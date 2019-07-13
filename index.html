@@ -1,0 +1,2759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="description" content="Software engineer. Passion for low-level technologies and educational applications. Opinions are my own.">
+<title>Ciro Santilli (三西候)</title>
+<script>
+<!-- Google Analytics, AKA selling my soul to Google for some backlinks. -->
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-47867706-1', 'auto');
+ga('send', 'pageview');
+</script>
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="shortcut icon" type="image/x-icon" href="/me.jpg" />
+<style>
+body {
+  padding-left: 10px;
+}
+.imageblock {
+  margin-bottom: 10px;
+}
+/* Custom style. */
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>Ciro Santilli (三西候)</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Software engineer. Passion for low-level technologies and educational applications. Opinions are my own.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/cirosantilli">GitHub</a> |
+<a href="https://stackoverflow.com/users/895245">Stack Overflow </a> |
+<a href="https://www.linkedin.com/in/cirosantilli">LinkedIn</a> |
+<a href="https://www.youtube.com/channel/UCBrJjpKMpdrkA1VsAiR2wEg">YouTube</a> |
+<a href="https://twitter.com/cirosantilli">Twitter</a> |
+<a href="https://www.zhihu.com/people/cirosantilli/activities">Zhihu 知乎</a> |
+<a href="https://www.weibo.com/p/1005055601627311">Weibo 微博</a> |
+<a href="#accounts">Other accounts</a></p>
+</div>
+<div class="paragraph">
+<p><a href="me.jpg"><span class="image"><img src="me.jpg" alt="me" height="300"></span></a> <a href="logo.png"><span class="image"><img src="logo.png" alt="logo" height="300"></span></a></p>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title"></div>
+<ul class="sectlevel1">
+<li><a href="#getting-started-with-ciro">1. Getting started with Ciro</a>
+<ul class="sectlevel2">
+<li><a href="#quick-facts">1.1. Quick facts</a></li>
+<li><a href="#projects-done">1.2. Projects done</a>
+<ul class="sectlevel3">
+<li><a href="#linux-kernel-module-cheat">1.2.1. Linux kernel module cheat</a></li>
+<li><a href="#stack-overflow-contributions">1.2.2. Stack Overflow contributions</a></li>
+<li><a href="#campaign-for-freedom-of-speech-in-china">1.2.3. Campaign for freedom of speech in China</a></li>
+<li><a href="#minor-projects">1.2.4. Minor projects</a></li>
+</ul>
+</li>
+<li><a href="#projects-todo">1.3. Projects TODO</a>
+<ul class="sectlevel3">
+<li><a href="#write-free-books-to-get-famous-website">1.3.1. Write free books to get famous website</a>
+<ul class="sectlevel4">
+<li><a href="#write-free-books-to-get-famous-website-motivation">1.3.1.1. Write free books to get famous website motivation</a></li>
+</ul>
+</li>
+<li><a href="#design-a-large-cohesive-game-world-for-robotic-like-artificial-intelligence-development">1.3.2. Design a large cohesive game world for robotic-like artificial intelligence development</a></li>
+<li><a href="#create-a-website-front-end-for-a-mathematical-formal-proof-system">1.3.3. Create a website front-end for a mathematical formal proof system</a></li>
+<li><a href="#molecular-biology">1.3.4. Molecular biology</a></li>
+<li><a href="#create-videos-of-all-key-physical-experiments">1.3.5. Create videos of all key physical experiments</a></li>
+</ul>
+</li>
+<li><a href="#articles">1.4. Articles</a></li>
+<li><a href="#ciro-santillis-ideology">1.5. Ciro Santilli&#8217;s ideology</a>
+<ul class="sectlevel3">
+<li><a href="#ciro-santillis-ultimate-life-goal">1.5.1. Ciro Santilli&#8217;s ultimate life goal</a></li>
+<li><a href="#having-more-than-one-natural-language-is-bad-for-the-world">1.5.2. Having more than one natural language is bad for the world</a></li>
+</ul>
+</li>
+<li><a href="#how-to-contact-ciro-santilli">1.6. How to contact Ciro Santilli?</a></li>
+<li><a href="#how-to-develop-ciro-santillis-website">1.7. How to develop Ciro Santilli&#8217;s website</a></li>
+<li><a href="#license-of-ciro-santillis-website">1.8. License of Ciro Santilli&#8217;s website</a></li>
+</ul>
+</li>
+<li><a href="#accounts">2. Accounts</a></li>
+<li><a href="#programming-language-choice">3. Programming language choice</a></li>
+<li><a href="#about-ciro-santillis-website">4. About Ciro Santilli&#8217;s website</a>
+<ul class="sectlevel2">
+<li><a href="#unmigrated-sections-of-the-old-version-of-this-website">4.1. Unmigrated sections of the old version of this website</a></li>
+<li><a href="#why-ciro-santilli-removed-disqus-comments-from-this-website-in-2019-05-04">4.2. Why Ciro Santilli removed Disqus comments from this website in 2019-05-04</a></li>
+<li><a href="#dns-configuration-of-ciro-santillis-website">4.3. DNS configuration of Ciro Santilli&#8217;s website</a></li>
+<li><a href="#the-css-of-ciro-santillis-website-looks-broken">4.4. The CSS of Ciro Santilli&#8217;s website looks broken</a></li>
+<li><a href="#ciro-santillis-website-is-not-mobile-friendly">4.5. Ciro Santilli&#8217;s website is not mobile friendly</a></li>
+</ul>
+</li>
+<li><a href="#stack-overflow">5. Stack Overflow</a>
+<ul class="sectlevel2">
+<li><a href="#reply-to-stack-overflow-is-doomed-posts">5.1. Reply to Stack Overflow is doomed posts</a></li>
+<li><a href="#the-machiavellian-stack-overflow-contributor">5.2. The Machiavellian Stack Overflow contributor</a></li>
+<li><a href="#stack-overflow-vote-fraud-script">5.3. Stack Overflow Vote Fraud Script</a>
+<ul class="sectlevel3">
+<li><a href="#stack-overflow-suspension-for-vote-fraud-script-2019-03-20">5.3.1. Stack Overflow suspension for vote fraud script 2019-03-20</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ciro-santillis-skills">6. Ciro Santilli&#8217;s skills</a>
+<ul class="sectlevel2">
+<li><a href="#ciro-santillis-documentation-superpowers">6.1. Ciro Santilli&#8217;s documentation superpowers</a></li>
+<li><a href="#ciro-santillis-natural-languages-skills">6.2. Ciro Santilli&#8217;s natural languages skills</a></li>
+</ul>
+</li>
+<li><a href="#art">7. Art</a>
+<ul class="sectlevel2">
+<li><a href="#the-best-video-game-content-of-all-time">7.1. The best video game content of all time</a></li>
+<li><a href="#the-best-youtube-channels">7.2. The best YouTube channels</a></li>
+<li><a href="#the-best-television-series-of-all-time">7.3. The best television series of all time</a></li>
+<li><a href="#the-best-movies-of-all-time">7.4. The best movies of all time</a>
+<ul class="sectlevel3">
+<li><a href="#once-upon-a-time-in-the-west-1968">7.4.1. Once upon a time in the west (1968)</a></li>
+<li><a href="#battle-of-algiers-1966">7.4.2. Battle of Algiers (1966)</a></li>
+<li><a href="#the-godfather-1972-and-the-godfather-part-ii-1974">7.4.3. The Godfather (1972) and The Godfather Part II (1974)</a></li>
+<li><a href="#primer-2004">7.4.4. Primer (2004)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#artificial-general-intelligence">8. Artificial general intelligence</a></li>
+<li><a href="#physics">9. Physics</a>
+<ul class="sectlevel2">
+<li><a href="#the-most-important-physics-experiments">9.1. The most important physics experiments</a></li>
+<li><a href="#particle-physics">9.2. Particle physics</a>
+<ul class="sectlevel3">
+<li><a href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">9.2.1. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></li>
+<li><a href="#applications-of-particle-physics">9.2.2. Applications of particle physics</a></li>
+<li><a href="#particle-physics-bibliography">9.2.3. Particle physics bibliography</a></li>
+<li><a href="#dirac-equation">9.2.4. Dirac Equation</a>
+<ul class="sectlevel4">
+<li><a href="#how-does-diracs-equation-model-spin">9.2.4.1. How does Dirac&#8217;s equation model spin?</a></li>
+</ul>
+</li>
+<li><a href="#quantum-electrodynamics">9.2.5. Quantum Electrodynamics</a>
+<ul class="sectlevel4">
+<li><a href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">9.2.5.1. What does it mean that photons are force carriers for electromagnetism?</a></li>
+</ul>
+</li>
+<li><a href="#quantum-chromodynamics">9.2.6. Quantum Chromodynamics</a></li>
+<li><a href="#lamb-shift">9.2.7. Lamb shift</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-started-with-ciro"><a class="anchor" href="#getting-started-with-ciro"></a><a class="link" href="#getting-started-with-ciro">1. Getting started with Ciro</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="quick-facts"><a class="anchor" href="#quick-facts"></a><a class="link" href="#quick-facts">1.1. Quick facts</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Nationalities: Italian and Brazilian</p>
+</li>
+<li>
+<p>Grew up in: Brazil</p>
+</li>
+<li>
+<p>Relationship status: married</p>
+</li>
+<li>
+<p>Chinese name: 三西猴, means "three western monkeys". Phonetic approximation to SANtilli CIRO. Semi-unintentionally reminds Chinese people of <a href="https://en.wikipedia.org/wiki/Sun_Wukong">Sun Wukong</a>.</p>
+</li>
+<li>
+<p>Laptop: high end ThinkPad</p>
+</li>
+<li>
+<p>Distro: latest Ubuntu release</p>
+</li>
+<li>
+<p>Vim or Emacs: Vim. But for The Love, will someone please make an open source C++ IDE that actually just works?</p>
+</li>
+<li>
+<p>Tabs or spaces: spaces</p>
+</li>
+<li>
+<p>Mailing list or Git(Hub|Lab): Git(Hub|Lab), <a href="https://webapps.stackexchange.com/questions/23197/reply-to-mailman-archived-message/115088#115088">with passion</a></p>
+</li>
+<li>
+<p>System or unit tests: system</p>
+</li>
+<li>
+<p>Default programming languages: Python and C++. <a href="#programming-language-choice">I&#8217;ll learn Rust and Haskell once I&#8217;m rich</a></p>
+</li>
+<li>
+<p>Favorite musical instruments to listen: <a href="https://en.wikipedia.org/wiki/Guqin">Chinese Guqin</a> and electric Jazz-fusion guitar</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="projects-done"><a class="anchor" href="#projects-done"></a><a class="link" href="#projects-done">1.2. Projects done</a></h3>
+<div class="paragraph">
+<p>These are the most important projects that I feel I&#8217;ve done so far.</p>
+</div>
+<div class="paragraph">
+<p>In retrospect, I sometimes I wish I had focused on even greater impact things, some of them in the <a href="#projects-todo">Projects TODO</a> section.</p>
+</div>
+<div class="paragraph">
+<p>But maybe "Everything you did brought you where you are now." type of stuff: maybe it is during the "low impact activities" that we get the inspiration and experience required for the "high impact ones".</p>
+</div>
+<div class="sect3">
+<h4 id="linux-kernel-module-cheat"><a class="anchor" href="#linux-kernel-module-cheat"></a><a class="link" href="#linux-kernel-module-cheat">1.2.1. Linux kernel module cheat</a></h4>
+<div class="paragraph">
+<p><a href="https://github.com/cirosantilli/linux-kernel-module-cheat" class="bare">https://github.com/cirosantilli/linux-kernel-module-cheat</a></p>
+</div>
+<div class="paragraph">
+<p>This is the most important technical tutorial project that I&#8217;ve done in my life so far as of 2019.</p>
+</div>
+<div class="paragraph">
+<p>The scope is insane and unprecedented, and goes beyond Linux-kernel-land alone.</p>
+</div>
+<div class="paragraph">
+<p>It ate up every system programming content I had previously written, including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>C, C++, POSIX</p>
+</li>
+<li>
+<p>x86 and arm userland assembly</p>
+</li>
+<li>
+<p>arm baremetal assembly. x86 baremetal is at: <a href="https://github.com/cirosantilli/x86-bare-metal-examples" class="bare">https://github.com/cirosantilli/x86-bare-metal-examples</a> and would in theory be migrated, but I&#8217;m lazy</p>
+</li>
+<li>
+<p>QEMU and gem5 emulation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>so that this repo would better be called "system-programming-cheat". But "Linux kernel module cheat" sounds more hardcore ;-)</p>
+</div>
+<div class="paragraph">
+<p>Other major things that could be added there as well in the future are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/cirosantilli/algorithm-cheat" class="bare">https://github.com/cirosantilli/algorithm-cheat</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Computer_architecture">computer architecture</a> tutorials with gem5</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="stack-overflow-contributions"><a class="anchor" href="#stack-overflow-contributions"></a><a class="link" href="#stack-overflow-contributions">1.2.2. Stack Overflow contributions</a></h4>
+<div class="paragraph">
+<p><a href="https://stackoverflow.com/users/895245" class="bare">https://stackoverflow.com/users/895245</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://stackoverflow.com/users/895245"><img src="https://stackoverflow.com/users/flair/895245.png?theme=dark" alt="Stack overflow flare"></a>
+</div>
+<div class="title">Figure 1. Ciro Santilli&#8217;s amazing Stack Overflow profile</div>
+</div>
+<div class="paragraph">
+<p>My contributions have, unsurprisingly, centered around the subjects I have worked with: systems programming and web development, and necessary tooling to get those done, such a Git, Python, Bash and Ubuntu.</p>
+</div>
+<div class="paragraph">
+<p>My self-selected best answers are listed at: <a href="#articles">Articles</a></p>
+</div>
+<div class="paragraph">
+<p>In Stack Overflow I like to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>answer important questions found through Google which I need to solve an actual problem I have right now, and for which none of the existing answers satisfied me, and close duplicates.</p>
+</li>
+<li>
+<p>monitor less known tags which very few people know a lot about, but in which I specialize</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When I get an upvote on one of my more obscure answers, I often re-read it, and often find improvements to be made and make them.</p>
+</div>
+<div class="paragraph">
+<p>I don&#8217;t like to refresh the homepage looking for easy rep on widely known subjects.</p>
+</div>
+<div class="paragraph">
+<p>For this reason, <a href="https://stackoverflow.com/help/badges/17/necromancer">Necromancer</a> is my favorite badge (get 5 upvotes on a question older than 60 days), and As of July 2019, <a href="https://data.stackexchange.com/stackoverflow/query/300735/users-with-most-necromancer-badges-at-a-given-date?Date=2019-07-15">I became the #1 user with the most of this badge</a>. Announcement <a href="https://twitter.com/cirosantilli/status/1146157392343785474">on Twitter</a>.</p>
+</div>
+<div class="paragraph">
+<p>The number two is <a href="https://stackoverflow.com/users/6309">VonC</a>, who has about 16 times more answers than me in total! From this query: <a href="https://data.stackexchange.com/stackoverflow/query/1072396?&amp;Date=2019-07-01&amp;UserId=895245" class="bare">https://data.stackexchange.com/stackoverflow/query/1072396?&amp;Date=2019-07-01&amp;UserId=895245</a> it can be seen that as of July 2019, 1216 out of my 1329 answers were answered 60 days after the questions and constitute potential necromancers! Compare that to VonC&#8217;s 1643 potential necromancers out of 21767 answers!</p>
+</div>
+<div class="paragraph">
+<p>Stack Overflow reputation is of course, in itself, meaningless. People who contribute to popular subjects like web development will always have infinitely more reputation that the low level subjects.</p>
+</div>
+<div class="paragraph">
+<p>For example, my most upvoted answer as of July 2019 is <a href="https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies/22004559#22004559" class="bare">https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies/22004559#22004559</a> was written when I spent my first week playing with NodeJS (I was having a look at <a href="https://www.sharelatex.com/">ShareLaTeX</a>, later merged into <a href="https://www.overleaf.com/">Overleaf</a>, for <a href="#write-free-books-to-get-famous-website">education</a>), which I didn&#8217;t touch again for several years, and still haven&#8217;t "mastered" as of 2019!</p>
+</div>
+<div class="paragraph">
+<p>What happens on the specialized topics though is that you end up getting to know all the 5 users who contribute 95% of the content pretty soon as you study those subjects.</p>
+</div>
+<div class="paragraph">
+<p>My deep understanding of Stack Overflow mechanisms and its shortcomings also helped shape my ideas for: <a href="#write-free-books-to-get-famous-website">Write free books to get famous website</a>.</p>
+</div>
+<div class="paragraph">
+<p>After answering so many questions, I ended up converging to a more or less consistent style, which I formalized at: <a href="https://meta.stackexchange.com/questions/18614/style-guide-for-questions-and-answers/326746#326746" class="bare">https://meta.stackexchange.com/questions/18614/style-guide-for-questions-and-answers/326746#326746</a></p>
+</div>
+<div class="paragraph">
+<p>More thoughts on Stack Overflow at: <a href="#stack-overflow">Stack Overflow</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="campaign-for-freedom-of-speech-in-china"><a class="anchor" href="#campaign-for-freedom-of-speech-in-china"></a><a class="link" href="#campaign-for-freedom-of-speech-in-china">1.2.3. Campaign for freedom of speech in China</a></h4>
+<div class="paragraph">
+<p><a href="https://github.com/cirosantilli/china-dictatorship" class="bare">https://github.com/cirosantilli/china-dictatorship</a></p>
+</div>
+<div id="xi-jinping-chrysanthemum-230-liusi" class="imageblock">
+<div class="content">
+<a class="image" href="xi-jinping-chrysanthemum-230-liusi.jpeg"><img src="xi-jinping-chrysanthemum-230-liusi.jpeg" alt="xi jinping chrysanthemum 230 liusi"></a>
+</div>
+<div class="title">Figure 2. <a href="https://www.independent.co.uk/news/world/asia/chinese-artist-who-posted-funny-image-of-president-xi-jinping-facing-five-years-in-prison-as-10282630.html">Chrysanthemum Xi Jinping</a> with <a href="https://en.wikipedia.org/wiki/1989_Tiananmen_Square_protests">六四</a> spice added by Ciro Santilli</div>
+</div>
+<div class="paragraph">
+<p>Like most people in the West, I have always been for political freedom of speech, and therefore against the Chinese government&#8217;s policies.</p>
+</div>
+<div class="paragraph">
+<p>However, the seriousness of the matter only fully dawned on me in 2015 when, my mother-in-law, a then a 63-year-old lady, was put into jail for 15 days for doing <a href="https://github.com/cirosantilli/china-dictatorship/tree/714d8104549ea19714787f148ff93c7403fd120c#falun-gong">Falun Gong</a>.</p>
+</div>
+<div class="paragraph">
+<p>In response, I decided to use my <a href="#stack-overflow-contributions">considerable Stack Overflow presence</a> to sabotage the website in China with keywords censored keywords on my username, for example: <a href="http://web.archive.org/web/20150602004401/https://stackoverflow.com/users/895245/ciro-santilli-%e5%85%ad%e5%9b%9b%e4%ba%8b%e4%bb%b6-%e6%b3%95%e8%bd%ae%e5%8a%9f-%e7%ba%b3%e7%b1%b3%e6%af%94%e4%ba%9a%e8%83%a1%e6%b5%b7%e5%b3%b0" class="bare">http://web.archive.org/web/20150602004401/https://stackoverflow.com/users/895245/ciro-santilli-%e5%85%ad%e5%9b%9b%e4%ba%8b%e4%bb%b6-%e6%b3%95%e8%bd%ae%e5%8a%9f-%e7%ba%b3%e7%b1%b3%e6%af%94%e4%ba%9a%e8%83%a1%e6%b5%b7%e5%b3%b0</a></p>
+</div>
+<div class="paragraph">
+<p>The rationale of this is to force the Chinese Government to either:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>leave things as they are, and let censored keywords appear on Stack Overflow (most likely scenario)</p>
+</li>
+<li>
+<p>block Stack Overflow, and lose billions of dollars with worse IT technology</p>
+</li>
+<li>
+<p>disable the Great Firewall</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Full rationale is described at: <a href="https://github.com/cirosantilli/china-dictatorship/tree/714d8104549ea19714787f148ff93c7403fd120c#why-keyword-attack" class="bare">https://github.com/cirosantilli/china-dictatorship/tree/714d8104549ea19714787f148ff93c7403fd120c#why-keyword-attack</a></p>
+</div>
+<div class="paragraph">
+<p>In the beginning, this <a href="https://github.com/cirosantilli/china-dictatorship/tree/236407528ab6424504e442e070d632496c110087#backlinks-to-this-repository">generated some commotion</a>, but activity reduced as novelty wore off, and as I collected the reply to all possible comments at: <a href="https://github.com/cirosantilli/china-dictatorship" class="bare">https://github.com/cirosantilli/china-dictatorship</a></p>
+</div>
+<div class="paragraph">
+<p>This campaign has led me to have an insane profile view / reputation ratio, since many people pause to look at my profile. I am point "A" at the top right corner of <a href="#image-stack-overflow-reputation-profile-views-ciro-santilli">Stack Overflow reputation vs Profile Views as of 2019 with Ciro Santilli marked as "A"</a>:</p>
+</div>
+<div id="image-stack-overflow-reputation-profile-views-ciro-santilli" class="imageblock">
+<div class="content">
+<a class="image" href="stack-overflow-reputation-profile-views-ciro-santilli.png"><img src="stack-overflow-reputation-profile-views-ciro-santilli.png" alt="stack overflow reputation profile views ciro santilli"></a>
+</div>
+<div class="title">Figure 3. Stack Overflow reputation vs Profile Views as of 2019 with Ciro Santilli marked as "A"</div>
+</div>
+<div class="paragraph">
+<p>Further analysis done at: <a href="https://stats.stackexchange.com/questions/376361/how-to-find-the-sample-points-that-have-statistically-meaningful-large-outlier-r" class="bare">https://stats.stackexchange.com/questions/376361/how-to-find-the-sample-points-that-have-statistically-meaningful-large-outlier-r</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="minor-projects"><a class="anchor" href="#minor-projects"></a><a class="link" href="#minor-projects">1.2.4. Minor projects</a></h4>
+<div class="paragraph">
+<p>These are some smaller projects that I carried out. They are all either for fun, or misguided use of my time done by an younger self.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Naughty stuff. I like being naughty.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#stack-overflow-vote-fraud-script">Stack Overflow Vote Fraud Script</a> How do you think I got <a href="#stack-overflow-contributions">my rep</a>? Just kidding. Stack Overflow later forbade me from advertising these project: <a href="#stack-overflow-suspension-for-vote-fraud-script-2019-03-20">Stack Overflow suspension for vote fraud script 2019-03-20</a></p>
+</li>
+<li>
+<p>GitHub makes me feel especially naughty:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/cirosantilli/all-github-commit-emails">All GitHub Commit Emails</a>: I extracted (almost) all Git commit emails from GitHub with Google BigQuery</p>
+</li>
+<li>
+<p><a href="https://github.com/cirosantilli/test-many-commits-1m/">A repository with 1 million commits</a>: likely the <a href="https://www.quora.com/Which-GitHub-repo-has-the-most-commits/answer/Ciro-SantilliI">live repo with the most commits as of 2017</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/20099235/who-is-the-user-with-the-longest-streak-on-github/27742165#27742165">An 100 year GitHub streak</a>, likely longest ever when that existed. It was consuming too much server resources however, which led to GitHub admins manually <a href="https://web.archive.org/web/20151021135921/https://github.com/cirosantilli/">turning off my contribution history</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/cirosantilli/test-octopus-100k">A repository with a 100k commit Git octopus merge</a>. Now that is a true <a href="https://softwareengineering.stackexchange.com/questions/314215/can-a-git-commit-have-more-than-2-parents/377903#377903">Cthulhu merge</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Because I <a href="#write-free-books-to-get-famous-website">care about education</a>, around 2014 I looked into markup languages and version control for books, before I noticed that this approach was useless and that ranking algorithms are all that matter:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://gitlab.com/gitlab-org/gitlab-ce">GitLab</a>: very important to me because I wanted to base <a href="https://github.com/booktree/booktree">Booktree</a> on it.</p>
+<div class="paragraph">
+<p>I was <a href="https://github.com/gitlabhq/gitlabhq/graphs/contributors?from=2013-01-01&amp;to=2015-01-01&amp;type=a">the number 2 contributor from 2013 to 2015</a>.</p>
+</div>
+<div class="paragraph">
+<p>I have implemented some large features and several smaller improvements.</p>
+</div>
+<div class="paragraph">
+<p>I was made a moderator of <a href="https://www.reddit.com/r/gitlab">/r/gitlab</a> in <a href="https://web.archive.org/web/20160524164714/https://www.reddit.com/r/gitlab/about/moderators">2016-05</a>.</p>
+</div>
+<div class="paragraph">
+<p>They send me a free swag bottle later after they got funding on to thank me for my contributions:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="gitlab-bottle-beach.jpg"><img src="gitlab-bottle-beach.jpg" alt="gitlab bottle beach"></a>
+</div>
+<div class="title">Figure 4. Ciro Santilli at the beach with this GitLab bottle</div>
+</div>
+<div class="paragraph">
+<p>I had to pay for the beach trip though.</p>
+</div>
+</li>
+<li>
+<p><a href="/markdown-style-guide">Markdown Style Guide</a></p>
+</li>
+<li>
+<p><a href="https://github.com/karlcow/markdown-testsuite">Markdown Testsuite improvements</a>: I have implemented the test runner a few months before CommonMark left stealth mode and killed it instantaneously.</p>
+<div class="paragraph">
+<p>At least MacFarlane was able to <a href="https://github.com/jgm/CommonMark/blob/2528c87c0cf08e02eb3e201c149cb3acf521e0c8/test/normalize.py#L8">reuse</a> part of the HTML normalizer <a href="https://github.com/karlcow/markdown-testsuite/blame/639cd234d71ca81956b61ff7876f37c3cdc5c043/run-tests.py">I wrote</a>, and I extracted the multi-engine comparison to: <a href="https://github.com/cirosantilli/commonmark-implementation-compare">CommonMark Implementation Compare</a>.</p>
+</div>
+<div class="paragraph">
+<p>Playing with this project has led me to find and report many Markdown bugs / bad behavior on other software, e.g. <a href="https://github.com/isaacs/github/issues/297">GitHub</a> and <a href="https://github.com/fletcher/MultiMarkdown-4/issues/68">MultiMarkdown-4</a>.</p>
+</div>
+</li>
+<li>
+<p><a href="https://github.com/isaacs/github">isaacs/github public unofficial GitHub issue tracker</a>: I have commented there so often that I <a href="https://github.com/isaacs/github/issues/430#issuecomment-123851480">was made a collaborator</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Vim: sometimes I got crazy and wasted my time with Vimscript:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/plasticboy/vim-markdown">Vim Markdown</a>: the owner <code>plasticboy</code> was really nice and made me a collaborator for my contributions, notably a live ToC outline and the header mappings</p>
+</li>
+<li>
+<p><a href="https://github.com/cirosantilli/vundle-plugin-tester">Vundle Plugin Tester</a>, which I used to start the testing system of Vim Markdown</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://github.com/cirosantilli/breakthrough-message">Breakthrough Message</a>: aliens!!! Creative / media project, powered by some Python scripts.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="projects-todo"><a class="anchor" href="#projects-todo"></a><a class="link" href="#projects-todo">1.3. Projects TODO</a></h3>
+<div class="paragraph">
+<p>These are projects which I&#8217;m seriously considering doing, and which I believe could have a considerable impact in the world, given a few months of work.</p>
+</div>
+<div class="paragraph">
+<p>They are sorted in order of "most likely to get done first".</p>
+</div>
+<div class="sect3">
+<h4 id="write-free-books-to-get-famous-website"><a class="anchor" href="#write-free-books-to-get-famous-website"></a><a class="link" href="#write-free-books-to-get-famous-website">1.3.1. Write free books to get famous website</a></h4>
+<div class="paragraph">
+<p><a href="https://github.com/cirosantilli/write-free-science-books-to-get-famous-website" class="bare">https://github.com/cirosantilli/write-free-science-books-to-get-famous-website</a></p>
+</div>
+<div class="paragraph">
+<p>In this project, I want to explore if it is possible to create a sustainable website that will make people write university-level natural science books for free.</p>
+</div>
+<div class="paragraph">
+<p>The initial incentive for those people is to make them famous and allow them to get more fulfilling jobs more easily, although I also want to add money transfer mechanisms to it later on.</p>
+</div>
+<div class="paragraph">
+<p>The key intended technical innovation of the website is a PageRank-like algorithm that answers the key questions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>who knows the most about subject X</p>
+</li>
+<li>
+<p>what is the best content for subject X</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>where any user can create any new subject X.</p>
+</div>
+<div class="paragraph">
+<p>I envision a Wikipedia-like page, where you can fork a version of any subject or header to improve it, suggest changes via a "GitHub-pull-request-like" mechanism, and create bug reports under any given header.</p>
+</div>
+<div class="paragraph">
+<p>Then, while reading an article about a subject, say, "The Fundamental Theorem of Calculus", you would be able to click a button, and easily view the other best articles about that subject.</p>
+</div>
+<div class="paragraph">
+<p>Many subjects have changed very little in the last hundred years, and so I find it mind-blowing that people have to pay for books that teach them!</p>
+</div>
+<div class="paragraph">
+<p>More than that however, if such project succeeds, it could fundamentally change the way university is organized, enormously improving its efficiency.</p>
+</div>
+<div class="paragraph">
+<p>It could destroy the current educational system and replace it by one that lets people choose what they want to learn.</p>
+</div>
+<div class="sect4">
+<h5 id="write-free-books-to-get-famous-website-motivation"><a class="anchor" href="#write-free-books-to-get-famous-website-motivation"></a><a class="link" href="#write-free-books-to-get-famous-website-motivation">1.3.1.1. Write free books to get famous website motivation</a></h5>
+<div class="paragraph">
+<p>Since I was young, I have been bewildered by the natural sciences and mathematics.</p>
+</div>
+<div class="paragraph">
+<p>As a result, I have always suffered a lot at school: my grades were good, but I wasn&#8217;t really learning those beautiful things that I wanted to learn!</p>
+</div>
+<div class="paragraph">
+<p>School, instead of helping me, was just wasting my time with superficial knowledge.</p>
+</div>
+<div class="paragraph">
+<p>First, before university, school organization had only one goal: put you into the best universities, to make a poster out of you and get publicity, so that more parents will be willing to pay them money to put their kids into good university.</p>
+</div>
+<div class="paragraph">
+<p>Then, after entering university, although things got way better, teachers were still to a large extent researchers who didn&#8217;t want to, know how to and above all have enough time and institutional freedom to teach things properly and make you see their beauty.</p>
+</div>
+<div class="paragraph">
+<p>This is especially true because I was in Brazil, a third world country, where the opportunities are comparatively extremely limited to the first world.</p>
+</div>
+<div class="paragraph">
+<p>And all of this is considering that was I was very luck and was already in some of the best educational institutions locally available already, and had comparatively awesome teachers. I wouldn&#8217;t be here today if I hadn&#8217;t had such advantages in the first place.</p>
+</div>
+<div class="paragraph">
+<p>But no matter how awesome one teacher is, no single person can overcome a system so large and broken, without technological innovation that is.</p>
+</div>
+<div class="paragraph">
+<p>The key problem all along the way is the Society&#8217;s / Government&#8217;s belief that everyone has to learn the same things, and that grades in exams mean anything.</p>
+</div>
+<div class="paragraph">
+<p>I believe however, that exams are useless, and that there are only two meaningful metrics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>reputation points for doing useful work for society</p>
+</li>
+<li>
+<p>how much money you make</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Around 2012 however, I finally saw the light.</p>
+</div>
+<div class="paragraph">
+<p>Firstly, I was introduced to LaTeX, and my mind was blown. Ha, so I can write my own books, and so can anyone, for free? Why isn&#8217;t everyone doing that!</p>
+</div>
+<div class="paragraph">
+<p>Then I found two websites that changed my life forever, and made be believe that there was an alternative: <a href="#stack-overflow-contributions">Stack Overflow</a> and <a href="https://github.com/cirosantilli">GitHub</a>.</p>
+</div>
+<div class="paragraph">
+<p>The brutal openness of it all. The raw high quality content. Ugliness and uselessness too no doubt. But definitely spark in a sea of darkness.</p>
+</div>
+<div class="paragraph">
+<p>University was not needed anymore. I could learn whatever I wanted. A vision was born.</p>
+</div>
+<div class="paragraph">
+<p>To make things worse, for a long time I was tired of seeing poor people begging on the streets every day and not doing anything about it.</p>
+</div>
+<div class="paragraph">
+<p>So, by the time I left University, instead of pursuing a PhD in theoretical Mathematics or Physics just for the beauty of it as I had once considered, I had new plans.</p>
+</div>
+<div class="paragraph">
+<p>We needed a new educational system. One that would allow people to fulfill their potential and desires, and truly <a href="#ciro-santillis-ultimate-life-goal">improve society as a result</a>, both in rich and poor countries.</p>
+</div>
+<div class="paragraph">
+<p>And I found out that programming and applied mathematics could also be fun, so I might as well have some fun while doing this! ;-)</p>
+</div>
+<div class="paragraph">
+<p>So I started <a href="https://github.com/booktree/booktree">Booktree</a> in 2014, worked on it for an year, noticed the idea was dumb, and then started building this new idea and the courage to do it.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-a-large-cohesive-game-world-for-robotic-like-artificial-intelligence-development"><a class="anchor" href="#design-a-large-cohesive-game-world-for-robotic-like-artificial-intelligence-development"></a><a class="link" href="#design-a-large-cohesive-game-world-for-robotic-like-artificial-intelligence-development">1.3.2. Design a large cohesive game world for robotic-like artificial intelligence development</a></h4>
+<div class="paragraph">
+<p>Prototype: <a href="https://github.com/cirosantilli/Urho3D-cheat" class="bare">https://github.com/cirosantilli/Urho3D-cheat</a> YouTube demo: <a href="https://www.youtube.com/watch?v=j_fl4xoGTKU" class="bare">https://www.youtube.com/watch?v=j_fl4xoGTKU</a></p>
+</div>
+<div class="paragraph">
+<p>Less good discrete prototype: <a href="https://github.com/cirosantilli/rl-game-2d-grid" class="bare">https://github.com/cirosantilli/rl-game-2d-grid</a> YouTube demo: <a href="https://www.youtube.com/watch?v=TQ5k2u25eI8" class="bare">https://www.youtube.com/watch?v=TQ5k2u25eI8</a></p>
+</div>
+<div class="paragraph">
+<p>Prior art research: <a href="https://github.com/cirosantilli/awesome-reinforcement-learning-games" class="bare">https://github.com/cirosantilli/awesome-reinforcement-learning-games</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="ai-game-2d-continuous-basketball.png"><img src="ai-game-2d-continuous-basketball.png" alt="ai game 2d continuous basketball"></a>
+</div>
+<div class="title">Figure 5. Screenshot of the "Baketrock" stage</div>
+</div>
+<div class="paragraph">
+<p>The goal of this project is to reach <a href="#artificial-general-intelligence">Artificial general intelligence</a>.</p>
+</div>
+<div class="paragraph">
+<p>A few initiatives have created reasonable sets of robotics-like games for the purposes of AI development, most notably: <a href="https://en.wikipedia.org/wiki/OpenAI">OpenAI</a> and <a href="https://en.wikipedia.org/wiki/DeepMind">Google DeepMind</a>.</p>
+</div>
+<div class="paragraph">
+<p>However, all projects I&#8217;ve seen so far have only created sets of unrelated games, or worse: focused on closed games designed for humans!</p>
+</div>
+<div class="paragraph">
+<p>What I really feel is needed is to create a single cohesive game world, designed specifically for this purpose, and with a very large number of game mechanics.</p>
+</div>
+<div class="paragraph">
+<p>Notably, by "game mechanic" I mean "a magic aspect of the game world, which cannot be explained by object&#8217;s location and inertia alone". For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>when you press a button here, a door opens somewhere far away</p>
+</li>
+<li>
+<p>when you touch certain types of objects, a chemical reaction may happen, but not other types of objects</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Much in the spirit of <a href="http://www.gvgai.net/" class="bare">http://www.gvgai.net/</a>, I we have to do the following loop:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>create an initial game</p>
+</li>
+<li>
+<p>find an AI that beats it well</p>
+</li>
+<li>
+<p>study the AI, and add a new mechanic that breaks the AI, but does not break a human!</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The question then becomes: do we have enough computational power to simulation a game worlds that is analogous enough to the real world, so that our AI algorithms will also apply to the real world?</p>
+</div>
+<div class="paragraph">
+<p>To reduce computation requirements, I have decided to focus on a 2D world at first. I am confident that such world with the right mechanics can break any AI, while still being faster to simulate than a 3D world.</p>
+</div>
+<div class="paragraph">
+<p>My prototype used the Urho3D open source game engine, and that is a reasonable project, but I feel a raw SDL + Box2D + OpenGL solution from scratch would be faster to develop for my use case, since Urho3D has a lot of human-gaming features that I don&#8217;t need. Also me and the 2019 maintainer <a href="https://github.com/cirosantilli/china-dictatorship/blob/236407528ab6424504e442e070d632496c110087/communities-that-censor-politics.md">don&#8217;t share certain political views :-)</a>, so I was blocked from the GitHub project and forum.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="create-a-website-front-end-for-a-mathematical-formal-proof-system"><a class="anchor" href="#create-a-website-front-end-for-a-mathematical-formal-proof-system"></a><a class="link" href="#create-a-website-front-end-for-a-mathematical-formal-proof-system">1.3.3. Create a website front-end for a mathematical formal proof system</a></h4>
+<div class="paragraph">
+<p>When I first learnt the old <a href="https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory">Zermelo–Fraenkel set theory</a> and the idea of <a href="https://en.wikipedia.org/wiki/Formal_proof">Formal proofs</a>, my mind was completely blown.</p>
+</div>
+<div class="paragraph">
+<p>Finally, there it was: a proper and precise definition of mathematics, including a definition of integers, reals and limits!</p>
+</div>
+<div class="paragraph">
+<p>Theorems are strings, proofs are string manipulations, and axioms are the initial strings that you can use.</p>
+</div>
+<div class="paragraph">
+<p>Once proved, press a button on your computer, and the proof is automatically verified. No messy complicated "group of savants" reading it for 4 years and looking for flaws!</p>
+</div>
+<div class="paragraph">
+<p>I am aware of a few formal proof systems with several theorems in their Git tracked standard library. I don&#8217;t know which one is best, nor have I used any of them, but the hottest ones seem to be:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/coq/coq" class="bare">https://github.com/coq/coq</a></p>
+</li>
+<li>
+<p><a href="https://github.com/HOL-Theorem-Prover/HOL" class="bare">https://github.com/HOL-Theorem-Prover/HOL</a></p>
+</li>
+<li>
+<p><a href="https://github.com/seL4/isabelle" class="bare">https://github.com/seL4/isabelle</a>. I&#8217;ve been told however that this is "uncompilable" from source without blobs, to be verified.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And here are some more interesting links:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/awesomo4000/awesome-provable" class="bare">https://github.com/awesomo4000/awesome-provable</a> an awesome list of formal stuff</p>
+</li>
+<li>
+<p><a href="https://devel.isa-afp.org/" class="bare">https://devel.isa-afp.org/</a> Isabelle Archive of Formal Proofs. A curated list of Isabelle proofs, with minimal web UI. I want this, but without the manual curation, and with a better web UI.</p>
+</li>
+<li>
+<p><a href="http://www.cs.ru.nl/~freek/100/" class="bare">http://www.cs.ru.nl/~freek/100/</a> list of how many of the <a href="http://web.archive.org/web/20080105074243/http://personal.stevens.edu/~nkahl/Top100Theorems.html">"Top 100 theorems"</a> had been proved in several formal systems.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>However, it still blows my mind, that there isn&#8217;t one awesome and dominating website, that hosts all those proofs, possibly an on the browser editor, and which all mathematicians in the world use as the one golden reference of mathematics to rule them all!</p>
+</div>
+<div class="paragraph">
+<p>Just imagine the impact.</p>
+</div>
+<div class="paragraph">
+<p>Standard library maintainers don&#8217;t have to deal with the impossible question of what is "beautiful" or "useful" enough mathematics to deserve merged: users just push content to the online database, and star what they like!</p>
+</div>
+<div class="paragraph">
+<p>Interested in a conjecture? No problem: just subscribe to its formal statement + all known equivalents, and get an email on your inbox when it gets proved!</p>
+</div>
+<div class="paragraph">
+<p>Are you a garage mathematician and have managed to prove a hard theorem, but no will will read your proof? Fuck that, just publish it on the system and let it get auto verified. Overnight fame awaits.</p>
+</div>
+<div class="paragraph">
+<p>Notation incompatibility hell? A thing of the past, just automatically convert to your preferred representation.</p>
+</div>
+<div class="paragraph">
+<p>Such a system would be the perfect companion to: <a href="#write-free-books-to-get-famous-website">Write free books to get famous website</a>. Just like computer code offers the backbone of <a href="#linux-kernel-module-cheat">Linux kernel module cheat</a> Linux kernel tutorials, a formal proof system website would be the backbone of mathematics tutorials!</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, it would not be too hard to achieve this system!</p>
+</div>
+<div class="paragraph">
+<p>All we would need would be something analogous to a package registry like <a href="https://pypi.org/">Python&#8217;s PyPI</a> or <a href="https://www.npmjs.com/">NodeJS' registry</a>.</p>
+</div>
+<div class="paragraph">
+<p>Then, each person can publish packages containing proofs.</p>
+</div>
+<div class="paragraph">
+<p>Packages can rely on other packages that contain pre-requisites definition or theorem.</p>
+</div>
+<div class="paragraph">
+<p>Packages are just regular git repos, with some metadata. One notable metadata would be a human readable description of the theorems the package provides.</p>
+</div>
+<div class="paragraph">
+<p>The package registry would then in addition to most package registries have a CI server in it, that checks the correctness of all proofs, generates a web-page showing each theorem.</p>
+</div>
+<div class="paragraph">
+<p>All proofs can be conditional: the package registry simply shows clearly what axiom set a theorem is based on.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="molecular-biology"><a class="anchor" href="#molecular-biology"></a><a class="link" href="#molecular-biology">1.3.4. Molecular biology</a></h4>
+<div class="paragraph">
+<p><a href="https://github.com/cirosantilli/awesome-whole-cell-simulation" class="bare">https://github.com/cirosantilli/awesome-whole-cell-simulation</a></p>
+</div>
+<div class="paragraph">
+<p>I know "nothing" about this domain, but I see it clearly that silicon industry is ending, and that molecular biology technology is the most promising and growing field today.</p>
+</div>
+<div class="paragraph">
+<p>Such advances could one day lead to both <a href="#ciro-santillis-ultimate-life-goal">biological super-AGI and immortality</a>.</p>
+</div>
+<div class="paragraph">
+<p>First, during the 2000&#8217;s, the cost of sequencing fell to about 1000 USD per genome in the end of the 2010&#8217;s. The medical consequences of this revolution are still trickling down the application ladder today, inevitably, but somewhat slowly due to tight control of medical records.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="human-genome-sequencing-cost-evolution.png"><img src="human-genome-sequencing-cost-evolution.png" alt="human genome sequencing cost evolution"></a>
+</div>
+<div class="title">Figure 6. Cost per genome vs Moore&#8217;s law from 2000 to 2019, image <a href="https://www.genome.gov/sites/default/files/inline-images/Sequencing_Cost_Per_Genome_Feb%202019.png">by the NIH</a></div>
+</div>
+<div class="paragraph">
+<p>Then, in the 2010&#8217;s, <a href="https://en.wikipedia.org/wiki/CRISPR_gene_editing">CRISPR/Cas9 gene editing</a> started opening up the way to actually modifying the genome that we could now see.</p>
+</div>
+<div class="paragraph">
+<p>What&#8217;s next?</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;d put my money on <a href="https://en.wikipedia.org/wiki/DNA_synthesis">DNA synthesis</a>, see for example: <a href="https://twistbioscience.com/" class="bare">https://twistbioscience.com/</a> | <a href="https://www.evonetix.com/technology/" class="bare">https://www.evonetix.com/technology/</a> | <a href="http://dnascript.co/" class="bare">http://dnascript.co/</a> | <a href="https://www.ansabio.com/" class="bare">https://www.ansabio.com/</a> | <a href="https://www.nuclera.com/" class="bare">https://www.nuclera.com/</a></p>
+</div>
+<div class="paragraph">
+<p>I&#8217;m also curious about simulations of cell metabolism, protein and small molecule, microscopy (cristalography, cryo-EM), analytical chemistry (mass spectroscopy), single cell techniques (Single-cell RNA sequencing), &#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s weird, cells feel a lot like <a href="#linux-kernel-module-cheat">embedded systems</a>: small, complex, hard to observe, and profound.</p>
+</div>
+<div class="paragraph">
+<p>It saddens me that I&#8217;ll die and humanity won&#8217;t have understood the brain, maybe not even a measly E. Coli&#8230;&#8203;</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="create-videos-of-all-key-physical-experiments"><a class="anchor" href="#create-videos-of-all-key-physical-experiments"></a><a class="link" href="#create-videos-of-all-key-physical-experiments">1.3.5. Create videos of all key physical experiments</a></h4>
+<div class="paragraph">
+<p>Another thing that blows my mind is that you can&#8217;t find easily on YouTube recreations of many of the key physics / chemistry experiments.</p>
+</div>
+<div class="paragraph">
+<p>In particular, videos that are completely reproducible, indicating the exact model of every experimental element used, and how the experiment is setup. A bit like what I do in my <a href="#stack-overflow-contributions">Stack Overflow contributions</a>!</p>
+</div>
+<div class="paragraph">
+<p>I understand that some experiments are just to complex and expensive to re-create, as an extreme example say, a precise description of the <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider">LHC</a>, but up to the mid 20th century? We should have all of those nailed down.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="articles"><a class="anchor" href="#articles"></a><a class="link" href="#articles">1.4. Articles</a></h3>
+<div class="paragraph">
+<p>Selection of my best more or less short focused articles, most of them in the format of Stack Overflow answers.</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;ll post updates on Twitter if I publish some new considerably cool one: <a href="https://twitter.com/cirosantilli" class="bare">https://twitter.com/cirosantilli</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Trended on <a href="https://news.ycombinator.com/">Hacker News</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/cirosantilli/x86-bare-metal-examples">x86 Bare Metal Examples</a> on <a href="https://news.ycombinator.com/item?id=19428700">2019-03-19</a>. The third time something related to that repo trends. Hacker news people really like that repo!</p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/22054578/how-to-run-a-program-without-an-operating-system/32483545#32483545">How to run a program without an operating system?</a> on <a href="https://web.archive.org/web/20181126123625/https://news.ycombinator.com">2018-11-26</a>. Covers x86 and ARM.</p>
+</li>
+<li>
+<p><a href="/elf-hello-world">ELF Hello World Tutorial</a> on <a href="https://web.archive.org/web/20170517174951/https://news.ycombinator.com/news">2017-05-17</a></p>
+</li>
+<li>
+<p><a href="/x86-paging">x86 Paging Tutorial</a> on <a href="https://news.ycombinator.com/item?id=13773219">2017-03-02</a>. Number 1 Google search result for "x86 Paging" <a href="https://archive.is/VUSNt">in 2017-08</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>x86 Assembly</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/980999/what-does-multicore-assembly-language-look-like/33651438#33651438">What does “multicore” assembly language look like?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Linux kernel</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://unix.stackexchange.com/a/219674/32558">What do the flags in /proc/cpuinfo mean?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/a/31394861/895245">How does kernel get an executable binary file running under linux?</a></p>
+</li>
+<li>
+<p><a href="https://unix.stackexchange.com/questions/17122/is-it-possible-to-install-the-linux-kernel-alone/200572#200572">Is it possible to install the linux kernel alone?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/11408041/how-to-debug-the-linux-kernel-with-gdb-and-qemu/33203642#33203642">How to debug the Linux kernel with GDB and QEMU?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/33852690/can-the-sys-execve-system-call-in-the-linux-kernel-receive-both-absolute-or-re/42290593#42290593">Can the sys_execve() system call in the Linux kernel receive both absolute or relative paths?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/5957570/what-is-the-difference-between-the-kernel-space-and-the-user-space/44285809#44285809">What is the difference between the kernel space and the user space?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/5748492/is-there-any-api-for-determining-the-physical-address-from-virtual-address-in-li/45128487#45128487">Is there any API for determining the physical address from virtual address in Linux?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/2429511/why-do-people-write-the-usr-bin-env-python-shebang-on-the-first-line-of-a-pyt/40938801#40938801">Why do people write the <code>#!/usr/bin/env</code> python shebang on the first line of a Python script?</a></p>
+</li>
+<li>
+<p><a href="https://unix.stackexchange.com/questions/122717/how-to-create-a-custom-linux-distro-that-runs-just-one-program-and-nothing-else/238579#238579">How to create a custom Linux distro that runs just one program and nothing else?</a></p>
+</li>
+<li>
+<p><a href="https://unix.stackexchange.com/questions/5518/what-is-the-difference-between-the-following-kernel-makefile-terms-vmlinux-vml/482978#482978">What is the difference between the following kernel Makefile terms: vmLinux, vmlinuz, vmlinux.bin, zimage &amp; bzimage?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>QEMU</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/28315265/how-to-add-a-new-device-in-qemu-source-code/44612957#44612957">How to add a new device in QEMU source code?</a></p>
+</li>
+<li>
+<p><a href="https://askubuntu.com/questions/281763/is-there-any-prebuilt-qemu-ubuntu-image32bit-online/1081171#1081171">How to generate Ubuntu <code>debootstrap</code> disk images for QEMU?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/10949169/how-to-create-a-multi-partition-sd-image-without-root-privileges/52850819#52850819">How to create a multi partition SD disk image without root privileges?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>GCC</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/3322911/what-do-linkers-do/33690144#33690144">How do linkers and address relocation works?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/a/30308151/895245">How many GCC optimization levels are there?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/29391965/what-is-partial-linking-in-gnu-linker/53959624#53959624">What is incremental linking or partial linking?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/3476093/replacing-ld-with-gold-any-experience/53921263#53921263">GOLD (<code>-fuse-ld=gold</code>) linker vs the traditional GNU ld</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>C / C++</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/572547/what-does-static-mean-in-a-c-program/14339047#14339047">What does “static” mean in a C program?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/1041866/in-c-source-what-is-the-effect-of-extern-c/30526795#30526795">In C++ source, what is the effect of extern “C”?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/10186765/char-array-vs-char-pointer-in-c/30661089#30661089">Char array vs Char Pointer in C</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/847179/multiple-glibc-libraries-on-a-single-host/52454603#52454603">How to compile glibc from source and use it?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>IEEE 754</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/8341395/what-is-a-subnormal-floating-point-number/53203428#53203428">What is a subnormal floating point number?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/18118408/what-is-difference-between-quiet-nan-and-signaling-nan/55648118#55648118">What is difference between quiet NaN and signaling NaN?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/2618059/in-java-what-does-nan-mean/55673220#55673220">In Java, what does NaN mean?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Algorithms</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/a/29548834/895245">Heap vs Binary Search Tree (BST)</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Git internals</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/a/25806452/895245">What does the git index contain EXACTLY?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Python</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/a/19950198/895245">What is the difference between old style and new style classes in Python?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/a/20022860/895245">What is a mixin in Python, and why are they useful?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Web</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/a/28380690/895245">What does enctype='multipart/form-data' mean?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/a/23877420/895245">How does JavaScript .prototype work?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/a/24595458/895245">.prop() vs .attr()</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>OpenGL</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/3191978/how-to-use-glut-opengl-to-render-to-a-file/14324292#14324292">How to use GLUT/OpenGL to render to a file?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/8847899/opengl-how-to-draw-text-using-only-opengl-methods/36065835#36065835">How to draw text using only opengl methods?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/30864752/is-it-possible-to-build-a-heatmap-from-point-data-at-60-times-per-second/39839788#39839788">Is it possible to build a heatmap from point data at 60 times per second?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/2571402/how-to-use-glortho-in-opengl/36046924#36046924">How to use <code>glOrtho()</code> in OpenGL?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Node.js</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/a/22004559/895245">What&#8217;s the difference between dependencies, devDependencies and peerDependencies in npm package.json file?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Rails</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/a/25626629/895245">What is the difference between &lt;%, &lt;%=, &lt;%# and -%&gt; in ERB in Rails?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>POSIX</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/a/31865755/895245">What is POSIX?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Systems programming</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/868568/what-do-the-terms-cpu-bound-and-i-o-bound-mean/33510470#33510470">What do the terms “CPU bound” and “I/O bound” mean?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1/53937376#53937376">What do 'real', 'user' and 'sys' mean in the output of time?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Security</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://security.stackexchange.com/a/72569/53321">Why is the same origin policy so important?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Media</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/2205070/programmatically-synthesizing-programming-music/52126471#52126471">How to programmatically synthesize music?</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/12831761/how-to-resize-a-picture-using-ffmpegs-sws-scale/36487785#36487785">How to resize a picture using ffmpeg&#8217;s sws_scale()?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Non technical</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/cirosantilli/how-to-teach-efficiently">How to teach efficiently</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Eclipse</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/4038760/how-to-set-up-the-eclipse-for-remote-c-debugging-with-gdbserver/45608937#45608937">How to set up the Eclipse for remote C debugging with gdbserver?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Hardware</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.quora.com/Are-there-good-open-source-standard-cell-libraries-to-learn-IC-synthesis-with-EDA-tools/answer/Ciro-Santilli">Are there good open source standard cell libraries to learn IC synthesis with EDA tools?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Scientific software</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/5854515/large-plot-20-million-samples-gigabytes-of-data/55967461#55967461">A survey of open source interactive plotting software with a 10 million point scatter plot benchmark on Ubuntu 18.10</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>RTL, Verilog, VHDL</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/38108243/is-it-possible-to-do-interactive-user-input-and-output-simulation-in-vhdl-or-ver/38174654#38174654">Is it possible to do interactive user input and output simulation in VHDL or Verilog?</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ciro-santillis-ideology"><a class="anchor" href="#ciro-santillis-ideology"></a><a class="link" href="#ciro-santillis-ideology">1.5. Ciro Santilli&#8217;s ideology</a></h3>
+<div class="sect3">
+<h4 id="ciro-santillis-ultimate-life-goal"><a class="anchor" href="#ciro-santillis-ultimate-life-goal"></a><a class="link" href="#ciro-santillis-ultimate-life-goal">1.5.1. Ciro Santilli&#8217;s ultimate life goal</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Basic_income">Unconditional basic income</a> is my ultimate <a href="https://en.wikipedia.org/wiki/Transhumanism">non-transhumanist</a> technological dream: to reach a state of technological advancement and distribution of resources so high that everyone gets money for doing nothing, enough for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>basic survival needs: food, housing, clothes, hygiene, etc.</p>
+</li>
+<li>
+<p>two children to keep the world going. Or immortality tech, but I think that is harder and borderline transhumanist :-)</p>
+</li>
+<li>
+<p>high speed computer and Internet</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once a person has that, they can <a href="#write-free-books-to-get-famous-website">learn, teach</a> and create whatever they want. Or play video games all day long if they wish.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Basic_income_pilots">I don&#8217;t think I will live to see this</a>, so I content myself with helping it happen faster by increasing the efficiency of the world as I can. And having at least two well educated kids to carry on the project after I die :-)</p>
+</div>
+<div class="paragraph">
+<p>Technologies which would help a lot towards unconditional basic income and might be required but which I don&#8217;t think I will live to see:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#artificial-general-intelligence">Artificial general intelligence</a></p>
+</li>
+<li>
+<p>affordable <a href="https://en.wikipedia.org/wiki/Humanoid_robot">humanoid robots</a> with human-like energy efficiency and <a href="https://en.wikipedia.org/wiki/Power-to-weight_ratio">power-to-weight ratio</a>.</p>
+<div class="paragraph">
+<p>But I feel that this is even less likely than AGI, since I&#8217;m alive at the end of silicon Moore&#8217;s law and at the start of the Genome&#8217;s Moore&#8217;s law: information doubles, small sizes halve, but macroscopic mechanical artifacts stay the same.</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;m pretty certain about <a href="https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface">brain–computer interfaces</a>, in particular <a href="https://github.com/cirosantilli/essays/blob/7e1147daeb941a95b96b099d0db0474db25116ea/questions-for-my-future-self.md">full BCI as defined here</a>. Post my life time however.</p>
+</div>
+<div class="paragraph">
+<p>So in the worst case we can just grow brainless bodies and replace the cavity hole with a computer that controls the body, possibly with high level decisions coming from a remote building-sized genetically engineered biological AGI brain.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Of course, it is all about costs. A human costs about <a href="http://content.time.com/time/health/article/0,8599,1808049,00.html">130k 2010 USD / year</a>. So how cheap can we make the AGI / robot human equivalent / year for a given task?</p>
+</div>
+<div class="paragraph">
+<p>AGI + humanoid robots likely implies <a href="https://en.wikipedia.org/wiki/AI_takeover">AI takeover</a> though. It would then come down to human loving bots vs human hating bots fighting it out. It will be both terrifying and fun to watch.</p>
+</div>
+<div class="paragraph">
+<p>AGI alone would be very dangerous, in case it can get control of our nuclear arsenals through software zero days or <a href="https://en.wikipedia.org/wiki/Social_engineering_%28security%29">social engineering</a>. Although some <a href="https://www.quora.com/Could-a-group-of-hackers-break-into-military-networks-and-launch-or-detonate-nuclear-missiles">claim that is unlikely</a>.</p>
+</div>
+<div class="paragraph">
+<p>Humanity&#8217;s best bet to achieve silicon AGI today is to work on: <a href="#design-a-large-cohesive-game-world-for-robotic-like-artificial-intelligence-development">Design a large cohesive game world for robotic-like artificial intelligence development</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="having-more-than-one-natural-language-is-bad-for-the-world"><a class="anchor" href="#having-more-than-one-natural-language-is-bad-for-the-world"></a><a class="link" href="#having-more-than-one-natural-language-is-bad-for-the-world">1.5.2. Having more than one natural language is bad for the world</a></h4>
+<div class="paragraph">
+<p>Natural language diversity is beautiful, but useless.</p>
+</div>
+<div class="paragraph">
+<p>The fact that in poor countries a huge number of people do not speak the economically dominating language of the world (currently English), is a major obstacle to the development of those countries.</p>
+</div>
+<div class="paragraph">
+<p>Despite us being in the information age, the people in those countries cannot fully benefit from it at all!</p>
+</div>
+<div class="paragraph">
+<p>Teaching its people English should be the number one priority of any country. Without that, there can be no technological development. Everything else is secondary and can be learnt off the Internet once you know English.</p>
+</div>
+<div class="paragraph">
+<p>And the most efficient way to do that, is that every country should create amazing free open source English learning material for their own language.</p>
+</div>
+<div class="paragraph">
+<p>Also consider the European countries.</p>
+</div>
+<div class="paragraph">
+<p>What big companies have been created in Europe in the past 50 years, that have not been bought out by American or Japanese companies?</p>
+</div>
+<div class="paragraph">
+<p>The key problem is that there are so many small countries in Europe, that any startup has to deal with too many incompatible legislation and cannot easily sell to the hole of Europe.</p>
+</div>
+<div class="paragraph">
+<p>So then a larger company from a more uniform country comes and eats it up!</p>
+</div>
+<div class="paragraph">
+<p>So why can&#8217;t Europe unify its laws?</p>
+</div>
+<div class="paragraph">
+<p>Because the countries are still essentially walled off by languages.</p>
+</div>
+<div class="paragraph">
+<p>There isn&#8217;t true mobility of people between countries.</p>
+</div>
+<div class="paragraph">
+<p>You just can&#8217;t go study or work in any other country (except for the UK, when it was still in the EU) without putting a huge effort into learning its language first.</p>
+</div>
+<div class="paragraph">
+<p>Without this, there isn&#8217;t enough mixing to truly make cultures more uniform, and therefore allow the laws to be more uniform.</p>
+</div>
+<div class="paragraph">
+<p>Europe can&#8217;t even unify basic things like a mariage registry, or the posting of parcels, which often get lost and require you to contact people who may not speak English.</p>
+</div>
+<div class="paragraph">
+<p>For this reason, I believe Europe will only continue to go downhill with the years, and the UK will continue to try and endosymbiose into a state of the USA.</p>
+</div>
+<div class="paragraph">
+<p>It is the European <a href="https://en.wikipedia.org/wiki/Tower_of_Babel">Tower of Babel</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how-to-contact-ciro-santilli"><a class="anchor" href="#how-to-contact-ciro-santilli"></a><a class="link" href="#how-to-contact-ciro-santilli">1.6. How to contact Ciro Santilli?</a></h3>
+<div class="paragraph">
+<p>To contact Ciro Santilli publicly about any general subject that is not covered in a more specif repository, including saying hi or suggestions about this website, create a GitHub issue at: <a href="https://github.com/cirosantilli/cirosantilli.github.io/issues/new" class="bare">https://github.com/cirosantilli/cirosantilli.github.io/issues/new</a></p>
+</div>
+<div class="paragraph">
+<p>For comments about China first read:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/cirosantilli/china-dictatorship#faq" class="bare">https://github.com/cirosantilli/china-dictatorship#faq</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cirosantilli/china-dictatorship/blob/master/CONTRIBUTING.md" class="bare">https://github.com/cirosantilli/china-dictatorship/blob/master/CONTRIBUTING.md</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>and then create a GitHub issue at: <a href="https://github.com/cirosantilli/china-dictatorship/issues/new" class="bare">https://github.com/cirosantilli/china-dictatorship/issues/new</a></p>
+</div>
+<div class="paragraph">
+<p>If you need private contact, extract his email from on of my GitHub repos or use LinkedIn.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Disqus">Disqus comments</a> were removed from this website in 2019-05-04, a manual dump is <a href="/disqus-archive/">available here</a>, removal rationale: <a href="#why-ciro-santilli-removed-disqus-comments-from-this-website-in-2019-05-04">Why Ciro Santilli removed Disqus comments from this website in 2019-05-04</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how-to-develop-ciro-santillis-website"><a class="anchor" href="#how-to-develop-ciro-santillis-website"></a><a class="link" href="#how-to-develop-ciro-santillis-website">1.7. How to develop Ciro Santilli&#8217;s website</a></h3>
+<div class="paragraph">
+<p>This website is powered by <a href="https://pages.github.com">GitHub Pages</a>.</p>
+</div>
+<div class="paragraph">
+<p>The source code is located at: <a href="https://github.com/cirosantilli/cirosantilli.github.io" class="bare">https://github.com/cirosantilli/cirosantilli.github.io</a></p>
+</div>
+<div class="paragraph">
+<p>Build locally, watch for changes and rebuild automatically, and start a local server with:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>bundle install
+./run</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and then visit the website at:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>xdg-open http://localhost:8000</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After making any changes to the README.adoc, simply refresh the page to view the updates.</p>
+</div>
+<div class="paragraph">
+<p>If you make changes to other files however, e.g. image, you must also do the full rebuild with:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./build</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Source: <a href="build" class="bare">build</a></p>
+</div>
+<div class="paragraph">
+<p>Publish changes:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>git add -u
+git commit -m 'make yourself look sillier'
+./publish</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Source: <a href="publish" class="bare">publish</a></p>
+</div>
+<div class="paragraph">
+<p>GitHub forces us to use the master branch for the build output&#8230;&#8203; so the actual source is in the branch <code>dev</code>.</p>
+</div>
+<div class="paragraph">
+<p>Update the gems with:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>bundle update
+git add Gemfile.lock
+git commit -m 'update gems'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This website was originally written in Markdown and <a href="https://github.com/jekyll/jekyll">Jekyll</a>, however those were deprecated in favour of Asciidoctor when Ciro saw the light, rationale shown at: <a href="/markdown-style-guide#use-asciidoc" class="bare">/markdown-style-guide#use-asciidoc</a></p>
+</div>
+<div class="paragraph">
+<p>Jekyll is only used now for backwards compatibility to not break some key content with high PageRank, Ciro might kill it entirely at some point.</p>
+</div>
+<div class="paragraph">
+<p>GitHub pages is chosen instead of a GitHub README for the following reasons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ciro will want some unsupported extensions, notably mathematics, likely with Katex server side:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/asciidoctor/asciidoctor/pull/3338" class="bare">https://github.com/asciidoctor/asciidoctor/pull/3338</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/11256433/how-to-show-math-equations-in-general-githubs-markdownnot-githubs-blog" class="bare">https://stackoverflow.com/questions/11256433/how-to-show-math-equations-in-general-githubs-markdownnot-githubs-blog</a></p>
+</li>
+<li>
+<p><a href="https://g14n.info/2014/09/math-on-github-pages/" class="bare">https://g14n.info/2014/09/math-on-github-pages/</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/11256433/how-to-show-math-equations-in-general-githubs-markdownnot-githubs-blog" class="bare">https://stackoverflow.com/questions/11256433/how-to-show-math-equations-in-general-githubs-markdownnot-githubs-blog</a></p>
+</li>
+<li>
+<p><a href="https://www.quora.com/How-can-I-combine-latex-and-markdown-in-GitHub" class="bare">https://www.quora.com/How-can-I-combine-latex-and-markdown-in-GitHub</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>when GitHub dies, my website URL still lives and retains the PageRank!</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="license-of-ciro-santillis-website"><a class="anchor" href="#license-of-ciro-santillis-website"></a><a class="link" href="#license-of-ciro-santillis-website">1.8. License of Ciro Santilli&#8217;s website</a></h3>
+<div class="paragraph">
+<p>Ciro Santilli&#8217;s website is licensed as: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> unless otherwise noted on a more specific page or header. The license can also be found at: <a href="LICENSE" class="bare">LICENSE</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="accounts"><a class="anchor" href="#accounts"></a><a class="link" href="#accounts">2. Accounts</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I control the following accounts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://seqanswers.com/forums/member.php?u=90053" class="bare">http://seqanswers.com/forums/member.php?u=90053</a></p>
+</li>
+<li>
+<p><a href="http://answers.gazebosim.org/users/2289/cirosantilli/" class="bare">http://answers.gazebosim.org/users/2289/cirosantilli/</a></p>
+</li>
+<li>
+<p><a href="https://4programmers.net/Profile/86786" class="bare">https://4programmers.net/Profile/86786</a></p>
+</li>
+<li>
+<p><a href="https://9gag.com/u/cirosantilli" class="bare">https://9gag.com/u/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://addons.mozilla.org/en-US/firefox/user/cirosantilli/" class="bare">https://addons.mozilla.org/en-US/firefox/user/cirosantilli/</a></p>
+</li>
+<li>
+<p><a href="https://androidforums.com/members/ciro-santilli.1918307" class="bare">https://androidforums.com/members/ciro-santilli.1918307</a></p>
+</li>
+<li>
+<p><a href="https://ask.libreoffice.org/en/users/2352/cirosantilli/" class="bare">https://ask.libreoffice.org/en/users/2352/cirosantilli/</a></p>
+</li>
+<li>
+<p><a href="https://bbs.archlinux.org/profile.php?id=116270" class="bare">https://bbs.archlinux.org/profile.php?id=116270</a></p>
+</li>
+<li>
+<p><a href="https://brilliant.org/profile/ciro-il1uxz/" class="bare">https://brilliant.org/profile/ciro-il1uxz/</a></p>
+</li>
+<li>
+<p><a href="https://bugzilla.gnome.org/page.cgi?id=describeuser.html&amp;login=ciro.santilli@gmail.com" class="bare">https://bugzilla.gnome.org/page.cgi?id=describeuser.html&amp;login=ciro.santilli@gmail.com</a></p>
+</li>
+<li>
+<p><a href="https://cirosantilli.blogspot.com/" class="bare">https://cirosantilli.blogspot.com/</a></p>
+</li>
+<li>
+<p><a href="https://cirosantilli.imgur.com" class="bare">https://cirosantilli.imgur.com</a></p>
+</li>
+<li>
+<p><a href="https://community.arm.com/people/cirosantilli" class="bare">https://community.arm.com/people/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://community.atlassian.com/t5/user/viewprofilepage/user-id/680821" class="bare">https://community.atlassian.com/t5/user/viewprofilepage/user-id/680821</a></p>
+</li>
+<li>
+<p><a href="https://community.plos.org/people/cirosantilli" class="bare">https://community.plos.org/people/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://community.skype.com/t5/user/viewprofilepage/user-id/2646858" class="bare">https://community.skype.com/t5/user/viewprofilepage/user-id/2646858</a></p>
+</li>
+<li>
+<p><a href="https://community.zimbra.com/members/cirosantilli" class="bare">https://community.zimbra.com/members/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://del.icio.us/cirosantilli" class="bare">https://del.icio.us/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://dev.to/cirosantilli" class="bare">https://dev.to/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://developer.mbed.org/users/cirosantilli/" class="bare">https://developer.mbed.org/users/cirosantilli/</a></p>
+</li>
+<li>
+<p><a href="https://devtalk.nvidia.com/member/2118846/" class="bare">https://devtalk.nvidia.com/member/2118846/</a></p>
+</li>
+<li>
+<p><a href="https://droit-finances.commentcamarche.net/profile/user/cirosantilli" class="bare">https://droit-finances.commentcamarche.net/profile/user/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/User:Ciro.santilli" class="bare">https://en.wikipedia.org/wiki/User:Ciro.santilli</a> is also mine, but I lost the password</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/User:Cirosantilli2" class="bare">https://en.wikipedia.org/wiki/User:Cirosantilli2</a></p>
+</li>
+<li>
+<p><a href="https://eternagame.org/web/player/260828/" class="bare">https://eternagame.org/web/player/260828/</a></p>
+</li>
+<li>
+<p><a href="https://figshare.com/authors/Ciro_Santilli/656781" class="bare">https://figshare.com/authors/Ciro_Santilli/656781</a></p>
+</li>
+<li>
+<p><a href="https://forum.osdev.org/memberlist.php?mode=viewprofile&amp;u=16372" class="bare">https://forum.osdev.org/memberlist.php?mode=viewprofile&amp;u=16372</a></p>
+</li>
+<li>
+<p><a href="https://forum.videolan.org/memberlist.php?mode=viewprofile&amp;u=173503" class="bare">https://forum.videolan.org/memberlist.php?mode=viewprofile&amp;u=173503</a></p>
+</li>
+<li>
+<p><a href="https://forum.xda-developers.com/member.php?u=7116837" class="bare">https://forum.xda-developers.com/member.php?u=7116837</a></p>
+</li>
+<li>
+<p><a href="https://forums.androidcentral.com/members/cirosantilli-2734491" class="bare">https://forums.androidcentral.com/members/cirosantilli-2734491</a></p>
+</li>
+<li>
+<p><a href="https://framasphere.org/people/78a975c0b6c40133a3032a0000053625" class="bare">https://framasphere.org/people/78a975c0b6c40133a3032a0000053625</a> <a href="https://framasphere.org/posts/1519871" class="bare">https://framasphere.org/posts/1519871</a></p>
+</li>
+<li>
+<p><a href="https://gitlab.com/u/cirosantilli" class="bare">https://gitlab.com/u/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://hackaday.io/cirosantilli" class="bare">https://hackaday.io/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://identity.kde.org/index.php?r=people/view&amp;uid=cirosantilli" class="bare">https://identity.kde.org/index.php?r=people/view&amp;uid=cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://jsfiddle.net/user/cirosantilli/" class="bare">https://jsfiddle.net/user/cirosantilli/</a></p>
+</li>
+<li>
+<p><a href="https://launchpad.net/~cirosantilli" class="bare">https://launchpad.net/~cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://nanohub.org/members/146301/" class="bare">https://nanohub.org/members/146301/</a></p>
+</li>
+<li>
+<p><a href="https://next-episode.net/user/cirosantilli/" class="bare">https://next-episode.net/user/cirosantilli/</a></p>
+</li>
+<li>
+<p><a href="https://opencollective.com/ciro-santilli" class="bare">https://opencollective.com/ciro-santilli</a></p>
+</li>
+<li>
+<p><a href="https://orcid.org/0000-0003-2895-7763" class="bare">https://orcid.org/0000-0003-2895-7763</a></p>
+</li>
+<li>
+<p><a href="https://peerj.com/cirosantilli/" class="bare">https://peerj.com/cirosantilli/</a></p>
+</li>
+<li>
+<p><a href="https://profiles.3dgames.com.ar/profiles/1002278" class="bare">https://profiles.3dgames.com.ar/profiles/1002278</a></p>
+</li>
+<li>
+<p><a href="https://pypi.org/user/cirosantilli/" class="bare">https://pypi.org/user/cirosantilli/</a></p>
+</li>
+<li>
+<p><a href="https://software.intel.com/en-us/user/1090688" class="bare">https://software.intel.com/en-us/user/1090688</a></p>
+</li>
+<li>
+<p><a href="https://soundcloud.com/cirosantilli" class="bare">https://soundcloud.com/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://steamcommunity.com/id/cirosantilli/" class="bare">https://steamcommunity.com/id/cirosantilli/</a></p>
+</li>
+<li>
+<p><a href="https://support.mozilla.org/en-US/user/cirosantilli" class="bare">https://support.mozilla.org/en-US/user/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://tabmixplus.org/forum/memberlist.php?mode=viewprofile&amp;u=59846" class="bare">https://tabmixplus.org/forum/memberlist.php?mode=viewprofile&amp;u=59846</a></p>
+</li>
+<li>
+<p><a href="https://talk.commonmark.org/users/cirosantilli" class="bare">https://talk.commonmark.org/users/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://talk.jekyllrb.com/users/cirosantilli" class="bare">https://talk.jekyllrb.com/users/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://talks.cam.ac.uk/user/show/81142" class="bare">https://talks.cam.ac.uk/user/show/81142</a></p>
+</li>
+<li>
+<p><a href="https://tatoeba.org/eng/user/profile/cirosantilli" class="bare">https://tatoeba.org/eng/user/profile/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://telegram.me/cirosantilli" class="bare">https://telegram.me/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://tuleap.net/users/cirosantilli" class="bare">https://tuleap.net/users/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://tuleap.ring.cx/users/cirosantilli" class="bare">https://tuleap.ring.cx/users/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://twittercommunity.com/users/cirosantilli/activity" class="bare">https://twittercommunity.com/users/cirosantilli/activity</a></p>
+</li>
+<li>
+<p><a href="https://wiki.qemu.org/User:Cirosantilli" class="bare">https://wiki.qemu.org/User:Cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.airbnb.com/users/show/45794827" class="bare">https://www.airbnb.com/users/show/45794827</a></p>
+</li>
+<li>
+<p><a href="https://www.bibsonomy.org/user/cirosantilli" class="bare">https://www.bibsonomy.org/user/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.biostars.org/u/50170/" class="bare">https://www.biostars.org/u/50170/</a></p>
+</li>
+<li>
+<p><a href="https://www.bulletphysics.org/Bullet/phpBB3/memberlist.php?mode=viewprofile&amp;u=11704" class="bare">https://www.bulletphysics.org/Bullet/phpBB3/memberlist.php?mode=viewprofile&amp;u=11704</a></p>
+</li>
+<li>
+<p><a href="https://www.codingame.com/profile/cddd0a711c22d97e8264361f7c8205567563841" class="bare">https://www.codingame.com/profile/cddd0a711c22d97e8264361f7c8205567563841</a></p>
+</li>
+<li>
+<p><a href="https://www.dailymotion.com/ciro-santilli" class="bare">https://www.dailymotion.com/ciro-santilli</a></p>
+</li>
+<li>
+<p><a href="https://www.digitalocean.com/community/users/cirosantilli" class="bare">https://www.digitalocean.com/community/users/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.ebay.com/usr/cirosantilli" class="bare">https://www.ebay.com/usr/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.edaboard.com/member587087.html" class="bare">https://www.edaboard.com/member587087.html</a></p>
+</li>
+<li>
+<p><a href="https://www.flickr.com/photos/141515492@N02/" class="bare">https://www.flickr.com/photos/141515492@N02/</a></p>
+</li>
+<li>
+<p><a href="https://www.freecodecamp.org/fcc8f660b91-167c-4b04-a8da-5d50cdb46def" class="bare">https://www.freecodecamp.org/fcc8f660b91-167c-4b04-a8da-5d50cdb46def</a></p>
+</li>
+<li>
+<p><a href="https://www.gitbook.com/@cirosantilli" class="bare">https://www.gitbook.com/@cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.hackerrank.com/cirosantilli" class="bare">https://www.hackerrank.com/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.hackster.io/cirosantilli" class="bare">https://www.hackster.io/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.html5gamedevs.com/profile/30103-cirosantilli/" class="bare">https://www.html5gamedevs.com/profile/30103-cirosantilli/</a></p>
+</li>
+<li>
+<p><a href="https://www.imdb.com/user/ur59802249" class="bare">https://www.imdb.com/user/ur59802249</a></p>
+</li>
+<li>
+<p><a href="https://www.instagram.com/cirosantilli/" class="bare">https://www.instagram.com/cirosantilli/</a></p>
+</li>
+<li>
+<p><a href="https://www.kaggle.com/cirosantilli" class="bare">https://www.kaggle.com/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.linux.org/members/ciro-santilli.62540/" class="bare">https://www.linux.org/members/ciro-santilli.62540/</a></p>
+</li>
+<li>
+<p><a href="https://www.linuxquestions.org/questions/user/cirosantilli-688439/" class="bare">https://www.linuxquestions.org/questions/user/cirosantilli-688439/</a></p>
+</li>
+<li>
+<p><a href="https://www.meetup.com/members/252568305/" class="bare">https://www.meetup.com/members/252568305/</a></p>
+</li>
+<li>
+<p><a href="https://www.mentebinaria.com.br/profile/1987-ciro-santilli/" class="bare">https://www.mentebinaria.com.br/profile/1987-ciro-santilli/</a></p>
+</li>
+<li>
+<p><a href="https://www.metacritic.com/user/cirosantilli" class="bare">https://www.metacritic.com/user/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.mudhut.com/user/1995000" class="bare">https://www.mudhut.com/user/1995000</a></p>
+</li>
+<li>
+<p><a href="https://www.myopportunity.com/en/profile/ciro-santilli" class="bare">https://www.myopportunity.com/en/profile/ciro-santilli</a></p>
+</li>
+<li>
+<p><a href="https://www.opengl.org/discussion_boards/member.php/40269-cirosantilli" class="bare">https://www.opengl.org/discussion_boards/member.php/40269-cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.patreon.com/cirosantilli" class="bare">https://www.patreon.com/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.plurk.com/cirosantilli" class="bare">https://www.plurk.com/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.quora.com/profile/Ciro-Santilli" class="bare">https://www.quora.com/profile/Ciro-Santilli</a></p>
+</li>
+<li>
+<p><a href="https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=273389" class="bare">https://www.raspberrypi.org/forums/memberlist.php?mode=viewprofile&amp;u=273389</a></p>
+</li>
+<li>
+<p><a href="https://www.reddit.com/user/cirosantilli/" class="bare">https://www.reddit.com/user/cirosantilli/</a> <a href="https://www.reddit.com/r/CirosantilliTest0/comments/5ek3di/i_own_this_website/" class="bare">https://www.reddit.com/r/CirosantilliTest0/comments/5ek3di/i_own_this_website/</a></p>
+</li>
+<li>
+<p><a href="https://www.shadertoy.com/user/cirosantilli" class="bare">https://www.shadertoy.com/user/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.tastekid.com/ciro.santilli" class="bare">https://www.tastekid.com/ciro.santilli</a></p>
+</li>
+<li>
+<p><a href="https://www.ted.com/profiles/5822760" class="bare">https://www.ted.com/profiles/5822760</a></p>
+</li>
+<li>
+<p><a href="https://www.transifex.com/user/profile/cirosantilli" class="bare">https://www.transifex.com/user/profile/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.tripadvisor.com/members/cirosantilli" class="bare">https://www.tripadvisor.com/members/cirosantilli</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Accounts in Chinese websites. These accounts might be banned or altered or offer other limitations, so I will only communicate briefly through them:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://bbs.nibaedu.com/index.php?m=space&amp;uid=70" class="bare">http://bbs.nibaedu.com/index.php?m=space&amp;uid=70</a></p>
+</li>
+<li>
+<p><a href="http://www.renren.com/338003848/profile" class="bare">http://www.renren.com/338003848/profile</a></p>
+</li>
+<li>
+<p><a href="http://www.tianya.cn/109285544" class="bare">http://www.tianya.cn/109285544</a> (can&#8217;t post, no cell phone)</p>
+</li>
+<li>
+<p><a href="https://pincong.rocks/people/cirosantilli" class="bare">https://pincong.rocks/people/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://tieba.baidu.com/home/main?id=5cd56369726f73616e74696c6c69c944" class="bare">https://tieba.baidu.com/home/main?id=5cd56369726f73616e74696c6c69c944</a></p>
+</li>
+<li>
+<p><a href="https://v2ex.com/member/cirosantilli" class="bare">https://v2ex.com/member/cirosantilli</a></p>
+</li>
+<li>
+<p><a href="https://www.zhihu.com/people/cirosantilli" class="bare">https://www.zhihu.com/people/cirosantilli</a>. I was <a href="https://github.com/cirosantilli/china-dictatorship/tree/746d7e851097bfacfb03149138f0e16c8da9d8db#zhihu-ban">banned in 2018-06-25</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Dead websites:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.citeulike.org/user/cirosantilli" class="bare">http://www.citeulike.org/user/cirosantilli</a> (2019-05)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A younger unrelated Argentinian homonym I&#8217;ve found on Google:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.facebook.com/profile.php?id=100009065024069" class="bare">https://www.facebook.com/profile.php?id=100009065024069</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/channel/UCY44wYp2nEuhMRBU1kHkdCA" class="bare">https://www.youtube.com/channel/UCY44wYp2nEuhMRBU1kHkdCA</a></p>
+</li>
+<li>
+<p><a href="https://twitter.com/cirosantilli7" class="bare">https://twitter.com/cirosantilli7</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="programming-language-choice"><a class="anchor" href="#programming-language-choice"></a><a class="link" href="#programming-language-choice">3. Programming language choice</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There is only space for two languages at most in the world: the compiled one, and the interpreted one.</p>
+</div>
+<div class="paragraph">
+<p>For now, when you have a choice, you must go for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Python as the interpreted one</p>
+</li>
+<li>
+<p>C++ for compiled</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Those two are languages not by any means perfect from a language design point of view, and there are likely already better alternatives, they are only chosen due to a pragmatic tradeoff between ecosystem and familiarity.</p>
+</div>
+<div class="paragraph">
+<p>Bash can also be used when you&#8217;re lazy. But if the project goes on, you will sooner or later regret that choice.</p>
+</div>
+<div class="paragraph">
+<p>The language syntax in itself does not matter. All that matters is how many useful libraries and tooling it has.</p>
+</div>
+<div class="paragraph">
+<p>This is how other languages compare:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>C cool, but cannot make a large codebase DRY without insanity</p>
+</li>
+<li>
+<p>Ruby: the exact same as Python, and only strong in one domain: web, while Python rules everything else, and is not bad on web either. So just kill Ruby, please.</p>
+</li>
+<li>
+<p>JavaScript: it is totally fine if NodeJS destroys Python and becomes the ONE scripting language to rule them all since Python and JavaScript are almost equally crappy.</p>
+<div class="paragraph">
+<p>People just don&#8217;t use it much because of ecosystem / unfamiliarity.</p>
+</div>
+</li>
+<li>
+<p>Java: good language, but has an ugly enterprisey ecosystem, Oracle has made / kept the development process too closed, and API patenting madness on Android just kills if off completely</p>
+</li>
+<li>
+<p>Haskell: many have tried to learn some functional stuff, but too hard. Sounds really cool though.</p>
+</li>
+<li>
+<p>Rust: sounds cool, you will gladly replace C and C++ with it if the ecosystem ramps up.</p>
+</li>
+<li>
+<p>Go: likely a good replacement for Python. If the ecosystem gets there, you will gladly use it more.</p>
+</li>
+<li>
+<p>Swift: Apple is evil</p>
+</li>
+<li>
+<p>C#: Microsoft is evil</p>
+</li>
+<li>
+<p>Tcl, Perl: I&#8217;m not old enough for that, Python killed them before I awoke to programming. And I&#8217;m glad, Python feels less insane from my little exposure.</p>
+</li>
+<li>
+<p>R, GNU Octave: all of this is a waste of society&#8217;s time, applied mathematicians are capable of writing a few braces in exchange for a sane general purpose language, we should just invest in good libraries with fast C bindings for those languages like NumPy where needed. And when I see the closed source ones like MATLAB being used, it makes me lose all hope on humanity.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="about-ciro-santillis-website"><a class="anchor" href="#about-ciro-santillis-website"></a><a class="link" href="#about-ciro-santillis-website">4. About Ciro Santilli&#8217;s website</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="unmigrated-sections-of-the-old-version-of-this-website"><a class="anchor" href="#unmigrated-sections-of-the-old-version-of-this-website"></a><a class="link" href="#unmigrated-sections-of-the-old-version-of-this-website">4.1. Unmigrated sections of the old version of this website</a></h3>
+<div class="paragraph">
+<p>It is interesting to see how your own ideas shift with time, I don&#8217;t think the following are very important anymore, so I was lazy to migrate them:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="education" class="bare">education</a></p>
+</li>
+<li>
+<p><a href="skills" class="bare">skills</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Likely because when I did the original website I was in a "I must show off my skills to get a job mindset", and now I&#8217;m more in a "CV websites are useless, just do amazing projects and showcase them on your website to help them succeed" mindset.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="why-ciro-santilli-removed-disqus-comments-from-this-website-in-2019-05-04"><a class="anchor" href="#why-ciro-santilli-removed-disqus-comments-from-this-website-in-2019-05-04"></a><a class="link" href="#why-ciro-santilli-removed-disqus-comments-from-this-website-in-2019-05-04">4.2. Why Ciro Santilli removed Disqus comments from this website in 2019-05-04</a></h3>
+<div class="paragraph">
+<p>Commit: <a href="https://github.com/cirosantilli/cirosantilli.github.io/commit/794705a201a79b5128934e69df85e3511655c03f" class="bare">https://github.com/cirosantilli/cirosantilli.github.io/commit/794705a201a79b5128934e69df85e3511655c03f</a></p>
+</div>
+<div class="paragraph">
+<p>As I started getting a lot of comments on my home page, mostly about China, I decided that Disqus does not scale, and that it would be more productive long term to remove it and point people to GitHub issues instead.</p>
+</div>
+<div class="paragraph">
+<p>Upsides of removal:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Disqus discoverability is bad:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>there is no decent way to search existing issues, you have to do JavaScript infinite loading + Ctrl + F. So every reply that I write is a waste of time, as it will never be seen again.</p>
+</li>
+<li>
+<p>comments don&#8217;t have: decent URLs, titles, metadata like tags or open / close</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Disqus archival is bad: <a href="http://web.archive.org/" class="bare">http://web.archive.org/</a> does not work, and no one knows how to export the issues: <a href="https://www.archiveteam.org/index.php?title=Disqus" class="bare">https://www.archiveteam.org/index.php?title=Disqus</a></p>
+</li>
+<li>
+<p>before, I had two places where people could comment, Disqus and GitHub issues. Now there is just one.</p>
+</li>
+<li>
+<p>Disqus has ads if you ever reach enough traffic, which I&#8217;m not willing to have on my website, especially if I don&#8217;t get paid for them! It also makes page loads slower, although that likely does not matter much.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Downsides:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>people are more likely to comment on Disqus than to create an issue on GitHub, especially because most people use GitHub professionally. But this has the upside that there will be less shitposts as well.</p>
+</li>
+<li>
+<p>with Disqus you can see all issues attached to a page automatically, which is nice. But for as long as I&#8217;m around, I intend to just solve the issues, cross link between content and issues and tag things appropriately.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>My stance towards China hasn&#8217;t changed, and China comments and corrections about this website are still welcome as always.</p>
+</div>
+<div class="paragraph">
+<p>Related issue: <a href="https://github.com/cirosantilli/cirosantilli.github.io/issues/37" class="bare">https://github.com/cirosantilli/cirosantilli.github.io/issues/37</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="dns-configuration-of-ciro-santillis-website"><a class="anchor" href="#dns-configuration-of-ciro-santillis-website"></a><a class="link" href="#dns-configuration-of-ciro-santillis-website">4.3. DNS configuration of Ciro Santilli&#8217;s website</a></h3>
+<div class="paragraph">
+<p>AKA how I serve this <a href="https://github.com/cirosantilli/cirosantilli.github.io">GitHub page</a> in my own domain.</p>
+</div>
+<div class="paragraph">
+<p>I only touch this very rarely, and always forget and go into great pain whenever a change needs to done, so I really need to document what I did.</p>
+</div>
+<div class="paragraph">
+<p>The last change was of 2019-07-07, when I moved from the www subdomain <a href="https://www.cirosantilli.com" class="bare">https://www.cirosantilli.com</a> to the APEX <a href="https://cirosantilli.com" class="bare">https://cirosantilli.com</a>. A redirect is setup from the www to APEX.</p>
+</div>
+<div class="paragraph">
+<p>GoDaddy DNS entries:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Type    Name    Value                   TTL
+A       @       185.199.108.153         1 Hour
+A       @       185.199.109.153         1 Hour
+A       @       185.199.110.153         1 Hour
+A       @       185.199.111.153         1 Hour
+CNAME   www     cirosantilli.github.io  1 Hour</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where the IPs are obtained from: <a href="https://help.github.com/en/articles/setting-up-an-apex-domain#configuring-a-records-with-your-dns-provider" class="bare">https://help.github.com/en/articles/setting-up-an-apex-domain#configuring-a-records-with-your-dns-provider</a> (<a href="http://web.archive.org/web/20190707085154/https://help.github.com/en/articles/setting-up-an-apex-domain#configuring-a-records-with-your-dns-provider">archive</a>).</p>
+</div>
+<div class="paragraph">
+<p>Under <a href="https://github.com/cirosantilli/cirosantilli.github.io/settings" class="bare">https://github.com/cirosantilli/cirosantilli.github.io/settings</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Custom domain: <code>cirosantilli.com</code></p>
+</li>
+<li>
+<p>Enforce HTTPS: checked</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And the CNAME file is tracked in this repository: <a href="CNAME" class="bare">CNAME</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="the-css-of-ciro-santillis-website-looks-broken"><a class="anchor" href="#the-css-of-ciro-santillis-website-looks-broken"></a><a class="link" href="#the-css-of-ciro-santillis-website-looks-broken">4.4. The CSS of Ciro Santilli&#8217;s website looks broken</a></h3>
+<div class="paragraph">
+<p>That which does not exist, cannot be broken.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ciro-santillis-website-is-not-mobile-friendly"><a class="anchor" href="#ciro-santillis-website-is-not-mobile-friendly"></a><a class="link" href="#ciro-santillis-website-is-not-mobile-friendly">4.5. Ciro Santilli&#8217;s website is not mobile friendly</a></h3>
+<div class="paragraph">
+<p>True art cannot be consumed in mobile format.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="stack-overflow"><a class="anchor" href="#stack-overflow"></a><a class="link" href="#stack-overflow">5. Stack Overflow</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Stack_Overflow" class="bare">https://en.wikipedia.org/wiki/Stack_Overflow</a></p>
+</div>
+<div class="paragraph">
+<p>An overview of Ciro Santilli&#8217;s Stack Overflow contribution can be found at: <a href="#stack-overflow-contributions">Stack Overflow contributions</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="reply-to-stack-overflow-is-doomed-posts"><a class="anchor" href="#reply-to-stack-overflow-is-doomed-posts"></a><a class="link" href="#reply-to-stack-overflow-is-doomed-posts">5.1. Reply to Stack Overflow is doomed posts</a></h3>
+<div class="paragraph">
+<p>I keep seeing those, so here is a reply.</p>
+</div>
+<div class="paragraph">
+<p>Stack Overflow does have an super naive reputation and moderation system and overly restrictive subject matter, which I want to improve upon with: <a href="#write-free-books-to-get-famous-website">Write free books to get famous website</a>.</p>
+</div>
+<div class="paragraph">
+<p>However, it is the best that we have now, and if you <a href="#stack-overflow-contributions">use it like me</a>, you won&#8217;t get tired:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>monitor only rare tags that you know a lot about, let others answer duplicates on big tags for you</p>
+</li>
+<li>
+<p>only answer on bigger tags when you find a better answer than can be found on the page</p>
+</li>
+<li>
+<p>accept that sometimes things are bound to go wrong, that reputation is meaningless, and move on</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>What else would you expect from a naive algorithm system that has 10 million newbies asking stuff?</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="the-machiavellian-stack-overflow-contributor"><a class="anchor" href="#the-machiavellian-stack-overflow-contributor"></a><a class="link" href="#the-machiavellian-stack-overflow-contributor">5.2. The Machiavellian Stack Overflow contributor</a></h3>
+<div class="paragraph">
+<p>I keep getting these evil ideas! Not that I would ever do anything like that, right?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>always upvote questions you care about, to increase the probability that they will get answered</p>
+</li>
+<li>
+<p>never upvote other people&#8217;s answers unless you might gain from it somehow, otherwise you are just giving other high reputation users more reputation relative to you</p>
+</li>
+<li>
+<p>only mark something to close or as a duplicate if it will bring you some advantage, because closing things creates enemies, especially if the OP has a high profile</p>
+</li>
+<li>
+<p>protect questions you&#8217;ve answered whenever someone with less than 10 reputation answers it with a bad answer, to prevent other good contributors from coming along and beating you</p>
+</li>
+<li>
+<p>when you find a duplicate pool answer every question with similar answers.</p>
+<div class="paragraph">
+<p>Alter each answer slightly to avoid the duplicate answer detector.</p>
+</div>
+<div class="paragraph">
+<p>If one of the question closes, it is not too bad, as it continues netting you to upvotes, and prevents new answers from coming in.</p>
+</div>
+</li>
+<li>
+<p>follow on Twitter / RSS someone who comments on the top features of new software releases. E.g. for Git, follow GitHub on Twitter. Then run back to any question which has a new answer.</p>
+</li>
+<li>
+<p>always upvote the question when you answer it:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>the more upvotes, more likely people are to click it.</p>
+</li>
+<li>
+<p>the OP is more likely to see your answer and feel good and upvote you</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>if a niche question only has few answers and you come with a good one, upvote the existing ones by other high profile users.</p>
+<div class="paragraph">
+<p>This may lead to them upvoting or liking you.</p>
+</div>
+<div class="paragraph">
+<p>Even if they don&#8217;t, other people will still see your answer anyways, and this will lead to people to upvoting you more just to make your great answer surpass the current ones, especially i the accepted one has less upvotes than yours. Being second is often an asset.</p>
+</div>
+</li>
+<li>
+<p>always upvote comments that favor you:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>"I like this answer!" on your answers</p>
+</li>
+<li>
+<p>"also look at that question" when you have answered that question</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>don&#8217;t invest a lot of time in edits. They don&#8217;t give you rep, and they can get reverted and waste your time.</p>
+</li>
+<li>
+<p>if you answer a question by newbie without 15 reputation, find their other questions if any and upvote them, so that the OP can upvote your answer in addition to just accepting</p>
+</li>
+<li>
+<p>If you haven&#8217;t answered a question, link to related questions you&#8217;ve answered on question comments, so more people will come to your answers.</p>
+<div class="paragraph">
+<p>If you have answered the question, only link to other questions at the bottom of your answer, so that people won&#8217;t go away before they reach your answer, and so as to strengthen your answer.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="stack-overflow-vote-fraud-script"><a class="anchor" href="#stack-overflow-vote-fraud-script"></a><a class="link" href="#stack-overflow-vote-fraud-script">5.3. Stack Overflow Vote Fraud Script</a></h3>
+<div class="paragraph">
+<p><a href="https://github.com/cirosantilli/stack-overflow-vote-fraud-script" class="bare">https://github.com/cirosantilli/stack-overflow-vote-fraud-script</a></p>
+</div>
+<div class="sect3">
+<h4 id="stack-overflow-suspension-for-vote-fraud-script-2019-03-20"><a class="anchor" href="#stack-overflow-suspension-for-vote-fraud-script-2019-03-20"></a><a class="link" href="#stack-overflow-suspension-for-vote-fraud-script-2019-03-20">5.3.1. Stack Overflow suspension for vote fraud script 2019-03-20</a></h4>
+<div class="paragraph">
+<p>After I got a lot of attention on Hacker News <a href="https://news.ycombinator.com/item?id=19428700" class="bare">https://news.ycombinator.com/item?id=19428700</a> my Stack Overflow account was suspended for 3 days <a href="http://web.archive.org/web/20190320163458/https://stackoverflow.com/users/895245/ciro-santilli-新疆改造中心-六四事件-法轮功" class="bare">http://web.archive.org/web/20190320163458/https://stackoverflow.com/users/895245/ciro-santilli-新疆改造中心-六四事件-法轮功</a> and I received a magic notification that led to a private message:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Hello,</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;m writing in reference to your Stack Overflow account:</p>
+</div>
+<div class="paragraph">
+<p>I don&#8217;t understand why you are actively promoting and assisting people to commit fraud on the site.</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve removed this from your profile <a href="https://github.com/cirosantilli/stack-overflow-vote-fraud-script" class="bare">https://github.com/cirosantilli/stack-overflow-vote-fraud-script</a> and do not expect you to post it around the site.</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;m suspending you to gain your attention on this matter.</p>
+</div>
+<div class="paragraph">
+<p>We have temporarily suspended your account; you may return after 3 days.</p>
+</div>
+<div class="paragraph">
+<p>Regards,</p>
+</div>
+<div class="paragraph">
+<p>Stack Overflow Moderation Team</p>
+</div>
+<div class="paragraph">
+<p>To: Aaron Hall ♦;Andy ♦;Baum mit Augen ♦;Bhargav Rao ♦;Bohemian ♦;BoltClock ♦;Brad Larson ♦;ChrisF ♦;Cody Gray ♦;deceze ♦;Ed Cottrell ♦;Flexo ♦;George Stocker ♦;Jean-François Fabre ♦;Jon Clements ♦;josliber ♦;Madara Uchiha ♦;Martijn Pieters ♦;meagar ♦;Michael Myers ♦;Rob ♦;Robert Harvey ♦;Ry- ♦;Samuel Liew ♦;Undo ♦;Yvette Colomb ♦</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>My reply:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Hi mods,</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Security_through_obscurity" class="bare">https://en.wikipedia.org/wiki/Security_through_obscurity</a></p>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle" class="bare">https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://stackoverflow.com/questions/533965/why-is-security-through-obscurity-a-bad-idea" class="bare">https://stackoverflow.com/questions/533965/why-is-security-through-obscurity-a-bad-idea</a></p>
+</div>
+<div class="paragraph">
+<p>Security by obscurity does not work. If that is all Stack Overflow relies on, and that is what it looks like, then it is guaranteed to be flawed and already been attacked.</p>
+</div>
+<div class="paragraph">
+<p>That is one of the reasons that my website will eventually beat Stack Overflow: <a href="https://github.com/cirosantilli/write-free-science-books-to-get-famous-website/tree/d77b18d2e7acb3558615797c36195f60dfd26306#pagerank-with-tags" class="bare">https://github.com/cirosantilli/write-free-science-books-to-get-famous-website/tree/d77b18d2e7acb3558615797c36195f60dfd26306#pagerank-with-tags</a></p>
+</div>
+</li>
+<li>
+<p>If you had messaged me and told me "take down or suspend" I would have done it immediately because I understand the meaning of political power.</p>
+<div class="paragraph">
+<p>That would have been the better course of action for everyone: I get no block, and you get no bad publicity as I shout Kerckhoff&#8217;s principle on Twitter.</p>
+</div>
+<div class="paragraph">
+<p>But maybe it is a good thing that people learn more about that.</p>
+</div>
+</li>
+<li>
+<p>Is there an existing public discussion saying that you cannot advertise vote fraud tools on this website?</p>
+<div class="paragraph">
+<p>If not, can you please create that meta thread as a reference for future users, and perhaps let the community decide by itself?</p>
+</div>
+<div class="paragraph">
+<p>In particular, will you still suspend me if I don&#8217;t take down the GitHub repo?</p>
+</div>
+<div class="paragraph">
+<p>Because if not, does it make any sense to prevent it from being mentioned in Stack Overflow? Any good GitHub repo just gets enough Google pagerank that it won&#8217;t matter.</p>
+</div>
+<div class="paragraph">
+<p>And if yes, nothing prevents me from re-uploading on an anonymous account.</p>
+</div>
+</li>
+</ol>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><a href="https://twitter.com/cirosantilli/status/1108413211840339970" class="bare">https://twitter.com/cirosantilli/status/1108413211840339970</a></p>
+</div>
+<div class="paragraph">
+<p>Reply and unsuspend quickly followed, with link still removed:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>I suspended you to get your attention. Your attitude about going to Twitter about it does not bode well with me.</p>
+</div>
+<div class="paragraph">
+<p>Feel free to have whatever you want in your GitHub repo. Just don&#8217;t advertise tools to make it easier for people to circumvent the rules. As easy or as hard as it may be to circumvent them, you&#8217;re handing it to people who may not be capable of doing so. It doesn&#8217;t help.</p>
+</div>
+<div class="paragraph">
+<p>Don&#8217;t make threats to upload on an anonymous account. Accounts created to circumvent previous warnings are not welcomed on the site.</p>
+</div>
+<div class="paragraph">
+<p>We don&#8217;t need a meta thread to discuss whether it&#8217;s ok to post voting fraud links in your profile and we definitely don&#8217;t need to give it anymore publicity.</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;ll unsuspend you, now we&#8217;ve had this discussion.</p>
+</div>
+<div class="paragraph">
+<p>Regards,</p>
+</div>
+<div class="paragraph">
+<p>Stack Overflow Moderation Team</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A meta thread was later created by Yvette, to which I answered with the correct unpopular answer that will be downvoted to oblivion: <a href="https://meta.stackoverflow.com/questions/381577/is-it-ok-to-have-links-on-how-to-create-sock-puppets-and-gain-rep-fraudulently-i/381635#381635" class="bare">https://meta.stackoverflow.com/questions/381577/is-it-ok-to-have-links-on-how-to-create-sock-puppets-and-gain-rep-fraudulently-i/381635#381635</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ciro-santillis-skills"><a class="anchor" href="#ciro-santillis-skills"></a><a class="link" href="#ciro-santillis-skills">6. Ciro Santilli&#8217;s skills</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="ciro-santillis-documentation-superpowers"><a class="anchor" href="#ciro-santillis-documentation-superpowers"></a><a class="link" href="#ciro-santillis-documentation-superpowers">6.1. Ciro Santilli&#8217;s documentation superpowers</a></h3>
+<div class="paragraph">
+<p>Ciro Santilli has the power to document stuff in a way that makes using them awesome.</p>
+</div>
+<div class="paragraph">
+<p>If your project does something awesome, hiring me means that more people will be able to notice that it is actually awesome, and use it.</p>
+</div>
+<div class="paragraph">
+<p>He likes to do this in parallel to contributing new features, quickly switching between his "developer" and "technical documentor" hats.</p>
+</div>
+<div class="paragraph">
+<p>This means of course that he will develop new features a bit slower than others, but I feel it is more valuable if end users can actually use your project in the first place.</p>
+</div>
+<div class="paragraph">
+<p>His technique is to provide upfront extremely interactive and reproducible getting started setups that immediately show the key value of the project to users.</p>
+</div>
+<div class="paragraph">
+<p>He backs those setups with:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>scripts that automate the setup much as possible to make things enjoyable and reproducible</p>
+</li>
+<li>
+<p>a detailed description of the environment in which he tested: which OS, version of key software, etc.</p>
+</li>
+<li>
+<p>a detailed description of what is expected to happen when you take an action, including known bugs with links to bug reports</p>
+</li>
+<li>
+<p>theory and rationale on the sections after the initial getting started, but always finely interspersed with concrete examples</p>
+</li>
+<li>
+<p>all docs contained in a Git-tracked repo, with the ability to render to a single HTML with one TOC</p>
+</li>
+<li>
+<p>short sentences and paragraphs, interspersed with many headers, lists and code blocks</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>While he create this setup, he inevitably start to notice and fix:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>bugs</p>
+</li>
+<li>
+<p>annoyances on the public interface of the project</p>
+</li>
+<li>
+<p>the devs were using 50 different local scripts to do similar things, all of them semi-broken and limited. Every new hire was copying one of those local scripts, and hacking it up further.</p>
+</li>
+<li>
+<p>your crappy build / test / version control setup</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Exploiting this skill, however, requires you to trust him.</p>
+</div>
+<div class="paragraph">
+<p>When he tells to managers that he&#8217;s good at documenting, they always say: great, we need better documentation! But then, one of the following may happen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>managers forget that they wanted good documentation and just tell him to code new features as fast as possible</p>
+</li>
+<li>
+<p>they don&#8217;t let him own the getting started page, but rather and expect him to try and fix the existing crappy unfixable existing getting started, without stepping on anyone&#8217;s pride in the process &gt;:-)</p>
+<div class="paragraph">
+<p>This makes him tired, and less likely to do a good job.</p>
+</div>
+<div class="paragraph">
+<p>Good documentation requires a large number of small iterative reviews, and detailed review of every line is not always feasible.</p>
+</div>
+<div class="paragraph">
+<p>Too many cooks.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A prime example of this ability is his <a href="#linux-kernel-module-cheat">Linux kernel module cheat</a></p>
+</div>
+<div class="paragraph">
+<p>See also <a href="#articles">Articles</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ciro-santillis-natural-languages-skills"><a class="anchor" href="#ciro-santillis-natural-languages-skills"></a><a class="link" href="#ciro-santillis-natural-languages-skills">6.2. Ciro Santilli&#8217;s natural languages skills</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>English: Cambridge CPE grade B in 2004. Proficient, with minor defects in collocation / pronunciation.</p>
+</li>
+<li>
+<p>French: TCF grade C2 in 2011. Proficient, with a bit more defects than English.</p>
+</li>
+<li>
+<p>Brazilian Portuguese: Native speaker</p>
+</li>
+<li>
+<p>Chinese: see <a href="https://github.com/cirosantilli/china-dictatorship/tree/92cfb1a9a62e45447c1d4e0bf5483c572a3d1bd7#what-is-your-chinese-level" class="bare">https://github.com/cirosantilli/china-dictatorship/tree/92cfb1a9a62e45447c1d4e0bf5483c572a3d1bd7#what-is-your-chinese-level</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="art"><a class="anchor" href="#art"></a><a class="link" href="#art">7. Art</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Art" class="bare">https://en.wikipedia.org/wiki/Art</a></p>
+</div>
+<div class="paragraph">
+<p>Stuff that is beautiful but useless because it does not make food or houses cheaper.</p>
+</div>
+<div class="sect2">
+<h3 id="the-best-video-game-content-of-all-time"><a class="anchor" href="#the-best-video-game-content-of-all-time"></a><a class="link" href="#the-best-video-game-content-of-all-time">7.1. The best video game content of all time</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>TAS: <a href="https://en.wikipedia.org/wiki/Tool-assisted_speedrun" class="bare">https://en.wikipedia.org/wiki/Tool-assisted_speedrun</a></p>
+</li>
+<li>
+<p>speed running evolution videos, which I consider as a probabilistic human achievable TAS</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The most beautiful TAS content ever made are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Super Mario 64</p>
+<div class="ulist">
+<ul>
+<li>
+<p>no-A press 120 stars attempts by <a href="https://en.wikipedia.org/wiki/Pannenkoek2012" class="bare">https://en.wikipedia.org/wiki/Pannenkoek2012</a></p>
+<div class="paragraph">
+<p>2018 video outlining the 18 unique A presses missing for 120-stars at the time: <a href="https://www.youtube.com/watch?v=RJaL5QOq590" class="bare">https://www.youtube.com/watch?v=RJaL5QOq590</a></p>
+</div>
+<div class="paragraph">
+<p>One of the most elaborate explained videos: <a href="https://www.youtube.com/watch?v=kpk2tdsPh0A" class="bare">https://www.youtube.com/watch?v=kpk2tdsPh0A</a> "SM64 - Watch for Rolling Rocks - 0.5x A Presses"</p>
+</div>
+</li>
+<li>
+<p>1-key any percent run:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2016 emulator run: <a href="https://www.youtube.com/watch?v=TkOkJvLKxUY" class="bare">https://www.youtube.com/watch?v=TkOkJvLKxUY</a></p>
+</li>
+<li>
+<p>AGDQ 2018 commented TASBOT console verification: <a href="https://www.youtube.com/watch?v=xvWOLT9G6tM" class="bare">https://www.youtube.com/watch?v=xvWOLT9G6tM</a></p>
+</li>
+<li>
+<p>Why we need one key: <a href="https://gaming.stackexchange.com/questions/249969/in-mario-64-speedruns-why-are-the-keys-necessary/351595#351595" class="bare">https://gaming.stackexchange.com/questions/249969/in-mario-64-speedruns-why-are-the-keys-necessary/351595#351595</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Super Mario World for the SNES arbitrary code execution</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=OPcV9uIY5i4" class="bare">https://www.youtube.com/watch?v=OPcV9uIY5i4</a> with in-game programmed Pong and Snake, 2014</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=HxFh1CJOrTU" class="bare">https://www.youtube.com/watch?v=HxFh1CJOrTU</a> Seth Bling does it manually in about 3 minutes, 2015</p>
+<div class="ulist">
+<ul>
+<li>
+<p>then he injected a Flappy Bird clone manually!!! <a href="https://www.youtube.com/watch?v=hB6eY73sLV0" class="bare">https://www.youtube.com/watch?v=hB6eY73sLV0</a>, 2016</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Zelda ocarina of time wrong warp glitch:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=uCO0jU66g3g" class="bare">https://www.youtube.com/watch?v=uCO0jU66g3g</a> 2016 video</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=Gso4MuNSuV8" class="bare">https://www.youtube.com/watch?v=Gso4MuNSuV8</a> EZScape explains the glitch, 2016</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="the-best-youtube-channels"><a class="anchor" href="#the-best-youtube-channels"></a><a class="link" href="#the-best-youtube-channels">7.2. The best YouTube channels</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/channel/UCivA7_KLKWo43tFcCkFvydw" class="bare">https://www.youtube.com/channel/UCivA7_KLKWo43tFcCkFvydw</a> "Applied Science". Materials, chemistry, microscopy, electronics. Uber practical, and very deep science stuff, he is awesome.</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/user/webofstories" class="bare">https://www.youtube.com/user/webofstories</a> "Web of Stories - Life Stories of Remarkable People". 1-2 to hour long interviews, the number of Nobel prize winners is off-the-charts.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="the-best-television-series-of-all-time"><a class="anchor" href="#the-best-television-series-of-all-time"></a><a class="link" href="#the-best-television-series-of-all-time">7.3. The best television series of all time</a></h3>
+<div class="paragraph">
+<p>BBC 1979-1982 adaptations of <a href="https://en.wikipedia.org/wiki/John_le_Carr%C3%A9">John le Carré&#8217;s</a> novels are the best miniseries ever made:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Tinker_Tailor_Soldier_Spy_(miniseries" class="bare">https://en.wikipedia.org/wiki/Tinker_Tailor_Soldier_Spy_(miniseries</a>) Tinker Tailor Soldier Spy (1979)</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Smiley%27s_People_(miniseries" class="bare">https://en.wikipedia.org/wiki/Smiley%27s_People_(miniseries</a>) Smiley&#8217;s People (1982)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>They are the most realistic depiction of spy craft ever done.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="the-best-movies-of-all-time"><a class="anchor" href="#the-best-movies-of-all-time"></a><a class="link" href="#the-best-movies-of-all-time">7.4. The best movies of all time</a></h3>
+<div class="sect3">
+<h4 id="once-upon-a-time-in-the-west-1968"><a class="anchor" href="#once-upon-a-time-in-the-west-1968"></a><a class="link" href="#once-upon-a-time-in-the-west-1968">7.4.1. Once upon a time in the west (1968)</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Once_Upon_a_Time_in_the_West" class="bare">https://en.wikipedia.org/wiki/Once_Upon_a_Time_in_the_West</a></p>
+</div>
+<div class="paragraph">
+<p>Has the best opening scene of all time.</p>
+</div>
+<div class="paragraph">
+<p>Top quotes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3 evil guys: looks like we&#8217;re short one horse. The good guy, shaking his head: you brought two too many.</p>
+</li>
+<li>
+<p>"So, you found out you&#8217;re not a businessman after all." dialogue, see: <a href="https://www.imdb.com/title/tt0064116/characters/nm0000314" class="bare">https://www.imdb.com/title/tt0064116/characters/nm0000314</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="battle-of-algiers-1966"><a class="anchor" href="#battle-of-algiers-1966"></a><a class="link" href="#battle-of-algiers-1966">7.4.2. Battle of Algiers (1966)</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/The_Battle_of_Algiers" class="bare">https://en.wikipedia.org/wiki/The_Battle_of_Algiers</a></p>
+</div>
+<div class="paragraph">
+<p>There&#8217;s nothing like seeing the hypocrisy of the "Liberté, Égalité, Fraternité" people destroyed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-godfather-1972-and-the-godfather-part-ii-1974"><a class="anchor" href="#the-godfather-1972-and-the-godfather-part-ii-1974"></a><a class="link" href="#the-godfather-1972-and-the-godfather-part-ii-1974">7.4.3. The Godfather (1972) and The Godfather Part II (1974)</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/The_Godfather" class="bare">https://en.wikipedia.org/wiki/The_Godfather</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/The_Godfather_Part_II" class="bare">https://en.wikipedia.org/wiki/The_Godfather_Part_II</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Part 3 (1990) <a href="https://en.wikipedia.org/wiki/The_Godfather_Part_III" class="bare">https://en.wikipedia.org/wiki/The_Godfather_Part_III</a> is an abomination and disgrace to the bilogy.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="primer-2004"><a class="anchor" href="#primer-2004"></a><a class="link" href="#primer-2004">7.4.4. Primer (2004)</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Primer_(film" class="bare">https://en.wikipedia.org/wiki/Primer_(film</a>)</p>
+</div>
+<div class="paragraph">
+<p>Things that can be understood are boring.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="artificial-general-intelligence"><a class="anchor" href="#artificial-general-intelligence"></a><a class="link" href="#artificial-general-intelligence">8. Artificial general intelligence</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Artificial_general_intelligence" class="bare">https://en.wikipedia.org/wiki/Artificial_general_intelligence</a></p>
+</div>
+<div class="paragraph">
+<p>Shortened to: "AGI".</p>
+</div>
+<div class="paragraph">
+<p>Given enough computational power per dollar, AGI is inevitable, but it is not sure certain ever happen given the end of Moore&#8217;s Law.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, it could also be achieved genetically modified biological brains + <a href="https://en.wikipedia.org/wiki/Brain_in_a_vat">brain in a vat</a>.</p>
+</div>
+<div class="paragraph">
+<p>Imagine a brain the size of a building, perfectly engineered to solve certain engineering problems, and giving hints to human operators + taking feedback from cameras and audio attached to the operators.</p>
+</div>
+<div class="paragraph">
+<p>This likely implies transhumanism, and <a href="https://en.wikipedia.org/wiki/Mind_uploading">mind uploading</a>.</p>
+</div>
+<div class="paragraph">
+<p>Ciro Santilli joined the silicon industry at one point to help increase our computational capacity and reach AGI.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="physics"><a class="anchor" href="#physics"></a><a class="link" href="#physics">9. Physics</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Physics" class="bare">https://en.wikipedia.org/wiki/Physics</a></p>
+</div>
+<div class="paragraph">
+<p>Time to embarrass myself with stuff I don&#8217;t know. Partly to start playing with some scientific content for: <a href="#write-free-books-to-get-famous-website">Write free books to get famous website</a>, partly because this stuff is just amazing. I&#8217;m especially curious about <a href="#particle-physics">Particle physics</a> and condensed matter.</p>
+</div>
+<div class="sect2">
+<h3 id="the-most-important-physics-experiments"><a class="anchor" href="#the-most-important-physics-experiments"></a><a class="link" href="#the-most-important-physics-experiments">9.1. The most important physics experiments</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#lamb-shift">Lamb shift</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="particle-physics"><a class="anchor" href="#particle-physics"></a><a class="link" href="#particle-physics">9.2. Particle physics</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Particle_physics" class="bare">https://en.wikipedia.org/wiki/Particle_physics</a></p>
+</div>
+<div class="paragraph">
+<p>Currently an informal name for the <a href="https://en.wikipedia.org/wiki/Standard_Model">Standard Model</a>.</p>
+</div>
+<div class="paragraph">
+<p>Key outline:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation">Schrodinger equation</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Date: 1926</p>
+</li>
+<li>
+<p>Numerical predictions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Hydrogen spectra energies, excluding finer structure such as 2p up and down split: <a href="https://en.wikipedia.org/wiki/Fine-structure_constant" class="bare">https://en.wikipedia.org/wiki/Fine-structure_constant</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#dirac-equation">Dirac Equation</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Date: 1928</p>
+</li>
+<li>
+<p>Numerical predictions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Hydrogen spectra including 2p split, but excluding even finer structure such as <a href="#lamb-shift">Lamb shift</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Qualitative predictions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Antimatter</p>
+</li>
+<li>
+<p>Spin as part of the equation</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#quantum-electrodynamics">Quantum Electrodynamics</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Date: 1947 onwards</p>
+</li>
+<li>
+<p>Numerical predictions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#lamb-shift">Lamb shift</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Qualitative predictions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Antimatter</p>
+</li>
+<li>
+<p>Spin as part of the equation</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"><a class="anchor" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"></a><a class="link" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">9.2.1. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></h4>
+<div class="paragraph">
+<p>TODO.</p>
+</div>
+<div class="paragraph">
+<p>Physicists love to talk about that stuff, it must mean something I guess!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="applications-of-particle-physics"><a class="anchor" href="#applications-of-particle-physics"></a><a class="link" href="#applications-of-particle-physics">9.2.2. Applications of particle physics</a></h4>
+<div class="paragraph">
+<p>There aren&#8217;t any, it&#8217;s <a href="#art">useless</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.quora.com/What-if-any-are-the-widespread-applications-of-quantum-field-theory-today" class="bare">https://www.quora.com/What-if-any-are-the-widespread-applications-of-quantum-field-theory-today</a></p>
+</li>
+<li>
+<p><a href="https://www.quora.com/What-commercial-applications-in-high-energy-particle-physics-and-the-results-coming-out-of-the-LHC-do-we-expect-to-see-in-the-next-5-10-years" class="bare">https://www.quora.com/What-commercial-applications-in-high-energy-particle-physics-and-the-results-coming-out-of-the-LHC-do-we-expect-to-see-in-the-next-5-10-years</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="particle-physics-bibliography"><a class="anchor" href="#particle-physics-bibliography"></a><a class="link" href="#particle-physics-bibliography">9.2.3. Particle physics bibliography</a></h4>
+<div class="paragraph">
+<p>Some light YouTube channels, good for the first view, but not enough for me:
+K</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>PBS Space Time: <a href="https://www.youtube.com/channel/UC7_gcs09iThXybpVgjHZ_7g" class="bare">https://www.youtube.com/channel/UC7_gcs09iThXybpVgjHZ_7g</a> A bit on the superficial side, but OK, 5-10 minute videos.</p>
+</li>
+<li>
+<p>Physics Videos by Eugene Khutoryansky <a href="https://www.youtube.com/user/EugeneKhutoryansky" class="bare">https://www.youtube.com/user/EugeneKhutoryansky</a> Some insight, but too slow and not experiments, just "truth".</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=vIJTwYOZrGU&amp;list=PLCfRa7MXBEsoJuAM8s6D8oKDPyBepBosS">Fermilab - Videos by Don Lincoln</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="dirac-equation"><a class="anchor" href="#dirac-equation"></a><a class="link" href="#dirac-equation">9.2.4. Dirac Equation</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Dirac_equation" class="bare">https://en.wikipedia.org/wiki/Dirac_equation</a></p>
+</div>
+<div class="sect4">
+<h5 id="how-does-diracs-equation-model-spin"><a class="anchor" href="#how-does-diracs-equation-model-spin"></a><a class="link" href="#how-does-diracs-equation-model-spin">9.2.4.1. How does Dirac&#8217;s equation model spin?</a></h5>
+<div class="paragraph">
+<p>This tutorial is awesome: <a href="https://www.youtube.com/watch?v=OCuaBmAzqek" class="bare">https://www.youtube.com/watch?v=OCuaBmAzqek</a> "Quantum Mechanics 12a - Dirac Equation I" by "viascience" published 2015-12-19.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="quantum-electrodynamics"><a class="anchor" href="#quantum-electrodynamics"></a><a class="link" href="#quantum-electrodynamics">9.2.5. Quantum Electrodynamics</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Quantum_electrodynamics" class="bare">https://en.wikipedia.org/wiki/Quantum_electrodynamics</a></p>
+</div>
+<div class="sect4">
+<h5 id="what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"><a class="anchor" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"></a><a class="link" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">9.2.5.1. What does it mean that photons are force carriers for electromagnetism?</a></h5>
+<div class="paragraph">
+<p><a href="https://physics.stackexchange.com/questions/61095/photon-as-the-carrier-of-the-electromagnetic-force" class="bare">https://physics.stackexchange.com/questions/61095/photon-as-the-carrier-of-the-electromagnetic-force</a></p>
+</div>
+<div class="paragraph">
+<p>TODO find / create decent answer.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="quantum-chromodynamics"><a class="anchor" href="#quantum-chromodynamics"></a><a class="link" href="#quantum-chromodynamics">9.2.6. Quantum Chromodynamics</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Quantum_chromodynamics" class="bare">https://en.wikipedia.org/wiki/Quantum_chromodynamics</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.youtube.com/watch?v=FoR3hq5b5yE" class="bare">https://www.youtube.com/watch?v=FoR3hq5b5yE</a> "Quarks, Gluon flux tubes, Strong Nuclear Force, &amp; Quantum Chromodynamics" by "Physics Videos by Eugene Khutoryansky". Some decent visualizations.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="lamb-shift"><a class="anchor" href="#lamb-shift"></a><a class="link" href="#lamb-shift">9.2.7. Lamb shift</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Lamb_shift" class="bare">https://en.wikipedia.org/wiki/Lamb_shift</a></p>
+</div>
+<div class="paragraph">
+<p>2s / 2p energy split, not predicted by the <a href="#dirac-equation">Dirac Equation</a>, but explained by <a href="#quantum-electrodynamics">Quantum Electrodynamics</a>, which is one of the first great triumphs of that theory.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
