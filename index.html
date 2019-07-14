@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
 <meta name="description" content="Software engineer. Passion for low-level technologies and educational applications. Opinions are my own.">
-<title>Ciro Santilli (三西候)</title>
+<title>Ciro Santilli (三西猴)</title>
 <script>
 <!-- Google Analytics, AKA selling my soul to Google for some backlinks. -->
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -30,7 +30,7 @@ body {
 </head>
 <body class="article">
 <div id="header">
-<h1>Ciro Santilli (三西候)</h1>
+<h1>Ciro Santilli (三西猴)</h1>
 </div>
 <div id="content">
 <div id="preamble">
@@ -137,27 +137,39 @@ body {
 <li><a href="#physics">9. Physics</a>
 <ul class="sectlevel2">
 <li><a href="#the-most-important-physics-experiments">9.1. The most important physics experiments</a></li>
-<li><a href="#particle-physics">9.2. Particle physics</a>
+<li><a href="#speed-of-light-experiments">9.2. Speed of light experiments</a></li>
+<li><a href="#blackbody-radiation-experiment">9.3. Blackbody radiation experiment</a>
 <ul class="sectlevel3">
-<li><a href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">9.2.1. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></li>
-<li><a href="#applications-of-particle-physics">9.2.2. Applications of particle physics</a></li>
-<li><a href="#particle-physics-bibliography">9.2.3. Particle physics bibliography</a></li>
-<li><a href="#dirac-equation">9.2.4. Dirac Equation</a>
+<li><a href="#lamb-shift">9.3.1. Lamb shift</a></li>
+</ul>
+</li>
+<li><a href="#particle-physics">9.4. Particle physics</a>
+<ul class="sectlevel3">
+<li><a href="#quantum-mechanics">9.4.1. Quantum mechanics</a>
 <ul class="sectlevel4">
-<li><a href="#how-does-diracs-equation-model-spin">9.2.4.1. How does Dirac&#8217;s equation model spin?</a></li>
+<li><a href="#plancks-law">9.4.1.1. Planck&#8217;s law</a></li>
+<li><a href="#spin">9.4.1.2. Spin</a></li>
 </ul>
 </li>
-<li><a href="#quantum-electrodynamics">9.2.5. Quantum Electrodynamics</a>
+<li><a href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">9.4.2. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></li>
+<li><a href="#applications-of-particle-physics">9.4.3. Applications of particle physics</a></li>
+<li><a href="#particle-physics-bibliography">9.4.4. Particle physics bibliography</a></li>
+<li><a href="#dirac-equation">9.4.5. Dirac Equation</a>
 <ul class="sectlevel4">
-<li><a href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">9.2.5.1. What does it mean that photons are force carriers for electromagnetism?</a></li>
+<li><a href="#how-does-diracs-equation-model-spin">9.4.5.1. How does Dirac&#8217;s equation model spin?</a></li>
 </ul>
 </li>
-<li><a href="#quantum-chromodynamics">9.2.6. Quantum Chromodynamics</a></li>
-<li><a href="#lamb-shift">9.2.7. Lamb shift</a></li>
+<li><a href="#quantum-electrodynamics">9.4.6. Quantum Electrodynamics</a>
+<ul class="sectlevel4">
+<li><a href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">9.4.6.1. What does it mean that photons are force carriers for electromagnetism?</a></li>
+</ul>
+</li>
+<li><a href="#quantum-chromodynamics">9.4.7. Quantum Chromodynamics</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#microsoft-windows">10. Microsoft Windows</a></li>
 </ul>
 </div>
 </div>
@@ -332,9 +344,9 @@ body {
 <div class="paragraph">
 <p><a href="https://github.com/cirosantilli/china-dictatorship" class="bare">https://github.com/cirosantilli/china-dictatorship</a></p>
 </div>
-<div id="xi-jinping-chrysanthemum-230-liusi" class="imageblock">
+<div id="image-xi-jinping-chrysanthemum-230-liusi" class="imageblock">
 <div class="content">
-<a class="image" href="xi-jinping-chrysanthemum-230-liusi.jpeg"><img src="xi-jinping-chrysanthemum-230-liusi.jpeg" alt="xi jinping chrysanthemum 230 liusi"></a>
+<a class="image" href="#image-xi-jinping-chrysanthemum-230-liusi"><img src="xi-jinping-chrysanthemum-230-liusi.jpeg" alt="xi jinping chrysanthemum 230 liusi"></a>
 </div>
 <div class="title">Figure 2. <a href="https://www.independent.co.uk/news/world/asia/chinese-artist-who-posted-funny-image-of-president-xi-jinping-facing-five-years-in-prison-as-10282630.html">Chrysanthemum Xi Jinping</a> with <a href="https://en.wikipedia.org/wiki/1989_Tiananmen_Square_protests">六四</a> spice added by Ciro Santilli</div>
 </div>
@@ -374,7 +386,7 @@ body {
 </div>
 <div id="image-stack-overflow-reputation-profile-views-ciro-santilli" class="imageblock">
 <div class="content">
-<a class="image" href="stack-overflow-reputation-profile-views-ciro-santilli.png"><img src="stack-overflow-reputation-profile-views-ciro-santilli.png" alt="stack overflow reputation profile views ciro santilli"></a>
+<a class="image" href="#image-stack-overflow-reputation-profile-views-ciro-santilli"><img src="stack-overflow-reputation-profile-views-ciro-santilli.png" alt="stack overflow reputation profile views ciro santilli"></a>
 </div>
 <div class="title">Figure 3. Stack Overflow reputation vs Profile Views as of 2019 with Ciro Santilli marked as "A"</div>
 </div>
@@ -434,16 +446,13 @@ body {
 <p>I was made a moderator of <a href="https://www.reddit.com/r/gitlab">/r/gitlab</a> in <a href="https://web.archive.org/web/20160524164714/https://www.reddit.com/r/gitlab/about/moderators">2016-05</a>.</p>
 </div>
 <div class="paragraph">
-<p>They send me a free swag bottle later after they got funding on to thank me for my contributions:</p>
+<p>They send me a free swag bottle later after they got funding on to thank me for my contributions: <a href="#image-gitlab-bottle-beach">Ciro Santilli at the beach with his GitLab bottle</a>. I had to pay for the beach trip though.</p>
 </div>
-<div class="imageblock">
+<div id="image-gitlab-bottle-beach" class="imageblock">
 <div class="content">
-<a class="image" href="gitlab-bottle-beach.jpg"><img src="gitlab-bottle-beach.jpg" alt="gitlab bottle beach"></a>
+<a class="image" href="#image-gitlab-bottle-beach"><img src="gitlab-bottle-beach.jpg" alt="gitlab bottle beach"></a>
 </div>
-<div class="title">Figure 4. Ciro Santilli at the beach with this GitLab bottle</div>
-</div>
-<div class="paragraph">
-<p>I had to pay for the beach trip though.</p>
+<div class="title">Figure 4. Ciro Santilli at the beach with his GitLab bottle</div>
 </div>
 </li>
 <li>
@@ -619,11 +628,11 @@ body {
 <div class="paragraph">
 <p>Prior art research: <a href="https://github.com/cirosantilli/awesome-reinforcement-learning-games" class="bare">https://github.com/cirosantilli/awesome-reinforcement-learning-games</a></p>
 </div>
-<div class="imageblock">
+<div id="image-ai-game-2d-continuous-basketball" class="imageblock">
 <div class="content">
-<a class="image" href="ai-game-2d-continuous-basketball.png"><img src="ai-game-2d-continuous-basketball.png" alt="ai game 2d continuous basketball"></a>
+<a class="image" href="#image-ai-game-2d-continuous-basketball"><img src="ai-game-2d-continuous-basketball.png" alt="ai game 2d continuous basketball"></a>
 </div>
-<div class="title">Figure 5. Screenshot of the "Baketrock" stage</div>
+<div class="title">Figure 5. Screenshot of the "Basketrock" stage</div>
 </div>
 <div class="paragraph">
 <p>The goal of this project is to reach <a href="#artificial-general-intelligence">Artificial general intelligence</a>.</p>
@@ -779,9 +788,9 @@ body {
 <div class="paragraph">
 <p>First, during the 2000&#8217;s, the cost of sequencing fell to about 1000 USD per genome in the end of the 2010&#8217;s. The medical consequences of this revolution are still trickling down the application ladder today, inevitably, but somewhat slowly due to tight control of medical records.</p>
 </div>
-<div class="imageblock">
+<div id="image-human-genome-sequencing-cost-evolution" class="imageblock">
 <div class="content">
-<a class="image" href="human-genome-sequencing-cost-evolution.png"><img src="human-genome-sequencing-cost-evolution.png" alt="human genome sequencing cost evolution"></a>
+<a class="image" href="#image-human-genome-sequencing-cost-evolution"><img src="human-genome-sequencing-cost-evolution.png" alt="human genome sequencing cost evolution"></a>
 </div>
 <div class="title">Figure 6. Cost per genome vs Moore&#8217;s law from 2000 to 2019, image <a href="https://www.genome.gov/sites/default/files/inline-images/Sequencing_Cost_Per_Genome_Feb%202019.png">by the NIH</a></div>
 </div>
@@ -1812,7 +1821,7 @@ git commit -m 'update gems'</pre>
 <p>Swift: Apple is evil</p>
 </li>
 <li>
-<p>C#: Microsoft is evil</p>
+<p>C#: <a href="#microsoft-windows">Microsoft</a> is evil</p>
 </li>
 <li>
 <p>Tcl, Perl: I&#8217;m not old enough for that, Python killed them before I awoke to programming. And I&#8217;m glad, Python feels less insane from my little exposure.</p>
@@ -2561,7 +2570,55 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="particle-physics"><a class="anchor" href="#particle-physics"></a><a class="link" href="#particle-physics">9.2. Particle physics</a></h3>
+<h3 id="speed-of-light-experiments"><a class="anchor" href="#speed-of-light-experiments"></a><a class="link" href="#speed-of-light-experiments">9.2. Speed of light experiments</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Speed_of_light#First_measurement_attempts" class="bare">https://en.wikipedia.org/wiki/Speed_of_light#First_measurement_attempts</a> Rømer and  Christiaan Huygens reached 26% accuracy by the observation of Jupiter&#8217;s moon!</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Fizeau_experiment" class="bare">https://en.wikipedia.org/wiki/Fizeau_experiment</a> 1851</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=YMO9uUsjXaI" class="bare">https://www.youtube.com/watch?v=YMO9uUsjXaI</a> "Measuring the speed of light the old fashioned way: Replicating the Fizeau Apparatus" by "AlphaPhoenix" Published on "May 26, 2018". Modern reconstruction with a laser and digital camera.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="blackbody-radiation-experiment"><a class="anchor" href="#blackbody-radiation-experiment"></a><a class="link" href="#blackbody-radiation-experiment">9.3. Blackbody radiation experiment</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Black-body_radiation" class="bare">https://en.wikipedia.org/wiki/Black-body_radiation</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=HnBZf1RfB-w" class="bare">https://www.youtube.com/watch?v=HnBZf1RfB-w</a> "Blackbody Radiation Experiment" by "sciencesolutions". A modern version of the experiment with a PASCO scientific EX-9920 setup.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>TODO original setups.</p>
+</div>
+<div class="paragraph">
+<p>Led to: <a href="#plancks-law">Planck&#8217;s law</a></p>
+</div>
+<div class="sect3">
+<h4 id="lamb-shift"><a class="anchor" href="#lamb-shift"></a><a class="link" href="#lamb-shift">9.3.1. Lamb shift</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Lamb_shift" class="bare">https://en.wikipedia.org/wiki/Lamb_shift</a></p>
+</div>
+<div class="paragraph">
+<p>2s / 2p energy split, not predicted by the <a href="#dirac-equation">Dirac Equation</a>, but explained by <a href="#quantum-electrodynamics">Quantum Electrodynamics</a>, which is one of the first great triumphs of that theory.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="particle-physics"><a class="anchor" href="#particle-physics"></a><a class="link" href="#particle-physics">9.4. Particle physics</a></h3>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Particle_physics" class="bare">https://en.wikipedia.org/wiki/Particle_physics</a></p>
 </div>
@@ -2651,7 +2708,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p>Antimatter</p>
 </li>
 <li>
-<p>Spin as part of the equation</p>
+<p><a href="#spin">Spin</a> as part of the equation</p>
 </li>
 </ul>
 </div>
@@ -2662,7 +2719,50 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"><a class="anchor" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"></a><a class="link" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">9.2.1. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></h4>
+<h4 id="quantum-mechanics"><a class="anchor" href="#quantum-mechanics"></a><a class="link" href="#quantum-mechanics">9.4.1. Quantum mechanics</a></h4>
+<div class="sect4">
+<h5 id="plancks-law"><a class="anchor" href="#plancks-law"></a><a class="link" href="#plancks-law">9.4.1.1. Planck&#8217;s law</a></h5>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Planck%27s_law" class="bare">https://en.wikipedia.org/wiki/Planck%27s_law</a></p>
+</div>
+<div class="paragraph">
+<p>Used to explain: <a href="#blackbody-radiation-experiment">Blackbody radiation experiment</a></p>
+</div>
+<div class="paragraph">
+<p>Good explanation of how discretization + energy increases with frequency explains the curve: <a href="https://youtu.be/KabPQLIXLw4?list=PL193BC0532FE7B02C&amp;t=7" class="bare">https://youtu.be/KabPQLIXLw4?list=PL193BC0532FE7B02C&amp;t=7</a> "Quantum Mechanics 2 - Photons" by "viascience". You need more and more energy for small wavelengths, each time higher above the average energy available.</p>
+</div>
+<div class="paragraph">
+<p>TODO full equation derivation.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="spin"><a class="anchor" href="#spin"></a><a class="link" href="#spin">9.4.1.2. Spin</a></h5>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Spin_(physics" class="bare">https://en.wikipedia.org/wiki/Spin_(physics</a>)</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.youtube.com/watch?v=6sR6RV2znXI&amp;list=PL193BC0532FE7B02C&amp;index=17" class="bare">https://www.youtube.com/watch?v=6sR6RV2znXI&amp;list=PL193BC0532FE7B02C&amp;index=17</a> "Quantum Mechanics 9a - Photon Spin and Schrödinger&#8217;s Cat I" by "viascience" shows nicely how:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>photon spin can be either linear or circular</p>
+</li>
+<li>
+<p>the linear one can be made from a superposition of cirlar ones</p>
+</li>
+<li>
+<p>straight antennas produce linearly prolaized photos, and <a href="https://en.wikipedia.org/wiki/Helical_antenna">Helical antennas</a> circularly polarized ones</p>
+</li>
+<li>
+<p>a jump between 2s and 2p in an atom changes angular momentum. Therefore, the photon must cary angular momemtum as well as energy.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"><a class="anchor" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"></a><a class="link" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">9.4.2. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></h4>
 <div class="paragraph">
 <p>TODO.</p>
 </div>
@@ -2671,7 +2771,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="applications-of-particle-physics"><a class="anchor" href="#applications-of-particle-physics"></a><a class="link" href="#applications-of-particle-physics">9.2.2. Applications of particle physics</a></h4>
+<h4 id="applications-of-particle-physics"><a class="anchor" href="#applications-of-particle-physics"></a><a class="link" href="#applications-of-particle-physics">9.4.3. Applications of particle physics</a></h4>
 <div class="paragraph">
 <p>There aren&#8217;t any, it&#8217;s <a href="#art">useless</a>:</p>
 </div>
@@ -2687,7 +2787,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="particle-physics-bibliography"><a class="anchor" href="#particle-physics-bibliography"></a><a class="link" href="#particle-physics-bibliography">9.2.3. Particle physics bibliography</a></h4>
+<h4 id="particle-physics-bibliography"><a class="anchor" href="#particle-physics-bibliography"></a><a class="link" href="#particle-physics-bibliography">9.4.4. Particle physics bibliography</a></h4>
 <div class="paragraph">
 <p>Some light YouTube channels, good for the first view, but not enough for me:
 K</p>
@@ -2707,24 +2807,24 @@ K</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="dirac-equation"><a class="anchor" href="#dirac-equation"></a><a class="link" href="#dirac-equation">9.2.4. Dirac Equation</a></h4>
+<h4 id="dirac-equation"><a class="anchor" href="#dirac-equation"></a><a class="link" href="#dirac-equation">9.4.5. Dirac Equation</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Dirac_equation" class="bare">https://en.wikipedia.org/wiki/Dirac_equation</a></p>
 </div>
 <div class="sect4">
-<h5 id="how-does-diracs-equation-model-spin"><a class="anchor" href="#how-does-diracs-equation-model-spin"></a><a class="link" href="#how-does-diracs-equation-model-spin">9.2.4.1. How does Dirac&#8217;s equation model spin?</a></h5>
+<h5 id="how-does-diracs-equation-model-spin"><a class="anchor" href="#how-does-diracs-equation-model-spin"></a><a class="link" href="#how-does-diracs-equation-model-spin">9.4.5.1. How does Dirac&#8217;s equation model spin?</a></h5>
 <div class="paragraph">
 <p>This tutorial is awesome: <a href="https://www.youtube.com/watch?v=OCuaBmAzqek" class="bare">https://www.youtube.com/watch?v=OCuaBmAzqek</a> "Quantum Mechanics 12a - Dirac Equation I" by "viascience" published 2015-12-19.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="quantum-electrodynamics"><a class="anchor" href="#quantum-electrodynamics"></a><a class="link" href="#quantum-electrodynamics">9.2.5. Quantum Electrodynamics</a></h4>
+<h4 id="quantum-electrodynamics"><a class="anchor" href="#quantum-electrodynamics"></a><a class="link" href="#quantum-electrodynamics">9.4.6. Quantum Electrodynamics</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Quantum_electrodynamics" class="bare">https://en.wikipedia.org/wiki/Quantum_electrodynamics</a></p>
 </div>
 <div class="sect4">
-<h5 id="what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"><a class="anchor" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"></a><a class="link" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">9.2.5.1. What does it mean that photons are force carriers for electromagnetism?</a></h5>
+<h5 id="what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"><a class="anchor" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"></a><a class="link" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">9.4.6.1. What does it mean that photons are force carriers for electromagnetism?</a></h5>
 <div class="paragraph">
 <p><a href="https://physics.stackexchange.com/questions/61095/photon-as-the-carrier-of-the-electromagnetic-force" class="bare">https://physics.stackexchange.com/questions/61095/photon-as-the-carrier-of-the-electromagnetic-force</a></p>
 </div>
@@ -2734,23 +2834,28 @@ K</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="quantum-chromodynamics"><a class="anchor" href="#quantum-chromodynamics"></a><a class="link" href="#quantum-chromodynamics">9.2.6. Quantum Chromodynamics</a></h4>
+<h4 id="quantum-chromodynamics"><a class="anchor" href="#quantum-chromodynamics"></a><a class="link" href="#quantum-chromodynamics">9.4.7. Quantum Chromodynamics</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Quantum_chromodynamics" class="bare">https://en.wikipedia.org/wiki/Quantum_chromodynamics</a></p>
 </div>
 <div class="paragraph">
-<p><a href="https://www.youtube.com/watch?v=FoR3hq5b5yE" class="bare">https://www.youtube.com/watch?v=FoR3hq5b5yE</a> "Quarks, Gluon flux tubes, Strong Nuclear Force, &amp; Quantum Chromodynamics" by "Physics Videos by Eugene Khutoryansky". Some decent visualizations.</p>
+<p><a href="https://www.youtube.com/watch?v=FoR3hq5b5yE" class="bare">https://www.youtube.com/watch?v=FoR3hq5b5yE</a> "Quarks, Gluon flux tubes, Strong Nuclear Force, &amp; Quantum Chromodynamics" by "Physics Videos by Eugene Khutoryansky". Some decent visualizations of the field lines.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="lamb-shift"><a class="anchor" href="#lamb-shift"></a><a class="link" href="#lamb-shift">9.2.7. Lamb shift</a></h4>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="microsoft-windows"><a class="anchor" href="#microsoft-windows"></a><a class="link" href="#microsoft-windows">10. Microsoft Windows</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://en.wikipedia.org/wiki/Lamb_shift" class="bare">https://en.wikipedia.org/wiki/Lamb_shift</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Microsoft_Windows" class="bare">https://en.wikipedia.org/wiki/Microsoft_Windows</a></p>
 </div>
 <div class="paragraph">
-<p>2s / 2p energy split, not predicted by the <a href="#dirac-equation">Dirac Equation</a>, but explained by <a href="#quantum-electrodynamics">Quantum Electrodynamics</a>, which is one of the first great triumphs of that theory.</p>
+<p>A monopolistic operating system that only exists today because of historical lock-in and constant useless changes of the Microsoft Word document format to prevent cross operability.</p>
 </div>
-</div>
+<div class="paragraph">
+<p>It offers no technical advantages over free Linux distros in the late 2010&#8217;s, and it is barely impossible to buy a non-Mac computer without paying for it, which should be illegal.</p>
 </div>
 </div>
 </div>
