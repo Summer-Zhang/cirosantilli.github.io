@@ -16,8 +16,14 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-47867706-1', 'auto');
 ga('send', 'pageview');
 </script>
-<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/>
 <link rel="shortcut icon" type="image/x-icon" href="/me.jpg" />
+<link  rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+  crossorigin="anonymous"
+  integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j"
+>
 <style>
 body {
   padding-left: 10px;
@@ -75,7 +81,7 @@ body {
 <li><a href="#design-a-large-cohesive-game-world-for-robotic-like-artificial-intelligence-development">1.3.2. Design a large cohesive game world for robotic-like artificial intelligence development</a></li>
 <li><a href="#create-a-website-front-end-for-a-mathematical-formal-proof-system">1.3.3. Create a website front-end for a mathematical formal proof system</a></li>
 <li><a href="#molecular-biology">1.3.4. Molecular biology</a></li>
-<li><a href="#create-videos-of-all-key-physical-experiments">1.3.5. Create videos of all key physical experiments</a></li>
+<li><a href="#create-videos-of-all-key-physics-experiments">1.3.5. Create videos of all key physics experiments</a></li>
 </ul>
 </li>
 <li><a href="#articles">1.4. Articles</a></li>
@@ -85,7 +91,7 @@ body {
 <li><a href="#having-more-than-one-natural-language-is-bad-for-the-world">1.5.2. Having more than one natural language is bad for the world</a></li>
 </ul>
 </li>
-<li><a href="#how-to-contact-ciro-santilli">1.6. How to contact Ciro Santilli?</a></li>
+<li><a href="#how-to-contact-ciro-santilli">1.6. How to contact Ciro Santilli</a></li>
 <li><a href="#how-to-develop-ciro-santillis-website">1.7. How to develop Ciro Santilli&#8217;s website</a></li>
 <li><a href="#license-of-ciro-santillis-website">1.8. License of Ciro Santilli&#8217;s website</a></li>
 </ul>
@@ -94,11 +100,12 @@ body {
 <li><a href="#programming-language-choice">3. Programming language choice</a></li>
 <li><a href="#about-ciro-santillis-website">4. About Ciro Santilli&#8217;s website</a>
 <ul class="sectlevel2">
-<li><a href="#unmigrated-sections-of-the-old-version-of-this-website">4.1. Unmigrated sections of the old version of this website</a></li>
-<li><a href="#why-ciro-santilli-removed-disqus-comments-from-this-website-in-2019-05-04">4.2. Why Ciro Santilli removed Disqus comments from this website in 2019-05-04</a></li>
+<li><a href="#unmigrated-sections-of-the-old-version-of-ciro-santillis-website">4.1. Unmigrated sections of the old version of Ciro Santilli&#8217;s website</a></li>
+<li><a href="#why-ciro-santilli-removed-disqus-comments-from-his-website-in-2019-05-04">4.2. Why Ciro Santilli removed Disqus comments from his website in 2019-05-04</a></li>
 <li><a href="#dns-configuration-of-ciro-santillis-website">4.3. DNS configuration of Ciro Santilli&#8217;s website</a></li>
 <li><a href="#the-css-of-ciro-santillis-website-looks-broken">4.4. The CSS of Ciro Santilli&#8217;s website looks broken</a></li>
 <li><a href="#ciro-santillis-website-is-not-mobile-friendly">4.5. Ciro Santilli&#8217;s website is not mobile friendly</a></li>
+<li><a href="#mathematics-typesetting-setup-of-ciro-santillis-website">4.6. Mathematics typesetting setup of Ciro Santilli&#8217;s website</a></li>
 </ul>
 </li>
 <li><a href="#stack-overflow">5. Stack Overflow</a>
@@ -136,35 +143,43 @@ body {
 <li><a href="#artificial-general-intelligence">8. Artificial general intelligence</a></li>
 <li><a href="#physics">9. Physics</a>
 <ul class="sectlevel2">
-<li><a href="#the-most-important-physics-experiments">9.1. The most important physics experiments</a></li>
-<li><a href="#speed-of-light-experiments">9.2. Speed of light experiments</a></li>
-<li><a href="#blackbody-radiation-experiment">9.3. Blackbody radiation experiment</a>
+<li><a href="#the-most-important-physics-experiments">9.1. The most important physics experiments</a>
 <ul class="sectlevel3">
-<li><a href="#lamb-shift">9.3.1. Lamb shift</a></li>
+<li><a href="#speed-of-light-experiments">9.1.1. Speed of light experiments</a></li>
+<li><a href="#double-slit-experiment">9.1.2. Double slit experiment</a></li>
+<li><a href="#blackbody-radiation-experiment">9.1.3. Blackbody radiation experiment</a></li>
+<li><a href="#compton-scattering">9.1.4. Compton scattering</a></li>
+<li><a href="#photoelectric-effect">9.1.5. Photoelectric effect</a></li>
+<li><a href="#lamb-shift">9.1.6. Lamb shift</a></li>
 </ul>
 </li>
-<li><a href="#particle-physics">9.4. Particle physics</a>
+<li><a href="#particle-physics">9.2. Particle physics</a>
 <ul class="sectlevel3">
-<li><a href="#quantum-mechanics">9.4.1. Quantum mechanics</a>
+<li><a href="#quantum-mechanics">9.2.1. Quantum mechanics</a>
 <ul class="sectlevel4">
-<li><a href="#plancks-law">9.4.1.1. Planck&#8217;s law</a></li>
-<li><a href="#spin">9.4.1.2. Spin</a></li>
+<li><a href="#plancks-law">9.2.1.1. Planck&#8217;s law</a></li>
+<li><a href="#spin">9.2.1.2. Spin</a></li>
 </ul>
 </li>
-<li><a href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">9.4.2. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></li>
-<li><a href="#applications-of-particle-physics">9.4.3. Applications of particle physics</a></li>
-<li><a href="#particle-physics-bibliography">9.4.4. Particle physics bibliography</a></li>
-<li><a href="#dirac-equation">9.4.5. Dirac Equation</a>
+<li><a href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">9.2.2. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></li>
+<li><a href="#applications-of-particle-physics">9.2.3. Applications of particle physics</a></li>
+<li><a href="#particle-physics-bibliography">9.2.4. Particle physics bibliography</a></li>
+<li><a href="#dirac-equation">9.2.5. Dirac Equation</a>
 <ul class="sectlevel4">
-<li><a href="#how-does-diracs-equation-model-spin">9.4.5.1. How does Dirac&#8217;s equation model spin?</a></li>
+<li><a href="#how-does-diracs-equation-model-spin">9.2.5.1. How does Dirac&#8217;s equation model spin?</a></li>
 </ul>
 </li>
-<li><a href="#quantum-electrodynamics">9.4.6. Quantum Electrodynamics</a>
+<li><a href="#quantum-electrodynamics">9.2.6. Quantum Electrodynamics</a>
 <ul class="sectlevel4">
-<li><a href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">9.4.6.1. What does it mean that photons are force carriers for electromagnetism?</a></li>
+<li><a href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">9.2.6.1. What does it mean that photons are force carriers for electromagnetism?</a></li>
 </ul>
 </li>
-<li><a href="#quantum-chromodynamics">9.4.7. Quantum Chromodynamics</a></li>
+<li><a href="#quantum-chromodynamics">9.2.7. Quantum Chromodynamics</a></li>
+<li><a href="#photon">9.2.8. Photon</a>
+<ul class="sectlevel4">
+<li><a href="#planck-einstein-relation">9.2.8.1. Planck-Einstein relation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -226,7 +241,7 @@ body {
 <p>These are the most important projects that I feel I&#8217;ve done so far.</p>
 </div>
 <div class="paragraph">
-<p>In retrospect, I sometimes I wish I had focused on even greater impact things, some of them in the <a href="#projects-todo">Projects TODO</a> section.</p>
+<p>In retrospect, I sometimes I wish I had focused on even greater impact things, some of them at: <a href="#projects-todo">Projects TODO</a></p>
 </div>
 <div class="paragraph">
 <p>But maybe "Everything you did brought you where you are now." type of stuff: maybe it is during the "low impact activities" that we get the inspiration and experience required for the "high impact ones".</p>
@@ -382,7 +397,7 @@ body {
 <p>In the beginning, this <a href="https://github.com/cirosantilli/china-dictatorship/tree/236407528ab6424504e442e070d632496c110087#backlinks-to-this-repository">generated some commotion</a>, but activity reduced as novelty wore off, and as I collected the reply to all possible comments at: <a href="https://github.com/cirosantilli/china-dictatorship" class="bare">https://github.com/cirosantilli/china-dictatorship</a></p>
 </div>
 <div class="paragraph">
-<p>This campaign has led me to have an insane profile view / reputation ratio, since many people pause to look at my profile. I am point "A" at the top right corner of <a href="#image-stack-overflow-reputation-profile-views-ciro-santilli">Stack Overflow reputation vs Profile Views as of 2019 with Ciro Santilli marked as "A"</a>:</p>
+<p>This campaign has led me to have an insane profile view / reputation ratio, since many people pause to look at my profile. I am point "A" at the top right corner of <a href="#image-stack-overflow-reputation-profile-views-ciro-santilli">Figure 3, &#8220;Stack Overflow reputation vs Profile Views as of 2019 with Ciro Santilli marked as "A"&#8221;</a>:</p>
 </div>
 <div id="image-stack-overflow-reputation-profile-views-ciro-santilli" class="imageblock">
 <div class="content">
@@ -446,7 +461,7 @@ body {
 <p>I was made a moderator of <a href="https://www.reddit.com/r/gitlab">/r/gitlab</a> in <a href="https://web.archive.org/web/20160524164714/https://www.reddit.com/r/gitlab/about/moderators">2016-05</a>.</p>
 </div>
 <div class="paragraph">
-<p>They send me a free swag bottle later after they got funding on to thank me for my contributions: <a href="#image-gitlab-bottle-beach">Ciro Santilli at the beach with his GitLab bottle</a>. I had to pay for the beach trip though.</p>
+<p>They send me a free swag bottle later after they got funding on to thank me for my contributions: <a href="#image-gitlab-bottle-beach">Figure 4, &#8220;Ciro Santilli at the beach with his GitLab bottle&#8221;</a>. I had to pay for the beach trip though.</p>
 </div>
 <div id="image-gitlab-bottle-beach" class="imageblock">
 <div class="content">
@@ -635,7 +650,7 @@ body {
 <div class="title">Figure 5. Screenshot of the "Basketrock" stage</div>
 </div>
 <div class="paragraph">
-<p>The goal of this project is to reach <a href="#artificial-general-intelligence">Artificial general intelligence</a>.</p>
+<p>The goal of this project is to reach <a href="#artificial-general-intelligence">artificial general intelligence</a>.</p>
 </div>
 <div class="paragraph">
 <p>A few initiatives have created reasonable sets of robotics-like games for the purposes of AI development, most notably: <a href="https://en.wikipedia.org/wiki/OpenAI">OpenAI</a> and <a href="https://en.wikipedia.org/wiki/DeepMind">Google DeepMind</a>.</p>
@@ -750,7 +765,7 @@ body {
 <p>Notation incompatibility hell? A thing of the past, just automatically convert to your preferred representation.</p>
 </div>
 <div class="paragraph">
-<p>Such a system would be the perfect companion to: <a href="#write-free-books-to-get-famous-website">Write free books to get famous website</a>. Just like computer code offers the backbone of <a href="#linux-kernel-module-cheat">Linux kernel module cheat</a> Linux kernel tutorials, a formal proof system website would be the backbone of mathematics tutorials!</p>
+<p>Such a system would be the perfect companion to <a href="#write-free-books-to-get-famous-website">Write free books to get famous website</a>. Just like computer code offers the backbone of <a href="#linux-kernel-module-cheat">Linux kernel module cheat</a> Linux kernel tutorials, a formal proof system website would be the backbone of mathematics tutorials!</p>
 </div>
 <div class="paragraph">
 <p>Furthermore, it would not be too hard to achieve this system!</p>
@@ -786,7 +801,7 @@ body {
 <p>Such advances could one day lead to both <a href="#ciro-santillis-ultimate-life-goal">biological super-AGI and immortality</a>.</p>
 </div>
 <div class="paragraph">
-<p>First, during the 2000&#8217;s, the cost of sequencing fell to about 1000 USD per genome in the end of the 2010&#8217;s. The medical consequences of this revolution are still trickling down the application ladder today, inevitably, but somewhat slowly due to tight control of medical records.</p>
+<p>First, during the 2000&#8217;s, the cost of sequencing fell to about 1000 USD per genome in the end of the 2010&#8217;s: <a href="#image-human-genome-sequencing-cost-evolution">Figure 6, &#8220;Cost per genome vs Moore&#8217;s law from 2000 to 2019, image <a href="https://www.genome.gov/sites/default/files/inline-images/Sequencing_Cost_Per_Genome_Feb%202019.png">by the NIH</a>&#8221;</a>. The medical consequences of this revolution are still trickling down the application ladder today, inevitably, but somewhat slowly due to tight control of medical records.</p>
 </div>
 <div id="image-human-genome-sequencing-cost-evolution" class="imageblock">
 <div class="content">
@@ -814,15 +829,27 @@ body {
 </div>
 </div>
 <div class="sect3">
-<h4 id="create-videos-of-all-key-physical-experiments"><a class="anchor" href="#create-videos-of-all-key-physical-experiments"></a><a class="link" href="#create-videos-of-all-key-physical-experiments">1.3.5. Create videos of all key physical experiments</a></h4>
+<h4 id="create-videos-of-all-key-physics-experiments"><a class="anchor" href="#create-videos-of-all-key-physics-experiments"></a><a class="link" href="#create-videos-of-all-key-physics-experiments">1.3.5. Create videos of all key physics experiments</a></h4>
 <div class="paragraph">
 <p>Another thing that blows my mind is that you can&#8217;t find easily on YouTube recreations of many of the key physics / chemistry experiments.</p>
 </div>
 <div class="paragraph">
-<p>In particular, videos that are completely reproducible, indicating the exact model of every experimental element used, and how the experiment is setup. A bit like what I do in my <a href="#stack-overflow-contributions">Stack Overflow contributions</a>!</p>
+<p>The videos must be completely reproducible, indicating the exact model of every experimental element used, and how the experiment is setup.</p>
+</div>
+<div class="paragraph">
+<p>A bit like what Ciro Santilli does in his <a href="#stack-overflow-contributions">Stack Overflow contributions</a> but with computers!</p>
 </div>
 <div class="paragraph">
 <p>I understand that some experiments are just to complex and expensive to re-create, as an extreme example say, a precise description of the <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider">LHC</a>, but up to the mid 20th century? We should have all of those nailed down.</p>
+</div>
+<div class="paragraph">
+<p>We should strive to achieve the cheapest most reproducible setup possible.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, it is also desirable to reproduce the original setups whenever possible in addition to having the most convenient modern setup.</p>
+</div>
+<div class="paragraph">
+<p>Lists of good experiments to cover be found at: <a href="#the-most-important-physics-experiments">The most important physics experiments</a>.</p>
 </div>
 </div>
 </div>
@@ -1276,9 +1303,9 @@ body {
 </div>
 </div>
 <div class="sect2">
-<h3 id="how-to-contact-ciro-santilli"><a class="anchor" href="#how-to-contact-ciro-santilli"></a><a class="link" href="#how-to-contact-ciro-santilli">1.6. How to contact Ciro Santilli?</a></h3>
+<h3 id="how-to-contact-ciro-santilli"><a class="anchor" href="#how-to-contact-ciro-santilli"></a><a class="link" href="#how-to-contact-ciro-santilli">1.6. How to contact Ciro Santilli</a></h3>
 <div class="paragraph">
-<p>To contact Ciro Santilli publicly about any general subject that is not covered in a more specif repository, including saying hi or suggestions about this website, create a GitHub issue at: <a href="https://github.com/cirosantilli/cirosantilli.github.io/issues/new" class="bare">https://github.com/cirosantilli/cirosantilli.github.io/issues/new</a></p>
+<p>To contact Ciro Santilli publicly about any general subject that is not covered in a more specif repository, including saying hi or suggestions about his website, create a GitHub issue at: <a href="https://github.com/cirosantilli/cirosantilli.github.io/issues/new" class="bare">https://github.com/cirosantilli/cirosantilli.github.io/issues/new</a></p>
 </div>
 <div class="paragraph">
 <p>For comments about China first read:</p>
@@ -1300,13 +1327,13 @@ body {
 <p>If you need private contact, extract his email from on of my GitHub repos or use LinkedIn.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://en.wikipedia.org/wiki/Disqus">Disqus comments</a> were removed from this website in 2019-05-04, a manual dump is <a href="/disqus-archive/">available here</a>, removal rationale: <a href="#why-ciro-santilli-removed-disqus-comments-from-this-website-in-2019-05-04">Why Ciro Santilli removed Disqus comments from this website in 2019-05-04</a>.</p>
+<p><a href="https://en.wikipedia.org/wiki/Disqus">Disqus comments</a> were removed from his website in 2019-05-04, a manual dump is <a href="/disqus-archive/">available here</a>, removal rationale at: <a href="#why-ciro-santilli-removed-disqus-comments-from-his-website-in-2019-05-04">Why Ciro Santilli removed Disqus comments from his website in 2019-05-04</a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="how-to-develop-ciro-santillis-website"><a class="anchor" href="#how-to-develop-ciro-santillis-website"></a><a class="link" href="#how-to-develop-ciro-santillis-website">1.7. How to develop Ciro Santilli&#8217;s website</a></h3>
 <div class="paragraph">
-<p>This website is powered by <a href="https://pages.github.com">GitHub Pages</a>.</p>
+<p>His website is powered by <a href="https://pages.github.com">GitHub Pages</a>.</p>
 </div>
 <div class="paragraph">
 <p>The source code is located at: <a href="https://github.com/cirosantilli/cirosantilli.github.io" class="bare">https://github.com/cirosantilli/cirosantilli.github.io</a></p>
@@ -1369,7 +1396,7 @@ git commit -m 'update gems'</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This website was originally written in Markdown and <a href="https://github.com/jekyll/jekyll">Jekyll</a>, however those were deprecated in favour of Asciidoctor when Ciro saw the light, rationale shown at: <a href="/markdown-style-guide#use-asciidoc" class="bare">/markdown-style-guide#use-asciidoc</a></p>
+<p>His website was originally written in Markdown and <a href="https://github.com/jekyll/jekyll">Jekyll</a>, however those were deprecated in favour of Asciidoctor when Ciro saw the light, rationale shown at: <a href="/markdown-style-guide#use-asciidoc" class="bare">/markdown-style-guide#use-asciidoc</a></p>
 </div>
 <div class="paragraph">
 <p>Jekyll is only used now for backwards compatibility to not break some key content with high PageRank, Ciro might kill it entirely at some point.</p>
@@ -1837,7 +1864,7 @@ git commit -m 'update gems'</pre>
 <h2 id="about-ciro-santillis-website"><a class="anchor" href="#about-ciro-santillis-website"></a><a class="link" href="#about-ciro-santillis-website">4. About Ciro Santilli&#8217;s website</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="unmigrated-sections-of-the-old-version-of-this-website"><a class="anchor" href="#unmigrated-sections-of-the-old-version-of-this-website"></a><a class="link" href="#unmigrated-sections-of-the-old-version-of-this-website">4.1. Unmigrated sections of the old version of this website</a></h3>
+<h3 id="unmigrated-sections-of-the-old-version-of-ciro-santillis-website"><a class="anchor" href="#unmigrated-sections-of-the-old-version-of-ciro-santillis-website"></a><a class="link" href="#unmigrated-sections-of-the-old-version-of-ciro-santillis-website">4.1. Unmigrated sections of the old version of Ciro Santilli&#8217;s website</a></h3>
 <div class="paragraph">
 <p>It is interesting to see how your own ideas shift with time, I don&#8217;t think the following are very important anymore, so I was lazy to migrate them:</p>
 </div>
@@ -1856,7 +1883,7 @@ git commit -m 'update gems'</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="why-ciro-santilli-removed-disqus-comments-from-this-website-in-2019-05-04"><a class="anchor" href="#why-ciro-santilli-removed-disqus-comments-from-this-website-in-2019-05-04"></a><a class="link" href="#why-ciro-santilli-removed-disqus-comments-from-this-website-in-2019-05-04">4.2. Why Ciro Santilli removed Disqus comments from this website in 2019-05-04</a></h3>
+<h3 id="why-ciro-santilli-removed-disqus-comments-from-his-website-in-2019-05-04"><a class="anchor" href="#why-ciro-santilli-removed-disqus-comments-from-his-website-in-2019-05-04"></a><a class="link" href="#why-ciro-santilli-removed-disqus-comments-from-his-website-in-2019-05-04">4.2. Why Ciro Santilli removed Disqus comments from his website in 2019-05-04</a></h3>
 <div class="paragraph">
 <p>Commit: <a href="https://github.com/cirosantilli/cirosantilli.github.io/commit/794705a201a79b5128934e69df85e3511655c03f" class="bare">https://github.com/cirosantilli/cirosantilli.github.io/commit/794705a201a79b5128934e69df85e3511655c03f</a></p>
 </div>
@@ -1906,7 +1933,7 @@ git commit -m 'update gems'</pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>My stance towards China hasn&#8217;t changed, and China comments and corrections about this website are still welcome as always.</p>
+<p>My stance towards China hasn&#8217;t changed, and China comments and corrections about his website are still welcome as always.</p>
 </div>
 <div class="paragraph">
 <p>Related issue: <a href="https://github.com/cirosantilli/cirosantilli.github.io/issues/37" class="bare">https://github.com/cirosantilli/cirosantilli.github.io/issues/37</a></p>
@@ -1966,6 +1993,21 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <h3 id="ciro-santillis-website-is-not-mobile-friendly"><a class="anchor" href="#ciro-santillis-website-is-not-mobile-friendly"></a><a class="link" href="#ciro-santillis-website-is-not-mobile-friendly">4.5. Ciro Santilli&#8217;s website is not mobile friendly</a></h3>
 <div class="paragraph">
 <p>True art cannot be consumed in mobile format.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mathematics-typesetting-setup-of-ciro-santillis-website"><a class="anchor" href="#mathematics-typesetting-setup-of-ciro-santillis-website"></a><a class="link" href="#mathematics-typesetting-setup-of-ciro-santillis-website">4.6. Mathematics typesetting setup of Ciro Santilli&#8217;s website</a></h3>
+<div class="paragraph">
+<p>Inline: \(\sqrt{2+2} = 2\)</p>
+</div>
+<div class="paragraph">
+<p>Block: <a href="#math-test-math">A test block equation</a></p>
+</div>
+<div id="math-test-math" class="stemblock">
+<div class="title">A test block equation</div>
+<div class="content">
+\[\sqrt{2+2} = 2\]
+</div>
 </div>
 </div>
 </div>
@@ -2313,7 +2355,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p>A prime example of this ability is his <a href="#linux-kernel-module-cheat">Linux kernel module cheat</a></p>
 </div>
 <div class="paragraph">
-<p>See also <a href="#articles">Articles</a>.</p>
+<p>See also: <a href="#articles">Articles</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2557,20 +2599,18 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p><a href="https://en.wikipedia.org/wiki/Physics" class="bare">https://en.wikipedia.org/wiki/Physics</a></p>
 </div>
 <div class="paragraph">
-<p>Time to embarrass myself with stuff I don&#8217;t know. Partly to start playing with some scientific content for: <a href="#write-free-books-to-get-famous-website">Write free books to get famous website</a>, partly because this stuff is just amazing. I&#8217;m especially curious about <a href="#particle-physics">Particle physics</a> and condensed matter.</p>
+<p>Ciro Santilli doesn&#8217;t know physics.</p>
+</div>
+<div class="paragraph">
+<p>He writes about it partly to start playing with some scientific content for: <a href="#write-free-books-to-get-famous-website">Write free books to get famous website</a>, partly because this stuff is just amazingly beautiful. He is especially curious about <a href="#particle-physics">Particle physics</a> and condensed matter.</p>
 </div>
 <div class="sect2">
 <h3 id="the-most-important-physics-experiments"><a class="anchor" href="#the-most-important-physics-experiments"></a><a class="link" href="#the-most-important-physics-experiments">9.1. The most important physics experiments</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#lamb-shift">Lamb shift</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Videos should be found / made for all of those: <a href="#create-videos-of-all-key-physics-experiments">Create videos of all key physics experiments</a></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="speed-of-light-experiments"><a class="anchor" href="#speed-of-light-experiments"></a><a class="link" href="#speed-of-light-experiments">9.2. Speed of light experiments</a></h3>
+<div class="sect3">
+<h4 id="speed-of-light-experiments"><a class="anchor" href="#speed-of-light-experiments"></a><a class="link" href="#speed-of-light-experiments">9.1.1. Speed of light experiments</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2589,8 +2629,30 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="blackbody-radiation-experiment"><a class="anchor" href="#blackbody-radiation-experiment"></a><a class="link" href="#blackbody-radiation-experiment">9.3. Blackbody radiation experiment</a></h3>
+<div class="sect3">
+<h4 id="double-slit-experiment"><a class="anchor" href="#double-slit-experiment"></a><a class="link" href="#double-slit-experiment">9.1.2. Double slit experiment</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Double-slit_experiment" class="bare">https://en.wikipedia.org/wiki/Double-slit_experiment</a></p>
+</div>
+<div class="paragraph">
+<p>When done with individual electrons it amazingly confirms the wave particle duality of quantum mechanics.</p>
+</div>
+<div class="paragraph">
+<p>TODO here are a few non well specified demonstrations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=GzbKb59my3U" class="bare">https://www.youtube.com/watch?v=GzbKb59my3U</a> "Single Photon Interference" by "Veritasium"</p>
+</li>
+<li>
+<p>"Quantum Mechanics - Double Slit Experiment. Is anything real? (Prof. Anton Zeilinger)" by "D"</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="blackbody-radiation-experiment"><a class="anchor" href="#blackbody-radiation-experiment"></a><a class="link" href="#blackbody-radiation-experiment">9.1.3. Blackbody radiation experiment</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Black-body_radiation" class="bare">https://en.wikipedia.org/wiki/Black-body_radiation</a></p>
 </div>
@@ -2607,8 +2669,42 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <div class="paragraph">
 <p>Led to: <a href="#plancks-law">Planck&#8217;s law</a></p>
 </div>
+</div>
 <div class="sect3">
-<h4 id="lamb-shift"><a class="anchor" href="#lamb-shift"></a><a class="link" href="#lamb-shift">9.3.1. Lamb shift</a></h4>
+<h4 id="compton-scattering"><a class="anchor" href="#compton-scattering"></a><a class="link" href="#compton-scattering">9.1.4. Compton scattering</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Compton_scattering" class="bare">https://en.wikipedia.org/wiki/Compton_scattering</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.youtube.com/watch?v=uICnnfYHYJ4" class="bare">https://www.youtube.com/watch?v=uICnnfYHYJ4</a> "Compton Scattering" by "Compton Scattering" experiment with a Cesium-137 source.</p>
+</div>
+<div class="paragraph">
+<p>Classic theory predicts that the output frequency must be the same as the input one since the electromagnetic wave makes the electron vibrate with same frequency as itself, which then irradiates further waves.</p>
+</div>
+<div class="paragraph">
+<p>But the output waves are longer: <a href="https://www.youtube.com/watch?v=WR88_Vzfcx4" class="bare">https://www.youtube.com/watch?v=WR88_Vzfcx4</a> "L3.3 Compton Scattering" by "MIT OpenCourseWare", because <a href="#planck-einstein-relation">photons are discrete and energy is proportional to frequency</a>.</p>
+</div>
+<div class="paragraph">
+<p>The formula is exactly that of two relativistic billard balls colliding, which further suggests that photons are real.</p>
+</div>
+<div class="paragraph">
+<p>Therefore this is evidence that <a href="#photon">photons</a> exist.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="photoelectric-effect"><a class="anchor" href="#photoelectric-effect"></a><a class="link" href="#photoelectric-effect">9.1.5. Photoelectric effect</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Photoelectric_effect" class="bare">https://en.wikipedia.org/wiki/Photoelectric_effect</a></p>
+</div>
+<div class="paragraph">
+<p>No matter how hight the wave intensity, if it the frequency is small, no photons are removed from the material.</p>
+</div>
+<div class="paragraph">
+<p>This is coherent with the <a href="#planck-einstein-relation">Planck-Einstein relation</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="lamb-shift"><a class="anchor" href="#lamb-shift"></a><a class="link" href="#lamb-shift">9.1.6. Lamb shift</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Lamb_shift" class="bare">https://en.wikipedia.org/wiki/Lamb_shift</a></p>
 </div>
@@ -2618,7 +2714,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="particle-physics"><a class="anchor" href="#particle-physics"></a><a class="link" href="#particle-physics">9.4. Particle physics</a></h3>
+<h3 id="particle-physics"><a class="anchor" href="#particle-physics"></a><a class="link" href="#particle-physics">9.2. Particle physics</a></h3>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Particle_physics" class="bare">https://en.wikipedia.org/wiki/Particle_physics</a></p>
 </div>
@@ -2626,7 +2722,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p>Currently an informal name for the <a href="https://en.wikipedia.org/wiki/Standard_Model">Standard Model</a>.</p>
 </div>
 <div class="paragraph">
-<p>Key outline:</p>
+<p>Key outline of the theories:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2719,9 +2815,9 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="quantum-mechanics"><a class="anchor" href="#quantum-mechanics"></a><a class="link" href="#quantum-mechanics">9.4.1. Quantum mechanics</a></h4>
+<h4 id="quantum-mechanics"><a class="anchor" href="#quantum-mechanics"></a><a class="link" href="#quantum-mechanics">9.2.1. Quantum mechanics</a></h4>
 <div class="sect4">
-<h5 id="plancks-law"><a class="anchor" href="#plancks-law"></a><a class="link" href="#plancks-law">9.4.1.1. Planck&#8217;s law</a></h5>
+<h5 id="plancks-law"><a class="anchor" href="#plancks-law"></a><a class="link" href="#plancks-law">9.2.1.1. Planck&#8217;s law</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Planck%27s_law" class="bare">https://en.wikipedia.org/wiki/Planck%27s_law</a></p>
 </div>
@@ -2736,9 +2832,12 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="spin"><a class="anchor" href="#spin"></a><a class="link" href="#spin">9.4.1.2. Spin</a></h5>
+<h5 id="spin"><a class="anchor" href="#spin"></a><a class="link" href="#spin">9.2.1.2. Spin</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Spin_(physics" class="bare">https://en.wikipedia.org/wiki/Spin_(physics</a>)</p>
+</div>
+<div class="paragraph">
+<p>TODO</p>
 </div>
 <div class="paragraph">
 <p><a href="https://www.youtube.com/watch?v=6sR6RV2znXI&amp;list=PL193BC0532FE7B02C&amp;index=17" class="bare">https://www.youtube.com/watch?v=6sR6RV2znXI&amp;list=PL193BC0532FE7B02C&amp;index=17</a> "Quantum Mechanics 9a - Photon Spin and Schrödinger&#8217;s Cat I" by "viascience" shows nicely how:</p>
@@ -2746,23 +2845,23 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>photon spin can be either linear or circular</p>
+<p><a href="#photon">Photon</a> spin can be either linear or circular</p>
 </li>
 <li>
-<p>the linear one can be made from a superposition of cirlar ones</p>
+<p>the linear one can be made from a superposition of circular ones</p>
 </li>
 <li>
-<p>straight antennas produce linearly prolaized photos, and <a href="https://en.wikipedia.org/wiki/Helical_antenna">Helical antennas</a> circularly polarized ones</p>
+<p>straight antennas produce linearly polarized photos, and <a href="https://en.wikipedia.org/wiki/Helical_antenna">Helical antennas</a> circularly polarized ones</p>
 </li>
 <li>
-<p>a jump between 2s and 2p in an atom changes angular momentum. Therefore, the photon must cary angular momemtum as well as energy.</p>
+<p>a jump between 2s and 2p in an atom changes angular momentum. Therefore, the photon must carry angular momentum as well as energy.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"><a class="anchor" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"></a><a class="link" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">9.4.2. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></h4>
+<h4 id="why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"><a class="anchor" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"></a><a class="link" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">9.2.2. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></h4>
 <div class="paragraph">
 <p>TODO.</p>
 </div>
@@ -2771,7 +2870,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="applications-of-particle-physics"><a class="anchor" href="#applications-of-particle-physics"></a><a class="link" href="#applications-of-particle-physics">9.4.3. Applications of particle physics</a></h4>
+<h4 id="applications-of-particle-physics"><a class="anchor" href="#applications-of-particle-physics"></a><a class="link" href="#applications-of-particle-physics">9.2.3. Applications of particle physics</a></h4>
 <div class="paragraph">
 <p>There aren&#8217;t any, it&#8217;s <a href="#art">useless</a>:</p>
 </div>
@@ -2787,7 +2886,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="particle-physics-bibliography"><a class="anchor" href="#particle-physics-bibliography"></a><a class="link" href="#particle-physics-bibliography">9.4.4. Particle physics bibliography</a></h4>
+<h4 id="particle-physics-bibliography"><a class="anchor" href="#particle-physics-bibliography"></a><a class="link" href="#particle-physics-bibliography">9.2.4. Particle physics bibliography</a></h4>
 <div class="paragraph">
 <p>Some light YouTube channels, good for the first view, but not enough for me:
 K</p>
@@ -2807,24 +2906,24 @@ K</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="dirac-equation"><a class="anchor" href="#dirac-equation"></a><a class="link" href="#dirac-equation">9.4.5. Dirac Equation</a></h4>
+<h4 id="dirac-equation"><a class="anchor" href="#dirac-equation"></a><a class="link" href="#dirac-equation">9.2.5. Dirac Equation</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Dirac_equation" class="bare">https://en.wikipedia.org/wiki/Dirac_equation</a></p>
 </div>
 <div class="sect4">
-<h5 id="how-does-diracs-equation-model-spin"><a class="anchor" href="#how-does-diracs-equation-model-spin"></a><a class="link" href="#how-does-diracs-equation-model-spin">9.4.5.1. How does Dirac&#8217;s equation model spin?</a></h5>
+<h5 id="how-does-diracs-equation-model-spin"><a class="anchor" href="#how-does-diracs-equation-model-spin"></a><a class="link" href="#how-does-diracs-equation-model-spin">9.2.5.1. How does Dirac&#8217;s equation model spin?</a></h5>
 <div class="paragraph">
 <p>This tutorial is awesome: <a href="https://www.youtube.com/watch?v=OCuaBmAzqek" class="bare">https://www.youtube.com/watch?v=OCuaBmAzqek</a> "Quantum Mechanics 12a - Dirac Equation I" by "viascience" published 2015-12-19.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="quantum-electrodynamics"><a class="anchor" href="#quantum-electrodynamics"></a><a class="link" href="#quantum-electrodynamics">9.4.6. Quantum Electrodynamics</a></h4>
+<h4 id="quantum-electrodynamics"><a class="anchor" href="#quantum-electrodynamics"></a><a class="link" href="#quantum-electrodynamics">9.2.6. Quantum Electrodynamics</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Quantum_electrodynamics" class="bare">https://en.wikipedia.org/wiki/Quantum_electrodynamics</a></p>
 </div>
 <div class="sect4">
-<h5 id="what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"><a class="anchor" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"></a><a class="link" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">9.4.6.1. What does it mean that photons are force carriers for electromagnetism?</a></h5>
+<h5 id="what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"><a class="anchor" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"></a><a class="link" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">9.2.6.1. What does it mean that photons are force carriers for electromagnetism?</a></h5>
 <div class="paragraph">
 <p><a href="https://physics.stackexchange.com/questions/61095/photon-as-the-carrier-of-the-electromagnetic-force" class="bare">https://physics.stackexchange.com/questions/61095/photon-as-the-carrier-of-the-electromagnetic-force</a></p>
 </div>
@@ -2834,12 +2933,82 @@ K</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="quantum-chromodynamics"><a class="anchor" href="#quantum-chromodynamics"></a><a class="link" href="#quantum-chromodynamics">9.4.7. Quantum Chromodynamics</a></h4>
+<h4 id="quantum-chromodynamics"><a class="anchor" href="#quantum-chromodynamics"></a><a class="link" href="#quantum-chromodynamics">9.2.7. Quantum Chromodynamics</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Quantum_chromodynamics" class="bare">https://en.wikipedia.org/wiki/Quantum_chromodynamics</a></p>
 </div>
 <div class="paragraph">
 <p><a href="https://www.youtube.com/watch?v=FoR3hq5b5yE" class="bare">https://www.youtube.com/watch?v=FoR3hq5b5yE</a> "Quarks, Gluon flux tubes, Strong Nuclear Force, &amp; Quantum Chromodynamics" by "Physics Videos by Eugene Khutoryansky". Some decent visualizations of the field lines.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="photon"><a class="anchor" href="#photon"></a><a class="link" href="#photon">9.2.8. Photon</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Photon" class="bare">https://en.wikipedia.org/wiki/Photon</a></p>
+</div>
+<div class="paragraph">
+<p>Initially light was though of as a wave because it experienced interference as shown by experiments such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#double-slit-experiment">Double slit experiment</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>But then, some key experiments also start suggesting that light is made up of discrete packets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#compton-scattering">Compton scattering</a></p>
+</li>
+<li>
+<p><a href="#photoelectric-effect">Photoelectric effect</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This duality is fully described mathematically by <a href="#quantum-electrodynamics">Quantum Electrodynamics</a>.</p>
+</div>
+<div class="sect4">
+<h5 id="planck-einstein-relation"><a class="anchor" href="#planck-einstein-relation"></a><a class="link" href="#planck-einstein-relation">9.2.8.1. Planck-Einstein relation</a></h5>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Planck%E2%80%93Einstein_relation" class="bare">https://en.wikipedia.org/wiki/Planck%E2%80%93Einstein_relation</a></p>
+</div>
+<div class="paragraph">
+<p>Photon energy is proportional to its frequency:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[energy = (plancks \space constant) * (frequency)\]
+</div>
+</div>
+<div class="paragraph">
+<p>or with common weird variables:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[E = h * \nu\]
+</div>
+</div>
+<div class="paragraph">
+<p>This only makes sense if the <a href="#photon">Photon</a> exists, there is no classical analogue.</p>
+</div>
+<div class="paragraph">
+<p>Experiments that suggest this:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#photoelectric-effect">Photoelectric effect</a></p>
+</li>
+<li>
+<p><a href="#compton-scattering">Compton scattering</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -2860,5 +3029,29 @@ K</p>
 </div>
 </div>
 </div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "all" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains('stemblock')) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </body>
 </html>
