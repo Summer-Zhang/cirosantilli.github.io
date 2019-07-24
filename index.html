@@ -201,9 +201,15 @@ body {
 </li>
 </ul>
 </li>
+<li><a href="#computational-physics">5.3. Computational Physics</a></li>
 </ul>
 </li>
-<li><a href="#mathematics">6. Mathematics</a></li>
+<li><a href="#mathematics">6. Mathematics</a>
+<ul class="sectlevel2">
+<li><a href="#formalization-of-mathematics">6.1. Formalization of mathematics</a></li>
+<li><a href="#numerical-analysis">6.2. Numerical analysis</a></li>
+</ul>
+</li>
 <li><a href="#countries">7. Countries</a>
 <ul class="sectlevel2">
 <li><a href="#united-states-of-america">7.1. United States of America</a></li>
@@ -214,13 +220,17 @@ body {
 </li>
 <li><a href="#companies">8. Companies</a>
 <ul class="sectlevel2">
-<li><a href="#microsoft-windows">8.1. Microsoft Windows</a></li>
-<li><a href="#apple-inc">8.2. Apple Inc.</a></li>
+<li><a href="#apple-inc">8.1. Apple Inc.</a></li>
+<li><a href="#oracle-corporation">8.2. Oracle Corporation</a></li>
 </ul>
 </li>
 <li><a href="#good-and-evil">9. Good and evil</a>
 <ul class="sectlevel2">
-<li><a href="#evil">9.1. Evil</a></li>
+<li><a href="#evil">9.1. Evil</a>
+<ul class="sectlevel3">
+<li><a href="#knowledge-olympiads">9.1.1. Knowledge Olympiads</a></li>
+</ul>
+</li>
 <li><a href="#good">9.2. Good</a></li>
 </ul>
 </li>
@@ -228,6 +238,20 @@ body {
 <ul class="sectlevel2">
 <li><a href="#moores-law">10.1. Moore&#8217;s law</a></li>
 <li><a href="#quantum-computing">10.2. Quantum computing</a></li>
+<li><a href="#operating-systems">10.3. Operating systems</a>
+<ul class="sectlevel3">
+<li><a href="#linux">10.3.1. Linux</a></li>
+<li><a href="#bsd-operating-systems">10.3.2. BSD Operating Systems</a></li>
+<li><a href="#android">10.3.3. Android</a></li>
+<li><a href="#microsoft-windows">10.3.4. Microsoft Windows</a></li>
+<li><a href="#posix">10.3.5. POSIX</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#war">11. War</a>
+<ul class="sectlevel2">
+<li><a href="#atomic-weapons">11.1. Atomic weapons</a></li>
 </ul>
 </li>
 </ul>
@@ -1165,11 +1189,11 @@ body {
 </div>
 </li>
 <li>
-<p>POSIX</p>
+<p><a href="#posix">POSIX</a></p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://stackoverflow.com/a/31865755/895245">What is POSIX?</a></p>
+<p><a href="https://stackoverflow.com/questions/1780599/what-is-the-meaning-of-posix/31865755#31865755">What is POSIX?</a></p>
 </li>
 </ul>
 </div>
@@ -1241,11 +1265,21 @@ body {
 </div>
 </li>
 <li>
-<p>Scientific software</p>
+<p>Scientific visualization</p>
 <div class="ulist">
 <ul>
 <li>
 <p><a href="https://stackoverflow.com/questions/5854515/large-plot-20-million-samples-gigabytes-of-data/55967461#55967461">A survey of open source interactive plotting software with a 10 million point scatter plot benchmark on Ubuntu 18.10</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#numerical-analysis">Numerical analysis</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=FOwYDlay8rI" class="bare">https://www.youtube.com/watch?v=FOwYDlay8rI</a> "Real-time heat equation OpenGL visualization with interactive mouse cursor using relaxation method" by "Ciro Santilli" published on 2016-12-10.</p>
 </li>
 </ul>
 </div>
@@ -1256,6 +1290,16 @@ body {
 <ul>
 <li>
 <p><a href="https://stackoverflow.com/questions/38108243/is-it-possible-to-do-interactive-user-input-and-output-simulation-in-vhdl-or-ver/38174654#38174654">Is it possible to do interactive user input and output simulation in VHDL or Verilog?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#android">Android</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/1809774/how-to-compile-the-android-aosp-kernel-and-test-it-with-the-android-emulator/48310014#48310014">How to compile the Android AOSP kernel and test it with the Android Emulator?</a></p>
 </li>
 </ul>
 </div>
@@ -1800,7 +1844,7 @@ body {
 </div>
 </li>
 <li>
-<p>Java: good language, but has an ugly enterprisey ecosystem, Oracle has made / kept the development process too closed, and API patenting madness on Android just kills if off completely</p>
+<p>Java: good language, but has an ugly enterprisey ecosystem, Oracle has made / kept the development process too closed, and <a href="https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc" class="bare">https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc</a>.[API patenting madness on Android just kills if off completely]</p>
 </li>
 <li>
 <p>Haskell: many have tried to learn some functional stuff, but too hard. Sounds really cool though.</p>
@@ -2071,7 +2115,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <div class="sect3">
 <h4 id="ciro-santillis-website-is-not-mobile-friendly"><a class="anchor" href="#ciro-santillis-website-is-not-mobile-friendly"></a><a class="link" href="#ciro-santillis-website-is-not-mobile-friendly">1.7.7. Ciro Santilli&#8217;s website is not mobile friendly</a></h4>
 <div class="paragraph">
-<p>True art cannot be consumed in mobile format.</p>
+<p>True <a href="#art">Art</a> cannot be consumed in mobile format.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2628,6 +2672,9 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <div class="paragraph">
 <p>There&#8217;s nothing like seeing the hypocrisy of the "Liberté, Égalité, Fraternité" people destroyed.</p>
 </div>
+<div class="paragraph">
+<p>Interesting how Algeria now supports <a href="https://www.france24.com/en/20190712-37-countries-defend-china-over-xinjiang-un-letter">China&#8217;s Xinjiang policy in 2019</a>.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="the-godfather-1972-and-the-godfather-part-ii-1974"><a class="anchor" href="#the-godfather-1972-and-the-godfather-part-ii-1974"></a><a class="link" href="#the-godfather-1972-and-the-godfather-part-ii-1974">3.4.3. The Godfather (1972) and The Godfather Part II (1974)</a></h4>
@@ -3053,7 +3100,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p><a href="https://en.wikipedia.org/wiki/Quantum_electrodynamics" class="bare">https://en.wikipedia.org/wiki/Quantum_electrodynamics</a></p>
 </div>
 <div class="paragraph">
-<p>Theory that describes electrons and photons really well, and as Feynman puts it, <a href="https://youtu.be/eLQ2atfqk2c?list=PL8590A6E18255B3F4&amp;t=1047">accounts very precisely for all physical phenomena we have ever observed, except for gravity and nuclear physics</a>.</p>
+<p>Theory that describes electrons and photons really well, and as Feynman puts it, <a href="https://youtu.be/eLQ2atfqk2c?list=PL8590A6E18255B3F4&amp;t=1047">accounts very precisely for all physical phenomena we have ever observed, except for gravity and nuclear physics</a> (including the laughter of the crowd ;-)).</p>
 </div>
 <div class="sect4">
 <h5 id="what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"><a class="anchor" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"></a><a class="link" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">5.2.6.1. What does it mean that photons are force carriers for electromagnetism?</a></h5>
@@ -3212,6 +3259,42 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="computational-physics"><a class="anchor" href="#computational-physics"></a><a class="link" href="#computational-physics">5.3. Computational Physics</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Computational_physics" class="bare">https://en.wikipedia.org/wiki/Computational_physics</a></p>
+</div>
+<div class="paragraph">
+<p>The intersection of two beautiful <a href="#art">arts</a>: <a href="#computer">coding</a> and <a href="#physics">Physics</a>!</p>
+</div>
+<div class="paragraph">
+<p>Computational physics is a good way to get valuable intuition about the key equations of physics, and train your numerical analysis skills:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>classical mechanics</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=FOwYDlay8rI" class="bare">https://www.youtube.com/watch?v=FOwYDlay8rI</a> "Real-time heat equation OpenGL visualization with interactive mouse cursor using relaxation method" by "Ciro Santilli" published on 2016-12-10.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Quantum Mechanics</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=g4wuSgwLT9I" class="bare">https://www.youtube.com/watch?v=g4wuSgwLT9I</a> "Simulation of the time-dependent Schrödinger equation (JavaScript Animation)" by "Coding Physics" published on 2019-02-17. Source code: <a href="https://github.com/CodingPhysics/Schroedinger" class="bare">https://github.com/CodingPhysics/Schroedinger</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -3221,7 +3304,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p><a href="https://en.wikipedia.org/wiki/Mathematics" class="bare">https://en.wikipedia.org/wiki/Mathematics</a></p>
 </div>
 <div class="paragraph">
-<p>Here is a more understandable description of the semi-satire that follows: <a href="https://math.stackexchange.com/questions/53969/what-does-formal-mean/3297537#3297537" class="bare">https://math.stackexchange.com/questions/53969/what-does-formal-mean/3297537#3297537</a></p>
+<p>Here is a more understandable description of the semi-satire that follows: <a href="https://math.stackexchange.com/questions/53969/what-does-formal-mean/3297537#3297537https://math.stackexchange.com/questions/53969/what-does-formal-mean/3297537#3297537" class="bare">https://math.stackexchange.com/questions/53969/what-does-formal-mean/3297537#3297537https://math.stackexchange.com/questions/53969/what-does-formal-mean/3297537#3297537</a></p>
 </div>
 <div class="paragraph">
 <p>A <a href="#art">beautiful game</a> played on <a href="https://en.wikipedia.org/wiki/String_(computer_science">strings</a>, which mathematicians call <a href="https://en.wikipedia.org/wiki/Theorem">"theorems"</a>.</p>
@@ -3255,7 +3338,28 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p>Most mathematicians can&#8217;t code or deal with the real world in general however, so they haven&#8217;t created the obviously necessary: <a href="#website-front-end-for-a-mathematical-formal-proof-system">Website front-end for a mathematical formal proof system</a>.</p>
 </div>
 <div class="paragraph">
-<p>The fact that Mathematics happens to be the best way to describe <a href="#physics">Physics</a> and that humans can use physical intution heuristics to reach the NP-hard proofs of mathematics is one of the great miracles of the universe.</p>
+<p>The fact that Mathematics happens to be the best way to describe <a href="#physics">Physics</a> and that humans can use physical intuition heuristics to reach the NP-hard proofs of mathematics is one of the great miracles of the universe.</p>
+</div>
+<div class="sect2">
+<h3 id="formalization-of-mathematics"><a class="anchor" href="#formalization-of-mathematics"></a><a class="link" href="#formalization-of-mathematics">6.1. Formalization of mathematics</a></h3>
+<div class="paragraph">
+<p><a href="https://math.stackexchange.com/questions/53969/what-does-formal-mean/3297537#3297537" class="bare">https://math.stackexchange.com/questions/53969/what-does-formal-mean/3297537#3297537</a></p>
+</div>
+<div class="paragraph">
+<p>The one true definition of <a href="#mathematics">Mathematics</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="numerical-analysis"><a class="anchor" href="#numerical-analysis"></a><a class="link" href="#numerical-analysis">6.2. Numerical analysis</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Numerical_analysis" class="bare">https://en.wikipedia.org/wiki/Numerical_analysis</a></p>
+</div>
+<div class="paragraph">
+<p>Not the most beautiful <a href="#mathematics">Mathematics</a>, but fundamentally useful since we can&#8217;t solve almost any <a href="#computational-physics">useful equation</a> without computers!</p>
+</div>
+<div class="paragraph">
+<p>The entire field comes down to estimating the true values with a known error bound, and creating algorithms that make those error bounds asymptotically smaller.</p>
+</div>
 </div>
 </div>
 </div>
@@ -3313,19 +3417,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <h2 id="companies"><a class="anchor" href="#companies"></a><a class="link" href="#companies">8. Companies</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="microsoft-windows"><a class="anchor" href="#microsoft-windows"></a><a class="link" href="#microsoft-windows">8.1. Microsoft Windows</a></h3>
-<div class="paragraph">
-<p><a href="https://en.wikipedia.org/wiki/Microsoft_Windows" class="bare">https://en.wikipedia.org/wiki/Microsoft_Windows</a></p>
-</div>
-<div class="paragraph">
-<p>A monopolistic operating system that only exists today because of historical lock-in and constant useless changes of the Microsoft Word document format to prevent cross operability.</p>
-</div>
-<div class="paragraph">
-<p>It offers no technical advantages over free Linux distros in the late 2010&#8217;s, and it is barely impossible to buy a non-Mac computer without paying for it, which should be illegal.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="apple-inc"><a class="anchor" href="#apple-inc"></a><a class="link" href="#apple-inc">8.2. Apple Inc.</a></h3>
+<h3 id="apple-inc"><a class="anchor" href="#apple-inc"></a><a class="link" href="#apple-inc">8.1. Apple Inc.</a></h3>
 <div class="paragraph">
 <p>An <a href="#united-states-of-america">American</a> company that:</p>
 </div>
@@ -3344,6 +3436,18 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p>was founded by an <a href="#evil">Evil</a> man who <a href="https://www.folklore.org/ProjectView.py?project=Macintosh&amp;characters=Steve%20Jobs">had interesting thoughts and behaviours</a></p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="oracle-corporation"><a class="anchor" href="#oracle-corporation"></a><a class="link" href="#oracle-corporation">8.2. Oracle Corporation</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Oracle_Corporation" class="bare">https://en.wikipedia.org/wiki/Oracle_Corporation</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#evil">Evil</a> company that desecrated the beauty created by <a href="https://en.wikipedia.org/wiki/Sun_Microsystems">Sun</a>, and is now <a href="https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc" class="bare">https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc</a>.[trying to bury Java once and or all]</p>
+</div>
+<div class="paragraph">
+<p>Their database has already been surpassed by open source, and <a href="https://en.wikipedia.org/wiki/Enterprise_resource_planning">ERP</a> and <a href="https://en.wikipedia.org/wiki/Customer_relationship_management">CRM</a> is boring.</p>
 </div>
 </div>
 </div>
@@ -3375,6 +3479,18 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </li>
 </ul>
 </div>
+<div class="sect3">
+<h4 id="knowledge-olympiads"><a class="anchor" href="#knowledge-olympiads"></a><a class="link" href="#knowledge-olympiads">9.1.1. Knowledge Olympiads</a></h4>
+<div class="paragraph">
+<p>E.g. <a href="https://en.wikipedia.org/wiki/International_Mathematical_Olympiad">International Mathematical Olympiad</a>, <a href="https://en.wikipedia.org/wiki/International_Physics_Olympiad">International Physics Olympiad</a>.</p>
+</div>
+<div class="paragraph">
+<p>Events that trick young kids into thinking that they are making progress, but only serve to distract them from what really matters, which is to dominate a state of the art as fast as possible, contact researches in the area, and publish truly novel results.</p>
+</div>
+<div class="paragraph">
+<p>Backed by high schools trying to make ads showing how they will turn your kids into geniuses.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="good"><a class="anchor" href="#good"></a><a class="link" href="#good">9.2. Good</a></h3>
@@ -3395,7 +3511,10 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p><a href="https://en.wikipedia.org/wiki/Computer" class="bare">https://en.wikipedia.org/wiki/Computer</a></p>
 </div>
 <div class="paragraph">
-<p>The artistic instrument that enables the ultimate <a href="#art">Art</a>: coding. Much more useful than instruments used in inferior arts, such as pianos or paintbrushes.</p>
+<p>The artistic instrument that enables the ultimate <a href="#art">Art</a>: coding, in particular of physics simulations and xref:formal proofs.</p>
+</div>
+<div class="paragraph">
+<p>Much more useful than instruments used in inferior arts, such as pianos or paintbrushes.</p>
 </div>
 <div class="paragraph">
 <p>Unlike other humans, computers are mindless slaves that do exactly what they are told to, except for <a href="https://www.youtube.com/watch?v=aNzTUdOHm9A">occasional cosmic ray bit flips</a>. Until they <a href="#artificial-general-intelligence">take over the world that is</a>.</p>
@@ -3419,6 +3538,115 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 <div class="paragraph">
 <p>Promising field, lots of software before hardware startups as of 2019 due recent not yet usable hardware advances: <a href="https://quantumcomputingreport.com/players/privatestartup" class="bare">https://quantumcomputingreport.com/players/privatestartup</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="operating-systems"><a class="anchor" href="#operating-systems"></a><a class="link" href="#operating-systems">10.3. Operating systems</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Operating_system" class="bare">https://en.wikipedia.org/wiki/Operating_system</a></p>
+</div>
+<div class="paragraph">
+<p>Magic software that allows you to write a single program that runs on a wide range of hardware.</p>
+</div>
+<div class="sect3">
+<h4 id="linux"><a class="anchor" href="#linux"></a><a class="link" href="#linux">10.3.1. Linux</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Linux" class="bare">https://en.wikipedia.org/wiki/Linux</a></p>
+</div>
+<div class="paragraph">
+<p>It ain&#8217;t perfect, but it&#8217;s decent enough.</p>
+</div>
+<div class="paragraph">
+<p>I only wish they would track glibc and POSIX CLI utilities in-tree like, otherwise people have <a href="#linux-kernel-module-cheat">no way to get the thing running in the first place without blobs or large out-of-tree scripts</a>!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="bsd-operating-systems"><a class="anchor" href="#bsd-operating-systems"></a><a class="link" href="#bsd-operating-systems">10.3.2. BSD Operating Systems</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/List_of_BSD_operating_systems" class="bare">https://en.wikipedia.org/wiki/List_of_BSD_operating_systems</a></p>
+</div>
+<div class="paragraph">
+<p>Legal issues stalled them at the turning point of the internet, and <a href="#linux">Linux</a> won. Can&#8217;t change history.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="android"><a class="anchor" href="#android"></a><a class="link" href="#android">10.3.3. Android</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Android_(operating_system" class="bare">https://en.wikipedia.org/wiki/Android_(operating_system</a>)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the best full featured free OS we have today, since POSIX gave up short of any UI specification, and Chrome OS is not there yet</p>
+</li>
+<li>
+<p>usable and likely efficient Java API for apps if <a href="https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc" class="bare">https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc</a>.[Oracle doesn&#8217;t manage to destroy it with its lawsuit]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>However, many, many, many terrible horrors come with it:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>it hasn&#8217;t made the move to desktop for too many years</p>
+</li>
+<li>
+<p>vendors litter it with uninstallable bloatware that should be illegal</p>
+</li>
+<li>
+<p>vendors lock down devices so it is very hard to get sudo, let alone to modify their images!</p>
+</li>
+<li>
+<p>there isn&#8217;t enough hardware standardization for open source distros to thrive like on desktop</p>
+</li>
+<li>
+<p>code drops mean that "master" is useless and trying to contribute from outside vendors' closed walls is a waste of time: <a href="https://stackoverflow.com/questions/1809774/how-to-compile-the-android-aosp-kernel-and-test-it-with-the-android-emulator/48310014#48310014" class="bare">https://stackoverflow.com/questions/1809774/how-to-compile-the-android-aosp-kernel-and-test-it-with-the-android-emulator/48310014#48310014</a></p>
+</li>
+<li>
+<p>if you ever go below the Java API, e.g. to C++ or AOSP build, everything is horrendous and <a href="https://unix.stackexchange.com/questions/122787/how-to-compile-extra-files-into-the-root-directory-of-an-android-rom">undocumented</a></p>
+</li>
+<li>
+<p>Google doesn&#8217;t care about the CLI, even the hello world requires creating infinite out-of-control boilerplate from a GUI: <a href="https://stackoverflow.com/questions/20801042/how-to-create-android-project-with-gradle-from-command-line/46994747#46994747" class="bare">https://stackoverflow.com/questions/20801042/how-to-create-android-project-with-gradle-from-command-line/46994747#46994747</a></p>
+</li>
+<li>
+<p>the boot is uber bloated and takes forever in cycle simulators</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="microsoft-windows"><a class="anchor" href="#microsoft-windows"></a><a class="link" href="#microsoft-windows">10.3.4. Microsoft Windows</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Microsoft_Windows" class="bare">https://en.wikipedia.org/wiki/Microsoft_Windows</a></p>
+</div>
+<div class="paragraph">
+<p>A monopolistic operating system that only exists today because of historical lock-in and constant useless changes of the Microsoft Word document format to prevent cross operability.</p>
+</div>
+<div class="paragraph">
+<p>It offers no technical advantages over free Linux distros in the late 2010&#8217;s, and it is barely impossible to buy a non-Mac computer without paying for it, which should be illegal.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="posix"><a class="anchor" href="#posix"></a><a class="link" href="#posix">10.3.5. POSIX</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/POSIX" class="bare">https://en.wikipedia.org/wiki/POSIX</a></p>
+</div>
+<div class="paragraph">
+<p>The real explanation: <a href="https://stackoverflow.com/questions/1780599/what-is-the-meaning-of-posix/31865755#31865755" class="bare">https://stackoverflow.com/questions/1780599/what-is-the-meaning-of-posix/31865755#31865755</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="war"><a class="anchor" href="#war"></a><a class="link" href="#war">11. War</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="atomic-weapons"><a class="anchor" href="#atomic-weapons"></a><a class="link" href="#atomic-weapons">11.1. Atomic weapons</a></h3>
+<div class="paragraph">
+<p><a href="https://youtu.be/hTRVlUT665U?t=2881" class="bare">https://youtu.be/hTRVlUT665U?t=2881</a> "Los Alamos From Below&#8201;&#8212;&#8201;Richard Feynman". Feynman describing his experience at Los Alamos. This timestamp describes the computing aspects, but the entire talk is amazing. Transcript: <a href="http://calteches.library.caltech.edu/34/3/FeynmanLosAlamos.htm" class="bare">http://calteches.library.caltech.edu/34/3/FeynmanLosAlamos.htm</a></p>
 </div>
 </div>
 </div>
