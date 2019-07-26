@@ -41,6 +41,33 @@ body {
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<div style="display:none;">
+\[
+%% physics package
+% Partial derivative.
+\newcommand{\curl}[1]{\nabla \times #1}
+\newcommand{\dv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\divergence}[1]{\nabla \cdot #1}
+% Vector Arrow.
+\newcommand{\va}[1]{\overrightarrow{#1}}
+
+%% Real analysis
+\newcommand{\RThree}[0]{\mathbb{R}^{3}}
+\newcommand{\RTwo}[0]{\mathbb{R}^{2}}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\functionDomain}[3]{#1 : #2 \to #3}
+
+%% Electromagnetism
+% Magnetic field vector
+\newcommand{\B}[0]{\va{\mathbf{B}}}
+% Electric field vector
+\newcommand{\E}[0]{\va{\mathbf{E}}}
+% Electric current vector.
+\newcommand{\J}[0]{\va{\mathbf{J}}}
+\newcommand{\vacuumPermittivity}[0]{\varepsilon_0}
+\newcommand{\vacuumPermeability}[0]{\mu_0}
+\]
+</div>
 <div class="paragraph">
 <p>Software engineer. Passion for low-level technologies and educational applications. Opinions are my own.</p>
 </div>
@@ -163,40 +190,48 @@ body {
 </li>
 <li><a href="#particle-physics">5.2. Particle physics</a>
 <ul class="sectlevel3">
-<li><a href="#quantum-mechanics">5.2.1. Quantum mechanics</a>
+<li><a href="#maxwells-equations">5.2.1. Maxwell&#8217;s equations</a>
 <ul class="sectlevel4">
-<li><a href="#plancks-law">5.2.1.1. Planck&#8217;s law</a></li>
-<li><a href="#spin">5.2.1.2. Spin</a></li>
+<li><a href="#maxwells-equations-in-2d">5.2.1.1. Maxwell&#8217;s equations in 2D</a></li>
+<li><a href="#existence-and-uniqueness-of-solutions-to-maxwells-equations">5.2.1.2. Existence and uniqueness of solutions to Maxwell&#8217;s equations</a></li>
 </ul>
 </li>
-<li><a href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">5.2.2. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></li>
-<li><a href="#applications-of-particle-physics">5.2.3. Applications of particle physics</a></li>
-<li><a href="#particle-physics-bibliography">5.2.4. Particle physics bibliography</a></li>
-<li><a href="#dirac-equation">5.2.5. Dirac Equation</a>
+<li><a href="#special-relativity">5.2.2. Special relativity</a></li>
+<li><a href="#quantum-mechanics">5.2.3. Quantum mechanics</a>
 <ul class="sectlevel4">
-<li><a href="#how-does-diracs-equation-model-spin">5.2.5.1. How does Dirac&#8217;s equation model spin?</a></li>
+<li><a href="#schrodinger-equation">5.2.3.1. Schrodinger equation</a></li>
+<li><a href="#plancks-law">5.2.3.2. Planck&#8217;s law</a></li>
+<li><a href="#spin">5.2.3.3. Spin</a></li>
 </ul>
 </li>
-<li><a href="#quantum-electrodynamics">5.2.6. Quantum Electrodynamics</a>
+<li><a href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">5.2.4. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></li>
+<li><a href="#applications-of-particle-physics">5.2.5. Applications of particle physics</a></li>
+<li><a href="#particle-physics-bibliography">5.2.6. Particle physics bibliography</a></li>
+<li><a href="#dirac-equation">5.2.7. Dirac Equation</a>
 <ul class="sectlevel4">
-<li><a href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">5.2.6.1. What does it mean that photons are force carriers for electromagnetism?</a></li>
-<li><a href="#quantum-electrodynamics-bibliography">5.2.6.2. Quantum Electrodynamics bibliography</a>
+<li><a href="#how-does-diracs-equation-model-spin">5.2.7.1. How does Dirac&#8217;s equation model spin?</a></li>
+</ul>
+</li>
+<li><a href="#quantum-electrodynamics">5.2.8. Quantum Electrodynamics</a>
+<ul class="sectlevel4">
+<li><a href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">5.2.8.1. What does it mean that photons are force carriers for electromagnetism?</a></li>
+<li><a href="#quantum-electrodynamics-bibliography">5.2.8.2. Quantum Electrodynamics bibliography</a>
 <ul class="sectlevel5">
-<li><a href="#richard-feynman-quantum-electrodynamics-lecture-at-university-of-auckland-in-1979">5.2.6.2.1. Richard Feynman Quantum Electrodynamics Lecture at University of Auckland in 1979</a></li>
+<li><a href="#richard-feynman-quantum-electrodynamics-lecture-at-university-of-auckland-in-1979">5.2.8.2.1. Richard Feynman Quantum Electrodynamics Lecture at University of Auckland in 1979</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#quantum-chromodynamics">5.2.7. Quantum Chromodynamics</a></li>
-<li><a href="#photon">5.2.8. Photon</a>
+<li><a href="#quantum-chromodynamics">5.2.9. Quantum Chromodynamics</a></li>
+<li><a href="#photon">5.2.10. Photon</a>
 <ul class="sectlevel4">
-<li><a href="#single-photon-production-and-detection-experiments">5.2.8.1. Single photon production and detection experiments</a>
+<li><a href="#single-photon-production-and-detection-experiments">5.2.10.1. Single photon production and detection experiments</a>
 <ul class="sectlevel5">
-<li><a href="#photomultiplier-tube">5.2.8.1.1. Photomultiplier tube</a></li>
-<li><a href="#silicon-photomultiplier">5.2.8.1.2. Silicon photomultiplier</a></li>
+<li><a href="#photomultiplier-tube">5.2.10.1.1. Photomultiplier tube</a></li>
+<li><a href="#silicon-photomultiplier">5.2.10.1.2. Silicon photomultiplier</a></li>
 </ul>
 </li>
-<li><a href="#planck-einstein-relation">5.2.8.2. Planck-Einstein relation</a></li>
+<li><a href="#planck-einstein-relation">5.2.10.2. Planck-Einstein relation</a></li>
 </ul>
 </li>
 </ul>
@@ -207,7 +242,16 @@ body {
 <li><a href="#mathematics">6. Mathematics</a>
 <ul class="sectlevel2">
 <li><a href="#formalization-of-mathematics">6.1. Formalization of mathematics</a></li>
-<li><a href="#numerical-analysis">6.2. Numerical analysis</a></li>
+<li><a href="#partial-differential-equations">6.2. Partial differential equations</a>
+<ul class="sectlevel3">
+<li><a href="#existence-and-uniqueness-of-solutions-of-partial-differential-equations">6.2.1. Existence and uniqueness of solutions of partial differential equations</a></li>
+</ul>
+</li>
+<li><a href="#numerical-analysis">6.3. Numerical analysis</a>
+<ul class="sectlevel3">
+<li><a href="#finite-element-method">6.3.1. Finite element method</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#countries">7. Countries</a>
@@ -2863,10 +2907,10 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p>But the output waves are longer: <a href="https://www.youtube.com/watch?v=WR88_Vzfcx4" class="bare">https://www.youtube.com/watch?v=WR88_Vzfcx4</a> "L3.3 Compton Scattering" by "MIT OpenCourseWare", because <a href="#planck-einstein-relation">photons are discrete and energy is proportional to frequency</a>.</p>
 </div>
 <div class="paragraph">
-<p>The formula is exactly that of two relativistic billard balls colliding, which further suggests that photons are real.</p>
+<p>The formula is exactly that of two <a href="#special-relativity">relativistic</a> billiard balls colliding, which further suggests that photons are real.</p>
 </div>
 <div class="paragraph">
-<p>Therefore this is evidence that <a href="#photon">photons exist</a> and have momemtum.</p>
+<p>Therefore this is evidence that <a href="#photon">photons exist</a> and have momentum.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2905,7 +2949,10 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation">Schrodinger equation</a></p>
+<p><a href="#maxwells-equations">Maxwell&#8217;s equations</a></p>
+</li>
+<li>
+<p><a href="#schrodinger-equation">Schrodinger equation</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -2993,9 +3040,167 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="quantum-mechanics"><a class="anchor" href="#quantum-mechanics"></a><a class="link" href="#quantum-mechanics">5.2.1. Quantum mechanics</a></h4>
+<h4 id="maxwells-equations"><a class="anchor" href="#maxwells-equations"></a><a class="link" href="#maxwells-equations">5.2.1. Maxwell&#8217;s equations</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Maxwell%27s_equations" class="bare">https://en.wikipedia.org/wiki/Maxwell%27s_equations</a></p>
+</div>
+<div class="paragraph">
+<p>Unified all previous electro-magnetism theories into one equation.</p>
+</div>
+<div class="paragraph">
+<p>Explains the propagation of light as a wave, and matches the previously known relationship between the <a href="#speed-of-light-experiments">speed of light</a> and electromagnetic constants.</p>
+</div>
+<div class="paragraph">
+<p>The equations are a limit case of the more complete <a href="#quantum-electrodynamics">Quantum Electrodynamics</a>, and unlike that more general theory account for the quantization of <a href="#photon">Photon</a>.</p>
+</div>
+<div class="paragraph">
+<p>TODO: what does it mean that it is coherent with <a href="#special-relativity">Special relativity</a>?</p>
+</div>
+<div class="paragraph">
+<p>The equations are a system of <a href="#partial-differential-equations">Partial differential equations</a>.</p>
+</div>
+<div class="paragraph">
+<p>The system consists of 6 unknown functions that map three variables (x, y and z positions in space) to a real number:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(E_x(x,y,z)\), \(E_y(x,y,z)\), \(E_z(x,y,z)\): directions of the electric field \(\functionDomain{\E}{\RThree}{\RThree}\)</p>
+</li>
+<li>
+<p>\(B_x(x,y,z)\), \(B_y(x,y,z)\), \(B_z(x,y,z)\): directions of the magnetic field \(\functionDomain{\B}{\RThree}{\RThree}\)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>and two known input functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(\functionDomain{\rho}{\RThree}{\R}\): density of charges in space</p>
+</li>
+<li>
+<p>\(\functionDomain{\J}{\RThree}{\RThree}\): current vector in space</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The equations can be written in short form as the following four equations:</p>
+</div>
+<div id="equation-gauss-law" class="stemblock">
+<div class="title">Gauss' law</div>
+<div class="content">
+\[\divergence{\E} = \frac{\rho}{\vacuumPermittivity}\]
+</div>
+</div>
+<div id="equation-gauss-law-for-magnetism" class="stemblock">
+<div class="title">Gauss&#8217;s law for magnetism</div>
+<div class="content">
+\[\divergence{\B} = 0\]
+</div>
+</div>
+<div id="equation-faradays-law" class="stemblock">
+<div class="title">Faraday&#8217;s law of induction</div>
+<div class="content">
+\[\curl{\E} = -\dv{\B}{t}\]
+</div>
+</div>
+<div id="equation-amperes-circuital-law" class="stemblock">
+<div class="title">Ampère&#8217;s circuital law</div>
+<div class="content">
+\[\curl{\B} = \vacuumPermeability \left(\J + \vacuumPermittivity \dv{E}{t} \right)\]
+</div>
+</div>
+<div class="paragraph">
+<p>and you should review the interpretation of divergence \(\divergence{}\) and curl \(\curl{}\):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>divergence: how much fluid goes out or into a point</p>
+</li>
+<li>
+<p>curl: points in the direction in which a wind spinner spins fastest</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For numerical algorithms and to get a more low level understanding of the equations, we can expand them all and simpler explicit:</p>
+</div>
+<div id="equation-maxwells-equation-explicit-form" class="stemblock">
+<div class="content">
+\[\dv{E_x}{x} + \dv{E_y}{x} +
+\dv{E_z}{x} =
+\frac{\rho}{\vacuumPermittivity}
+\\
+
+\dv{B_x}{x} +
+\dv{B_y}{x} +
+\dv{B_z}{x} =
+0
+\\
+
+\dv{E_z}{y} - \dv{E_y}{z} = -\dv{B_x}{t} \\
+\dv{E_x}{z} - \dv{E_z}{x} = -\dv{B_y}{t} \\
+\dv{E_y}{x} - \dv{E_x}{y} = -\dv{B_z}{t} \\
+
+\dv{B_z}{y} - \dv{B_y}{z} = \vacuumPermeability \left(J_x + \vacuumPermittivity \dv{E_x}{t} \right) \\
+\dv{B_x}{z} - \dv{B_z}{x} = \vacuumPermeability \left(J_y + \vacuumPermittivity \dv{E_y}{t} \right) \\
+\dv{B_y}{x} - \dv{B_x}{y} = \vacuumPermeability \left(J_z + \vacuumPermittivity \dv{E_z}{t} \right) \\\]
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see, this expands to 8 equations, so the question arises if the system is over-determined because it only has 6 variables. As explained at: <a href="https://en.wikipedia.org/wiki/Maxwell%27s_equations#Overdetermination_of_Maxwell&#8217;s_equations" class="bare">https://en.wikipedia.org/wiki/Maxwell%27s_equations#Overdetermination_of_Maxwell&#8217;s_equations</a> however, this is not the case, because if the first two equations hold for the initial condition, then they also hold for all time, so they can be essentially omitted.</p>
+</div>
 <div class="sect4">
-<h5 id="plancks-law"><a class="anchor" href="#plancks-law"></a><a class="link" href="#plancks-law">5.2.1.1. Planck&#8217;s law</a></h5>
+<h5 id="maxwells-equations-in-2d"><a class="anchor" href="#maxwells-equations-in-2d"></a><a class="link" href="#maxwells-equations-in-2d">5.2.1.1. Maxwell&#8217;s equations in 2D</a></h5>
+<div class="paragraph">
+<p>TODO it would be awesome if we could de-generalize the equations in 2D and do a JavaScript demo of it!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://physics.stackexchange.com/questions/104008/maxwells-equations-of-electromagnetism-in-21-spacetime-dimensions" class="bare">https://physics.stackexchange.com/questions/104008/maxwells-equations-of-electromagnetism-in-21-spacetime-dimensions</a></p>
+</li>
+<li>
+<p><a href="https://www.reed.edu/physics/faculty/wheeler/documents/Electrodynamics/Miscellaneous%20Essays/E&amp;M%20in%202%20Dimensions.pdf" class="bare">https://www.reed.edu/physics/faculty/wheeler/documents/Electrodynamics/Miscellaneous%20Essays/E&amp;M%20in%202%20Dimensions.pdf</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="existence-and-uniqueness-of-solutions-to-maxwells-equations"><a class="anchor" href="#existence-and-uniqueness-of-solutions-to-maxwells-equations"></a><a class="link" href="#existence-and-uniqueness-of-solutions-to-maxwells-equations">5.2.1.2. Existence and uniqueness of solutions to Maxwell&#8217;s equations</a></h5>
+<div class="paragraph">
+<p>TODO: I&#8217;m surprised that the Wiki page barely talks about it, and there are few Google hits too! A sample one: <a href="https://www.researchgate.net/publication/228928756_On_the_existence_and_uniqueness_of_Maxwell&#8217;s_equations_in_bounded_domains_with_application_to_magnetotellurics" class="bare">https://www.researchgate.net/publication/228928756_On_the_existence_and_uniqueness_of_Maxwell&#8217;s_equations_in_bounded_domains_with_application_to_magnetotellurics</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="special-relativity"><a class="anchor" href="#special-relativity"></a><a class="link" href="#special-relativity">5.2.2. Special relativity</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Special_relativity" class="bare">https://en.wikipedia.org/wiki/Special_relativity</a></p>
+</div>
+<div class="paragraph">
+<p>TODO.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="quantum-mechanics"><a class="anchor" href="#quantum-mechanics"></a><a class="link" href="#quantum-mechanics">5.2.3. Quantum mechanics</a></h4>
+<div class="sect4">
+<h5 id="schrodinger-equation"><a class="anchor" href="#schrodinger-equation"></a><a class="link" href="#schrodinger-equation">5.2.3.1. Schrodinger equation</a></h5>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation" class="bare">https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation</a></p>
+</div>
+<div class="paragraph">
+<p>The <a href="#partial-differential-equations">Partial differential equations</a> of <a href="#special-relativity">non-relativistic</a> <a href="#quantum-mechanics">Quantum mechanics</a>.</p>
+</div>
+<div class="paragraph">
+<p>TODO show some sample numerical solutions in JavaScript and applications such as deriving hydrogen energy levels.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="plancks-law"><a class="anchor" href="#plancks-law"></a><a class="link" href="#plancks-law">5.2.3.2. Planck&#8217;s law</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Planck%27s_law" class="bare">https://en.wikipedia.org/wiki/Planck%27s_law</a></p>
 </div>
@@ -3010,7 +3215,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="spin"><a class="anchor" href="#spin"></a><a class="link" href="#spin">5.2.1.2. Spin</a></h5>
+<h5 id="spin"><a class="anchor" href="#spin"></a><a class="link" href="#spin">5.2.3.3. Spin</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Spin_(physics" class="bare">https://en.wikipedia.org/wiki/Spin_(physics</a>)</p>
 </div>
@@ -3039,7 +3244,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"><a class="anchor" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"></a><a class="link" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">5.2.2. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></h4>
+<h4 id="why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"><a class="anchor" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics"></a><a class="link" href="#why-do-symmetries-such-as-su3su2u1-matter-in-particle-physics">5.2.4. Why do symmetries such as SU(3)×SU(2)×U(1) matter in particle physics?</a></h4>
 <div class="paragraph">
 <p>TODO.</p>
 </div>
@@ -3048,7 +3253,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="applications-of-particle-physics"><a class="anchor" href="#applications-of-particle-physics"></a><a class="link" href="#applications-of-particle-physics">5.2.3. Applications of particle physics</a></h4>
+<h4 id="applications-of-particle-physics"><a class="anchor" href="#applications-of-particle-physics"></a><a class="link" href="#applications-of-particle-physics">5.2.5. Applications of particle physics</a></h4>
 <div class="paragraph">
 <p>There aren&#8217;t any, it&#8217;s <a href="#art">useless</a>:</p>
 </div>
@@ -3064,7 +3269,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="particle-physics-bibliography"><a class="anchor" href="#particle-physics-bibliography"></a><a class="link" href="#particle-physics-bibliography">5.2.4. Particle physics bibliography</a></h4>
+<h4 id="particle-physics-bibliography"><a class="anchor" href="#particle-physics-bibliography"></a><a class="link" href="#particle-physics-bibliography">5.2.6. Particle physics bibliography</a></h4>
 <div class="paragraph">
 <p>Some light YouTube channels, good for the first view, but which don&#8217;t go into enough detail to truly show the subject&#8217;s beauty:</p>
 </div>
@@ -3083,19 +3288,19 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="dirac-equation"><a class="anchor" href="#dirac-equation"></a><a class="link" href="#dirac-equation">5.2.5. Dirac Equation</a></h4>
+<h4 id="dirac-equation"><a class="anchor" href="#dirac-equation"></a><a class="link" href="#dirac-equation">5.2.7. Dirac Equation</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Dirac_equation" class="bare">https://en.wikipedia.org/wiki/Dirac_equation</a></p>
 </div>
 <div class="sect4">
-<h5 id="how-does-diracs-equation-model-spin"><a class="anchor" href="#how-does-diracs-equation-model-spin"></a><a class="link" href="#how-does-diracs-equation-model-spin">5.2.5.1. How does Dirac&#8217;s equation model spin?</a></h5>
+<h5 id="how-does-diracs-equation-model-spin"><a class="anchor" href="#how-does-diracs-equation-model-spin"></a><a class="link" href="#how-does-diracs-equation-model-spin">5.2.7.1. How does Dirac&#8217;s equation model spin?</a></h5>
 <div class="paragraph">
 <p>This tutorial is awesome: <a href="https://www.youtube.com/watch?v=OCuaBmAzqek" class="bare">https://www.youtube.com/watch?v=OCuaBmAzqek</a> "Quantum Mechanics 12a - Dirac Equation I" by "viascience" published 2015-12-19.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="quantum-electrodynamics"><a class="anchor" href="#quantum-electrodynamics"></a><a class="link" href="#quantum-electrodynamics">5.2.6. Quantum Electrodynamics</a></h4>
+<h4 id="quantum-electrodynamics"><a class="anchor" href="#quantum-electrodynamics"></a><a class="link" href="#quantum-electrodynamics">5.2.8. Quantum Electrodynamics</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Quantum_electrodynamics" class="bare">https://en.wikipedia.org/wiki/Quantum_electrodynamics</a></p>
 </div>
@@ -3103,7 +3308,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p>Theory that describes electrons and photons really well, and as Feynman puts it, <a href="https://youtu.be/eLQ2atfqk2c?list=PL8590A6E18255B3F4&amp;t=1047">accounts very precisely for all physical phenomena we have ever observed, except for gravity and nuclear physics</a> (including the laughter of the crowd ;-)).</p>
 </div>
 <div class="sect4">
-<h5 id="what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"><a class="anchor" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"></a><a class="link" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">5.2.6.1. What does it mean that photons are force carriers for electromagnetism?</a></h5>
+<h5 id="what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"><a class="anchor" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism"></a><a class="link" href="#what-does-it-mean-that-photons-are-force-carriers-for-electromagnetism">5.2.8.1. What does it mean that photons are force carriers for electromagnetism?</a></h5>
 <div class="paragraph">
 <p><a href="https://physics.stackexchange.com/questions/61095/photon-as-the-carrier-of-the-electromagnetic-force" class="bare">https://physics.stackexchange.com/questions/61095/photon-as-the-carrier-of-the-electromagnetic-force</a></p>
 </div>
@@ -3112,9 +3317,9 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="quantum-electrodynamics-bibliography"><a class="anchor" href="#quantum-electrodynamics-bibliography"></a><a class="link" href="#quantum-electrodynamics-bibliography">5.2.6.2. Quantum Electrodynamics bibliography</a></h5>
+<h5 id="quantum-electrodynamics-bibliography"><a class="anchor" href="#quantum-electrodynamics-bibliography"></a><a class="link" href="#quantum-electrodynamics-bibliography">5.2.8.2. Quantum Electrodynamics bibliography</a></h5>
 <div class="sect5">
-<h6 id="richard-feynman-quantum-electrodynamics-lecture-at-university-of-auckland-in-1979"><a class="anchor" href="#richard-feynman-quantum-electrodynamics-lecture-at-university-of-auckland-in-1979"></a><a class="link" href="#richard-feynman-quantum-electrodynamics-lecture-at-university-of-auckland-in-1979">5.2.6.2.1. Richard Feynman Quantum Electrodynamics Lecture at University of Auckland in 1979</a></h6>
+<h6 id="richard-feynman-quantum-electrodynamics-lecture-at-university-of-auckland-in-1979"><a class="anchor" href="#richard-feynman-quantum-electrodynamics-lecture-at-university-of-auckland-in-1979"></a><a class="link" href="#richard-feynman-quantum-electrodynamics-lecture-at-university-of-auckland-in-1979">5.2.8.2.1. Richard Feynman Quantum Electrodynamics Lecture at University of Auckland in 1979</a></h6>
 <div class="paragraph">
 <p>Can&#8217;t find official video, so going with the upload by <a href="https://www.youtube.com/watch?v=eLQ2atfqk2c&amp;list=PL8590A6E18255B3F4" class="bare">https://www.youtube.com/watch?v=eLQ2atfqk2c&amp;list=PL8590A6E18255B3F4</a> by "ReasonPublic" for now&#8230;&#8203;</p>
 </div>
@@ -3122,7 +3327,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="quantum-chromodynamics"><a class="anchor" href="#quantum-chromodynamics"></a><a class="link" href="#quantum-chromodynamics">5.2.7. Quantum Chromodynamics</a></h4>
+<h4 id="quantum-chromodynamics"><a class="anchor" href="#quantum-chromodynamics"></a><a class="link" href="#quantum-chromodynamics">5.2.9. Quantum Chromodynamics</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Quantum_chromodynamics" class="bare">https://en.wikipedia.org/wiki/Quantum_chromodynamics</a></p>
 </div>
@@ -3131,7 +3336,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="photon"><a class="anchor" href="#photon"></a><a class="link" href="#photon">5.2.8. Photon</a></h4>
+<h4 id="photon"><a class="anchor" href="#photon"></a><a class="link" href="#photon">5.2.10. Photon</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Photon" class="bare">https://en.wikipedia.org/wiki/Photon</a></p>
 </div>
@@ -3168,7 +3373,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p>This duality is fully described mathematically by <a href="#quantum-electrodynamics">Quantum Electrodynamics</a>.</p>
 </div>
 <div class="sect4">
-<h5 id="single-photon-production-and-detection-experiments"><a class="anchor" href="#single-photon-production-and-detection-experiments"></a><a class="link" href="#single-photon-production-and-detection-experiments">5.2.8.1. Single photon production and detection experiments</a></h5>
+<h5 id="single-photon-production-and-detection-experiments"><a class="anchor" href="#single-photon-production-and-detection-experiments"></a><a class="link" href="#single-photon-production-and-detection-experiments">5.2.10.1. Single photon production and detection experiments</a></h5>
 <div class="paragraph">
 <p>You can&#8217;t get more direct than this in terms of proving that <a href="#photon">photons</a> exist!</p>
 </div>
@@ -3198,7 +3403,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p>Single photon production is described briefly at: <a href="https://youtu.be/F1GaTizdcb8?t=47" class="bare">https://youtu.be/F1GaTizdcb8?t=47</a> "How do you produce a single photon?" by "Physics World" which mentions parametric down conversion: <a href="https://en.wikipedia.org/wiki/Spontaneous_parametric_down-conversion" class="bare">https://en.wikipedia.org/wiki/Spontaneous_parametric_down-conversion</a></p>
 </div>
 <div class="sect5">
-<h6 id="photomultiplier-tube"><a class="anchor" href="#photomultiplier-tube"></a><a class="link" href="#photomultiplier-tube">5.2.8.1.1. Photomultiplier tube</a></h6>
+<h6 id="photomultiplier-tube"><a class="anchor" href="#photomultiplier-tube"></a><a class="link" href="#photomultiplier-tube">5.2.10.1.1. Photomultiplier tube</a></h6>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Photomultiplier_tube" class="bare">https://en.wikipedia.org/wiki/Photomultiplier_tube</a></p>
 </div>
@@ -3210,7 +3415,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="silicon-photomultiplier"><a class="anchor" href="#silicon-photomultiplier"></a><a class="link" href="#silicon-photomultiplier">5.2.8.1.2. Silicon photomultiplier</a></h6>
+<h6 id="silicon-photomultiplier"><a class="anchor" href="#silicon-photomultiplier"></a><a class="link" href="#silicon-photomultiplier">5.2.10.1.2. Silicon photomultiplier</a></h6>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Silicon_photomultiplier" class="bare">https://en.wikipedia.org/wiki/Silicon_photomultiplier</a></p>
 </div>
@@ -3220,7 +3425,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="planck-einstein-relation"><a class="anchor" href="#planck-einstein-relation"></a><a class="link" href="#planck-einstein-relation">5.2.8.2. Planck-Einstein relation</a></h5>
+<h5 id="planck-einstein-relation"><a class="anchor" href="#planck-einstein-relation"></a><a class="link" href="#planck-einstein-relation">5.2.10.2. Planck-Einstein relation</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Planck%E2%80%93Einstein_relation" class="bare">https://en.wikipedia.org/wiki/Planck%E2%80%93Einstein_relation</a></p>
 </div>
@@ -3350,7 +3555,48 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="numerical-analysis"><a class="anchor" href="#numerical-analysis"></a><a class="link" href="#numerical-analysis">6.2. Numerical analysis</a></h3>
+<h3 id="partial-differential-equations"><a class="anchor" href="#partial-differential-equations"></a><a class="link" href="#partial-differential-equations">6.2. Partial differential equations</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Partial_differential_equation" class="bare">https://en.wikipedia.org/wiki/Partial_differential_equation</a></p>
+</div>
+<div class="paragraph">
+<p>Some of the most important examples include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#maxwells-equations">Maxwell&#8217;s equations</a></p>
+</li>
+<li>
+<p><a href="#schrodinger-equation">Schrodinger equation</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <a href="#finite-element-method">Finite element method</a> is one of the most common ways to solve PDEs in practice.</p>
+</div>
+<div class="sect3">
+<h4 id="existence-and-uniqueness-of-solutions-of-partial-differential-equations"><a class="anchor" href="#existence-and-uniqueness-of-solutions-of-partial-differential-equations"></a><a class="link" href="#existence-and-uniqueness-of-solutions-of-partial-differential-equations">6.2.1. Existence and uniqueness of solutions of partial differential equations</a></h4>
+<div class="paragraph">
+<p>If you have a PDE that models <a href="#physics">physical phenomena</a>, it is fundamental that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>there must exist a solution for every physically valid initial condition, otherwise it means that the equation does not describe certain cases of reality</p>
+</li>
+<li>
+<p>the solution must be unique, otherwise how are we to choose between the multiple solutions?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Unlike for ordinary differential equations which have the <a href="https://en.wikipedia.org/wiki/Picard%E2%80%93Lindel%C3%B6f_theorem">Picard–Lindelöf theorem</a>, the existence and uniqueness of solution is not well solved for PDEs. For example, <a href="https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_existence_and_smoothness">Navier–Stokes existence and smoothness</a> was one of the <a href="https://en.wikipedia.org/wiki/Millennium_Prize_Problems">Millennium Prize Problems</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="numerical-analysis"><a class="anchor" href="#numerical-analysis"></a><a class="link" href="#numerical-analysis">6.3. Numerical analysis</a></h3>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Numerical_analysis" class="bare">https://en.wikipedia.org/wiki/Numerical_analysis</a></p>
 </div>
@@ -3359,6 +3605,15 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 <div class="paragraph">
 <p>The entire field comes down to estimating the true values with a known error bound, and creating algorithms that make those error bounds asymptotically smaller.</p>
+</div>
+<div class="sect3">
+<h4 id="finite-element-method"><a class="anchor" href="#finite-element-method"></a><a class="link" href="#finite-element-method">6.3.1. Finite element method</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Finite_element_method" class="bare">https://en.wikipedia.org/wiki/Finite_element_method</a></p>
+</div>
+<div class="paragraph">
+<p>TODO understand, give intuition, justification of bounds and JavaScript demo.</p>
+</div>
 </div>
 </div>
 </div>
@@ -3444,7 +3699,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p><a href="https://en.wikipedia.org/wiki/Oracle_Corporation" class="bare">https://en.wikipedia.org/wiki/Oracle_Corporation</a></p>
 </div>
 <div class="paragraph">
-<p><a href="#evil">Evil</a> company that desecrated the beauty created by <a href="https://en.wikipedia.org/wiki/Sun_Microsystems">Sun</a>, and is now <a href="https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc" class="bare">https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc</a>.[trying to bury Java once and or all]</p>
+<p><a href="#evil">Evil</a> company that desecrated the beauty created by <a href="https://en.wikipedia.org/wiki/Sun_Microsystems">Sun</a>, and was <a href="https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc.">trying to bury Java once and or all in the 2010&#8217;s</a>.</p>
 </div>
 <div class="paragraph">
 <p>Their database has already been surpassed by open source, and <a href="https://en.wikipedia.org/wiki/Enterprise_resource_planning">ERP</a> and <a href="https://en.wikipedia.org/wiki/Customer_relationship_management">CRM</a> is boring.</p>
