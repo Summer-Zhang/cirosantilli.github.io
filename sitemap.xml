@@ -37,6 +37,9 @@
 <loc>/git-tutorial/config.html</loc>
 </url>
 <url>
+<loc>/contrib.html</loc>
+</url>
+<url>
 <loc>/db/count.html</loc>
 </url>
 <url>
@@ -203,6 +206,9 @@
 </url>
 <url>
 <loc>/db/select.html</loc>
+</url>
+<url>
+<loc>/self-evaluation.html</loc>
 </url>
 <url>
 <loc>/skills.html</loc>
