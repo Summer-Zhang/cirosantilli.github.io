@@ -17,7 +17,7 @@ ga('create', 'UA-47867706-1', 'auto');
 ga('send', 'pageview');
 </script>
 <link rel="shortcut icon" type="image/x-icon" href="/ciro-santilli-id-photo-2013.jpg" />
-<link  rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
@@ -29,6 +29,12 @@ body {
   padding-left: 10px;
 }
 .imageblock {
+  margin-bottom: 10px;
+}
+.canvas-demo {
+  border: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
   margin-bottom: 10px;
 }
 /* Custom style. */
@@ -120,7 +126,6 @@ body {
 <ul class="sectlevel3">
 <li><a href="#unconditional-basic-income">1.6.1. Unconditional basic income</a></li>
 <li><a href="#having-more-than-one-natural-language-is-bad-for-the-world">1.6.2. Having more than one natural language is bad for the world</a></li>
-<li><a href="#programming-language-choice">1.6.3. Programming language choice</a></li>
 </ul>
 </li>
 <li><a href="#ciro-santillis-website">1.7. Ciro Santilli&#8217;s website</a>
@@ -313,15 +318,24 @@ body {
 </li>
 <li><a href="#computer">10. Computer</a>
 <ul class="sectlevel2">
-<li><a href="#moores-law">10.1. Moore&#8217;s law</a></li>
-<li><a href="#quantum-computing">10.2. Quantum computing</a></li>
-<li><a href="#operating-systems">10.3. Operating systems</a>
+<li><a href="#programming-languages">10.1. Programming languages</a>
 <ul class="sectlevel3">
-<li><a href="#linux">10.3.1. Linux</a></li>
-<li><a href="#bsd-operating-systems">10.3.2. BSD Operating Systems</a></li>
-<li><a href="#android">10.3.3. Android</a></li>
-<li><a href="#microsoft-windows">10.3.4. Microsoft Windows</a></li>
-<li><a href="#posix">10.3.5. POSIX</a></li>
+<li><a href="#javascript">10.1.1. JavaScript</a>
+<ul class="sectlevel4">
+<li><a href="#html-canvas">10.1.1.1. HTML canvas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#moores-law">10.2. Moore&#8217;s law</a></li>
+<li><a href="#quantum-computing">10.3. Quantum computing</a></li>
+<li><a href="#operating-systems">10.4. Operating systems</a>
+<ul class="sectlevel3">
+<li><a href="#linux">10.4.1. Linux</a></li>
+<li><a href="#bsd-operating-systems">10.4.2. BSD Operating Systems</a></li>
+<li><a href="#android">10.4.3. Android</a></li>
+<li><a href="#microsoft-windows">10.4.4. Microsoft Windows</a></li>
+<li><a href="#posix">10.4.5. POSIX</a></li>
 </ul>
 </li>
 </ul>
@@ -380,7 +394,7 @@ body {
 <p>System or unit tests: system</p>
 </li>
 <li>
-<p>Default programming languages: Python and C++. <a href="#programming-language-choice">he&#8217;ll learn Rust and Haskell once he&#8217;s rich</a></p>
+<p>Default programming languages: Python and C++. <a href="#programming-languages">he&#8217;ll learn Rust and Haskell once he&#8217;s rich</a></p>
 </li>
 <li>
 <p>Favorite musical instruments to listen: <a href="https://en.wikipedia.org/wiki/Guqin">Chinese Guqin</a> and <a href="#the-best-music-albums-of-all-time">electric Jazz-fusion guitar</a></p>
@@ -1879,77 +1893,6 @@ body {
 <p>The <a href="https://en.wikipedia.org/wiki/Linguistic_relativity">Sapir–Whorf hypothesis</a> is bullshit outside of poetry, and the ending of <a href="https://en.wikipedia.org/wiki/Arrival_(film)">Arrival (2016)</a> makes one want to puke.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="programming-language-choice"><a class="anchor" href="#programming-language-choice"></a><a class="link" href="#programming-language-choice">1.6.3. Programming language choice</a></h4>
-<div class="paragraph">
-<p>There is only space for two languages at most in the world: the compiled one, and the interpreted one.</p>
-</div>
-<div class="paragraph">
-<p>For now, when you have a choice, you must go for:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Python as the interpreted one</p>
-</li>
-<li>
-<p>C++ for compiled</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Those two are languages not by any means perfect from a language design point of view, and there are likely already better alternatives, they are only chosen due to a pragmatic tradeoff between ecosystem and familiarity.</p>
-</div>
-<div class="paragraph">
-<p>Bash can also be used when you&#8217;re lazy. But if the project goes on, you will sooner or later regret that choice.</p>
-</div>
-<div class="paragraph">
-<p>The language syntax in itself does not matter. All that matters is how many useful libraries and tooling it has.</p>
-</div>
-<div class="paragraph">
-<p>This is how other languages compare:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>C cool, but cannot make a large codebase DRY without insanity</p>
-</li>
-<li>
-<p>Ruby: the exact same as Python, and only strong in one domain: web, while Python rules everything else, and is not bad on web either. So just kill Ruby, please.</p>
-</li>
-<li>
-<p>JavaScript: it is totally fine if NodeJS destroys Python and becomes the ONE scripting language to rule them all since Python and JavaScript are almost equally crappy.</p>
-<div class="paragraph">
-<p>People just don&#8217;t use it much because of ecosystem / unfamiliarity.</p>
-</div>
-</li>
-<li>
-<p>Java: good language, but has an ugly enterprisey ecosystem, Oracle has made / kept the development process too closed, and <a href="https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc" class="bare">https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc</a>.[API patenting madness on Android just kills if off completely]</p>
-</li>
-<li>
-<p>Haskell: many have tried to learn some functional stuff, but too hard. Sounds really cool though.</p>
-</li>
-<li>
-<p>Rust: sounds cool, you will gladly replace C and C++ with it if the ecosystem ramps up.</p>
-</li>
-<li>
-<p>Go: likely a good replacement for Python. If the ecosystem gets there, you will gladly use it more.</p>
-</li>
-<li>
-<p>Swift: <a href="#apple-inc">Apple Inc.</a> is <a href="#evil">Evil</a></p>
-</li>
-<li>
-<p>C#: <a href="#microsoft-windows">Microsoft</a> is <a href="#evil">Evil</a></p>
-</li>
-<li>
-<p>Tcl, Perl: Python killed them way back and is less insane</p>
-</li>
-<li>
-<p>R, GNU Octave: all of this is a waste of society&#8217;s time, applied mathematicians are capable of writing a few braces in exchange for a sane general purpose language, we should just invest in good libraries with fast C bindings for those languages like NumPy where needed. And when Ciro see the closed source ones like MATLAB being used, it makes him lose all hope on humanity.</p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="ciro-santillis-website"><a class="anchor" href="#ciro-santillis-website"></a><a class="link" href="#ciro-santillis-website">1.7. Ciro Santilli&#8217;s website</a></h3>
@@ -1976,6 +1919,7 @@ body {
 <div class="literalblock">
 <div class="content">
 <pre>bundle install
+npm install
 ./run</pre>
 </div>
 </div>
@@ -4229,7 +4173,227 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p>Unlike other humans, computers are mindless slaves that do exactly what they are told to, except for <a href="https://www.youtube.com/watch?v=aNzTUdOHm9A">occasional cosmic ray bit flips</a>. Until they <a href="#artificial-general-intelligence">take over the world that is</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="moores-law"><a class="anchor" href="#moores-law"></a><a class="link" href="#moores-law">10.1. Moore&#8217;s law</a></h3>
+<h3 id="programming-languages"><a class="anchor" href="#programming-languages"></a><a class="link" href="#programming-languages">10.1. Programming languages</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Programming_language" class="bare">https://en.wikipedia.org/wiki/Programming_language</a></p>
+</div>
+<div class="paragraph">
+<p>A language that allows you to talk and command a <a href="#computer">Computer</a>.</p>
+</div>
+<div class="paragraph">
+<p>There is only space for two languages at most in the world: the compiled one, and the interpreted one.</p>
+</div>
+<div class="paragraph">
+<p>For now, when you have a choice, you must go for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Python as the interpreted one</p>
+</li>
+<li>
+<p>C++ for compiled</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Those two are languages not by any means perfect from a language design point of view, and there are likely already better alternatives, they are only chosen due to a pragmatic tradeoff between ecosystem and familiarity.</p>
+</div>
+<div class="paragraph">
+<p>Bash can also be used when you&#8217;re lazy. But if the project goes on, you will sooner or later regret that choice.</p>
+</div>
+<div class="paragraph">
+<p>The language syntax in itself does not matter. All that matters is how many useful libraries and tooling it has.</p>
+</div>
+<div class="paragraph">
+<p>This is how other languages compare:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>C cool, but cannot make a large codebase DRY without insanity</p>
+</li>
+<li>
+<p>Ruby: the exact same as Python, and only strong in one domain: web, while Python rules everything else, and is not bad on web either. So just kill Ruby, please.</p>
+</li>
+<li>
+<p><a href="#javascript">JavaScript</a>: it is totally fine if NodeJS destroys Python and becomes the ONE scripting language to rule them all since Python and JavaScript are almost equally crappy.</p>
+</li>
+<li>
+<p>Java: good language, but has an ugly enterprisey ecosystem, Oracle has made / kept the development process too closed, and <a href="https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc" class="bare">https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc</a>.[API patenting madness on Android just kills if off completely]</p>
+</li>
+<li>
+<p>Haskell: many have tried to learn some functional stuff, but too hard. Sounds really cool though.</p>
+</li>
+<li>
+<p>Rust: sounds cool, you will gladly replace C and C++ with it if the ecosystem ramps up.</p>
+</li>
+<li>
+<p>Go: likely a good replacement for Python. If the ecosystem gets there, you will gladly use it more.</p>
+</li>
+<li>
+<p>Swift: <a href="#apple-inc">Apple Inc.</a> is <a href="#evil">Evil</a></p>
+</li>
+<li>
+<p>C#: <a href="#microsoft-windows">Microsoft</a> is <a href="#evil">Evil</a></p>
+</li>
+<li>
+<p>Tcl, Perl: Python killed them way back and is less insane</p>
+</li>
+<li>
+<p>R, GNU Octave: all of this is a waste of society&#8217;s time, applied mathematicians are capable of writing a few braces in exchange for a sane general purpose language, we should just invest in good libraries with fast C bindings for those languages like NumPy where needed. And when Ciro see the closed source ones like MATLAB being used, it makes him lose all hope on humanity.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="javascript"><a class="anchor" href="#javascript"></a><a class="link" href="#javascript">10.1.1. JavaScript</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/JavaScript" class="bare">https://en.wikipedia.org/wiki/JavaScript</a></p>
+</div>
+<div class="paragraph">
+<p>The language all browsers converted to as of 2019, and therefore the easiest one to distribute and most widely implemented programming language.</p>
+</div>
+<div class="paragraph">
+<p>Hopefully will be killed by <a href="https://en.wikipedia.org/wiki/WebAssembly">WebAssembly</a> one day.</p>
+</div>
+<div class="sect4">
+<h5 id="html-canvas"><a class="anchor" href="#html-canvas"></a><a class="link" href="#html-canvas">10.1.1.1. HTML canvas</a></h5>
+<div class="paragraph">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" class="bare">https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API</a></p>
+</div>
+<div class="paragraph">
+<p>Allows us to draw! Great way to create <a href="#computational-physics">Computational Physics</a> demos!</p>
+</div>
+<div class="paragraph">
+<p>Here is an animation demo with some useful controls:</p>
+</div>
+<div class="canvas-demo">
+    <div>enable: <input type="checkbox" id="canvas-enable"></input> &lt;-- (click this to run!!!)</div>
+    <div>canvas width: <input type="number" min="10" id="canvas-width-input" value="128"></input> (very large will make the browser tab hang)</div>
+    <div>save images: <input type="checkbox" id="canvas-save-images-checkbox"></input> (some images are skipped if FPS is high)</div>
+    <div>FPS limit: <input type="number" min="10" id="canvas-fps-limit" value=""></input></div>
+    <div>FPS granule: <input type="number" min="10" id="canvas-fps-granule" value="5"></input></div>
+    <div>total frames: <span id="canvas-total-frames"></span></div>
+    <div>FPS: <span id="canvas-fps"></span></div>
+    <canvas id="canvas-canvas" style="border:1px solid black;"></canvas>
+</div>
+<script>
+(function() {
+    // Load required scripts.
+    // https://stackoverflow.com/questions/14521108/dynamically-load-js-inside-js/14521482#14521482
+    // https://stackoverflow.com/questions/10004112/how-can-i-wait-for-set-of-asynchronous-callback-functions
+    var script = document.createElement('script');
+    script.onload = main;
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js';
+    document.head.appendChild(script);
+    function main() {
+        //do stuff with the script
+        var demo_id = 'canvas';
+        var canvas = document.getElementById(demo_id + '-canvas');
+        var ctx = canvas.getContext('2d');
+        var pixel_size = 1;
+        var t = 0;
+        var fps_span = document.getElementById(demo_id + '-fps');
+        var fps_last_date = new Date();
+        var fps_granule_input = document.getElementById(demo_id + '-fps-granule');
+        var canvas_width_input = document.getElementById(demo_id + '-width-input');
+        // https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
+        var save_images_checkbox = document.getElementById(demo_id + '-save-images-checkbox');
+        var total_frames_span = document.getElementById(demo_id + '-total-frames');
+        total_frames_span.innerHTML = t.toString();
+
+        /* FPS limit. */
+        var fps_limit_input = document.getElementById(demo_id + '-fps-limit');
+        var fps_limit_last_render = Date.now();
+        var now, fps_limit_then, fps_limit_elapsed;
+        fps_limit_then = Date.now();
+
+        /* Enable disable. */
+        var enable_checkbox = document.getElementById(demo_id + '-enable');
+        enable_checkbox.addEventListener('change', drawIfEnabled)
+        function drawIfEnabled() {
+            if (enable_checkbox.checked) {
+                window.requestAnimationFrame(draw);
+            }
+        }
+
+        /* We need this to fix t because toBlob calls are asynchronous. */
+        function createBlobFunc(t) {
+            return function(blob) {
+                // From FileSaver.js.
+                saveAs(blob, 'canvas-' + t.toString() + '.png');
+            };
+        }
+
+        function resizeCanvas() {
+            var canvas_width = parseInt(canvas_width_input.value);
+            if (isNaN(canvas_width)) {
+                canvas_width = parseInt(canvas_width_input.getAttribute('value'));
+            }
+            canvas.width = canvas_width;
+            canvas.height = canvas_width;
+        }
+
+        function draw() {
+            drawIfEnabled();
+            var fps_limit = parseFloat(fps_limit_input.value);
+            if (!isNaN(fps_limit)) {
+                var fps_limit_time_millis = 1000.0 / fps_limit;
+                now = Date.now();
+                fps_limit_elapsed = now - fps_limit_then;
+            }
+            if (isNaN(fps_limit) || (fps_limit_elapsed > fps_limit_time_millis)) {
+                if (!isNaN(fps_limit)) {
+                    fps_limit_then = now - (fps_limit_elapsed % fps_limit_time_millis);
+                }
+                resizeCanvas();
+
+                // The actual drawing.
+                for (x = 0; x < canvas.width; x += pixel_size) {
+                    for (y = 0; y < canvas.height; y += pixel_size) {
+                        var b = ((1.0 + Math.sin(t * Math.PI / 16)) / 2.0);
+                        ctx.fillStyle =
+                            'rgba(' +
+                            (x / canvas.width) * 255 + ',' +
+                            (y / canvas.height) * 255 + ',' +
+                            b * 255 +
+                            ',255)'
+                        ;
+                        ctx.fillRect(x, y, pixel_size, pixel_size);
+                    }
+                }
+
+                // Save the images to files.
+                // https://stackoverflow.com/questions/19235286/convert-html5-canvas-sequence-to-a-video-file/57153718#57153718
+                if (save_images_checkbox.checked) {
+                    canvas.toBlob(createBlobFunc(t));
+                }
+                t++;
+                total_frames_span.innerHTML = t.toString();
+                fps_limit_last_render = Date.now();
+
+                /* FPS calculation. */
+                var fps_granule = parseInt(fps_granule_input.value);
+                if (t % fps_granule == 0) {
+                    var fps_date = Date.now();
+                    fps_span.innerHTML = (1000.0 * fps_granule / (fps_date - fps_last_date)).toFixed(2);
+                    fps_last_date = fps_date;
+                }
+            }
+        }
+        resizeCanvas();
+        drawIfEnabled();
+    };
+})();
+</script>
+<div class="paragraph">
+<p>Bibliography: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations"&gt;https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations" class="bare">https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations"&gt;https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="moores-law"><a class="anchor" href="#moores-law"></a><a class="link" href="#moores-law">10.2. Moore&#8217;s law</a></h3>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Moore%27s_law" class="bare">https://en.wikipedia.org/wiki/Moore%27s_law</a></p>
 </div>
@@ -4241,7 +4405,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="quantum-computing"><a class="anchor" href="#quantum-computing"></a><a class="link" href="#quantum-computing">10.2. Quantum computing</a></h3>
+<h3 id="quantum-computing"><a class="anchor" href="#quantum-computing"></a><a class="link" href="#quantum-computing">10.3. Quantum computing</a></h3>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Quantum_computing" class="bare">https://en.wikipedia.org/wiki/Quantum_computing</a></p>
 </div>
@@ -4250,7 +4414,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="operating-systems"><a class="anchor" href="#operating-systems"></a><a class="link" href="#operating-systems">10.3. Operating systems</a></h3>
+<h3 id="operating-systems"><a class="anchor" href="#operating-systems"></a><a class="link" href="#operating-systems">10.4. Operating systems</a></h3>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Operating_system" class="bare">https://en.wikipedia.org/wiki/Operating_system</a></p>
 </div>
@@ -4258,7 +4422,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <p>Magic software that allows you to write a single program that runs on a wide range of hardware.</p>
 </div>
 <div class="sect3">
-<h4 id="linux"><a class="anchor" href="#linux"></a><a class="link" href="#linux">10.3.1. Linux</a></h4>
+<h4 id="linux"><a class="anchor" href="#linux"></a><a class="link" href="#linux">10.4.1. Linux</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Linux" class="bare">https://en.wikipedia.org/wiki/Linux</a></p>
 </div>
@@ -4270,7 +4434,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="bsd-operating-systems"><a class="anchor" href="#bsd-operating-systems"></a><a class="link" href="#bsd-operating-systems">10.3.2. BSD Operating Systems</a></h4>
+<h4 id="bsd-operating-systems"><a class="anchor" href="#bsd-operating-systems"></a><a class="link" href="#bsd-operating-systems">10.4.2. BSD Operating Systems</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/List_of_BSD_operating_systems" class="bare">https://en.wikipedia.org/wiki/List_of_BSD_operating_systems</a></p>
 </div>
@@ -4279,7 +4443,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="android"><a class="anchor" href="#android"></a><a class="link" href="#android">10.3.3. Android</a></h4>
+<h4 id="android"><a class="anchor" href="#android"></a><a class="link" href="#android">10.4.3. Android</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Android_(operating_system)" class="bare">https://en.wikipedia.org/wiki/Android_(operating_system)</a></p>
 </div>
@@ -4326,7 +4490,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="microsoft-windows"><a class="anchor" href="#microsoft-windows"></a><a class="link" href="#microsoft-windows">10.3.4. Microsoft Windows</a></h4>
+<h4 id="microsoft-windows"><a class="anchor" href="#microsoft-windows"></a><a class="link" href="#microsoft-windows">10.4.4. Microsoft Windows</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Microsoft_Windows" class="bare">https://en.wikipedia.org/wiki/Microsoft_Windows</a></p>
 </div>
@@ -4338,7 +4502,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="posix"><a class="anchor" href="#posix"></a><a class="link" href="#posix">10.3.5. POSIX</a></h4>
+<h4 id="posix"><a class="anchor" href="#posix"></a><a class="link" href="#posix">10.4.5. POSIX</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/POSIX" class="bare">https://en.wikipedia.org/wiki/POSIX</a></p>
 </div>
