@@ -1,0 +1,112 @@
+body {
+  overflow-wrap: break-word; }
+  body header {
+    background-color: black;
+    border-radius: 0;
+    border-width: 0;
+    font-size: 2.0em;
+    margin: 0; }
+    body header a {
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin: 0; }
+      body header a.home {
+        color: white;
+        font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-decoration: none; }
+      body header a:hover {
+        background-color: white;
+        color: black; }
+    body header span.social a {
+      color: #CC0; }
+      body header span.social a:hover {
+        background-color: white;
+        color: black; }
+      body header span.social a:visited {
+        color: #CC0; }
+        body header span.social a:visited:hover {
+          background-color: white;
+          color: black; }
+  body main {
+    /* Don't stay too close to the edge of the screen. */
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    /* asciidoctor output. */
+    /* kramdown output. */
+    /* Generic elements. */
+    /* Custom classes. */ }
+    body main .imageblock {
+      margin-bottom: 15px; }
+    body main #markdown-toc {
+      font-weight: bold; }
+    body main a:link {
+      color: #28F; }
+    body main a:visited {
+      color: purple; }
+    body main blockquote {
+      font-size: 1.2em; }
+    body main code {
+      color: black; }
+    body main p {
+      /* Otherwise paragraphs after *nested* lists are too close. TODO why? */
+      margin-top: 5px; }
+    body main ul, body main ol {
+      /*list-style-position:inside;*/
+      margin-left: 14px;
+      padding-left: 14px; }
+    body main table {
+      border-collapse: collapse;
+      border: 1px solid black;
+      margin-bottom: 15px;
+      text-align: left; }
+    body main table tr > :not(:last-child) {
+      white-space: nowrap;
+      width: 1px; }
+    body main td, body main th {
+      border: 1px solid black;
+      padding: 2px 4px; }
+    body main th {
+      font-weight: bold; }
+    body main pre {
+      margin-left: 0px;
+      white-space: pre; }
+    body main .canvas-demo {
+      border: 1px solid black;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-bottom: 10px; }
+    body main .patches-table tr > :nth-child(1),
+    body main .patches-table tr > :nth-child(3) {
+      text-align: center; }
+    body main #bugs-table tr > :nth-child(1) {
+      text-align: center; }
+    body main #grading-table tr > :nth-child(1) {
+      font-weight: bold;
+      text-align: center;
+      padding-left: 8px;
+      padding-right: 8px; }
+    body main #languages-table tr > :nth-child(1) {
+      text-align: center; }
+    body main #other-tech-table tr > :nth-child(1) {
+      text-align: center; }
+    body main #natural-languages-table tr > :nth-child(1) {
+      text-align: center; }
+    body main table.dataTable tr.odd {
+      background-color: white; }
+      body main table.dataTable tr.odd td.sorting_1 {
+        background-color: white; }
+      body main table.dataTable tr.odd td.sorting_2 {
+        background-color: white; }
+      body main table.dataTable tr.odd td.sorting_3 {
+        background-color: white; }
+    body main table.dataTable tr.even {
+      background-color: white; }
+      body main table.dataTable tr.even td.sorting_1 {
+        background-color: white; }
+      body main table.dataTable tr.even td.sorting_2 {
+        background-color: white; }
+      body main table.dataTable tr.even td.sorting_3 {
+        background-color: white; }

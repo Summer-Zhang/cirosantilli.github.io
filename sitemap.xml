@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>/</loc>
+</url>
+<url>
 <loc>/accounts.html</loc>
+</url>
+<url>
+<loc>/adoc.html</loc>
 </url>
 <url>
 <loc>/articles.html</loc>
@@ -247,10 +253,6 @@
 <loc>/x86-paging.html</loc>
 </url>
 <url>
-<loc>/docinfo.html</loc>
-<lastmod>2019-08-07T08:52:43+01:00</lastmod>
-</url>
-<url>
 <loc>/files/cv.pdf</loc>
 <lastmod>2019-07-14T23:27:10+01:00</lastmod>
 </url>
@@ -300,7 +302,7 @@
 </url>
 <url>
 <loc>/web/css.html</loc>
-<lastmod>2019-07-14T23:27:11+01:00</lastmod>
+<lastmod>2019-08-18T14:15:06+01:00</lastmod>
 </url>
 <url>
 <loc>/web/d3/category.html</loc>
@@ -336,7 +338,7 @@
 </url>
 <url>
 <loc>/web/html.html</loc>
-<lastmod>2019-07-14T23:27:11+01:00</lastmod>
+<lastmod>2019-08-18T14:15:06+01:00</lastmod>
 </url>
 <url>
 <loc>/web/html2.html</loc>
@@ -360,7 +362,7 @@
 </url>
 <url>
 <loc>/web/js.html</loc>
-<lastmod>2019-07-14T23:27:11+01:00</lastmod>
+<lastmod>2019-08-18T14:15:06+01:00</lastmod>
 </url>
 <url>
 <loc>/web/jspdf.html</loc>

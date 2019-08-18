@@ -1,299 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.10">
-<meta name="description" content="Software engineer. Passion for computers, natural sciences and education. Opinions are my own.">
-<title>Ciro Santilli (三西猴)</title>
-<script>
-<!-- Google Analytics, AKA selling my soul to Google for some backlinks. -->
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-47867706-1', 'auto');
-ga('send', 'pageview');
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+        Ciro Santilli (三西猴) -
+      
+      Ciro Santilli
+    </title>
+    
+      <meta name="description" content="Software engineer. Passion for computers, natural sciences and education. Opinions are my own.">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/ciro-santilli-id-photo-2013.jpg" />
 
-// Load required scripts dynamically:
-//
-// * https://stackoverflow.com/questions/7308908/waiting-for-dynamically-loaded-script/57267538#57267538
-// * https://stackoverflow.com/questions/14521108/dynamically-load-js-inside-js/14521482#14521482
-// * https://stackoverflow.com/questions/10004112/how-can-i-wait-for-set-of-asynchronous-callback-functions
-//
-// We use to reduce the initial load time.
-//
-// Each script is loaded only once after it has finished loading for the first time,
-// even if this function is called multiple times.
-async function cirosantilli_load_scripts(script_urls) {
-    function load(script_url) {
-        return new Promise(function(resolve, reject) {
-            if (cirosantilli_load_scripts.loaded.has(script_url)) {
-                resolve();
-            } else {
-                var script = document.createElement('script');
-                script.onload = resolve;
-                script.src = script_url
-                document.head.appendChild(script);
-            }
-        });
-    }
-    var promises = [];
-    for (const script_url of script_urls) {
-        promises.push(load(script_url));
-    }
-    await Promise.all(promises);
-    for (const script_url of script_urls) {
-        cirosantilli_load_scripts.loaded.add(script_url);
-    }
-}
-cirosantilli_load_scripts.loaded = new Set();
+    
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
 
-// Create some nice controls for a canvas demo!
-class CirosantilliCanvasDemo {
-    constructor(demo_id, enabled = false, context_type = '2d') {
-        // Members.
-        this.time = 0;
-        this.demo_id = demo_id;
+    
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"/>
 
-        // Random variables.
-        // https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
-        this.fps_limit_then = Date.now();
-        this.fps_last_date = new Date();
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
 
-        // HTML.
-        var canvas_wrapper = document.createElement('div');
-        this.myclass = 'canvas-demo'
-        canvas_wrapper.setAttribute('class', this.myclass);
-
-        // Enable disable.
-        this.enable_input = document.createElement('input');
-        this.enable_input.setAttribute('type', 'checkbox');
-        this.enable_input.setAttribute('value', '5');
-        this.enable_input.setAttribute('min', '1');
-        this.enable_input.addEventListener('change', async () => {
-            this.enableStateChange(this.enable_input.checked, !this.enable_input.checked);
-        });
-        var enable_label = document.createElement('label');
-        enable_label.appendChild(document.createTextNode('Enable: '));
-        enable_label.appendChild(this.enable_input);
-        enable_label.appendChild(document.createTextNode('<-- (click this to run!!!)'));
-        this.enable_div = document.createElement('div');
-        this.enable_div.appendChild(enable_label);
-        canvas_wrapper.appendChild(this.enable_div);
-
-        // All inputs and info entries.
-        this.fps_span = this.addInfoSpanAfterEnable('FPS');
-        this.total_frames_span = this.addInfoSpanAfterEnable('Total frames');
-        this.fps_granule_input = this.addInputAfterEnable(
-            'FPS granule',
-            {
-                'min': '1',
-                'type': 'number',
-                'value': '5'
-            }
-        );
-        this.fps_limit_input = this.addInputAfterEnable(
-            'FPS limit',
-            {
-                'min': '1',
-                'type': 'number'
-            }
-        );
-        this.save_images_input = this.addInputAfterEnable(
-            'Save images',
-            {
-                'type': 'checkbox',
-            }
-        );
-        this.canvas_width_input = this.addInputAfterEnable(
-            'canvas width',
-            {
-                'min': '1',
-                'type': 'number',
-                'value': '128'
-            }
-        );
-
-        // Canvas.
-        this.canvas = document.createElement('canvas');
-        this.canvas.setAttribute('style', 'border:1px solid black;');
-        canvas_wrapper.appendChild(this.canvas);
-        this.ctx = this.canvas.getContext(context_type);
-        this.resizeCanvas();
-
-        // Add the canvas_wrapper.
-        document.currentScript.parentNode.insertBefore(canvas_wrapper, document.currentScript);
-
-        // Auto enable animations when they come into the viewport,
-        // and disable them when they leave the viewport!!!
-        //
-        // This is done to prevent JavaScript animations from slowing the page down too much,
-        // while still not requiring the user to click to enable all of them all the time.
-        //
-        // If the user explicitly disables then once, they are not automatically enabled anymore.
-        //
-        // https://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport/15203639#15203639
-        this.first_observer_init = true;
-        var observer = new IntersectionObserver(
-            (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.intersectionRatio > 0.0) {
-                        // Just entered the viewport.
-                        if (this.first_observer_init) {
-                            this.first_observer_init = false;
-                            this.enableStateChange(true, this.enable_input.checked);
-                        }
-                    } else {
-                        // Just left the viewport.
-                        this.enableStateChange(false, this.enable_input.checked);
-                    }
-                });
-            },
-            {}
-        )
-        observer.observe(canvas_wrapper);
-
-        // Finish initialization.
-        this.init_done = false;
-        this.enableStateChange(enabled, this.enable_input.checked);
-    }
-
-    addInputAfterEnable(label, attributes) {
-        var input = document.createElement('input');
-        for (var key in attributes) {
-            input.setAttribute(key, attributes[key]);
-        }
-        var div = document.createElement('div');
-        div.appendChild(document.createTextNode(label + ': '));
-        div.appendChild(input);
-        this.enable_div.parentNode.insertBefore(div, this.enable_div.nextSibling);
-        return input;
-    }
-
-    addInfoSpanAfterEnable(label) {
-        var span = document.createElement('span');
-        var div = document.createElement('div');
-        div.appendChild(document.createTextNode(label + ': '));
-        div.appendChild(span);
-        this.enable_div.parentNode.insertBefore(div, this.enable_div.nextSibling);
-        return span;
-
-    }
-
-    animate() {
-        var fps_limit = parseFloat(this.fps_limit_input.value);
-        if (!isNaN(fps_limit)) {
-            var fps_limit_time_millis = 1000.0 / fps_limit;
-            var now = Date.now();
-            var fps_limit_elapsed = now - this.fps_limit_then;
-        }
-        if (isNaN(fps_limit) || (fps_limit_elapsed > fps_limit_time_millis)) {
-            if (!isNaN(fps_limit)) {
-                this.fps_limit_then = now - (fps_limit_elapsed % fps_limit_time_millis);
-            }
-            this.resizeCanvas();
-            this.draw();
-
-            // Save the images to files.
-            // https://stackoverflow.com/questions/19235286/convert-html5-canvas-sequence-to-a-video-file/57153718#57153718
-            if (this.save_images_input.checked) {
-                this.canvas.toBlob(this.constructor.createBlobFunc(this.demo_id, this.time));
-            }
-            this.time++;
-            this.total_frames_span.innerHTML = this.time.toString();
-
-            /* FPS calculation. */
-            var fps_granule = parseInt(this.fps_granule_input.value);
-            if (this.time % fps_granule == 0) {
-                var fps_date = Date.now();
-                this.fps_span.innerHTML = (1000.0 * fps_granule / (fps_date - this.fps_last_date)).toFixed(2);
-                this.fps_last_date = fps_date;
-            }
-        }
-        if (this.enable_input.checked) {
-            window.requestAnimationFrame(this.animate.bind(this));
-        }
-    }
-
-    // We need this to fix time because toBlob calls are asynchronous.
-    static createBlobFunc(demo_id, time) {
-        return (blob) => {
-            // From FileSaver.js.
-            saveAs(blob, `canvas-${demo_id}-${time}.png`);
-        };
-    }
-
-    // Do the actual drawing.
-    draw() {
-        throw new Error('unimplemented');
-    }
-
-    // Change the state from the old to the new.
-    //
-    // If it was disabled and now became enabled, start the animation.
-    //
-    // async because it may do long async steps like loading external libraries
-    // on the first enable.
-    async enableStateChange(new_state, old_state) {
-        if (new_state) {
-            if (!old_state) {
-                this.enable_input.checked = true;
-                if (!this.init_done) {
-                    await cirosantilli_load_scripts(['https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js']);
-                    this.init_done = true;
-                }
-                console.log(`${this.myclass} starting: ${this.demo_id}`);
-                window.requestAnimationFrame(this.animate.bind(this));
-            }
-        } else {
-            if (old_state) {
-                console.log(`${this.myclass} stopping: ${this.demo_id}`);
-                this.enable_input.checked = false;
-            }
-        }
-    }
-
-    resizeCanvas() {
-        var canvas_width = parseInt(this.canvas_width_input.value);
-        if (isNaN(canvas_width)) {
-            canvas_width = parseInt(this.canvas_width_input.getAttribute('value'));
-        }
-        this.canvas.width = canvas_width;
-        this.canvas.height = canvas_width;
-        this.width = canvas_width
-        this.height = canvas_width
-    }
-}
-</script>
-<link rel="shortcut icon" type="image/x-icon" href="/ciro-santilli-id-photo-2013.jpg" />
-<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-<style>
-body {
-  padding-left: 10px;
-}
-label {
-    font-weight: normal !important;
-}
-.imageblock {
-  margin-bottom: 10px;
-}
-.canvas-demo {
-  border: 1px solid black;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-bottom: 10px;
-}
-/* Custom style. */
-</style>
-</head>
-<body class="article">
-<div id="header">
-<h1>Ciro Santilli (三西猴)</h1>
-</div>
-<div id="content">
-<div id="preamble">
+    
+    <script src="/main.js"></script>
+    <link rel="stylesheet" href="/main.css"/>
+    <link rel="stylesheet" href="/header-link.css"/>
+    <link rel="stylesheet" href="/syntax.css"/>
+  </head>
+  <body>
+    <header>
+      <a class="home" href="/">Ciro Santilli</a>
+      <span class="social">
+        <a href="https://stackoverflow.com/users/895245"><i class="fab fa-stack-overflow fa-fw"></i></a>
+        <a href="https://github.com/cirosantilli"><i class="fab fa-github fa-fw"></i></a>
+        <a href="https://www.linkedin.com/in/cirosantilli"><i class="fab fa-linkedin fa-fw"></i></a>
+        <a href="https://www.youtube.com/channel/UCBrJjpKMpdrkA1VsAiR2wEg"><i class="fab fa-youtube fa-fw"></i></a>
+        <a href="https://twitter.com/cirosantilli"><i class="fab fa-twitter fa-fw"></i></a>
+        
+        <a href="https://www.zhihu.com/people/cirosantilli/activities"><i class="fab fa-zhihu fa-fw"></i></a>
+        <a href="https://www.weibo.com/p/1005055601627311"><i class="fab fa-weibo fa-fw"></i></a>
+      </span>
+    </header>
+    <main>
+        <h1 class="page-title">Ciro Santilli (三西猴)</h1>
+        <p>Software engineer. Passion for computers, natural sciences and education. Opinions are my own.</p>
+        <div id="preamble">
 <div class="sectionbody">
 <div style="display:none;">
 \[
@@ -321,9 +74,6 @@ label {
 \newcommand{\vacuumPermittivity}[0]{\varepsilon_0}
 \newcommand{\vacuumPermeability}[0]{\mu_0}
 \]
-</div>
-<div class="paragraph">
-<p>Software engineer. Passion for computers, natural sciences and education. Opinions are my own.</p>
 </div>
 <div class="paragraph">
 <p><a href="https://github.com/cirosantilli">GitHub</a> |
@@ -492,11 +242,16 @@ label {
 </li>
 <li><a href="#the-best-music-albums-of-all-time">4.5. The best music albums of all time</a>
 <ul class="sectlevel3">
-<li><a href="#surfing-with-the-alien-1987-by-joe-satriani">4.5.1. Surfing with the Alien (1987) by Joe Satriani</a></li>
-<li><a href="#secrets-1989-by-allan-holdsworth">4.5.2. Secrets (1989) by Allan Holdsworth</a></li>
-<li><a href="#romantic-warrior-1976-by-return-to-forever">4.5.3. Romantic Warrior (1976) by Return to Forever</a></li>
-<li><a href="#maiden-voyage-1965-by-herbie-hancock">4.5.4. Maiden Voyage (1965) by Herbie Hancock</a></li>
-<li><a href="#aurora-1976-by-jean-luc-ponty">4.5.5. Aurora (1976) by Jean-Luc Ponty</a></li>
+<li><a href="#the-best-modern-instrumental-western-music-albums-of-all-time">4.5.1. The best modern instrumental Western music albums of all time</a>
+<ul class="sectlevel4">
+<li><a href="#surfing-with-the-alien-1987-by-joe-satriani">4.5.1.1. Surfing with the Alien (1987) by Joe Satriani</a></li>
+<li><a href="#secrets-1989-by-allan-holdsworth">4.5.1.2. Secrets (1989) by Allan Holdsworth</a></li>
+<li><a href="#romantic-warrior-1976-by-return-to-forever">4.5.1.3. Romantic Warrior (1976) by Return to Forever</a></li>
+<li><a href="#maiden-voyage-1965-by-herbie-hancock">4.5.1.4. Maiden Voyage (1965) by Herbie Hancock</a></li>
+<li><a href="#aurora-1976-by-jean-luc-ponty">4.5.1.5. Aurora (1976) by Jean-Luc Ponty</a></li>
+</ul>
+</li>
+<li><a href="#the-best-chinese-traditional-instrumental-music-albums-of-all-time">4.5.2. The best Chinese traditional instrumental music albums of all time</a></li>
 </ul>
 </li>
 </ul>
@@ -655,7 +410,7 @@ label {
 <p>Default programming languages: Python and C++. <a href="#programming-languages">he&#8217;ll learn Rust and Haskell once he&#8217;s rich</a></p>
 </li>
 <li>
-<p>Favorite musical instruments to listen: <a href="https://en.wikipedia.org/wiki/Guqin">Chinese Guqin</a> and <a href="#the-best-music-albums-of-all-time">electric Jazz-fusion guitar</a></p>
+<p>Favorite musical instruments to listen: <a href="#the-best-chinese-traditional-instrumental-music-albums-of-all-time">Chinese Guqin</a> and <a href="#the-best-music-albums-of-all-time">electric Jazz-fusion guitar</a></p>
 </li>
 </ul>
 </div>
@@ -889,7 +644,7 @@ label {
 </div>
 </li>
 <li>
-<p><a href="/markdown-style-guide">Markdown Style Guide</a></p>
+<p><a href="markdown-style-guide">Markdown Style Guide</a></p>
 </li>
 <li>
 <p><a href="https://github.com/karlcow/markdown-testsuite">Markdown Testsuite improvements</a>: Ciro has implemented the test runner a few months before CommonMark left stealth mode and killed it instantaneously.</p>
@@ -1327,10 +1082,10 @@ label {
 <p><a href="https://stackoverflow.com/questions/22054578/how-to-run-a-program-without-an-operating-system/32483545#32483545">How to run a program without an operating system?</a> on <a href="https://web.archive.org/web/20181126123625/https://news.ycombinator.com">2018-11-26</a>. Covers x86 and ARM.</p>
 </li>
 <li>
-<p><a href="/elf-hello-world">ELF Hello World Tutorial</a> on <a href="https://web.archive.org/web/20170517174951/https://news.ycombinator.com/news">2017-05-17</a></p>
+<p><a href="elf-hello-world">ELF Hello World Tutorial</a> on <a href="https://web.archive.org/web/20170517174951/https://news.ycombinator.com/news">2017-05-17</a></p>
 </li>
 <li>
-<p><a href="/x86-paging">x86 Paging Tutorial</a> on <a href="https://news.ycombinator.com/item?id=13773219">2017-03-02</a>. Number 1 <a href="#google">Google</a> search result for "x86 Paging" <a href="https://archive.is/VUSNt">in 2017-08</a>.</p>
+<p><a href="x86-paging">x86 Paging Tutorial</a> on <a href="https://news.ycombinator.com/item?id=13773219">2017-03-02</a>. Number 1 <a href="#google">Google</a> search result for "x86 Paging" <a href="https://archive.is/VUSNt">in 2017-08</a>.</p>
 </li>
 </ul>
 </div>
@@ -1684,7 +1439,7 @@ label {
 <p>If you need private contact, extract his email from on of his GitHub repos or use LinkedIn.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://en.wikipedia.org/wiki/Disqus">Disqus comments</a> were removed from his website in 2019-05-04, a manual dump is <a href="/disqus-archive/">available here</a>, removal rationale at: <a href="#why-ciro-santilli-removed-disqus-comments-from-his-website-in-2019-05-04">Why Ciro Santilli removed Disqus comments from his website in 2019-05-04</a>.</p>
+<p><a href="https://en.wikipedia.org/wiki/Disqus">Disqus comments</a> were removed from his website in 2019-05-04, a manual dump is <a href="disqus-archive/">available here</a>, removal rationale at: <a href="#why-ciro-santilli-removed-disqus-comments-from-his-website-in-2019-05-04">Why Ciro Santilli removed Disqus comments from his website in 2019-05-04</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2169,7 +1924,7 @@ label {
 <div class="sect3">
 <h4 id="how-to-develop-ciro-santillis-website"><a class="anchor" href="#how-to-develop-ciro-santillis-website"></a><a class="link" href="#how-to-develop-ciro-santillis-website">1.7.2. How to develop Ciro Santilli&#8217;s website</a></h4>
 <div class="paragraph">
-<p>His website is powered by <a href="https://pages.github.com">GitHub Pages</a>.</p>
+<p>Ciro&#8217;s website is powered by <a href="https://pages.github.com">GitHub Pages</a> and <a href="https://github.com/asciidoctor/jekyll-asciidoc">Jekyll Asciidoc</a>.</p>
 </div>
 <div class="paragraph">
 <p>The source code is located at: <a href="https://github.com/cirosantilli/cirosantilli.github.io" class="bare">https://github.com/cirosantilli/cirosantilli.github.io</a></p>
@@ -2185,29 +1940,16 @@ npm install
 </div>
 </div>
 <div class="paragraph">
-<p>and then visit the website at:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>xdg-open http://localhost:8000</pre>
-</div>
+<p>Source: <a href="run" class="bare">run</a></p>
 </div>
 <div class="paragraph">
-<p>After making any changes to the README.adoc, simply refresh the page to view the updates.</p>
+<p>The website will be visible at: <a href="http://localhost:4000" class="bare">http://localhost:4000</a>.</p>
 </div>
 <div class="paragraph">
-<p>If you make changes to other files however, e.g. image, you must also do the full rebuild with:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>./build</pre>
-</div>
+<p>Tested on the latest Ubuntu.</p>
 </div>
 <div class="paragraph">
-<p>Source: <a href="build" class="bare">build</a></p>
-</div>
-<div class="paragraph">
-<p>Publish changes:</p>
+<p>Publish changes to GitHub pages:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -2233,13 +1975,10 @@ git commit -m 'update gems'</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>His website was originally written in Markdown and <a href="https://github.com/jekyll/jekyll">Jekyll</a>, however those were deprecated in favour of Asciidoctor when Ciro saw the light, rationale shown at: <a href="/markdown-style-guide#use-asciidoc" class="bare">/markdown-style-guide#use-asciidoc</a></p>
+<p>His website was originally written in Markdown, however those were deprecated in favour of Asciidoctor when Ciro saw the light, rationale shown at: <a href="markdown-style-guide#use-asciidoc" class="bare">markdown-style-guide#use-asciidoc</a></p>
 </div>
 <div class="paragraph">
-<p>Jekyll is only used now for backwards compatibility to not break some key content with high PageRank, Ciro might kill it entirely at some point.</p>
-</div>
-<div class="paragraph">
-<p>GitHub pages is chosen instead of a GitHub README for the following reasons:</p>
+<p>GitHub pages is chosen instead of a single page GitHub README.adoc for the following reasons:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3631,33 +3370,42 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 <div class="sect2">
 <h3 id="the-best-music-albums-of-all-time"><a class="anchor" href="#the-best-music-albums-of-all-time"></a><a class="link" href="#the-best-music-albums-of-all-time">4.5. The best music albums of all time</a></h3>
 <div class="sect3">
-<h4 id="surfing-with-the-alien-1987-by-joe-satriani"><a class="anchor" href="#surfing-with-the-alien-1987-by-joe-satriani"></a><a class="link" href="#surfing-with-the-alien-1987-by-joe-satriani">4.5.1. Surfing with the Alien (1987) by Joe Satriani</a></h4>
+<h4 id="the-best-modern-instrumental-western-music-albums-of-all-time"><a class="anchor" href="#the-best-modern-instrumental-western-music-albums-of-all-time"></a><a class="link" href="#the-best-modern-instrumental-western-music-albums-of-all-time">4.5.1. The best modern instrumental Western music albums of all time</a></h4>
+<div class="sect4">
+<h5 id="surfing-with-the-alien-1987-by-joe-satriani"><a class="anchor" href="#surfing-with-the-alien-1987-by-joe-satriani"></a><a class="link" href="#surfing-with-the-alien-1987-by-joe-satriani">4.5.1.1. Surfing with the Alien (1987) by Joe Satriani</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Surfing_with_the_Alien" class="bare">https://en.wikipedia.org/wiki/Surfing_with_the_Alien</a></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="secrets-1989-by-allan-holdsworth"><a class="anchor" href="#secrets-1989-by-allan-holdsworth"></a><a class="link" href="#secrets-1989-by-allan-holdsworth">4.5.2. Secrets (1989) by Allan Holdsworth</a></h4>
+<div class="sect4">
+<h5 id="secrets-1989-by-allan-holdsworth"><a class="anchor" href="#secrets-1989-by-allan-holdsworth"></a><a class="link" href="#secrets-1989-by-allan-holdsworth">4.5.1.2. Secrets (1989) by Allan Holdsworth</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Secrets_(Allan_Holdsworth_album)" class="bare">https://en.wikipedia.org/wiki/Secrets_(Allan_Holdsworth_album)</a></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="romantic-warrior-1976-by-return-to-forever"><a class="anchor" href="#romantic-warrior-1976-by-return-to-forever"></a><a class="link" href="#romantic-warrior-1976-by-return-to-forever">4.5.3. Romantic Warrior (1976) by Return to Forever</a></h4>
+<div class="sect4">
+<h5 id="romantic-warrior-1976-by-return-to-forever"><a class="anchor" href="#romantic-warrior-1976-by-return-to-forever"></a><a class="link" href="#romantic-warrior-1976-by-return-to-forever">4.5.1.3. Romantic Warrior (1976) by Return to Forever</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Romantic_Warrior" class="bare">https://en.wikipedia.org/wiki/Romantic_Warrior</a></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="maiden-voyage-1965-by-herbie-hancock"><a class="anchor" href="#maiden-voyage-1965-by-herbie-hancock"></a><a class="link" href="#maiden-voyage-1965-by-herbie-hancock">4.5.4. Maiden Voyage (1965) by Herbie Hancock</a></h4>
+<div class="sect4">
+<h5 id="maiden-voyage-1965-by-herbie-hancock"><a class="anchor" href="#maiden-voyage-1965-by-herbie-hancock"></a><a class="link" href="#maiden-voyage-1965-by-herbie-hancock">4.5.1.4. Maiden Voyage (1965) by Herbie Hancock</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Maiden_Voyage_(Herbie_Hancock_album)" class="bare">https://en.wikipedia.org/wiki/Maiden_Voyage_(Herbie_Hancock_album)</a></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="aurora-1976-by-jean-luc-ponty"><a class="anchor" href="#aurora-1976-by-jean-luc-ponty"></a><a class="link" href="#aurora-1976-by-jean-luc-ponty">4.5.5. Aurora (1976) by Jean-Luc Ponty</a></h4>
+<div class="sect4">
+<h5 id="aurora-1976-by-jean-luc-ponty"><a class="anchor" href="#aurora-1976-by-jean-luc-ponty"></a><a class="link" href="#aurora-1976-by-jean-luc-ponty">4.5.1.5. Aurora (1976) by Jean-Luc Ponty</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Aurora_(Jean-Luc_Ponty_album)" class="bare">https://en.wikipedia.org/wiki/Aurora_(Jean-Luc_Ponty_album)</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-best-chinese-traditional-instrumental-music-albums-of-all-time"><a class="anchor" href="#the-best-chinese-traditional-instrumental-music-albums-of-all-time"></a><a class="link" href="#the-best-chinese-traditional-instrumental-music-albums-of-all-time">4.5.2. The best Chinese traditional instrumental music albums of all time</a></h4>
+<div class="paragraph">
+<p>List at: <a href="https://github.com/cirosantilli/china-dictatorship#music" class="bare">https://github.com/cirosantilli/china-dictatorship#music</a></p>
 </div>
 </div>
 </div>
@@ -4906,30 +4654,32 @@ void main() {
 </div>
 </div>
 </div>
-</div>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  messageStyle: "none",
-  tex2jax: {
-    inlineMath: [["\\(", "\\)"]],
-    displayMath: [["\\[", "\\]"]],
-    ignoreClass: "nostem|nolatexmath"
-  },
-  asciimath2jax: {
-    delimiters: [["\\$", "\\$"]],
-    ignoreClass: "nostem|noasciimath"
-  },
-  TeX: { equationNumbers: { autoNumber: "all" } }
-})
-MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
-  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
-    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains('stemblock')) {
-      data.math.root.display = "block"
-    }
-    return data
-  })
-})
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
-</body>
+    </main>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+    <script>
+      $('.data-table').dataTable({
+        //"aaSorting": [[0,'asc'], [1,'asc'], [2, 'asc'], [3, 'asc']],
+        "aaSorting": [],
+        "bFilter": false,
+        "bInfo": false,
+        "bPaginate": false
+      });
+    </script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+      MathJax.Hub.Config({
+          jax: ["input/TeX","output/HTML-CSS"],
+          displayAlign: "left",
+          displayIndent: "20px"
+      });
+    </script>
+  </body>
 </html>
