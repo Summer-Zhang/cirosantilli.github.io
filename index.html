@@ -136,6 +136,12 @@
 <li><a href="#the-css-of-ciro-santillis-website-looks-broken">1.7.6. The CSS of Ciro Santilli&#8217;s website looks broken</a></li>
 <li><a href="#ciro-santillis-website-is-not-mobile-friendly">1.7.7. Ciro Santilli&#8217;s website is not mobile friendly</a></li>
 <li><a href="#mathematics-typesetting-setup-of-ciro-santillis-website">1.7.8. Mathematics typesetting setup of Ciro Santilli&#8217;s website</a></li>
+<li><a href="#media-rationale-of-ciro-santillis-website">1.7.9. Media rationale of Ciro Santilli&#8217;s website</a>
+<ul class="sectlevel4">
+<li><a href="#media-rationale-of-ciro-santillis-website--keeping-pages-light">1.7.9.1. Keeping pages light</a></li>
+<li><a href="#media-rationale-of-ciro-santillis-website--where-to-store-images">1.7.9.2. Where to store images</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#ciro-santillis-skills">1.8. Ciro Santilli&#8217;s skills</a>
@@ -1411,6 +1417,16 @@
 </ul>
 </div>
 </li>
+<li>
+<p>Home DIY</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="window-blackout">How to blackout your window without drilling</a></p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </div>
@@ -2167,6 +2183,91 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 <div class="paragraph">
 <p>TODO: move to <a href="https://github.com/cirosantilli/asciidoctor-katex-2" class="bare">https://github.com/cirosantilli/asciidoctor-katex-2</a> once major TODOs there are done.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="media-rationale-of-ciro-santillis-website"><a class="anchor" href="#media-rationale-of-ciro-santillis-website"></a><a class="link" href="#media-rationale-of-ciro-santillis-website">1.7.9. Media rationale of Ciro Santilli&#8217;s website</a></h4>
+<div class="sect4">
+<h5 id="media-rationale-of-ciro-santillis-website--keeping-pages-light"><a class="anchor" href="#media-rationale-of-ciro-santillis-website--keeping-pages-light"></a><a class="link" href="#media-rationale-of-ciro-santillis-website--keeping-pages-light">1.7.9.1. Keeping pages light</a></h5>
+<div class="paragraph">
+<p>It is true that one image is worth a thousand words, but unfortunately it is also true that one image takes up at least as much bytes as a thousand words!</p>
+</div>
+<div class="paragraph">
+<p>Having one single page to rule them all is of course the ideal setup for a website, as you can Ctrl + F one ToC and quickly find what you want.</p>
+</div>
+<div class="paragraph">
+<p>And, with <a href="#linux-kernel-module-cheat">Linux Kernel Module Cheat</a> Ciro noticed that it is very hard to write intelligent prose that becomes larger than reasonable to load on a single webpage.</p>
+</div>
+<div class="paragraph">
+<p>However, if there are too many images on the page, the loading of the last images would take forever in case users want to view the last sections.</p>
+</div>
+<div class="paragraph">
+<p>There are two solutions to that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>be traditional and create separate web pages</p>
+</li>
+<li>
+<p>be bold and load images as they appear on the viewport: <a href="https://stackoverflow.com/questions/2321907/how-do-you-make-images-load-only-when-they-are-in-the-viewport/57389607#57389607" class="bare">https://stackoverflow.com/questions/2321907/how-do-you-make-images-load-only-when-they-are-in-the-viewport/57389607#57389607</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ciro is still deciding between those two. The traditional approach works for sure but loses the one page to rule them all benefits.</p>
+</div>
+<div class="paragraph">
+<p>The innovative approach will work for interactive viewing, but archive.org will fail to load the images for example, and there may be other unforseen consequences.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="media-rationale-of-ciro-santillis-website--where-to-store-images"><a class="anchor" href="#media-rationale-of-ciro-santillis-website--where-to-store-images"></a><a class="link" href="#media-rationale-of-ciro-santillis-website--where-to-store-images">1.7.9.2. Where to store images</a></h5>
+<div class="paragraph">
+<p>Since images are large, they bring the following challenges:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>keeping images in Git repositories makes the repos huge and slow to clone, and should not be done</p>
+</li>
+<li>
+<p>storing and serving images could cost us, which we want to avoid</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To solve those problems, the following alternatives appear to be stable enough and should be used decreasing preference:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://commons.wikimedia.org/wiki/Main_Page">Wikimedia Commons</a> if the format (no ZIPs) and License (CC BY SA, no fair use) are accepted there. This will be done for all own work images.</p>
+</li>
+<li>
+<p>use a separate GitHub repository such as: <a href="https://github.com/cirosantilli/media" class="bare">https://github.com/cirosantilli/media</a> But then we are at the mercy of GitHub&#8217;s size policy: <a href="https://help.github.com/en/articles/what-is-my-disk-quota" class="bare">https://help.github.com/en/articles/what-is-my-disk-quota</a></p>
+</li>
+<li>
+<p><a href="https://archive.org" class="bare">https://archive.org</a> for random images from the web, which are therefore not own work, and may not have clear licenses and be eligible for Wikimedia Commons. Never trust a website that is not on GitHub pages, for-profit companies will take down everything immediately as soon as it stops making them money. By the way, every external link to non-GitHub pages must be archived.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following alternatives seem impossible because Ciro could not find if they expose direct links to the images:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Google Photos <a href="https://webapps.stackexchange.com/questions/92777/how-to-get-the-direct-link-to-an-image-in-my-google-photos" class="bare">https://webapps.stackexchange.com/questions/92777/how-to-get-the-direct-link-to-an-image-in-my-google-photos</a></p>
+</li>
+<li>
+<p>Imgur <a href="https://webapps.stackexchange.com/questions/84535/has-imgur-stopped-giving-direct-links" class="bare">https://webapps.stackexchange.com/questions/84535/has-imgur-stopped-giving-direct-links</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Since we are here, it is also worth mentioning that every external link should be web archived and the archive is added next to the plain link. Except for GitHub links which should use explicit SHAs or tags. You should then fork any repo that is linked to under your account in case the repo is deleted. Or Stack Overflow which has a public data dump, so we will always be able to recover the data.</p>
+</div>
 </div>
 </div>
 </div>
@@ -3261,7 +3362,7 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </div>
 </li>
 <li>
-<p>Zelda ocarina of time wrong warp glitch:</p>
+<p>Zelda Ocarina of Time wrong warp glitch:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -3269,6 +3370,19 @@ CNAME   www     cirosantilli.github.io  1 Hour</pre>
 </li>
 <li>
 <p><a href="https://www.youtube.com/watch?v=Gso4MuNSuV8" class="bare">https://www.youtube.com/watch?v=Gso4MuNSuV8</a> EZScape explains the glitch, 2016</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Zelda Majora&#8217;s Mask debug menu</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=2wdchm5Uwp4&amp;t=2086s" class="bare">https://www.youtube.com/watch?v=2wdchm5Uwp4&amp;t=2086s</a> first video</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=CCubcEgnD6A" class="bare">https://www.youtube.com/watch?v=CCubcEgnD6A</a> overview</p>
 </li>
 </ul>
 </div>
