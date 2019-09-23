@@ -1,4 +1,4 @@
-exclude: ['out']
+exclude: ['out', 'submodules']
 paginate_path: 'page:num'
 markdown: kramdown
 sass:
@@ -26,6 +26,7 @@ kramdown:
 
 asciidoctor:
   attributes:
+    listing-caption: 'Listing '
     sectanchors: true
     sectlinks: true
     sectnumlevels: 6

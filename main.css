@@ -42,7 +42,7 @@ body {
       margin-bottom: 15px; }
     body main #markdown-toc {
       font-weight: bold; }
-    body main h1 a:link, body main h1 a:visited, body main h2 a:link, body main h2 a:visited, body main h3 a:link, body main h3 a:visited, body main h4 a:link, body main h4 a:visited, body main h5 a:link, body main h5 a:visited {
+    body main h1 a:link, body main h1 a:visited, body main h2 a:link, body main h2 a:visited, body main h3 a:link, body main h3 a:visited, body main h4 a:link, body main h4 a:visited, body main h5 a:link, body main h5 a:visited, body main h6 a:link, body main h6 a:visited {
       color: black; }
     body main a:link {
       color: #28F; }
@@ -55,6 +55,9 @@ body {
     body main p {
       /* Otherwise paragraphs after *nested* lists are too close. TODO why? */
       margin-top: 5px; }
+    body main pre {
+      margin-left: 0px;
+      white-space: pre; }
     body main ul, body main ol {
       /*list-style-position:inside;*/
       margin-left: 14px;
@@ -72,9 +75,6 @@ body {
       padding: 2px 4px; }
     body main th {
       font-weight: bold; }
-    body main pre {
-      margin-left: 0px;
-      white-space: pre; }
     body main .canvas-demo {
       border: 1px solid black;
       padding-left: 5px;
