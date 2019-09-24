@@ -71,7 +71,12 @@
 <li><a href="#pcr-verification-with-gel-electrophoresis">5.1. PCR verification with gel electrophoresis</a></li>
 </ul>
 </li>
-<li><a href="#sequencing">6. Sequencing</a></li>
+<li><a href="#sequencing">6. Sequencing</a>
+<ul class="sectlevel2">
+<li><a href="#pre-sequencing-preparation">6.1. Pre-sequencing preparation</a></li>
+<li><a href="#using-the-oxford-nanopore">6.2. Using the Oxford Nanopore</a></li>
+</ul>
+</li>
 <li><a href="#bioinformatics">7. Bioinformatics</a></li>
 <li><a href="#conclusions">8. Conclusions</a></li>
 <li><a href="#protocols-used">9. Protocols used</a>
@@ -611,11 +616,31 @@ Barcode --- 27S --- 16S --- 1492R</pre>
 <div class="paragraph">
 <p>Once we had the amplified 16S DNA, we were almost ready to start sequencing!</p>
 </div>
+<div class="sect2">
+<h3 id="pre-sequencing-preparation"><a class="anchor" href="#pre-sequencing-preparation"></a><a class="link" href="#pre-sequencing-preparation">6.1. Pre-sequencing preparation</a></h3>
 <div class="paragraph">
 <p>First we had to remove PCR byproducts with the <a href="#qiagen-qiaquick-pcr-purification-kit">Qiagen QIAquick PCR Purification Kit</a>.</p>
 </div>
 <div class="paragraph">
-<p>Then we prepared the DNA for sequencing with the <a href="#oxford-nanopore-sqk-lsk109-ligation-sequencing-kit">Oxford Nanopore SQK-LSK109 Ligation Sequencing Kit</a>.</p>
+<p>One cool thing we did in this procedure was to use <a href="https://en.wikipedia.org/wiki/Magnetic_separation">magnetic separation</a> with magnetic beads to purify the DNA: <a href="#image-ge-magrack-6-pipetting">Figure 22, &#8220;GE MagRack 6 pipetting. <a href="https://commons.wikimedia.org/wiki/File:GE_MagRack_6_pipetting.jpg">Source</a>.&#8221;</a>.</p>
+</div>
+<div class="paragraph">
+<p>The are coated to stick to the DNA, which allows us to easily extract the DNA from the rest of the solution. This is cool, but bio people are borderline obsessed by those beads! Go figure!</p>
+</div>
+<div id="image-ge-magrack-6-pipetting" class="imageblock">
+<div class="content">
+<a class="image" href="#image-ge-magrack-6-pipetting"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/GE_MagRack_6_pipetting.jpg/360px-GE_MagRack_6_pipetting.jpg" alt="360px GE MagRack 6 pipetting" height="400"></a>
+</div>
+<div class="title">Figure 22. GE MagRack 6 pipetting. <a href="https://commons.wikimedia.org/wiki/File:GE_MagRack_6_pipetting.jpg">Source</a>.</div>
+</div>
+<div id="image-ge-magrack-6-eppendorf-with-magnetic-beads-mounted" class="imageblock">
+<div class="content">
+<a class="image" href="#image-ge-magrack-6-eppendorf-with-magnetic-beads-mounted"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/GE_MagRack_6_eppendorf_with_magnetic_beads_mounted.jpg/503px-GE_MagRack_6_eppendorf_with_magnetic_beads_mounted.jpg" alt="503px GE MagRack 6 eppendorf with magnetic beads mounted" height="400"></a>
+</div>
+<div class="title">Figure 23. GE MagRack 6 eppendorf with magnetic beads mounted. <a href="https://commons.wikimedia.org/wiki/File:GE_MagRack_6_eppendorf_with_magnetic_beads_mounted.jpg">Source</a>.</div>
+</div>
+<div class="paragraph">
+<p>Then we prepared the DNA for sequencing with the Oxford Nanopore specific part: <a href="#oxford-nanopore-sqk-lsk109-ligation-sequencing-kit">Oxford Nanopore SQK-LSK109 Ligation Sequencing Kit</a>.</p>
 </div>
 <div class="paragraph">
 <p>Here some of the steps required a bit more of vortexing for mixing the reagents, and for this we used the <a href="#velp-scientifica-wizard-ir-infrared-vortex-mixer">VELP Scientifica WIZARD IR Infrared Vortex Mixer</a> which appears to be quicker to use and not as strong as the Vortex Genie 2 previously used to break up the cells:</p>
@@ -624,43 +649,46 @@ Barcode --- 27S --- 16S --- 1492R</pre>
 <div class="content">
 <a class="image" href="#image-velp-scientifica-wizard-ir-infrared-vortex-mixer-running"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/VELP_Scientifica_WIZARD_IR_Infrared_Vortex_Mixer_running.jpg/360px-VELP_Scientifica_WIZARD_IR_Infrared_Vortex_Mixer_running.jpg" alt="360px VELP Scientifica WIZARD IR Infrared Vortex Mixer running" height="400"></a>
 </div>
-<div class="title">Figure 22. VELP Scientifica WIZARD IR Infrared Vortex Mixer running. <a href="https://commons.wikimedia.org/wiki/File:VELP_Scientifica_WIZARD_IR_Infrared_Vortex_Mixer_running.jpg">Source</a>.</div>
+<div class="title">Figure 24. VELP Scientifica WIZARD IR Infrared Vortex Mixer running. <a href="https://commons.wikimedia.org/wiki/File:VELP_Scientifica_WIZARD_IR_Infrared_Vortex_Mixer_running.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>After all that was done, the DNA of the several 400 ml water bottles and hours of hard purification labour were contained in one single Eppendorf!</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="using-the-oxford-nanopore"><a class="anchor" href="#using-the-oxford-nanopore"></a><a class="link" href="#using-the-oxford-nanopore">6.2. Using the Oxford Nanopore</a></h3>
 <div class="paragraph">
 <p>With all this ready, we opened the Nanopore flow cell, which is the 500 dollar consumable piece that goes in the sequencer.</p>
 </div>
 <div class="paragraph">
-<p>We then had to pipette the final golden Eppendorf into the flow cell. My anxiety levels were going through the roof: <a href="#image-oxford-nanopore-minion-flow-cell-pipette-loading">Figure 26, &#8220;Oxford nanopore MinION flow cell pipette loading. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg">Source</a>.&#8221;</a>.</p>
+<p>We then had to pipette the final golden Eppendorf into the flow cell. My anxiety levels were going through the roof: <a href="#image-oxford-nanopore-minion-flow-cell-pipette-loading">Figure 28, &#8220;Oxford nanopore MinION flow cell pipette loading. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg">Source</a>.&#8221;</a>.</p>
 </div>
 <div id="image-oxford-nanopore-minion-flow-cell-package" class="imageblock">
 <div class="content">
 <a class="image" href="#image-oxford-nanopore-minion-flow-cell-package"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Oxford_nanopore_MinION_flow_cell_package.jpg/304px-Oxford_nanopore_MinION_flow_cell_package.jpg" alt="304px Oxford nanopore MinION flow cell package" height="400"></a>
 </div>
-<div class="title">Figure 23. Oxford nanopore MinION flow cell package. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_package.jpg">Source</a>.</div>
+<div class="title">Figure 25. Oxford nanopore MinION flow cell package. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_package.jpg">Source</a>.</div>
 </div>
 <div id="image-oxford-nanopore-minion-flow-cell-front" class="imageblock">
 <div class="content">
 <a class="image" href="#image-oxford-nanopore-minion-flow-cell-front"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Oxford_nanopore_MinION_flow_cell_front.jpg/640px-Oxford_nanopore_MinION_flow_cell_front.jpg" alt="640px Oxford nanopore MinION flow cell front" height="400"></a>
 </div>
-<div class="title">Figure 24. Oxford nanopore MinION flow cell front. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_front.jpg">Source</a>.</div>
+<div class="title">Figure 26. Oxford nanopore MinION flow cell front. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_front.jpg">Source</a>.</div>
 </div>
 <div id="image-oxford-nanopore-minion-flow-cell-back" class="imageblock">
 <div class="content">
 <a class="image" href="#image-oxford-nanopore-minion-flow-cell-back"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Oxford_nanopore_MinION_flow_cell_back.jpg/1024px-Oxford_nanopore_MinION_flow_cell_back.jpg" alt="1024px Oxford nanopore MinION flow cell back" height="400"></a>
 </div>
-<div class="title">Figure 25. Oxford nanopore MinION flow cell back. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_back.jpg">Source</a>.</div>
+<div class="title">Figure 27. Oxford nanopore MinION flow cell back. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_back.jpg">Source</a>.</div>
 </div>
 <div id="image-oxford-nanopore-minion-flow-cell-pipette-loading" class="imageblock">
 <div class="content">
 <a class="image" href="#image-oxford-nanopore-minion-flow-cell-pipette-loading"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg/278px-Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg" alt="278px Oxford nanopore MinION flow cell pipette loading" height="400"></a>
 </div>
-<div class="title">Figure 26. Oxford nanopore MinION flow cell pipette loading. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg">Source</a>.</div>
+<div class="title">Figure 28. Oxford nanopore MinION flow cell pipette loading. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
-<p>At this point bio people start telling lab horror stories of expensive solutions being spilled and people having to recover them from fridge walls, or of how people threw away golden Eppendorfs and had to pick them out of trash bins with hundreds of others looking exactly the same etc. (but also how some discoveries were made like this) This reminded me of: <a href="https://youtu.be/89UNPdNtOoE?t=919" class="bare">https://youtu.be/89UNPdNtOoE?t=919</a> <a href="https://en.wikipedia.org/wiki/Alfred_Maddock">Alfred Maddock&#8217;s plutonium horror story</a>.</p>
+<p>At this point bio people start telling lab horror stories of expensive solutions being spilled and people having to recover them from fridge walls, or of how people threw away golden Eppendorfs and had to pick them out of trash bins with hundreds of others looking exactly the same etc. (but also how some discoveries were made like this) This reminded me of: <a href="https://youtu.be/89UNPdNtOoE?t=919" class="bare">https://youtu.be/89UNPdNtOoE?t=919</a> <a href="https://en.wikipedia.org/wiki/Alfred_Maddock">Alfred Maddock&#8217;s plutonium spill horror story</a>.</p>
 </div>
 <div class="paragraph">
 <p>Luckily this time, it worked out!</p>
@@ -678,7 +706,7 @@ Barcode --- 27S --- 16S --- 1492R</pre>
 <div class="content">
 <a class="image" href="#image-oxford-nanopore-minion-connected-to-a-mac-via-usb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Oxford_Nanopore_MinION_connected_to_a_Mac_via_USB.jpg/360px-Oxford_Nanopore_MinION_connected_to_a_Mac_via_USB.jpg" alt="360px Oxford Nanopore MinION connected to a Mac via USB" height="400"></a>
 </div>
-<div class="title">Figure 27. Oxford Nanopore MinION connected to a Mac via USB. <a href="https://commons.wikimedia.org/wiki/File:Oxford_Nanopore_MinION_connected_to_a_Mac_via_USB.jpg">Source</a>.</div>
+<div class="title">Figure 29. Oxford Nanopore MinION connected to a Mac via USB. <a href="https://commons.wikimedia.org/wiki/File:Oxford_Nanopore_MinION_connected_to_a_Mac_via_USB.jpg">Source</a>.</div>
 </div>
 <div id="video-oxford-nanopore-minion-software-channels-pannel-on-mac" class="videoblock">
 <div class="title">Oxford Nanopore MinION software channels pannel on Mac. <a href="https://commons.wikimedia.org/wiki/File:Oxford_Nanopore_MinION_software_channels_pannel_on_Mac.webm">Source</a>.</div>
@@ -696,6 +724,7 @@ Your browser does not support the video tag.
 </div>
 <div class="paragraph">
 <p>We reached a yield of 16 billion base pairs out of the 30Gbp nominal maximum, which the bio people said was not bad.</p>
+</div>
 </div>
 </div>
 </div>
@@ -837,6 +866,9 @@ Your browser does not support the video tag.
 <h3 id="scientific-industries-inc-vortex-genie-2"><a class="anchor" href="#scientific-industries-inc-vortex-genie-2"></a><a class="link" href="#scientific-industries-inc-vortex-genie-2">10.4. Scientific Industries Inc. Vortex-Genie 2</a></h3>
 <div class="paragraph">
 <p><a href="https://www.scientificindustries.com/vortex-genie-2.html" class="bare">https://www.scientificindustries.com/vortex-genie-2.html</a> (<a href="http://web.archive.org/web/20190908034549/https://www.scientificind.ustries.com/vortex-genie-2.html">archive</a>)</p>
+</div>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Vortex_mixer" class="bare">https://en.wikipedia.org/wiki/Vortex_mixer</a></p>
 </div>
 </div>
 <div class="sect2">
