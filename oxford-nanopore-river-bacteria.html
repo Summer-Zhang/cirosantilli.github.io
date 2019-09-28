@@ -3,12 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-      
-        How to use an Oxford Nanopore MinION to extract DNA from river water and determine which bacteria live in it -
-      
-      Ciro Santilli
-    </title>
+    <title>How to use an Oxford Nanopore MinION to extract DNA from river water and determine which bacteria live in it - Ciro Santilli</title>
     
     <link rel="shortcut icon" type="image/x-icon" href="/ciro-santilli-id-photo-2013.jpg" />
 
@@ -145,7 +140,31 @@
 <p>For those that know biology and just want to do the thing, see: <a href="#protocols-used">Section 9, &#8220;Protocols used&#8221;</a>.</p>
 </div>
 <div class="paragraph">
-<p>The PuntSeq team uses an <a href="#oxford-nanopore-minion">Oxford Nanopore MinION</a> sequencer made by <a href="https://en.wikipedia.org/wiki/Oxford_Nanopore_Technologies">Oxford Nanopore Technologies</a> to sequence the <a href="https://en.wikipedia.org/wiki/16S_ribosomal_RNA">16S</a> region of bacterial DNA, which is about 1500 nucleotides long.</p>
+<p>The PuntSeq team uses an <a href="#oxford-nanopore-minion">Oxford Nanopore MinION</a> sequencer made by <a href="https://en.wikipedia.org/wiki/Oxford_Nanopore_Technologies">Oxford Nanopore Technologies</a> to sequence the <a href="https://en.wikipedia.org/wiki/16S_ribosomal_RNA">16S</a> region of bacterial DNA, which is about 1500 nucleotides long. This is how the MinION looks like: <a href="#image-oxford-nanopore-minion-top">Figure 1, &#8220;Oxford Nanopore MinION top. <a href="https://commons.wikimedia.org/wiki/File:Oxford_Nanopore_MinION_top_cropped.jpg">Source</a>.&#8221;</a>.</p>
+</div>
+<div id="image-oxford-nanopore-minion-top" class="imageblock">
+<div class="content">
+<a class="image" href="#image-oxford-nanopore-minion-top"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Oxford_Nanopore_MinION_top_cropped.jpg/392px-Oxford_Nanopore_MinION_top_cropped.jpg" alt="392px Oxford Nanopore MinION top cropped" height="400"></a>
+</div>
+<div class="title">Figure 1. Oxford Nanopore MinION top. <a href="https://commons.wikimedia.org/wiki/File:Oxford_Nanopore_MinION_top_cropped.jpg">Source</a>.</div>
+</div>
+<div id="image-oxford-nanopore-minion-side" class="imageblock">
+<div class="content">
+<a class="image" href="#image-oxford-nanopore-minion-side"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Oxford_Nanopore_MinION_side_cropped.jpg/191px-Oxford_Nanopore_MinION_side_cropped.jpg" alt="191px Oxford Nanopore MinION side cropped" height="400"></a>
+</div>
+<div class="title">Figure 2. Oxford Nanopore MinION side. <a href="https://commons.wikimedia.org/wiki/File:Oxford_Nanopore_MinION_side_cropped.jpg">Source</a>.</div>
+</div>
+<div id="image-oxford-nanopore-minion-top-open" class="imageblock">
+<div class="content">
+<a class="image" href="#image-oxford-nanopore-minion-top-open"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Oxford_Nanopore_MinION_top_open_cropped.jpg/110px-Oxford_Nanopore_MinION_top_open_cropped.jpg" alt="110px Oxford Nanopore MinION top open cropped" height="400"></a>
+</div>
+<div class="title">Figure 3. Oxford Nanopore MinION top open. <a href="https://commons.wikimedia.org/wiki/File:Oxford_Nanopore_MinION_top_open_cropped.jpg">Source</a>.</div>
+</div>
+<div id="image-oxford-nanopore-minion-side-usb" class="imageblock">
+<div class="content">
+<a class="image" href="#image-oxford-nanopore-minion-side-usb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Oxford_Nanopore_MinION_side_USB_cropped.jpg/597px-Oxford_Nanopore_MinION_side_USB_cropped.jpg" alt="597px Oxford Nanopore MinION side USB cropped" height="400"></a>
+</div>
+<div class="title">Figure 4. Oxford Nanopore MinION side USB. <a href="https://commons.wikimedia.org/wiki/File:Oxford_Nanopore_MinION_side_USB_cropped.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>The 16S region codes for one of the RNA pieces that makes the <a href="https://en.wikipedia.org/w/index.php?title=Ribosome&amp;oldid=912600990#Bacterial_ribosomes">bacterial ribosome</a>.</p>
@@ -181,13 +200,13 @@ U-A-G-C-U-A-G-C     G
 </div>
 </div>
 <div class="paragraph">
-<p>This is how the 16S RNA secondary structure looks like in its full glory: <a href="#image-16s-rna-secondary-structure">Figure 1, &#8220;16S RNA secondary structure. <a href="https://commons.wikimedia.org/wiki/File:16S.svg">Source</a>.&#8221;</a>.</p>
+<p>This is how the 16S RNA secondary structure looks like in its full glory: <a href="#image-16s-rna-secondary-structure">Figure 5, &#8220;16S RNA secondary structure. <a href="https://commons.wikimedia.org/wiki/File:16S.svg">Source</a>.&#8221;</a>.</p>
 </div>
 <div id="image-16s-rna-secondary-structure" class="imageblock">
 <div class="content">
 <a class="image" href="#image-16s-rna-secondary-structure"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/16S.svg" alt="16S" height="800"></a>
 </div>
-<div class="title">Figure 1. 16S RNA secondary structure. <a href="https://commons.wikimedia.org/wiki/File:16S.svg">Source</a>.</div>
+<div class="title">Figure 5. 16S RNA secondary structure. <a href="https://commons.wikimedia.org/wiki/File:16S.svg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>Since loops don&#8217;t base pair, they are less crucial in the determination of the secondary structure of the RNA.</p>
@@ -215,12 +234,12 @@ U-A-G-C-U-A-G-C     G
 <div class="ulist">
 <ul>
 <li>
-<p>portability for e.g. to do analysis on the field near infections outbreaks. Compare that to the smallest Illumina sequencer currently available in 2019, the iSeq 100: <a href="#image-illumina-iseq-100-dna-sequencer">Figure 2, &#8220;Illumina iSeq 100 DNA sequencer. <a href="https://www.illumina.com/systems/sequencing-platforms/iseq.html">Source</a>.&#8221;</a>.</p>
+<p>portability for e.g. to do analysis on the field near infections outbreaks. Compare that to the smallest Illumina sequencer currently available in 2019, the iSeq 100: <a href="#image-illumina-iseq-100-dna-sequencer">Figure 6, &#8220;Illumina iSeq 100 DNA sequencer. <a href="https://www.illumina.com/systems/sequencing-platforms/iseq.html">Source</a>.&#8221;</a>.</p>
 <div id="image-illumina-iseq-100-dna-sequencer" class="imageblock">
 <div class="content">
 <a class="image" href="#image-illumina-iseq-100-dna-sequencer"><img src="http://web.archive.org/web/20190922113448if_/https://www.illumina.com/content/dam/illumina-marketing/images/systems/v2/web-graphic/iseq-100-demo-video-thumbnail-web-graphic.jpg" alt="iseq 100 demo video thumbnail web graphic" height="400"></a>
 </div>
-<div class="title">Figure 2. Illumina iSeq 100 DNA sequencer. <a href="https://www.illumina.com/systems/sequencing-platforms/iseq.html">Source</a>.</div>
+<div class="title">Figure 6. Illumina iSeq 100 DNA sequencer. <a href="https://www.illumina.com/systems/sequencing-platforms/iseq.html">Source</a>.</div>
 </div>
 </li>
 <li>
@@ -284,37 +303,37 @@ U-A-G-C-U-A-G-C     G
 <div class="content">
 <a class="image" href="#image-river-water-sample-collection-swans"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/River_water_sample_collection_swans.jpg/800px-River_water_sample_collection_swans.jpg" alt="800px River water sample collection swans" height="400"></a>
 </div>
-<div class="title">Figure 3. River water sample collection swans. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_swans.jpg">Source</a>.</div>
+<div class="title">Figure 7. River water sample collection swans. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_swans.jpg">Source</a>.</div>
 </div>
 <div id="image-river-water-sample-collection-tie-rope-to-bottle" class="imageblock">
 <div class="content">
 <a class="image" href="#image-river-water-sample-collection-tie-rope-to-bottle"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/River_water_sample_collection_tie_rope_to_bottle.jpg/360px-River_water_sample_collection_tie_rope_to_bottle.jpg" alt="360px River water sample collection tie rope to bottle" height="400"></a>
 </div>
-<div class="title">Figure 4. River water sample collection tie rope to bottle. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_tie_rope_to_bottle.jpg">Source</a>.</div>
+<div class="title">Figure 8. River water sample collection tie rope to bottle. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_tie_rope_to_bottle.jpg">Source</a>.</div>
 </div>
 <div id="image-river-water-sample-collection-get-sample" class="imageblock">
 <div class="content">
 <a class="image" href="#image-river-water-sample-collection-get-sample"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/River_water_sample_collection_get_sample.jpg/360px-River_water_sample_collection_get_sample.jpg" alt="360px River water sample collection get sample" height="400"></a>
 </div>
-<div class="title">Figure 5. River water sample collection get sample. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_get_sample.jpg">Source</a>.</div>
+<div class="title">Figure 9. River water sample collection get sample. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_get_sample.jpg">Source</a>.</div>
 </div>
 <div id="image-river-water-sample-collection-measure-temperature" class="imageblock">
 <div class="content">
 <a class="image" href="#image-river-water-sample-collection-measure-temperature"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/River_water_sample_collection_measure_temperature.jpg/360px-River_water_sample_collection_measure_temperature.jpg" alt="360px River water sample collection measure temperature" height="400"></a>
 </div>
-<div class="title">Figure 6. River water sample collection measure temperature. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_measure_temperature.jpg">Source</a>.</div>
+<div class="title">Figure 10. River water sample collection measure temperature. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_measure_temperature.jpg">Source</a>.</div>
 </div>
 <div id="image-river-water-sample-collection-read-ph-strip" class="imageblock">
 <div class="content">
 <a class="image" href="#image-river-water-sample-collection-read-ph-strip"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/River_water_sample_collection_read_PH_strip.jpg/360px-River_water_sample_collection_read_PH_strip.jpg" alt="360px River water sample collection read PH strip" height="400"></a>
 </div>
-<div class="title">Figure 7. River water sample collection read PH strip. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_read_PH_strip.jpg">Source</a>.</div>
+<div class="title">Figure 11. River water sample collection read PH strip. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_read_PH_strip.jpg">Source</a>.</div>
 </div>
 <div id="image-river-water-sample-collection-identify-bottle" class="imageblock">
 <div class="content">
 <a class="image" href="#image-river-water-sample-collection-identify-bottle"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/River_water_sample_collection_identify_bottle.jpg/360px-River_water_sample_collection_identify_bottle.jpg" alt="360px River water sample collection identify bottle" height="400"></a>
 </div>
-<div class="title">Figure 8. River water sample collection identify bottle. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_identify_bottle.jpg">Source</a>.</div>
+<div class="title">Figure 12. River water sample collection identify bottle. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_identify_bottle.jpg">Source</a>.</div>
 </div>
 <div id="video-river-water-sample-collection-with-a-bottle-and-string" class="videoblock">
 <div class="title">River water sample collection with a bottle and string. <a href="https://commons.wikimedia.org/wiki/File:River_water_sample_collection_with_a_bottle_and_string.webm">Source</a>.</div>
@@ -359,19 +378,19 @@ Your browser does not support the video tag.
 <p>From the 1 liter in each bottle, we only used 400 ml because previous experiments showed that filtering the remaining 600 ml is very time consuming because the membrane filter gets clogged up.</p>
 </div>
 <div class="paragraph">
-<p>Therefore, the filtration step allows us to reduce those 400 ml volumes to more manageable Eppendorf tube volumes: <a href="#image-an-eppendorf-tube-is-small-and-convenient">Figure 9, &#8220;An Eppendorf tube is small and convenient. <a href="https://commons.wikimedia.org/wiki/File:Microcentrifuge_tube_in_hand.jpg">Source</a>.&#8221;</a>. Reagents are expensive, and centrifuges are small!</p>
+<p>Therefore, the filtration step allows us to reduce those 400 ml volumes to more manageable Eppendorf tube volumes: <a href="#image-an-eppendorf-tube-is-small-and-convenient">Figure 13, &#8220;An Eppendorf tube is small and convenient. <a href="https://commons.wikimedia.org/wiki/File:Microcentrifuge_tube_in_hand.jpg">Source</a>.&#8221;</a>. Reagents are expensive, and centrifuges are small!</p>
 </div>
 <div id="image-an-eppendorf-tube-is-small-and-convenient" class="imageblock">
 <div class="content">
 <a class="image" href="#image-an-eppendorf-tube-is-small-and-convenient"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Microcentrifuge_tube_in_hand.jpg/640px-Microcentrifuge_tube_in_hand.jpg" alt="640px Microcentrifuge tube in hand" height="400"></a>
 </div>
-<div class="title">Figure 9. An Eppendorf tube is small and convenient. <a href="https://commons.wikimedia.org/wiki/File:Microcentrifuge_tube_in_hand.jpg">Source</a>.</div>
+<div class="title">Figure 13. An Eppendorf tube is small and convenient. <a href="https://commons.wikimedia.org/wiki/File:Microcentrifuge_tube_in_hand.jpg">Source</a>.</div>
 </div>
 <div id="image-labelled-eppendorf-microcentrifuge-tubes-on-rack" class="imageblock">
 <div class="content">
 <a class="image" href="#image-labelled-eppendorf-microcentrifuge-tubes-on-rack"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Labelled_Eppendorf_microcentrifuge_tubes_on_rack.jpg/640px-Labelled_Eppendorf_microcentrifuge_tubes_on_rack.jpg" alt="640px Labelled Eppendorf microcentrifuge tubes on rack" height="400"></a>
 </div>
-<div class="title">Figure 10. Labelled Eppendorf microcentrifuge tubes on rack. <a href="https://commons.wikimedia.org/wiki/File:Labelled_Eppendorf_microcentrifuge_tubes_on_rack.jpg">Source</a>.</div>
+<div class="title">Figure 14. Labelled Eppendorf microcentrifuge tubes on rack. <a href="https://commons.wikimedia.org/wiki/File:Labelled_Eppendorf_microcentrifuge_tubes_on_rack.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>Since the filter is so fine, filtering by gravity alone would take forever, and so we used a vacuum pump to speed thing up!</p>
@@ -393,13 +412,13 @@ Your browser does not support the video tag.
 <div class="content">
 <a class="image" href="#image-vacuum-pump-filter-peel-filter"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Vacuum_pump_filter_peel_filter.png" alt="Vacuum pump filter peel filter" height="400"></a>
 </div>
-<div class="title">Figure 11. Vacuum pump filter peel filter. <a href="https://commons.wikimedia.org/wiki/File:Vacuum_pump_filter_peel_filter.png">Source</a>.</div>
+<div class="title">Figure 15. Vacuum pump filter peel filter. <a href="https://commons.wikimedia.org/wiki/File:Vacuum_pump_filter_peel_filter.png">Source</a>.</div>
 </div>
 <div id="image-vacuum-pump-filter-place-filter" class="imageblock">
 <div class="content">
 <a class="image" href="#image-vacuum-pump-filter-place-filter"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Vacuum_pump_filter_place_filter.png" alt="Vacuum pump filter place filter" height="400"></a>
 </div>
-<div class="title">Figure 12. Vacuum pump filter place filter. <a href="https://commons.wikimedia.org/wiki/File:Vacuum_pump_filter_place_filter.png">Source</a>.</div>
+<div class="title">Figure 16. Vacuum pump filter place filter. <a href="https://commons.wikimedia.org/wiki/File:Vacuum_pump_filter_place_filter.png">Source</a>.</div>
 </div>
 <div id="video-vacuum-pump-filter-pour-sample-and-turn-on" class="videoblock">
 <div class="title">Vacuum pump filter pour sample and turn on. <a href="https://commons.wikimedia.org/wiki/File:Vacuum_pump_filter_pour_sample_and_turn_on.webm">Source</a>.</div>
@@ -449,13 +468,13 @@ Your browser does not support the video tag.
 <p>Once that was done, we added several reagents which split the solution into two phases: one containing the DNA and the other not. We would then pipette the phase with the DNA out to the next Eppendorf, and continue the process.</p>
 </div>
 <div class="paragraph">
-<p>In one step for example, the DNA was present as a white precipitate at the bottom of the tube, and we threw away the supernatant liquid: <a href="#image-qiagen-dneasy-powerwater-kit-white-precipitate">Figure 13, &#8220;Qiagen DNeasy PowerWater Kit White Precipitate. <a href="https://commons.wikimedia.org/wiki/File:Qiagen_DNeasy_PowerWater_Kit_White_Precipitate.jpg">Source</a>.&#8221;</a>.</p>
+<p>In one step for example, the DNA was present as a white precipitate at the bottom of the tube, and we threw away the supernatant liquid: <a href="#image-qiagen-dneasy-powerwater-kit-white-precipitate">Figure 17, &#8220;Qiagen DNeasy PowerWater Kit White Precipitate. <a href="https://commons.wikimedia.org/wiki/File:Qiagen_DNeasy_PowerWater_Kit_White_Precipitate.jpg">Source</a>.&#8221;</a>.</p>
 </div>
 <div id="image-qiagen-dneasy-powerwater-kit-white-precipitate" class="imageblock">
 <div class="content">
 <a class="image" href="#image-qiagen-dneasy-powerwater-kit-white-precipitate"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Qiagen_DNeasy_PowerWater_Kit_White_Precipitate.jpg/586px-Qiagen_DNeasy_PowerWater_Kit_White_Precipitate.jpg" alt="586px Qiagen DNeasy PowerWater Kit White Precipitate" height="400"></a>
 </div>
-<div class="title">Figure 13. Qiagen DNeasy PowerWater Kit White Precipitate. <a href="https://commons.wikimedia.org/wiki/File:Qiagen_DNeasy_PowerWater_Kit_White_Precipitate.jpg">Source</a>.</div>
+<div class="title">Figure 17. Qiagen DNeasy PowerWater Kit White Precipitate. <a href="https://commons.wikimedia.org/wiki/File:Qiagen_DNeasy_PowerWater_Kit_White_Precipitate.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>At various stages, centrifuging was also necessary. Much like the previous vacuum pump step, this adds extra gravity to speed up the separation of phases with different molecular masses.</p>
@@ -467,13 +486,13 @@ Your browser does not support the video tag.
 <div class="content">
 <a class="image" href="#image-vwr-micro-star-17-microcentrifuge"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/VWR_Micro_Star_17_microcentrifuge.jpg/360px-VWR_Micro_Star_17_microcentrifuge.jpg" alt="360px VWR Micro Star 17 microcentrifuge" height="400"></a>
 </div>
-<div class="title">Figure 14. VWR Micro Star 17 microcentrifuge. <a href="https://commons.wikimedia.org/wiki/File:VWR_Micro_Star_17_microcentrifuge.jpg">Source</a>.</div>
+<div class="title">Figure 18. VWR Micro Star 17 microcentrifuge. <a href="https://commons.wikimedia.org/wiki/File:VWR_Micro_Star_17_microcentrifuge.jpg">Source</a>.</div>
 </div>
 <div id="image-vwr-micro-star-17-microcentrifuge-loading" class="imageblock">
 <div class="content">
 <a class="image" href="#image-vwr-micro-star-17-microcentrifuge-loading"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/VWR_Micro_Star_17_microcentrifuge_loading.png/358px-VWR_Micro_Star_17_microcentrifuge_loading.png" alt="358px VWR Micro Star 17 microcentrifuge loading" height="400"></a>
 </div>
-<div class="title">Figure 15. VWR Micro Star 17 microcentrifuge loading. <a href="https://commons.wikimedia.org/wiki/File:VWR_Micro_Star_17_microcentrifuge_loading.png">Source</a>.</div>
+<div class="title">Figure 19. VWR Micro Star 17 microcentrifuge loading. <a href="https://commons.wikimedia.org/wiki/File:VWR_Micro_Star_17_microcentrifuge_loading.png">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>Then, when we had finally finished all the purification steps, we measured the quantity of DNA with a <a href="#biochrom-simplinano-spectrophotometer">Biochrom SimpliNano spectrophotometer</a> to check that the purification went well:</p>
@@ -482,13 +501,13 @@ Your browser does not support the video tag.
 <div class="content">
 <a class="image" href="#image-biochrom-simplinano-spectrophotometer-loading-sample"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Biochrom_SimpliNano_spectrophotometer_loading_sample.jpg/262px-Biochrom_SimpliNano_spectrophotometer_loading_sample.jpg" alt="262px Biochrom SimpliNano spectrophotometer loading sample" height="400"></a>
 </div>
-<div class="title">Figure 16. Biochrom SimpliNano spectrophotometer loading sample. <a href="https://commons.wikimedia.org/wiki/File:Biochrom_SimpliNano_spectrophotometer_loading_sample.jpg">Source</a>.</div>
+<div class="title">Figure 20. Biochrom SimpliNano spectrophotometer loading sample. <a href="https://commons.wikimedia.org/wiki/File:Biochrom_SimpliNano_spectrophotometer_loading_sample.jpg">Source</a>.</div>
 </div>
 <div id="image-biochrom-simplinano-spectrophotometer-result-readout" class="imageblock">
 <div class="content">
 <a class="image" href="#image-biochrom-simplinano-spectrophotometer-result-readout"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Biochrom_SimpliNano_spectrophotometer_result_readout.jpg/360px-Biochrom_SimpliNano_spectrophotometer_result_readout.jpg" alt="360px Biochrom SimpliNano spectrophotometer result readout" height="400"></a>
 </div>
-<div class="title">Figure 17. Biochrom SimpliNano spectrophotometer result readout. <a href="https://commons.wikimedia.org/wiki/File:Biochrom_SimpliNano_spectrophotometer_result_readout.jpg">Source</a>.</div>
+<div class="title">Figure 21. Biochrom SimpliNano spectrophotometer result readout. <a href="https://commons.wikimedia.org/wiki/File:Biochrom_SimpliNano_spectrophotometer_result_readout.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>And because the readings were good, we put it in our -20 C fridge to preserve it until the second day of the workshop and called it a day:</p>
@@ -497,7 +516,7 @@ Your browser does not support the video tag.
 <div class="content">
 <a class="image" href="#image-minus-20-fridge-storing-samples"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Minus_20_fridge_storing_samples.jpg/183px-Minus_20_fridge_storing_samples.jpg" alt="183px Minus 20 fridge storing samples" height="400"></a>
 </div>
-<div class="title">Figure 18. Minus 20 fridge storing samples. <a href="https://commons.wikimedia.org/wiki/File:Minus_20_fridge_storing_samples.jpg">Source</a>.</div>
+<div class="title">Figure 22. Minus 20 fridge storing samples. <a href="https://commons.wikimedia.org/wiki/File:Minus_20_fridge_storing_samples.jpg">Source</a>.</div>
 </div>
 </div>
 </div>
@@ -537,7 +556,7 @@ Your browser does not support the video tag.
 <div class="content">
 <a class="image" href="#image-marshal-scientific-mj-research-ptc-200-thermal-cycler"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Marshal_Scientific_MJ_Research_PTC-200_Thermal_Cycler.jpg/360px-Marshal_Scientific_MJ_Research_PTC-200_Thermal_Cycler.jpg" alt="360px Marshal Scientific MJ Research PTC 200 Thermal Cycler" height="400"></a>
 </div>
-<div class="title">Figure 19. Marshal Scientific MJ Research PTC-200 Thermal Cycler. <a href="https://commons.wikimedia.org/wiki/File:Marshal_Scientific_MJ_Research_PTC-200_Thermal_Cycler.jpg">Source</a>.</div>
+<div class="title">Figure 23. Marshal Scientific MJ Research PTC-200 Thermal Cycler. <a href="https://commons.wikimedia.org/wiki/File:Marshal_Scientific_MJ_Research_PTC-200_Thermal_Cycler.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>We added PCR primers for regions that surround the 16S DNA. The primers are just bought from a vendor, and we used well known regions are called 27F and 1492R. Here is a paper that analyzes other choices: <a href="https://academic.oup.com/femsle/article/221/2/299/630719" class="bare">https://academic.oup.com/femsle/article/221/2/299/630719</a> (<a href="http://web.archive.org/web/20190911091818/https://academic.oup.com/femsle/article/221/2/299/630719">archive</a>) "Evaluation of primers and PCR conditions for the analysis of 16S rRNA genes from a natural environment" by "Yuichi Hongoh, Hiroe Yuzawa, Moriya Ohkuma, Toshiaki Kudo Published" published 01 April 2003.</p>
@@ -605,61 +624,61 @@ Barcode --- 27S --- 16S --- 1492R</pre>
 <div class="content">
 <a class="image" href="#image-gel-electrophoresis-insert-comb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Gel_electrophoresis_insert_comb.jpg/360px-Gel_electrophoresis_insert_comb.jpg" alt="360px Gel electrophoresis insert comb" height="400"></a>
 </div>
-<div class="title">Figure 20. Gel electrophoresis insert comb. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_insert_comb.jpg">Source</a>.</div>
+<div class="title">Figure 24. Gel electrophoresis insert comb. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_insert_comb.jpg">Source</a>.</div>
 </div>
 <div id="image-gel-electrophoresis-top-view-with-wells-visible" class="imageblock">
 <div class="content">
 <a class="image" href="#image-gel-electrophoresis-top-view-with-wells-visible"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Gel_electrophoresis_top_view_with_wells_visible.jpg/360px-Gel_electrophoresis_top_view_with_wells_visible.jpg" alt="360px Gel electrophoresis top view with wells visible" height="400"></a>
 </div>
-<div class="title">Figure 21. Gel electrophoresis top view with wells visible. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_top_view_with_wells_visible.jpg">Source</a>.</div>
+<div class="title">Figure 25. Gel electrophoresis top view with wells visible. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_top_view_with_wells_visible.jpg">Source</a>.</div>
 </div>
 <div id="image-gel-electrophoresis-pipette-sample-into-wells" class="imageblock">
 <div class="content">
 <a class="image" href="#image-gel-electrophoresis-pipette-sample-into-wells"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Gel_electrophoresis_pipette_sample_into_wells.jpg/360px-Gel_electrophoresis_pipette_sample_into_wells.jpg" alt="360px Gel electrophoresis pipette sample into wells" height="400"></a>
 </div>
-<div class="title">Figure 22. Gel electrophoresis pipette sample into wells. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_pipette_sample_into_wells.jpg">Source</a>.</div>
+<div class="title">Figure 26. Gel electrophoresis pipette sample into wells. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_pipette_sample_into_wells.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>To see the DNA, we added <a href="https://en.wikipedia.org/wiki/Ethidium_bromide">ethidium bromide</a> to the samples, which is a substance that that both binds to DNA and is fluorescent.</p>
 </div>
 <div class="paragraph">
-<p>Because it interacts heavily with DNA, ethidium bromide is a <a href="https://en.wikipedia.org/wiki/Mutagen">mutagen</a>, and the biology people sure did treat the dedicated electrophoresis bench area with respect! <a href="#image-gel-electrophoresis-dedicated-bench-area-to-prevent-ethidium-bromide-contamination">Figure 23, &#8220;Gel electrophoresis dedicated bench area to prevent ethidium bromide contamination. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_dedicated_bench_area_to_prevent_ethidium_bromide_contamination.jpg">Source</a>.&#8221;</a>.</p>
+<p>Because it interacts heavily with DNA, ethidium bromide is a <a href="https://en.wikipedia.org/wiki/Mutagen">mutagen</a>, and the biology people sure did treat the dedicated electrophoresis bench area with respect! <a href="#image-gel-electrophoresis-dedicated-bench-area-to-prevent-ethidium-bromide-contamination">Figure 27, &#8220;Gel electrophoresis dedicated bench area to prevent ethidium bromide contamination. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_dedicated_bench_area_to_prevent_ethidium_bromide_contamination.jpg">Source</a>.&#8221;</a>.</p>
 </div>
 <div id="image-gel-electrophoresis-dedicated-bench-area-to-prevent-ethidium-bromide-contamination" class="imageblock">
 <div class="content">
 <a class="image" href="#image-gel-electrophoresis-dedicated-bench-area-to-prevent-ethidium-bromide-contamination"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Gel_electrophoresis_dedicated_bench_area_to_prevent_ethidium_bromide_contamination.jpg/360px-Gel_electrophoresis_dedicated_bench_area_to_prevent_ethidium_bromide_contamination.jpg" alt="360px Gel electrophoresis dedicated bench area to prevent ethidium bromide contamination" height="400"></a>
 </div>
-<div class="title">Figure 23. Gel electrophoresis dedicated bench area to prevent ethidium bromide contamination. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_dedicated_bench_area_to_prevent_ethidium_bromide_contamination.jpg">Source</a>.</div>
+<div class="title">Figure 27. Gel electrophoresis dedicated bench area to prevent ethidium bromide contamination. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_dedicated_bench_area_to_prevent_ethidium_bromide_contamination.jpg">Source</a>.</div>
 </div>
 <div id="image-gel-electrophoresis-dedicated-waste-bin-for-centrifuge-tubes-and-pipette-tips-contaminated-with-ethidium-bromide" class="imageblock">
 <div class="content">
 <a class="image" href="#image-gel-electrophoresis-dedicated-waste-bin-for-centrifuge-tubes-and-pipette-tips-contaminated-with-ethidium-bromide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Gel_electrophoresis_dedicated_waste_bin_for_centrifuge_tubes_and_pipette_tips_contaminated_with_ethidium_bromide.jpg/360px-Gel_electrophoresis_dedicated_waste_bin_for_centrifuge_tubes_and_pipette_tips_contaminated_with_ethidium_bromide.jpg" alt="360px Gel electrophoresis dedicated waste bin for centrifuge tubes and pipette tips contaminated with ethidium bromide" height="400"></a>
 </div>
-<div class="title">Figure 24. Gel electrophoresis dedicated waste bin for centrifuge tubes and pipette tips contaminated with ethidium bromide. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_dedicated_waste_bin_for_centrifuge_tubes_and_pipette_tips_contaminated_with_ethidium_bromide.jpg">Source</a>.</div>
+<div class="title">Figure 28. Gel electrophoresis dedicated waste bin for centrifuge tubes and pipette tips contaminated with ethidium bromide. <a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_dedicated_waste_bin_for_centrifuge_tubes_and_pipette_tips_contaminated_with_ethidium_bromide.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>The UV transilluminator we used to shoot UV light into the gel was the <a href="#fischer-scientific-uvp-lm-26e-benchtop-2uv-transilluminator">Fischer Scientific UVP LM-26E Benchtop 2UV Transilluminator</a>. The fluorescent substance then emitted a light we can see.</p>
 </div>
 <div class="paragraph">
-<p>As barely seen at <a href="#image-fischer-scientific-uvp-lm-26e-benchtop-2uv-transilluminator-illuminated-gel">Figure 27, &#8220;Fischer Scientific UVP LM-26E Benchtop 2UV Transilluminator illuminated gel. <a href="https://commons.wikimedia.org/wiki/File:Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator_illuminated_gel.jpg">Source</a>.&#8221;</a> due to bad photo quality due to lack of light, there is one strong green line, which compared to the ladder matches our expected 16S length. What we saw it with the naked eyes was very clear however.</p>
+<p>As barely seen at <a href="#image-fischer-scientific-uvp-lm-26e-benchtop-2uv-transilluminator-illuminated-gel">Figure 31, &#8220;Fischer Scientific UVP LM-26E Benchtop 2UV Transilluminator illuminated gel. <a href="https://commons.wikimedia.org/wiki/File:Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator_illuminated_gel.jpg">Source</a>.&#8221;</a> due to bad photo quality due to lack of light, there is one strong green line, which compared to the ladder matches our expected 16S length. What we saw it with the naked eyes was very clear however.</p>
 </div>
 <div id="image-fischer-scientific-uvp-lm-26e-benchtop-2uv-transilluminator" class="imageblock">
 <div class="content">
 <a class="image" href="#image-fischer-scientific-uvp-lm-26e-benchtop-2uv-transilluminator"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator.jpg/640px-Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator.jpg" alt="640px Fischer Scientific UVP LM 26E Benchtop 2UV Transilluminator" height="400"></a>
 </div>
-<div class="title">Figure 25. Fischer Scientific UVP LM-26E Benchtop 2UV Transilluminator. <a href="https://commons.wikimedia.org/wiki/File:Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator.jpg">Source</a>.</div>
+<div class="title">Figure 29. Fischer Scientific UVP LM-26E Benchtop 2UV Transilluminator. <a href="https://commons.wikimedia.org/wiki/File:Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator.jpg">Source</a>.</div>
 </div>
 <div id="image-fischer-scientific-uvp-lm-26e-benchtop-2uv-transilluminator-loading-gel" class="imageblock">
 <div class="content">
 <a class="image" href="#image-fischer-scientific-uvp-lm-26e-benchtop-2uv-transilluminator-loading-gel"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator_loading_gel.jpg/360px-Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator_loading_gel.jpg" alt="360px Fischer Scientific UVP LM 26E Benchtop 2UV Transilluminator loading gel" height="400"></a>
 </div>
-<div class="title">Figure 26. Fischer Scientific UVP LM-26E Benchtop 2UV Transilluminator loading gel. <a href="https://commons.wikimedia.org/wiki/File:Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator_loading_gel.jpg">Source</a>.</div>
+<div class="title">Figure 30. Fischer Scientific UVP LM-26E Benchtop 2UV Transilluminator loading gel. <a href="https://commons.wikimedia.org/wiki/File:Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator_loading_gel.jpg">Source</a>.</div>
 </div>
 <div id="image-fischer-scientific-uvp-lm-26e-benchtop-2uv-transilluminator-illuminated-gel" class="imageblock">
 <div class="content">
 <a class="image" href="#image-fischer-scientific-uvp-lm-26e-benchtop-2uv-transilluminator-illuminated-gel"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator_illuminated_gel.jpg/360px-Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator_illuminated_gel.jpg" alt="360px Fischer Scientific UVP LM 26E Benchtop 2UV Transilluminator illuminated gel" height="400"></a>
 </div>
-<div class="title">Figure 27. Fischer Scientific UVP LM-26E Benchtop 2UV Transilluminator illuminated gel. <a href="https://commons.wikimedia.org/wiki/File:Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator_illuminated_gel.jpg">Source</a>.</div>
+<div class="title">Figure 31. Fischer Scientific UVP LM-26E Benchtop 2UV Transilluminator illuminated gel. <a href="https://commons.wikimedia.org/wiki/File:Fischer_Scientific_UVP_LM-26E_Benchtop_2UV_Transilluminator_illuminated_gel.jpg">Source</a>.</div>
 </div>
 </div>
 </div>
@@ -673,7 +692,7 @@ Barcode --- 27S --- 16S --- 1492R</pre>
 <div class="sect2">
 <h3 id="pre-sequencing-preparation"><a class="anchor" href="#pre-sequencing-preparation"></a><a class="link" href="#pre-sequencing-preparation">6.1. Pre-sequencing preparation</a></h3>
 <div class="paragraph">
-<p>One cool thing we did in this procedure was to use <a href="https://en.wikipedia.org/wiki/Magnetic_separation">magnetic separation</a> with magnetic beads to further concentrate the DNA: <a href="#image-ge-magrack-6-pipetting">Figure 28, &#8220;GE MagRack 6 pipetting. <a href="https://commons.wikimedia.org/wiki/File:GE_MagRack_6_pipetting.jpg">Source</a>.&#8221;</a>.</p>
+<p>One cool thing we did in this procedure was to use <a href="https://en.wikipedia.org/wiki/Magnetic_separation">magnetic separation</a> with magnetic beads to further concentrate the DNA: <a href="#image-ge-magrack-6-pipetting">Figure 32, &#8220;GE MagRack 6 pipetting. <a href="https://commons.wikimedia.org/wiki/File:GE_MagRack_6_pipetting.jpg">Source</a>.&#8221;</a>.</p>
 </div>
 <div class="paragraph">
 <p>The beads are coated to stick to the DNA, which allows us to easily extract the DNA from the rest of the solution. This is cool, but bio people are borderline obsessed by those beads! Go figure!</p>
@@ -682,13 +701,13 @@ Barcode --- 27S --- 16S --- 1492R</pre>
 <div class="content">
 <a class="image" href="#image-ge-magrack-6-pipetting"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/GE_MagRack_6_pipetting.jpg/360px-GE_MagRack_6_pipetting.jpg" alt="360px GE MagRack 6 pipetting" height="400"></a>
 </div>
-<div class="title">Figure 28. GE MagRack 6 pipetting. <a href="https://commons.wikimedia.org/wiki/File:GE_MagRack_6_pipetting.jpg">Source</a>.</div>
+<div class="title">Figure 32. GE MagRack 6 pipetting. <a href="https://commons.wikimedia.org/wiki/File:GE_MagRack_6_pipetting.jpg">Source</a>.</div>
 </div>
 <div id="image-ge-magrack-6-eppendorf-with-magnetic-beads-mounted" class="imageblock">
 <div class="content">
 <a class="image" href="#image-ge-magrack-6-eppendorf-with-magnetic-beads-mounted"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/GE_MagRack_6_eppendorf_with_magnetic_beads_mounted.jpg/503px-GE_MagRack_6_eppendorf_with_magnetic_beads_mounted.jpg" alt="503px GE MagRack 6 eppendorf with magnetic beads mounted" height="400"></a>
 </div>
-<div class="title">Figure 29. GE MagRack 6 eppendorf with magnetic beads mounted. <a href="https://commons.wikimedia.org/wiki/File:GE_MagRack_6_eppendorf_with_magnetic_beads_mounted.jpg">Source</a>.</div>
+<div class="title">Figure 33. GE MagRack 6 eppendorf with magnetic beads mounted. <a href="https://commons.wikimedia.org/wiki/File:GE_MagRack_6_eppendorf_with_magnetic_beads_mounted.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>Then we prepared the DNA for sequencing with the Oxford Nanopore specific part: <a href="#oxford-nanopore-sqk-lsk109-ligation-sequencing-kit">Oxford Nanopore SQK-LSK109 Ligation Sequencing Kit</a>.</p>
@@ -700,7 +719,7 @@ Barcode --- 27S --- 16S --- 1492R</pre>
 <div class="content">
 <a class="image" href="#image-velp-scientifica-wizard-ir-infrared-vortex-mixer-running"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/VELP_Scientifica_WIZARD_IR_Infrared_Vortex_Mixer_running.jpg/360px-VELP_Scientifica_WIZARD_IR_Infrared_Vortex_Mixer_running.jpg" alt="360px VELP Scientifica WIZARD IR Infrared Vortex Mixer running" height="400"></a>
 </div>
-<div class="title">Figure 30. VELP Scientifica WIZARD IR Infrared Vortex Mixer running. <a href="https://commons.wikimedia.org/wiki/File:VELP_Scientifica_WIZARD_IR_Infrared_Vortex_Mixer_running.jpg">Source</a>.</div>
+<div class="title">Figure 34. VELP Scientifica WIZARD IR Infrared Vortex Mixer running. <a href="https://commons.wikimedia.org/wiki/File:VELP_Scientifica_WIZARD_IR_Infrared_Vortex_Mixer_running.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>After all that was done, the DNA of the several 400 ml water bottles and hours of hard purification labour were contained in one single Eppendorf!</p>
@@ -712,31 +731,31 @@ Barcode --- 27S --- 16S --- 1492R</pre>
 <p>With all this ready, we opened the Nanopore flow cell, which is the 500 dollar consumable piece that goes in the sequencer.</p>
 </div>
 <div class="paragraph">
-<p>We then had to pipette the final golden Eppendorf into the flow cell. My anxiety levels were going through the roof: <a href="#image-oxford-nanopore-minion-flow-cell-pipette-loading">Figure 34, &#8220;Oxford nanopore MinION flow cell pipette loading. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg">Source</a>.&#8221;</a>.</p>
+<p>We then had to pipette the final golden Eppendorf into the flow cell. My anxiety levels were going through the roof: <a href="#image-oxford-nanopore-minion-flow-cell-pipette-loading">Figure 38, &#8220;Oxford nanopore MinION flow cell pipette loading. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg">Source</a>.&#8221;</a>.</p>
 </div>
 <div id="image-oxford-nanopore-minion-flow-cell-package" class="imageblock">
 <div class="content">
 <a class="image" href="#image-oxford-nanopore-minion-flow-cell-package"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Oxford_nanopore_MinION_flow_cell_package.jpg/304px-Oxford_nanopore_MinION_flow_cell_package.jpg" alt="304px Oxford nanopore MinION flow cell package" height="400"></a>
 </div>
-<div class="title">Figure 31. Oxford nanopore MinION flow cell package. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_package.jpg">Source</a>.</div>
+<div class="title">Figure 35. Oxford nanopore MinION flow cell package. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_package.jpg">Source</a>.</div>
 </div>
 <div id="image-oxford-nanopore-minion-flow-cell-front" class="imageblock">
 <div class="content">
 <a class="image" href="#image-oxford-nanopore-minion-flow-cell-front"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Oxford_nanopore_MinION_flow_cell_front.jpg/640px-Oxford_nanopore_MinION_flow_cell_front.jpg" alt="640px Oxford nanopore MinION flow cell front" height="400"></a>
 </div>
-<div class="title">Figure 32. Oxford nanopore MinION flow cell front. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_front.jpg">Source</a>.</div>
+<div class="title">Figure 36. Oxford nanopore MinION flow cell front. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_front.jpg">Source</a>.</div>
 </div>
 <div id="image-oxford-nanopore-minion-flow-cell-back" class="imageblock">
 <div class="content">
 <a class="image" href="#image-oxford-nanopore-minion-flow-cell-back"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Oxford_nanopore_MinION_flow_cell_back.jpg/1024px-Oxford_nanopore_MinION_flow_cell_back.jpg" alt="1024px Oxford nanopore MinION flow cell back" height="400"></a>
 </div>
-<div class="title">Figure 33. Oxford nanopore MinION flow cell back. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_back.jpg">Source</a>.</div>
+<div class="title">Figure 37. Oxford nanopore MinION flow cell back. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_back.jpg">Source</a>.</div>
 </div>
 <div id="image-oxford-nanopore-minion-flow-cell-pipette-loading" class="imageblock">
 <div class="content">
 <a class="image" href="#image-oxford-nanopore-minion-flow-cell-pipette-loading"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg/278px-Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg" alt="278px Oxford nanopore MinION flow cell pipette loading" height="400"></a>
 </div>
-<div class="title">Figure 34. Oxford nanopore MinION flow cell pipette loading. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg">Source</a>.</div>
+<div class="title">Figure 38. Oxford nanopore MinION flow cell pipette loading. <a href="https://commons.wikimedia.org/wiki/File:Oxford_nanopore_MinION_flow_cell_pipette_loading.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>At this point bio people start telling lab horror stories of expensive solutions being spilled and people having to recover them from fridge walls, or of how people threw away golden Eppendorfs and had to pick them out of trash bins with hundreds of others looking exactly the same etc. (but also how some discoveries were made like this) This reminded me of: <a href="https://youtu.be/89UNPdNtOoE?t=919" class="bare">https://youtu.be/89UNPdNtOoE?t=919</a> <a href="https://en.wikipedia.org/wiki/Alfred_Maddock">Alfred Maddock&#8217;s plutonium spill horror story</a>.</p>
@@ -757,7 +776,7 @@ Barcode --- 27S --- 16S --- 1492R</pre>
 <div class="content">
 <a class="image" href="#image-oxford-nanopore-minion-connected-to-a-mac-via-usb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Oxford_Nanopore_MinION_connected_to_a_Mac_via_USB.jpg/360px-Oxford_Nanopore_MinION_connected_to_a_Mac_via_USB.jpg" alt="360px Oxford Nanopore MinION connected to a Mac via USB" height="400"></a>
 </div>
-<div class="title">Figure 35. Oxford Nanopore MinION connected to a Mac via USB. <a href="https://commons.wikimedia.org/wiki/File:Oxford_Nanopore_MinION_connected_to_a_Mac_via_USB.jpg">Source</a>.</div>
+<div class="title">Figure 39. Oxford Nanopore MinION connected to a Mac via USB. <a href="https://commons.wikimedia.org/wiki/File:Oxford_Nanopore_MinION_connected_to_a_Mac_via_USB.jpg">Source</a>.</div>
 </div>
 <div id="video-oxford-nanopore-minion-software-channels-pannel-on-mac" class="videoblock">
 <div class="title">Oxford Nanopore MinION software channels pannel on Mac. <a href="https://commons.wikimedia.org/wiki/File:Oxford_Nanopore_MinION_software_channels_pannel_on_Mac.webm">Source</a>.</div>
@@ -869,7 +888,7 @@ Your browser does not support the video tag.
 <div class="content">
 <a class="image" href="#image-qiagen-dneasy-powerwater-kit-open-box"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Qiagen_DNeasy_PowerWater_Kit_open_box.jpg/360px-Qiagen_DNeasy_PowerWater_Kit_open_box.jpg" alt="360px Qiagen DNeasy PowerWater Kit open box" height="400"></a>
 </div>
-<div class="title">Figure 36. Qiagen DNeasy PowerWater Kit open box. <a href="https://commons.wikimedia.org/wiki/File:Qiagen_DNeasy_PowerWater_Kit_open_box.jpg">Source</a>.</div>
+<div class="title">Figure 40. Qiagen DNeasy PowerWater Kit open box. <a href="https://commons.wikimedia.org/wiki/File:Qiagen_DNeasy_PowerWater_Kit_open_box.jpg">Source</a>.</div>
 </div>
 </div>
 <div class="sect2">
