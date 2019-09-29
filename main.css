@@ -112,3 +112,15 @@ body {
         background-color: white; }
       body main table.dataTable tr.even td.sorting_3 {
         background-color: white; }
+  body footer {
+    background-color: black;
+    color: white;
+    padding: 15px; }
+    body footer a {
+      color: #CC0; }
+      body footer a:hover {
+        color: #CC0; }
+      body footer a:visited {
+        color: #CC0; }
+        body footer a:visited:hover {
+          color: #CC0; }
