@@ -10,6 +10,9 @@
 <loc>/adoc.html</loc>
 </url>
 <url>
+<loc>/adoc2.html</loc>
+</url>
+<url>
 <loc>/articles.html</loc>
 </url>
 <url>
@@ -185,6 +188,9 @@
 </url>
 <url>
 <loc>/db/order-by.html</loc>
+</url>
+<url>
+<loc>/oxford-nanopore-minion.html</loc>
 </url>
 <url>
 <loc>/oxford-nanopore-river-bacteria.html</loc>
