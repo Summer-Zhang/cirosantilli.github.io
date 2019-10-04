@@ -81,8 +81,8 @@
 <div class="listingblock">
 <div class="content">
 <pre>rm -f out/db.sqlite &amp;&amp; \
-CIROSANTILLI_COM_XREF2_LOCAL=1 bundle exec asciidoctor --trace -r "$(pwd)/_plugins/asciidoctor-extensions.rb" adoc2.adoc &amp;&amp; \
-CIROSANTILLI_COM_XREF2_LOCAL=1 bundle exec asciidoctor --trace -r "$(pwd)/_plugins/asciidoctor-extensions.rb" adoc.adoc &amp;&amp; \
+CIROSANTILLI_COM_XREF2_SERVERLESS=1 bundle exec asciidoctor --trace -r "$(pwd)/_plugins/asciidoctor-extensions.rb" adoc2.adoc &amp;&amp; \
+CIROSANTILLI_COM_XREF2_SERVERLESS=1 bundle exec asciidoctor --trace -r "$(pwd)/_plugins/asciidoctor-extensions.rb" adoc.adoc &amp;&amp; \
 sqlite3 out/db.sqlite .dump</pre>
 </div>
 </div>
@@ -93,7 +93,7 @@ sqlite3 out/db.sqlite .dump</pre>
 <p>Link to header in another file: <a href="adoc2#asciidoctor-test-2-h3">Asciidoctor test 2 h3</a></p>
 </div>
 <div class="paragraph">
-<p>Same but with xrefstyle full: <a href="adoc2#asciidoctor-test-2-h3">Asciidoctor test 2 h3</a></p>
+<p>Same but with xrefstyle full: <a href="adoc2#asciidoctor-test-2-h3">Section 1.1, &#8220;Asciidoctor test 2 h3&#8221;</a></p>
 </div>
 <div class="paragraph">
 <p>Same but with explicit text: <a href="adoc2#asciidoctor-test-2-h3">Now with text</a></p>
@@ -103,6 +103,9 @@ sqlite3 out/db.sqlite .dump</pre>
 </div>
 <div class="paragraph">
 <p>Link to a listing in another file: <a href="adoc2#my-listing">My listing</a></p>
+</div>
+<div class="paragraph">
+<p>Same bye xrefstyle full: <a href="adoc2#my-listing">Listing  1, &#8220;My listing&#8221;</a></p>
 </div>
 <div class="paragraph">
 <p>Link to an image: <a href="adoc2#my-image">My image</a></p>
@@ -121,7 +124,7 @@ sqlite3 out/db.sqlite .dump</pre>
         <div>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a> unless noted</div>
         <div>Suggestions and corrections: <a href="https://github.com/cirosantilli/cirosantilli.github.io/issues">https://github.com/cirosantilli/cirosantilli.github.io/issues</a></div>
         <div>Website source code: <a href="https://github.com/cirosantilli/cirosantilli.github.io">https://github.com/cirosantilli/cirosantilli.github.io</a></div>
-        <div>Website version: <a href="https://github.com/cirosantilli/cirosantilli.github.io/commit/e2ff3d02303fa721b35de55931d5056b9667943d">e2ff3d02303fa721b35de55931d5056b9667943d</a></div>
+        <div>Website version: <a href="https://github.com/cirosantilli/cirosantilli.github.io/commit/c5348bf332ed8ca1663be5e50b5166bdb483e448">c5348bf332ed8ca1663be5e50b5166bdb483e448</a></div>
         <div>Cite with: <a href="https://zenodo.org/badge/latestdoi/16453261">this DOI</a></div>
     </footer>
     
