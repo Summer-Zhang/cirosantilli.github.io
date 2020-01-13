@@ -46,8 +46,10 @@
 <div style="display:none;">
 \[
 %% physics package
-% Partial derivative.
+% Absolute value.
+\newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\curl}[1]{\nabla \times #1}
+% Partial derivative.
 \newcommand{\dv}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\divergence}[1]{\nabla \cdot #1}
 % Vector Arrow.
@@ -60,6 +62,10 @@
 \newcommand{\RTwo}[0]{\mathbb{R}^{2}}
 \newcommand{\R}[0]{\mathbb{R}}
 \newcommand{\functionDomain}[3]{#1 : #2 \to #3}
+
+%%% Lebesgue spaces.
+\newcommand{\LP}[0]{L^p}
+\newcommand{\LTwo}[0]{L^2}
 
 %% Electromagnetism
 % Magnetic field vector
@@ -271,23 +277,28 @@
 </li>
 <li><a href="#schrodinger-equation">2.3. Schrodinger equation</a>
 <ul class="sectlevel3">
-<li><a href="#derivation-of-the-schrodinger-equation">2.3.1. Derivation of the Schrodinger equation</a></li>
-<li><a href="#solutions-of-the-schrodinger-equation">2.3.2. Solutions of the Schrodinger equation</a>
+<li><a href="#mathematical-formulation-of-quantum-mechanics">2.3.1. Mathematical formulation of quantum mechanics</a>
 <ul class="sectlevel4">
-<li><a href="#schrodinger-equation-solution-for-a-free-particle">2.3.2.1. Schrodinger equation solution for a free particle</a></li>
-<li><a href="#schrodinger-equation-solution-for-the-hydrogen-atom">2.3.2.2. Schrodinger equation solution for the hydrogen atom</a></li>
-<li><a href="#schrodinger-equation-solution-for-the-helium-atom">2.3.2.3. Schrodinger equation solution for the helium atom</a></li>
-<li><a href="#hartree-fock-method">2.3.2.4. Hartree Fock method</a>
+<li><a href="#position-operator">2.3.1.1. Position operator</a></li>
+</ul>
+</li>
+<li><a href="#derivation-of-the-schrodinger-equation">2.3.2. Derivation of the Schrodinger equation</a></li>
+<li><a href="#solutions-of-the-schrodinger-equation">2.3.3. Solutions of the Schrodinger equation</a>
+<ul class="sectlevel4">
+<li><a href="#schrodinger-equation-solution-for-a-free-particle">2.3.3.1. Schrodinger equation solution for a free particle</a></li>
+<li><a href="#schrodinger-equation-solution-for-the-hydrogen-atom">2.3.3.2. Schrodinger equation solution for the hydrogen atom</a></li>
+<li><a href="#schrodinger-equation-solution-for-the-helium-atom">2.3.3.3. Schrodinger equation solution for the helium atom</a></li>
+<li><a href="#hartree-fock-method">2.3.3.4. Hartree Fock method</a>
 <ul class="sectlevel5">
-<li><a href="#hartree-fock-method-for-the-helium-atom">2.3.2.4.1. Hartree Fock method for the helium atom</a></li>
-<li><a href="#why-do-multiple-electrons-occupy-the-same-orbital-if-electrons-repel-each-other">2.3.2.4.2. Why do multiple electrons occupy the same orbital if electrons repel each other?</a></li>
-<li><a href="#aufbau-principle">2.3.2.4.3. Aufbau principle</a></li>
+<li><a href="#hartree-fock-method-for-the-helium-atom">2.3.3.4.1. Hartree Fock method for the helium atom</a></li>
+<li><a href="#why-do-multiple-electrons-occupy-the-same-orbital-if-electrons-repel-each-other">2.3.3.4.2. Why do multiple electrons occupy the same orbital if electrons repel each other?</a></li>
+<li><a href="#aufbau-principle">2.3.3.4.3. Aufbau principle</a></li>
 </ul>
 </li>
-<li><a href="#schrodinger-equation-simulations">2.3.2.5. Schrodinger equation simulations</a></li>
+<li><a href="#schrodinger-equation-simulations">2.3.3.5. Schrodinger equation simulations</a></li>
 </ul>
 </li>
-<li><a href="#conservation-laws-in-schrodinger-equations">2.3.3. Conservation laws in Schrodinger equations</a></li>
+<li><a href="#conservation-laws-in-schrodinger-equations">2.3.4. Conservation laws in Schrodinger equations</a></li>
 </ul>
 </li>
 <li><a href="#theory-of-everything">2.4. Theory of everything</a></li>
@@ -337,10 +348,15 @@
 </ul>
 </li>
 <li><a href="#computational-physics">2.9. Computational Physics</a></li>
-<li><a href="#philosophy-of-science">2.10. Philosophy of Science</a>
+<li><a href="#physicist">2.10. Physicist</a>
 <ul class="sectlevel3">
-<li><a href="#never-trust-an-experiment-that-is-not-supported-by-a-good-theory">2.10.1. Never trust an experiment that is not supported by a good theory</a></li>
-<li><a href="#physics-and-the-illusion-of-life">2.10.2. Physics and the illusion of life</a></li>
+<li><a href="#paul-dirac">2.10.1. Paul Dirac</a></li>
+</ul>
+</li>
+<li><a href="#philosophy-of-science">2.11. Philosophy of Science</a>
+<ul class="sectlevel3">
+<li><a href="#never-trust-an-experiment-that-is-not-supported-by-a-good-theory">2.11.1. Never trust an experiment that is not supported by a good theory</a></li>
+<li><a href="#physics-and-the-illusion-of-life">2.11.2. Physics and the illusion of life</a></li>
 </ul>
 </li>
 </ul>
@@ -349,29 +365,84 @@
 <ul class="sectlevel2">
 <li><a href="#formalization-of-mathematics">3.1. Formalization of mathematics</a>
 <ul class="sectlevel3">
-<li><a href="#real-number">3.1.1. Real number</a></li>
-<li><a href="#complex-number">3.1.2. Complex number</a></li>
-<li><a href="#ordered-pair">3.1.3. Ordered pair</a></li>
+<li><a href="#set">3.1.1. Set</a></li>
+<li><a href="#function">3.1.2. Function</a></li>
+<li><a href="#real-number">3.1.3. Real number</a></li>
+<li><a href="#complex-number">3.1.4. Complex number</a></li>
+<li><a href="#ordered-pair">3.1.5. Ordered pair</a></li>
 </ul>
 </li>
 <li><a href="#linear-algebra">3.2. Linear algebra</a>
 <ul class="sectlevel3">
 <li><a href="#matrix-multiplication">3.2.1. Matrix multiplication</a></li>
-<li><a href="#unitary-matrix">3.2.2. Unitary matrix</a></li>
+<li><a href="#eigenvalues-and-eigenvectors">3.2.2. Eigenvalues and eigenvectors</a></li>
+<li><a href="#unitary-matrix">3.2.3. Unitary matrix</a></li>
+<li><a href="#self-adjoint-operator">3.2.4. Self-adjoint operator</a></li>
 </ul>
 </li>
-<li><a href="#partial-differential-equations">3.3. Partial differential equations</a>
+<li><a href="#calculus">3.3. Calculus</a>
 <ul class="sectlevel3">
-<li><a href="#existence-and-uniqueness-of-solutions-of-partial-differential-equations">3.3.1. Existence and uniqueness of solutions of partial differential equations</a></li>
+<li><a href="#reimann-integral">3.3.1. Reimann integral</a></li>
+<li><a href="#lebesgue-integral">3.3.2. Lebesgue integral</a></li>
+<li><a href="#lebesgue-integral-of-lp-is-complete-but-reimann-isnt">3.3.3. Lebesgue integral of \(\LP\) is complete but Reimann isn&#8217;t</a>
+<ul class="sectlevel4">
+<li><a href="#riesz-fischer-theorem">3.3.3.1. Riesz-Fischer theorem</a>
+<ul class="sectlevel5">
+<li><a href="#lp-is-complete">3.3.3.1.1. \(\LP\) is complete</a></li>
+<li><a href="#fourier-basis-is-complete-for-l2">3.3.3.1.2. Fourier basis is complete for \(\L2\)</a></li>
 </ul>
 </li>
-<li><a href="#numerical-analysis">3.4. Numerical analysis</a>
+<li><a href="#lp">3.3.3.2. \(\LP\)</a>
+<ul class="sectlevel5">
+<li><a href="#l2">3.3.3.2.1. \(\LTwo\)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#fourier-transform">3.3.4. Fourier transform</a></li>
+<li><a href="#topology">3.3.5. Topology</a>
+<ul class="sectlevel4">
+<li><a href="#complete-metric-space">3.3.5.1. Complete metric space</a></li>
+<li><a href="#dense-set">3.3.5.2. Dense set</a></li>
+</ul>
+</li>
+<li><a href="#distribution">3.3.6. Distribution</a>
+<ul class="sectlevel4">
+<li><a href="#dirac-delta">3.3.6.1. Dirac delta</a></li>
+</ul>
+</li>
+<li><a href="#complex-analysis">3.3.7. Complex analysis</a></li>
+<li><a href="#hilbert-space">3.3.8. Hilbert space</a></li>
+<li><a href="#lie-algebra">3.3.9. Lie Algebra</a></li>
+<li><a href="#differential-equations">3.3.10. Differential equations</a>
+<ul class="sectlevel4">
+<li><a href="#partial-differential-equations">3.3.10.1. Partial differential equations</a></li>
+<li><a href="#existence-and-uniqueness-of-solutions-of-partial-differential-equations">3.3.10.2. Existence and uniqueness of solutions of partial differential equations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#algebra">3.4. Algebra</a>
 <ul class="sectlevel3">
-<li><a href="#finite-element-method">3.4.1. Finite element method</a></li>
+<li><a href="#group">3.4.1. Group</a></li>
+<li><a href="#subgroup-generated-by-a-group">3.4.2. Subgroup generated by a group</a>
+<ul class="sectlevel4">
+<li><a href="#unitary-group">3.4.2.1. Unitary group</a></li>
 </ul>
 </li>
-<li><a href="#mathematics-bibliography">3.5. Mathematics bibliography</a></li>
-<li><a href="#mathematicians">3.6. Mathematicians</a></li>
+</ul>
+</li>
+<li><a href="#numerical-analysis">3.5. Numerical analysis</a>
+<ul class="sectlevel3">
+<li><a href="#finite-element-method">3.5.1. Finite element method</a></li>
+</ul>
+</li>
+<li><a href="#mathematics-bibliography">3.6. Mathematics bibliography</a></li>
+<li><a href="#mathematicians">3.7. Mathematicians</a>
+<ul class="sectlevel3">
+<li><a href="#high-flying-bird-vs-gophers">3.7.1. High flying bird vs gophers</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#art">4. Art</a>
@@ -495,6 +566,11 @@
 </ul>
 </li>
 <li><a href="#united-states-of-america">7.5. United States of America</a></li>
+<li><a href="#united-kingdom">7.6. United Kingdom</a>
+<ul class="sectlevel3">
+<li><a href="#cambridge-united-kingdom">7.6.1. Cambridge, United Kingdom</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#companies">8. Companies</a>
@@ -522,7 +598,8 @@
 <ul class="sectlevel2">
 <li><a href="#evil">9.1. Evil</a>
 <ul class="sectlevel3">
-<li><a href="#knowledge-olympiads">9.1.1. Knowledge Olympiads</a></li>
+<li><a href="#planned-obsolescence">9.1.1. Planned obsolescence</a></li>
+<li><a href="#knowledge-olympiads">9.1.2. Knowledge Olympiads</a></li>
 </ul>
 </li>
 <li><a href="#good">9.2. Good</a></li>
@@ -583,7 +660,11 @@
 <li><a href="#the-most-important-quantum-computing-players">10.12.2. The most important quantum computing players</a></li>
 <li><a href="#programmers-model-of-quantum-computers">10.12.3. Programmer&#8217;s model of quantum computers</a>
 <ul class="sectlevel4">
-<li><a href="#quantum-logic-gate">10.12.3.1. Quantum logic gate</a></li>
+<li><a href="#quantum-logic-gate">10.12.3.1. Quantum logic gate</a>
+<ul class="sectlevel5">
+<li><a href="#universal-quantum-gates">10.12.3.1.1. Universal quantum gates</a></li>
+</ul>
+</li>
 <li><a href="#philosophical-discussion-of-the-programmers-model-of-quantum-computers">10.12.3.2. Philosophical discussion of the programmer&#8217;s model of quantum computers</a></li>
 </ul>
 </li>
@@ -637,6 +718,7 @@
 <li><a href="#war">11. War</a>
 <ul class="sectlevel2">
 <li><a href="#nuclear-weapon">11.1. Nuclear weapon</a></li>
+<li><a href="#nsa">11.2. NSA</a></li>
 </ul>
 </li>
 <li><a href="#chemistry">12. Chemistry</a>
@@ -662,7 +744,11 @@
 <li><a href="#protein">14.1. Protein</a></li>
 <li><a href="#dna-sequencing">14.2. DNA Sequencing</a>
 <ul class="sectlevel3">
-<li><a href="#illumina">14.2.1. Illumina</a></li>
+<li><a href="#illumina">14.2.1. Illumina</a>
+<ul class="sectlevel4">
+<li><a href="#solexa">14.2.1.1. Solexa</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -679,7 +765,16 @@
 <ul class="sectlevel2">
 <li><a href="#stuff-school-should-actually-teach">16.1. Stuff school should actually teach</a></li>
 <li><a href="#ecole-polytechnique">16.2. École Polytechnique</a></li>
-<li><a href="#university-of-sao-paulo-brazil">16.3. University of São Paulo, Brazil</a></li>
+<li><a href="#university-of-sao-paulo-brazil">16.3. University of São Paulo, Brazil</a>
+<ul class="sectlevel3">
+<li><a href="#university-of-cambridge">16.3.1. University of Cambridge</a></li>
+</ul>
+</li>
+<li><a href="#the-royal-society">16.4. The Royal Society</a>
+<ul class="sectlevel3">
+<li><a href="#post-nominal-letters">16.4.1. Post nominal letters</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#religion">17. Religion</a>
@@ -2281,6 +2376,9 @@ hello /root/.profile                                                            
 <p><a href="https://hackaday.io/cirosantilli" class="bare">https://hackaday.io/cirosantilli</a></p>
 </li>
 <li>
+<p><a href="https://hinative.com/en-US/profiles/5276462" class="bare">https://hinative.com/en-US/profiles/5276462</a></p>
+</li>
+<li>
 <p><a href="https://identity.kde.org/index.php?r=people/view&amp;uid=cirosantilli" class="bare">https://identity.kde.org/index.php?r=people/view&amp;uid=cirosantilli</a></p>
 </li>
 <li>
@@ -3433,7 +3531,13 @@ xdg-open http://localhost:4000</pre>
 <p>Ciro has some respiratory allergies. When he was around 5, he had relatively serious <a href="https://en.wikipedia.org/wiki/Asthma">asthma</a> crisis which scared parents were scared to death. Throughout his life, he appears to be allergic at an intermediate level to: mold or dust mites (or whatever it is that old books / pillows have), cats (itching on touch), hayfever (in May in the UK, likely grass pollen). Ciro believes however that this also gives him higher resistance to viral infections, since it has been many many years since he had a cold/flu, and when everyone in the office is going down with it, he&#8217;s just fine. Ciro wonders if his active immune system will actually kill off cancers early, which he ranks as his most likely causes of death, along with respiratory and gastro-intestinal problems. Ciro has low blood pressure and cannot get fat, so cardio vascular problems seem much less likely.</p>
 </div>
 <div class="paragraph">
-<p>Ciro is generally <a href="https://en.wikipedia.org/wiki/Republican">Republican</a> due to his high compassion level. He believes that politics is highly genetically determined, and that just like you enter a room full of people and immediately like some and dislike others, the same goes for politics. People just vote for whoever they want to see more of because their way of speaking makes them feel good. There is not rationality involved in it at all.</p>
+<p>Ciro is generally <a href="https://en.wikipedia.org/wiki/Democrat">Democrat</a> due to his high compassion level. He believes that politics is highly genetically determined, and that just like you enter a room full of people and immediately like some and dislike others, the same goes for politics. People just vote for whoever they want to see more of because their way of speaking makes them feel good. There is not rationality involved in it at all.</p>
+</div>
+<div class="paragraph">
+<p>In the field of Love and Friendship, Ciro is a big believer in the merciless application of <a href="https://en.wikipedia.org/wiki/Tit_for_tat">tit for tat</a>. Never desire someone&#8217;s love, if you give and what comes back is not proportional. Cut your attempts to reach out immediately in such cases.</p>
+</div>
+<div class="paragraph">
+<p>Ciro is a <a href="#high-flying-bird-vs-gophers">high flying bird scientist</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="effortless-effort"><a class="anchor" href="#effortless-effort"></a><a class="link" href="#effortless-effort">1.9.1. Effortless effort 無爲</a></h4>
@@ -3509,7 +3613,7 @@ xdg-open http://localhost:4000</pre>
 <p>Searching just for just <a href="https://www.google.com/search?q=%22ciro%22">"Ciro"</a> on Google does not give any Ciro Santilli hits, mostly some smaller brands that could be beaten, this is Ciro&#8217;s main initial fame metric goal. Reaching it would require doing things known much beyond the programming community however, as Ciro has done until of 2019. <a href="http://ciro.com" class="bare">http://ciro.com</a> is from an electromechanics consultancy <a href="https://web.archive.org/web/20190610202635/http://ciro.com/">as of 2019</a>, so it&#8217;s not bad, let them be.</p>
 </div>
 <div class="paragraph">
-<p>At the next useless gamified level, an honorary <a href="https://en.wikipedia.org/wiki/Order_of_the_British_Empire">OBE</a> and more ambitiously <a href="https://en.wikipedia.org/wiki/Fellow_of_the_Royal_Society">ForMemRS</a> post nominal letters would be nice.</p>
+<p>At the next useless gamified level, an honorary <a href="https://en.wikipedia.org/wiki/Order_of_the_British_Empire">OBE</a> and more ambitiously <a href="https://en.wikipedia.org/wiki/Fellow_of_the_Royal_Society">ForMemRS</a> from the <a href="#the-royal-society">The Royal Society</a> post nominal letters would be nice.</p>
 </div>
 <div class="paragraph">
 <p>The ultimate dream however would be to beat <a href="https://en.wikipedia.org/wiki/Cyrus_the_Great">Cyrus the Great</a> himself on Google searches ("Ciro" == "Cyrus" in Portuguese), maybe becoming "Cyrus the Greater"? That one will be a bit harder though. Maybe if <a href="https://github.com/cirosantilli/china-dictatorship/tree/4e5ad752ffe70c26fa0ff6a78e6eb64913153e33#falun-gong">Falung Gong</a> becomes the dominant religion in 2000 years like Christianism did, catapulting the Judaism benefactor Cyrus into greater fame, then there is some hope for Ciro as well.</p>
@@ -3739,6 +3843,12 @@ xdg-open http://localhost:4000</pre>
 <p><a href="#biology">Biology</a></p>
 </li>
 </ul>
+</div>
+<div id="xkcd-435-physics" class="imageblock">
+<div class="content">
+<a class="image" href="#xkcd-435-physics"><img src="https://web.archive.org/web/20190925220347if_/https://imgs.xkcd.com/comics/purity.png" alt="purity" height="400"></a>
+</div>
+<div class="title">Figure 27. xkcd 435: Fields arranged by purity. <a href="https://xkcd.com/435/">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>As of 2019, all known physics can be described by two theories:</p>
@@ -4599,7 +4709,7 @@ xdg-open http://localhost:4000</pre>
 <div class="content">
 <a class="image" href="#image-a-1-64-scale-model-of-the-ikaros-spacecraft"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/IKAROS_IAC_2010.jpg/568px-IKAROS_IAC_2010.jpg" alt="568px IKAROS IAC 2010" height="400"></a>
 </div>
-<div class="title">Figure 27. A 1:64 scale model of the IKAROS spacecraft. <a href="https://commons.wikimedia.org/wiki/File:IKAROS_IAC_2010.jpg">Source</a>.</div>
+<div class="title">Figure 28. A 1:64 scale model of the IKAROS spacecraft. <a href="https://commons.wikimedia.org/wiki/File:IKAROS_IAC_2010.jpg">Source</a>.</div>
 </div>
 </div>
 </div>
@@ -4781,7 +4891,57 @@ xdg-open http://localhost:4000</pre>
 <p>Existence and uniqueness: <a href="https://mathoverflow.net/questions/212913/existence-and-uniqueness-for-two-dimensional-time-dependent-schr%C3%B6dinger-equation" class="bare">https://mathoverflow.net/questions/212913/existence-and-uniqueness-for-two-dimensional-time-dependent-schr%C3%B6dinger-equation</a></p>
 </div>
 <div class="sect3">
-<h4 id="derivation-of-the-schrodinger-equation"><a class="anchor" href="#derivation-of-the-schrodinger-equation"></a><a class="link" href="#derivation-of-the-schrodinger-equation">2.3.1. Derivation of the Schrodinger equation</a></h4>
+<h4 id="mathematical-formulation-of-quantum-mechanics"><a class="anchor" href="#mathematical-formulation-of-quantum-mechanics"></a><a class="link" href="#mathematical-formulation-of-quantum-mechanics">2.3.1. Mathematical formulation of quantum mechanics</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics" class="bare">https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics</a></p>
+</div>
+<div class="paragraph">
+<p>This is the key thing to understand!!</p>
+</div>
+<div class="paragraph">
+<p>TODO correct and clean this up.</p>
+</div>
+<div class="paragraph">
+<p>The state of a quantum system is a vector of unit length in a <a href="#hilbert-space">Hilbert space</a>. TODO why Hilbert Space.</p>
+</div>
+<div class="paragraph">
+<p>"Doing a measurement" means applying a <a href="#self-adjoint-operator">Self-adjoint operator</a> to the state, and after a measurement is done</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the state collapses to an eigenvalue of the self adjoint operator</p>
+</li>
+<li>
+<p>the result of the measurement is the eigenvalue of the self adjoint operator</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Self adjoint operators are chosen because they have the following key properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>their eigenvalues form an orthonormal basis</p>
+</li>
+<li>
+<p>they are diagonalizable</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See also: <a href="https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics" class="bare">https://en.wikipedia.org/wiki/Measurement_in_quantum_mechanics</a></p>
+</div>
+<div class="sect4">
+<h5 id="position-operator"><a class="anchor" href="#position-operator"></a><a class="link" href="#position-operator">2.3.1.1. Position operator</a></h5>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Position_operator" class="bare">https://en.wikipedia.org/wiki/Position_operator</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="derivation-of-the-schrodinger-equation"><a class="anchor" href="#derivation-of-the-schrodinger-equation"></a><a class="link" href="#derivation-of-the-schrodinger-equation">2.3.2. Derivation of the Schrodinger equation</a></h4>
 <div class="paragraph">
 <p>Where derivation == "intuitive routes", since a "law of physics" cannot be derived, only observed right or wrong.</p>
 </div>
@@ -4790,12 +4950,12 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="solutions-of-the-schrodinger-equation"><a class="anchor" href="#solutions-of-the-schrodinger-equation"></a><a class="link" href="#solutions-of-the-schrodinger-equation">2.3.2. Solutions of the Schrodinger equation</a></h4>
+<h4 id="solutions-of-the-schrodinger-equation"><a class="anchor" href="#solutions-of-the-schrodinger-equation"></a><a class="link" href="#solutions-of-the-schrodinger-equation">2.3.3. Solutions of the Schrodinger equation</a></h4>
 <div class="paragraph">
 <p>As always, the best way to get some intuition about an equation is to solve it for some simple cases, so let&#8217;s give that a try with different fixed potentials.</p>
 </div>
 <div class="sect4">
-<h5 id="schrodinger-equation-solution-for-a-free-particle"><a class="anchor" href="#schrodinger-equation-solution-for-a-free-particle"></a><a class="link" href="#schrodinger-equation-solution-for-a-free-particle">2.3.2.1. Schrodinger equation solution for a free particle</a></h5>
+<h5 id="schrodinger-equation-solution-for-a-free-particle"><a class="anchor" href="#schrodinger-equation-solution-for-a-free-particle"></a><a class="link" href="#schrodinger-equation-solution-for-a-free-particle">2.3.3.1. Schrodinger equation solution for a free particle</a></h5>
 <div class="paragraph">
 <p>TODO.</p>
 </div>
@@ -4807,7 +4967,7 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="schrodinger-equation-solution-for-the-hydrogen-atom"><a class="anchor" href="#schrodinger-equation-solution-for-the-hydrogen-atom"></a><a class="link" href="#schrodinger-equation-solution-for-the-hydrogen-atom">2.3.2.2. Schrodinger equation solution for the hydrogen atom</a></h5>
+<h5 id="schrodinger-equation-solution-for-the-hydrogen-atom"><a class="anchor" href="#schrodinger-equation-solution-for-the-hydrogen-atom"></a><a class="link" href="#schrodinger-equation-solution-for-the-hydrogen-atom">2.3.3.2. Schrodinger equation solution for the hydrogen atom</a></h5>
 <div class="paragraph">
 <p>Is the only atom that has a closed form solution, which allows for very good predictions, and gives awesome intuition about the orbitals in general.</p>
 </div>
@@ -4819,7 +4979,7 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="schrodinger-equation-solution-for-the-helium-atom"><a class="anchor" href="#schrodinger-equation-solution-for-the-helium-atom"></a><a class="link" href="#schrodinger-equation-solution-for-the-helium-atom">2.3.2.3. Schrodinger equation solution for the helium atom</a></h5>
+<h5 id="schrodinger-equation-solution-for-the-helium-atom"><a class="anchor" href="#schrodinger-equation-solution-for-the-helium-atom"></a><a class="link" href="#schrodinger-equation-solution-for-the-helium-atom">2.3.3.3. Schrodinger equation solution for the helium atom</a></h5>
 <div class="paragraph">
 <p>No closed form solution, but good approximation with the <a href="#hartree-fock-method">Hartree Fock method</a>, see <a href="#hartree-fock-method-for-the-helium-atom">Hartree Fock method for the helium atom</a>.</p>
 </div>
@@ -4838,18 +4998,18 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="hartree-fock-method"><a class="anchor" href="#hartree-fock-method"></a><a class="link" href="#hartree-fock-method">2.3.2.4. Hartree Fock method</a></h5>
+<h5 id="hartree-fock-method"><a class="anchor" href="#hartree-fock-method"></a><a class="link" href="#hartree-fock-method">2.3.3.4. Hartree Fock method</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method" class="bare">https://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method</a></p>
 </div>
 <div class="sect5">
-<h6 id="hartree-fock-method-for-the-helium-atom"><a class="anchor" href="#hartree-fock-method-for-the-helium-atom"></a><a class="link" href="#hartree-fock-method-for-the-helium-atom">2.3.2.4.1. Hartree Fock method for the helium atom</a></h6>
+<h6 id="hartree-fock-method-for-the-helium-atom"><a class="anchor" href="#hartree-fock-method-for-the-helium-atom"></a><a class="link" href="#hartree-fock-method-for-the-helium-atom">2.3.3.4.1. Hartree Fock method for the helium atom</a></h6>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Helium_atom#Hartree%E2%80%93Fock_method" class="bare">https://en.wikipedia.org/wiki/Helium_atom#Hartree%E2%80%93Fock_method</a></p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="why-do-multiple-electrons-occupy-the-same-orbital-if-electrons-repel-each-other"><a class="anchor" href="#why-do-multiple-electrons-occupy-the-same-orbital-if-electrons-repel-each-other"></a><a class="link" href="#why-do-multiple-electrons-occupy-the-same-orbital-if-electrons-repel-each-other">2.3.2.4.2. Why do multiple electrons occupy the same orbital if electrons repel each other?</a></h6>
+<h6 id="why-do-multiple-electrons-occupy-the-same-orbital-if-electrons-repel-each-other"><a class="anchor" href="#why-do-multiple-electrons-occupy-the-same-orbital-if-electrons-repel-each-other"></a><a class="link" href="#why-do-multiple-electrons-occupy-the-same-orbital-if-electrons-repel-each-other">2.3.3.4.2. Why do multiple electrons occupy the same orbital if electrons repel each other?</a></h6>
 <div class="paragraph">
 <p>As shown at <a href="#schrodinger-equation-solution-for-the-helium-atom">Schrodinger equation solution for the helium atom</a>, they do repel each other, and that affects their measurable energy.</p>
 </div>
@@ -4871,7 +5031,7 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 <div class="sect5">
-<h6 id="aufbau-principle"><a class="anchor" href="#aufbau-principle"></a><a class="link" href="#aufbau-principle">2.3.2.4.3. Aufbau principle</a></h6>
+<h6 id="aufbau-principle"><a class="anchor" href="#aufbau-principle"></a><a class="link" href="#aufbau-principle">2.3.3.4.3. Aufbau principle</a></h6>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Aufbau_principle" class="bare">https://en.wikipedia.org/wiki/Aufbau_principle</a></p>
 </div>
@@ -4897,7 +5057,7 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="schrodinger-equation-simulations"><a class="anchor" href="#schrodinger-equation-simulations"></a><a class="link" href="#schrodinger-equation-simulations">2.3.2.5. Schrodinger equation simulations</a></h5>
+<h5 id="schrodinger-equation-simulations"><a class="anchor" href="#schrodinger-equation-simulations"></a><a class="link" href="#schrodinger-equation-simulations">2.3.3.5. Schrodinger equation simulations</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -4921,7 +5081,7 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="conservation-laws-in-schrodinger-equations"><a class="anchor" href="#conservation-laws-in-schrodinger-equations"></a><a class="link" href="#conservation-laws-in-schrodinger-equations">2.3.3. Conservation laws in Schrodinger equations</a></h4>
+<h4 id="conservation-laws-in-schrodinger-equations"><a class="anchor" href="#conservation-laws-in-schrodinger-equations"></a><a class="link" href="#conservation-laws-in-schrodinger-equations">2.3.4. Conservation laws in Schrodinger equations</a></h4>
 <div class="paragraph">
 <p><a href="https://physics.stackexchange.com/questions/229885/energy-equation-in-quantum-mechanics" class="bare">https://physics.stackexchange.com/questions/229885/energy-equation-in-quantum-mechanics</a></p>
 </div>
@@ -5216,7 +5376,7 @@ xdg-open http://localhost:4000</pre>
 <p>the pairs form a <a href="#bose-einstein-condensate">Bose-Einstein condensate</a></p>
 </li>
 <li>
-<p>once this new state is reached, all pairs are somehow entangled into one big wave function, and you can&#8217;t</p>
+<p>once this new state is reached, all pairs are somehow entangled into one big wave function, and you so individual lattice imperfections can&#8217;t move just one single electron off trajectory and make it lose energy</p>
 </li>
 </ul>
 </div>
@@ -5328,7 +5488,7 @@ xdg-open http://localhost:4000</pre>
 <div class="content">
 <a class="image" href="#image-illustration-of-a-thin-film-superconducting-tunnel-junction-stj-the-superconducting-material-is-light-blue-the-insulating-tunnel-barrier-is-black-and-the-substrate-is-green-"><img src="https://upload.wikimedia.org/wikipedia/en/0/03/STJ_SVG_file.svg" alt="STJ SVG file" height="400"></a>
 </div>
-<div class="title">Figure 28. Illustration of a thin-film superconducting tunnel junction (STJ). The superconducting material is light blue, the insulating tunnel barrier is black, and the substrate is green.</div>
+<div class="title">Figure 29. Illustration of a thin-film superconducting tunnel junction (STJ). The superconducting material is light blue, the insulating tunnel barrier is black, and the substrate is green.</div>
 </div>
 </div>
 </div>
@@ -5384,9 +5544,36 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="philosophy-of-science"><a class="anchor" href="#philosophy-of-science"></a><a class="link" href="#philosophy-of-science">2.10. Philosophy of Science</a></h3>
+<h3 id="physicist"><a class="anchor" href="#physicist"></a><a class="link" href="#physicist">2.10. Physicist</a></h3>
+<div id="xkcd-435-physicists" class="imageblock">
+<div class="content">
+<a class="image" href="#xkcd-435-physicists"><img src="https://web.archive.org/web/20190925220347if_/https://imgs.xkcd.com/comics/purity.png" alt="purity" height="400"></a>
+</div>
+<div class="title">Figure 30. xkcd 435: Fields arranged by purity. <a href="https://xkcd.com/435/">Source</a>.</div>
+</div>
 <div class="sect3">
-<h4 id="never-trust-an-experiment-that-is-not-supported-by-a-good-theory"><a class="anchor" href="#never-trust-an-experiment-that-is-not-supported-by-a-good-theory"></a><a class="link" href="#never-trust-an-experiment-that-is-not-supported-by-a-good-theory">2.10.1. Never trust an experiment that is not supported by a good theory</a></h4>
+<h4 id="paul-dirac"><a class="anchor" href="#paul-dirac"></a><a class="link" href="#paul-dirac">2.10.1. Paul Dirac</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Paul_Dirac" class="bare">https://en.wikipedia.org/wiki/Paul_Dirac</a></p>
+</div>
+<div class="paragraph">
+<p>Eccentric nerdy slow speaking <a href="#physicist">Physicist</a> mostly based in <a href="#university-of-cambridge">University of Cambridge</a>.</p>
+</div>
+<div class="paragraph">
+<p>Created the <a href="#dirac-equation">Dirac Equation</a>, what else do you need to know?!</p>
+</div>
+<div class="videoblock">
+<div class="title">Video  1. Good lecture about Paul Dirac&#8217;s biography by Graham Farmelo given at <a href="#the-royal-society">The Royal Society</a> in 2013</div>
+<div class="content">
+<iframe width="600" height="400" src="https://www.youtube.com/embed/jPwo1XsKKXg?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="philosophy-of-science"><a class="anchor" href="#philosophy-of-science"></a><a class="link" href="#philosophy-of-science">2.11. Philosophy of Science</a></h3>
+<div class="sect3">
+<h4 id="never-trust-an-experiment-that-is-not-supported-by-a-good-theory"><a class="anchor" href="#never-trust-an-experiment-that-is-not-supported-by-a-good-theory"></a><a class="link" href="#never-trust-an-experiment-that-is-not-supported-by-a-good-theory">2.11.1. Never trust an experiment that is not supported by a good theory</a></h4>
 <div class="paragraph">
 <p>Not the usual bullshit you were expecting right?</p>
 </div>
@@ -5401,11 +5588,11 @@ xdg-open http://localhost:4000</pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>I also like how Monod "learned from other students a little older than himself, rather than from the faculty.", read somewhere else that it is because faculty is more likely outdated.</p>
+<p><a href="#ciro-santilli">Ciro Santilli</a> also likes how Monod "learned from other students a little older than himself, rather than from the faculty.", read somewhere else that it is because faculty is more likely outdated.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="physics-and-the-illusion-of-life"><a class="anchor" href="#physics-and-the-illusion-of-life"></a><a class="link" href="#physics-and-the-illusion-of-life">2.10.2. Physics and the illusion of life</a></h4>
+<h4 id="physics-and-the-illusion-of-life"><a class="anchor" href="#physics-and-the-illusion-of-life"></a><a class="link" href="#physics-and-the-illusion-of-life">2.11.2. Physics and the illusion of life</a></h4>
 <div class="paragraph">
 <p>The natural sciences are not just a tool to predict the future.</p>
 </div>
@@ -5483,10 +5670,60 @@ xdg-open http://localhost:4000</pre>
 <p><a href="https://math.stackexchange.com/questions/53969/what-does-formal-mean/3297537#3297537" class="bare">https://math.stackexchange.com/questions/53969/what-does-formal-mean/3297537#3297537</a></p>
 </div>
 <div class="paragraph">
-<p>The one true definition of <a href="#mathematics">Mathematics</a>.</p>
+<p>The one true definition of <a href="#mathematics">Mathematics</a>!</p>
 </div>
 <div class="sect3">
-<h4 id="real-number"><a class="anchor" href="#real-number"></a><a class="link" href="#real-number">3.1.1. Real number</a></h4>
+<h4 id="set"><a class="anchor" href="#set"></a><a class="link" href="#set">3.1.1. Set</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Set_(mathematics)" class="bare">https://en.wikipedia.org/wiki/Set_(mathematics)</a></p>
+</div>
+<div class="paragraph">
+<p>Intuitively: unordered container where all the values are unique, just like C++ ``std::set.</p>
+</div>
+<div class="paragraph">
+<p>More precisely for set theory <a href="#formalization-of-mathematics">Formalization of mathematics</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>everything is a set, including the elements of sets</p>
+</li>
+<li>
+<p>string manipulation wise:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>{}</code> is an empty set. The natural number <code>0</code> is defined as <code>{}</code> as well.</p>
+</li>
+<li>
+<p><code>{{}}</code> is a set that contains an empty set</p>
+</li>
+<li>
+<p><code>{{}, {{}}}</code> is a set that contains two sets: <code>{}</code> and <code>{{}}</code></p>
+</li>
+<li>
+<p><code>{{}, {}}</code> is not well formed, because it contains <code>{}</code> twice</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="function"><a class="anchor" href="#function"></a><a class="link" href="#function">3.1.2. Function</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Function_(mathematics)" class="bare">https://en.wikipedia.org/wiki/Function_(mathematics)</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#set">Set</a> of <a href="#ordered-pair">ordered pairs</a>. That&#8217;s it!</p>
+</div>
+<div class="paragraph">
+<p><a href="https://math.stackexchange.com/questions/1480651/is-fx-x-1-x-2-a-function/1481099#1481099" class="bare">https://math.stackexchange.com/questions/1480651/is-fx-x-1-x-2-a-function/1481099#1481099</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="real-number"><a class="anchor" href="#real-number"></a><a class="link" href="#real-number">3.1.3. Real number</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Real_number" class="bare">https://en.wikipedia.org/wiki/Real_number</a></p>
 </div>
@@ -5495,19 +5732,19 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="complex-number"><a class="anchor" href="#complex-number"></a><a class="link" href="#complex-number">3.1.2. Complex number</a></h4>
+<h4 id="complex-number"><a class="anchor" href="#complex-number"></a><a class="link" href="#complex-number">3.1.4. Complex number</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Complex_number" class="bare">https://en.wikipedia.org/wiki/Complex_number</a></p>
 </div>
 <div class="paragraph">
-<p>An <a href="#ordered-pair">Ordered pair</a> of two <a href="#real-number">real numbers</a> with addition and multiplication defined to match whatever bullshit they taught you in school.</p>
+<p>An <a href="#ordered-pair">Ordered pair</a> of two <a href="#real-number">real numbers</a> with addition and multiplication defined to match whatever bullshit formula they taught you in school.</p>
 </div>
 <div class="paragraph">
 <p>TODO visual interpretations.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="ordered-pair"><a class="anchor" href="#ordered-pair"></a><a class="link" href="#ordered-pair">3.1.3. Ordered pair</a></h4>
+<h4 id="ordered-pair"><a class="anchor" href="#ordered-pair"></a><a class="link" href="#ordered-pair">3.1.5. Ordered pair</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Ordered_pair" class="bare">https://en.wikipedia.org/wiki/Ordered_pair</a></p>
 </div>
@@ -5522,7 +5759,23 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="unitary-matrix"><a class="anchor" href="#unitary-matrix"></a><a class="link" href="#unitary-matrix">3.2.2. Unitary matrix</a></h4>
+<h4 id="eigenvalues-and-eigenvectors"><a class="anchor" href="#eigenvalues-and-eigenvectors"></a><a class="link" href="#eigenvalues-and-eigenvectors">3.2.2. Eigenvalues and eigenvectors</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors" class="bare">https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://math.stackexchange.com/questions/23312/what-is-the-importance-of-eigenvalues-eigenvectors" class="bare">https://math.stackexchange.com/questions/23312/what-is-the-importance-of-eigenvalues-eigenvectors</a></p>
+</li>
+<li>
+<p><a href="https://math.stackexchange.com/questions/1520832/real-life-examples-for-eigenvalues-eigenvectors" class="bare">https://math.stackexchange.com/questions/1520832/real-life-examples-for-eigenvalues-eigenvectors</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="unitary-matrix"><a class="anchor" href="#unitary-matrix"></a><a class="link" href="#unitary-matrix">3.2.3. Unitary matrix</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Unitary_matrix" class="bare">https://en.wikipedia.org/wiki/Unitary_matrix</a></p>
 </div>
@@ -5532,14 +5785,252 @@ xdg-open http://localhost:4000</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#quantum-computing">Quantum computing</a></p>
+<p>in <a href="#quantum-computing">quantum computer</a> programming basically comes down to creating one big unitary matrix as explained at: <a href="#programmers-model-of-quantum-computers">Programmer&#8217;s model of quantum computers</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="self-adjoint-operator"><a class="anchor" href="#self-adjoint-operator"></a><a class="link" href="#self-adjoint-operator">3.2.4. Self-adjoint operator</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Self-adjoint_operator" class="bare">https://en.wikipedia.org/wiki/Self-adjoint_operator</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calculus"><a class="anchor" href="#calculus"></a><a class="link" href="#calculus">3.3. Calculus</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Calculus" class="bare">https://en.wikipedia.org/wiki/Calculus</a></p>
+</div>
+<div class="paragraph">
+<p>Fancy name for it with the "more advanced" connotation: <a href="https://en.wikipedia.org/wiki/Real_analysis" class="bare">https://en.wikipedia.org/wiki/Real_analysis</a></p>
+</div>
+<div class="sect3">
+<h4 id="reimann-integral"><a class="anchor" href="#reimann-integral"></a><a class="link" href="#reimann-integral">3.3.1. Reimann integral</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Riemann_integral" class="bare">https://en.wikipedia.org/wiki/Riemann_integral</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="lebesgue-integral"><a class="anchor" href="#lebesgue-integral"></a><a class="link" href="#lebesgue-integral">3.3.2. Lebesgue integral</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Lebesgue_integration" class="bare">https://en.wikipedia.org/wiki/Lebesgue_integration</a></p>
+</div>
+<div class="paragraph">
+<p>"More complex" integral. Matches "Reimann" for "simple functions", but also works for some "funkier" functions that Reimann does not work for.</p>
+</div>
+<div class="paragraph">
+<p>Key motivation: <a href="#lebesgue-integral-of-lp-is-complete-but-reimann-isnt">Lebesgue integral of \(\LP\) is complete but Reimann isn&#8217;t</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="lebesgue-integral-of-lp-is-complete-but-reimann-isnt"><a class="anchor" href="#lebesgue-integral-of-lp-is-complete-but-reimann-isnt"></a><a class="link" href="#lebesgue-integral-of-lp-is-complete-but-reimann-isnt">3.3.3. Lebesgue integral of \(\LP\) is complete but Reimann isn&#8217;t</a></h4>
+<div class="paragraph">
+<p>\(\LP\) is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#complete-metric-space">complete</a> under the Lebesgue integral, this result is may be called the <a href="#riesz-fischer-theorem">Riesz-Fischer theorem</a></p>
+</li>
+<li>
+<p>not complete under the <a href="#reimann-integral">Reimann integral</a>: <a href="https://math.stackexchange.com/questions/397369/space-of-riemann-integrable-functions-not-complete" class="bare">https://math.stackexchange.com/questions/397369/space-of-riemann-integrable-functions-not-complete</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And then this is why <a href="#quantum-mechanics">Quantum mechanics</a> basically lives in <a href="#l2">\(\LTwo\)</a>: not being complete makes no sense physically, it would mean that you can get closer and closer to states that don&#8217;t exist!</p>
+</div>
+<div class="sect4">
+<h5 id="riesz-fischer-theorem"><a class="anchor" href="#riesz-fischer-theorem"></a><a class="link" href="#riesz-fischer-theorem">3.3.3.1. Riesz-Fischer theorem</a></h5>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Riesz%E2%80%93Fischer_theorem" class="bare">https://en.wikipedia.org/wiki/Riesz%E2%80%93Fischer_theorem</a></p>
+</div>
+<div class="sect5">
+<h6 id="lp-is-complete"><a class="anchor" href="#lp-is-complete"></a><a class="link" href="#lp-is-complete">3.3.3.1.1. \(\LP\) is complete</a></h6>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="fourier-basis-is-complete-for-l2"><a class="anchor" href="#fourier-basis-is-complete-for-l2"></a><a class="link" href="#fourier-basis-is-complete-for-l2">3.3.3.1.2. Fourier basis is complete for \(\L2\)</a></h6>
+<div class="paragraph">
+<p><a href="https://math.stackexchange.com/questions/316235/proving-that-the-fourier-basis-is-complete-for-cr-2-pi-c-with-l2-norm" class="bare">https://math.stackexchange.com/questions/316235/proving-that-the-fourier-basis-is-complete-for-cr-2-pi-c-with-l2-norm</a></p>
+</div>
+<div class="paragraph">
+<p>Every converging Fourier series is in <a href="#l2">\(\LTwo\)</a> with a compact domain, and every <a href="#l2">\(\LTwo\)</a> function has a convering Fourier series.</p>
+</div>
+<div class="paragraph">
+<p>TODO how does it work for non-periodic functions? <a href="https://math.stackexchange.com/questions/1115240/can-a-non-periodic-function-have-a-fourier-series" class="bare">https://math.stackexchange.com/questions/1115240/can-a-non-periodic-function-have-a-fourier-series</a></p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="lp"><a class="anchor" href="#lp"></a><a class="link" href="#lp">3.3.3.2. \(\LP\)</a></h5>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Lp_space" class="bare">https://en.wikipedia.org/wiki/Lp_space</a></p>
+</div>
+<div class="paragraph">
+<p>Integrable functions to the power \(p\), usually and in this text assumed under the <a href="#lebesgue-integral">Lebesgue integral</a> because: <a href="#lebesgue-integral-of-lp-is-complete-but-reimann-isnt">Lebesgue integral of \(\LP\) is complete but Reimann isn&#8217;t</a></p>
+</div>
+<div class="sect5">
+<h6 id="l2"><a class="anchor" href="#l2"></a><a class="link" href="#l2">3.3.3.2.1. \(\LTwo\)</a></h6>
+<div class="paragraph">
+<p><a href="#lp">\(\LP\)</a> for \(p == 2\).</p>
+</div>
+<div class="paragraph">
+<p>\(\LTwo\) is by far the most important of \(\LP\) because it is <a href="#mathematical-formulation-of-quantum-mechanics">quantum mechanics states</a> live, because the total probability of being in any state has to be 1!</p>
+</div>
+<div class="paragraph">
+<p><a href="#l2">\(\LTwo\)</a> has some crucially important properties that other \(\LP\) don&#8217;t (TODO confirm and make those more precise):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>it is the only \(\LP\) that is <a href="#hilbert-space">Hilbert space</a> because it is the only one where an inner product compatible with the metric can be defined:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://math.stackexchange.com/questions/2005632/l2-is-the-only-hilbert-space-parallelogram-law-and-particular-ft-gt" class="bare">https://math.stackexchange.com/questions/2005632/l2-is-the-only-hilbert-space-parallelogram-law-and-particular-ft-gt</a></p>
+</li>
+<li>
+<p><a href="https://www.quora.com/Why-is-L2-a-Hilbert-space-but-not-Lp-or-higher-where-p-2" class="bare">https://www.quora.com/Why-is-L2-a-Hilbert-space-but-not-Lp-or-higher-where-p-2</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#fourier-basis-is-complete-for-l2">Fourier basis is complete for \(\L2\)</a>, which is great for solving <a href="#differential-equations">Differential equations</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="partial-differential-equations"><a class="anchor" href="#partial-differential-equations"></a><a class="link" href="#partial-differential-equations">3.3. Partial differential equations</a></h3>
+</div>
+<div class="sect3">
+<h4 id="fourier-transform"><a class="anchor" href="#fourier-transform"></a><a class="link" href="#fourier-transform">3.3.4. Fourier transform</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Fourier_transform" class="bare">https://en.wikipedia.org/wiki/Fourier_transform</a></p>
+</div>
+<div class="paragraph">
+<p>Applications:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://math.stackexchange.com/questions/579453/real-world-application-of-fourier-series" class="bare">https://math.stackexchange.com/questions/579453/real-world-application-of-fourier-series</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The continuous Fourier transform behaves especially nicely in <a href="#l2">\(\LTwo\)</a> (with the <a href="#lebesgue-integral">Lebesgue integral</a>), where there are completeness guarantees, see: <a href="#fourier-basis-is-complete-for-l2">Fourier basis is complete for \(\L2\)</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="topology"><a class="anchor" href="#topology"></a><a class="link" href="#topology">3.3.5. Topology</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Topology" class="bare">https://en.wikipedia.org/wiki/Topology</a></p>
+</div>
+<div class="paragraph">
+<p>Topology is the plumbing of <a href="#calculus">Calculus</a>.</p>
+</div>
+<div class="sect4">
+<h5 id="complete-metric-space"><a class="anchor" href="#complete-metric-space"></a><a class="link" href="#complete-metric-space">3.3.5.1. Complete metric space</a></h5>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Complete_metric_space" class="bare">https://en.wikipedia.org/wiki/Complete_metric_space</a></p>
+</div>
+<div class="paragraph">
+<p>One notable example where completeness matters: <a href="#lebesgue-integral-of-lp-is-complete-but-reimann-isnt">Lebesgue integral of \(\LP\) is complete but Reimann isn&#8217;t</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="dense-set"><a class="anchor" href="#dense-set"></a><a class="link" href="#dense-set">3.3.5.2. Dense set</a></h5>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Dense_set" class="bare">https://en.wikipedia.org/wiki/Dense_set</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="distribution"><a class="anchor" href="#distribution"></a><a class="link" href="#distribution">3.3.6. Distribution</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Distribution_(mathematics)" class="bare">https://en.wikipedia.org/wiki/Distribution_(mathematics)</a></p>
+</div>
+<div class="paragraph">
+<p>Generalize <a href="#function">functions</a> to allow adding some useful things which people wanted to be classical functions but which are not,</p>
+</div>
+<div class="paragraph">
+<p>It therefore requires you to redefine and reprove all of calculus.</p>
+</div>
+<div class="paragraph">
+<p>For this reason, most people are tempted to assume that all the hand wavy intuitive arguments undergrad teachers give are true.</p>
+</div>
+<div class="sect4">
+<h5 id="dirac-delta"><a class="anchor" href="#dirac-delta"></a><a class="link" href="#dirac-delta">3.3.6.1. Dirac delta</a></h5>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Dirac_delta_function" class="bare">https://en.wikipedia.org/wiki/Dirac_delta_function</a></p>
+</div>
+<div class="paragraph">
+<p>The "0-width" pulse <a href="#distribution">Distribution</a> that integrates to a step.</p>
+</div>
+<div class="paragraph">
+<p>There&#8217;s not way to describe it as a classical <a href="#function">Function</a>, making it the most important example of distribution.</p>
+</div>
+<div class="paragraph">
+<p>Applications:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#position-operator">Position operator</a> in <a href="#quantum-mechanics">Quantum mechanics</a>. It&#8217;s not a coincidence that the function is named after <a href="#paul-dirac">Paul Dirac</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="complex-analysis"><a class="anchor" href="#complex-analysis"></a><a class="link" href="#complex-analysis">3.3.7. Complex analysis</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Complex_analysis" class="bare">https://en.wikipedia.org/wiki/Complex_analysis</a></p>
+</div>
+<div class="paragraph">
+<p>The surprising thing is that a bunch of results are simpler in complex analysis!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="hilbert-space"><a class="anchor" href="#hilbert-space"></a><a class="link" href="#hilbert-space">3.3.8. Hilbert space</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Hilbert_space" class="bare">https://en.wikipedia.org/wiki/Hilbert_space</a></p>
+</div>
+<div class="paragraph">
+<p>Key for <a href="#quantum-mechanics">Quantum mechanics</a>, see: <a href="#mathematical-formulation-of-quantum-mechanics">Mathematical formulation of quantum mechanics</a>, the most important example by far being <a href="#l2">\(\LTwo\)</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="lie-algebra"><a class="anchor" href="#lie-algebra"></a><a class="link" href="#lie-algebra">3.3.9. Lie Algebra</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Lie_algebra" class="bare">https://en.wikipedia.org/wiki/Lie_algebra</a></p>
+</div>
+<div class="paragraph">
+<p>TODO <a href="#ciro-santilli">Ciro Santilli</a> really wants to understand what all the fuss is about.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://math.stackexchange.com/questions/1322206/lie-groups-lie-algebra-applications" class="bare">https://math.stackexchange.com/questions/1322206/lie-groups-lie-algebra-applications</a></p>
+</li>
+<li>
+<p><a href="https://mathoverflow.net/questions/58696/why-study-lie-algebras" class="bare">https://mathoverflow.net/questions/58696/why-study-lie-algebras</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Oh, there is a low dimensional classification! Ciro is <a href="#high-flying-bird-vs-gophers">a sucker for classification theorems</a>! <a href="https://en.wikipedia.org/wiki/Classification_of_low-dimensional_real_Lie_algebras" class="bare">https://en.wikipedia.org/wiki/Classification_of_low-dimensional_real_Lie_algebras</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="differential-equations"><a class="anchor" href="#differential-equations"></a><a class="link" href="#differential-equations">3.3.10. Differential equations</a></h4>
+<div class="sect4">
+<h5 id="partial-differential-equations"><a class="anchor" href="#partial-differential-equations"></a><a class="link" href="#partial-differential-equations">3.3.10.1. Partial differential equations</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Partial_differential_equation" class="bare">https://en.wikipedia.org/wiki/Partial_differential_equation</a></p>
 </div>
@@ -5559,8 +6050,9 @@ xdg-open http://localhost:4000</pre>
 <div class="paragraph">
 <p>The <a href="#finite-element-method">Finite element method</a> is one of the most common ways to solve PDEs in practice.</p>
 </div>
-<div class="sect3">
-<h4 id="existence-and-uniqueness-of-solutions-of-partial-differential-equations"><a class="anchor" href="#existence-and-uniqueness-of-solutions-of-partial-differential-equations"></a><a class="link" href="#existence-and-uniqueness-of-solutions-of-partial-differential-equations">3.3.1. Existence and uniqueness of solutions of partial differential equations</a></h4>
+</div>
+<div class="sect4">
+<h5 id="existence-and-uniqueness-of-solutions-of-partial-differential-equations"><a class="anchor" href="#existence-and-uniqueness-of-solutions-of-partial-differential-equations"></a><a class="link" href="#existence-and-uniqueness-of-solutions-of-partial-differential-equations">3.3.10.2. Existence and uniqueness of solutions of partial differential equations</a></h5>
 <div class="paragraph">
 <p>If you have a PDE that models <a href="#physics">physical phenomena</a>, it is fundamental that:</p>
 </div>
@@ -5579,19 +6071,50 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="numerical-analysis"><a class="anchor" href="#numerical-analysis"></a><a class="link" href="#numerical-analysis">3.4. Numerical analysis</a></h3>
+<h3 id="algebra"><a class="anchor" href="#algebra"></a><a class="link" href="#algebra">3.4. Algebra</a></h3>
+<div class="sect3">
+<h4 id="group"><a class="anchor" href="#group"></a><a class="link" href="#group">3.4.1. Group</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Group_(mathematics" class="bare">https://en.wikipedia.org/wiki/Group_(mathematics</a>)</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="subgroup-generated-by-a-group"><a class="anchor" href="#subgroup-generated-by-a-group"></a><a class="link" href="#subgroup-generated-by-a-group">3.4.2. Subgroup generated by a group</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Generating_set_of_a_group" class="bare">https://en.wikipedia.org/wiki/Generating_set_of_a_group</a></p>
+</div>
+<div class="sect4">
+<h5 id="unitary-group"><a class="anchor" href="#unitary-group"></a><a class="link" href="#unitary-group">3.4.2.1. Unitary group</a></h5>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Unitary_group" class="bare">https://en.wikipedia.org/wiki/Unitary_group</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#group">Group</a> of the <a href="#unitary-matrix">unitary matrices</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="numerical-analysis"><a class="anchor" href="#numerical-analysis"></a><a class="link" href="#numerical-analysis">3.5. Numerical analysis</a></h3>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Numerical_analysis" class="bare">https://en.wikipedia.org/wiki/Numerical_analysis</a></p>
 </div>
 <div class="paragraph">
-<p>Not the most beautiful <a href="#mathematics">Mathematics</a>, but fundamentally useful since we can&#8217;t solve almost any <a href="#computational-physics">useful equation</a> without computers!</p>
+<p>Techniques to get numerical approximations to numeric <a href="#mathematics">mathematical</a> problems.</p>
 </div>
 <div class="paragraph">
 <p>The entire field comes down to estimating the true values with a known error bound, and creating algorithms that make those error bounds asymptotically smaller.</p>
 </div>
+<div class="paragraph">
+<p>Not the most beautiful field of pure <a href="#mathematics">Mathematics</a>, but fundamentally useful since we can&#8217;t solve almost any <a href="#computational-physics">useful equation</a> without computers!</p>
+</div>
+<div class="paragraph">
+<p>The solution visualizations can also provide valuable intuition however.</p>
+</div>
 <div class="sect3">
-<h4 id="finite-element-method"><a class="anchor" href="#finite-element-method"></a><a class="link" href="#finite-element-method">3.4.1. Finite element method</a></h4>
+<h4 id="finite-element-method"><a class="anchor" href="#finite-element-method"></a><a class="link" href="#finite-element-method">3.5.1. Finite element method</a></h4>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Finite_element_method" class="bare">https://en.wikipedia.org/wiki/Finite_element_method</a></p>
 </div>
@@ -5601,13 +6124,13 @@ xdg-open http://localhost:4000</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="mathematics-bibliography"><a class="anchor" href="#mathematics-bibliography"></a><a class="link" href="#mathematics-bibliography">3.5. Mathematics bibliography</a></h3>
+<h3 id="mathematics-bibliography"><a class="anchor" href="#mathematics-bibliography"></a><a class="link" href="#mathematics-bibliography">3.6. Mathematics bibliography</a></h3>
 <div class="paragraph">
 <p><a href="https://github.com/vEnhance/napkin" class="bare">https://github.com/vEnhance/napkin</a> Evan Chen&#8217;s (陳誼廷) Infinite Napkin. 800+ page PDF with source on GitHub claiming to try and teach the beauty of modern maths for high schoolers. Fantastic project!!!</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="mathematicians"><a class="anchor" href="#mathematicians"></a><a class="link" href="#mathematicians">3.6. Mathematicians</a></h3>
+<h3 id="mathematicians"><a class="anchor" href="#mathematicians"></a><a class="link" href="#mathematicians">3.7. Mathematicians</a></h3>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Mathematician" class="bare">https://en.wikipedia.org/wiki/Mathematician</a></p>
 </div>
@@ -5633,11 +6156,30 @@ xdg-open http://localhost:4000</pre>
 <div class="paragraph">
 <p>It turned out that, about 10 years later, Ciro ended up following this advice, unwittingly.</p>
 </div>
-<div id="image-xkcd-435" class="imageblock">
+<div id="xkcd-435-mathematicians" class="imageblock">
 <div class="content">
-<a class="image" href="#image-xkcd-435"><img src="https://web.archive.org/web/20190925220347if_/https://imgs.xkcd.com/comics/purity.png" alt="purity" height="400"></a>
+<a class="image" href="#xkcd-435-mathematicians"><img src="https://web.archive.org/web/20190925220347if_/https://imgs.xkcd.com/comics/purity.png" alt="purity" height="400"></a>
 </div>
-<div class="title">Figure 29. xkcd 435. <a href="https://xkcd.com/435/">Source</a>.</div>
+<div class="title">Figure 31. xkcd 435: Fields arranged by purity. <a href="https://xkcd.com/435/">Source</a>.</div>
+</div>
+<div class="sect3">
+<h4 id="high-flying-bird-vs-gophers"><a class="anchor" href="#high-flying-bird-vs-gophers"></a><a class="link" href="#high-flying-bird-vs-gophers">3.7.1. High flying bird vs gophers</a></h4>
+<div class="paragraph">
+<p>Ciro once read that there are two types of mathematicians / scientists (he thinks it was comparing Einstein to some Jack of all trades polymath who didn&#8217;t do any new discoveries):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>high flying birds, who know a bit of everything, feel the beauty of each field, but never dig deep in any of them</p>
+</li>
+<li>
+<p>gophers, who dig all the way down, on a single subject, until they either get the Nobel prize, or work on the wrong problem and waste their lives</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ciro is without a doubt the bird type. Perhaps the ultimate scientist is the one who can combine both aspects in the right amount.</p>
+</div>
 </div>
 </div>
 </div>
@@ -6205,6 +6747,19 @@ xdg-open http://localhost:4000</pre>
 <p>1972 <a href="https://www.youtube.com/watch?v=bGC0gJAHIYs">Partido Alto</a>. Composed by Chico Buarque, but Caetano&#8217;s interpretation takes it to another level</p>
 </li>
 <li>
+<p>1975 <a href="https://en.wikipedia.org/wiki/Qualquer_Coisa">Qualquer coisa</a> album</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=796yP7HX9L0">Qualquer Coisa</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=HbXembjZ-cE">Samba e Amor</a>, cover from original song by Chico Buarque album <a href="https://pt.wikipedia.org/wiki/Chico_Buarque_de_Hollanda_-_N%C2%BA4">Chico Buarque de Hollanda - Nº4</a>. Desperately reminds Ciro of his University day weekend nights. Except that there was no Samba. And little Amor. Mostly a silent and wholesome loneliness.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p>1976 <a href="https://www.youtube.com/watch?v=9HpqgwC30Zg">Um Índio</a> from the <a href="https://en.wikipedia.org/wiki/Doces_B%C3%A1rbaros">Doces Bárbaros (1976)</a> album, and also appeared in the <a href="https://en.wikipedia.org/wiki/Bicho_(album)">Bicho (1977)</a> album</p>
 </li>
 <li>
@@ -6215,7 +6770,7 @@ xdg-open http://localhost:4000</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://www.youtube.com/watch?v=Ii2CKWHJQI8">Sampa</a> from the . Slang for São Paulo. Perfectly captures the city, and reminds Ciro so badly of <a href="#university-of-sao-paulo-brazil">his University days there</a>.</p>
+<p><a href="https://www.youtube.com/watch?v=Ii2CKWHJQI8">Sampa</a> Slang for São Paulo. Perfectly captures the city, and reminds Ciro so badly of <a href="#university-of-sao-paulo-brazil">his University days there</a>.</p>
 </li>
 <li>
 <p><a href="https://www.youtube.com/watch?v=gMsSrxGwW8U">Terra</a>. Ciro used to watch a television show about nature in the legendary <a href="https://en.wikipedia.org/wiki/TV_Cultura">TV Cultura</a> with his parents in the couch when he was young, Those days were the best. TODO what was the show exactly? Here is a sample: <a href="https://www.youtube.com/watch?v=vNwfYEMdrRU" class="bare">https://www.youtube.com/watch?v=vNwfYEMdrRU</a> Very likely just a translation of some British nature series with a custom Brazilian intro and presenter. Credits at end mention English narrator: Eugene Fraser, and Thirteen WNET Nature production, which produced <a href="https://en.wikipedia.org/wiki/Nature_(TV_program)">Nature (1982)</a> that ran since 1982.</p>
@@ -7220,6 +7775,21 @@ xdg-open http://localhost:4000</pre>
 <p>And Americans, please stop that <a href="https://en.wikipedia.org/wiki/Make_America_Number_1">America Number 1</a> bullshit. Obviously everyone has to strive to be the best, so when you say it like that, it sounds like "even if at the expense of everyone else". The motto has to be "democracy number 1" or else you will scare off all allies. If all other countries sell out to China, you are fucked.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="united-kingdom"><a class="anchor" href="#united-kingdom"></a><a class="link" href="#united-kingdom">7.6. United Kingdom</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/United_Kingdom" class="bare">https://en.wikipedia.org/wiki/United_Kingdom</a></p>
+</div>
+<div class="sect3">
+<h4 id="cambridge-united-kingdom"><a class="anchor" href="#cambridge-united-kingdom"></a><a class="link" href="#cambridge-united-kingdom">7.6.1. Cambridge, United Kingdom</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Cambridge" class="bare">https://en.wikipedia.org/wiki/Cambridge</a></p>
+</div>
+<div class="paragraph">
+<p>Contains the <a href="#university-of-cambridge">University of Cambridge</a>, that&#8217;s about it really, from that everything follows.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -7411,10 +7981,13 @@ xdg-open http://localhost:4000</pre>
 <p><a href="#europe-cookie-law">Europe cookie law</a></p>
 </li>
 <li>
-<p>chat programs that don&#8217;t have a proper web-only operation and force you to have a mobile phone, e.g. <a href="https://en.wikipedia.org/wiki/WeChat">WeChat</a>. Also evil but less: chat programs that can&#8217;t send you an email <a href="https://webapps.stackexchange.com/questions/41528/how-can-i-automatically-forward-facebook-messages-to-my-email-or-phone">if you don&#8217;t see the message in X minutes</a>. <a href="#europe">European Union</a>, time to force those evil <a href="#companies">Companies</a> to use support open standards like <a href="https://en.wikipedia.org/wiki/XMPP">XMPP</a>?</p>
+<p>adhesive inside mobile phones, see also: <a href="#planned-obsolescence">Planned obsolescence</a></p>
 </li>
 <li>
-<p>adhesive inside mobile phones, which makes them impossible to repair them unless you have a heat gun, spend hours and hours, and accept the risk of breaking the screen: <a href="https://www.ifixit.com/smartphone-repairability" class="bare">https://www.ifixit.com/smartphone-repairability</a> If you take a phone less than 300 dollars to a repair shop in the first world, they will say: I&#8217;ve never repaired this crap, and likely for the price of the repair you should just buy a new one, and so to the trash goes the old one, polluting the planet, and in comes a new one, enriching the manufacturer further. European Union, <a href="#europe-cookie-law">I need you now</a>.</p>
+<p>chat programs that don&#8217;t have a proper web-only operation and force you to have a mobile phone, e.g. <a href="https://en.wikipedia.org/wiki/WeChat">WeChat</a>. What is my phone breaks? What if I don&#8217;t want to have a fucking phone? What if I move countries and have to change the fucking number? Also evil but less because done by all: chat programs that can&#8217;t send you an email <a href="https://webapps.stackexchange.com/questions/41528/how-can-i-automatically-forward-facebook-messages-to-my-email-or-phone">if you don&#8217;t see the message in X minutes</a>. <a href="#europe">European Union</a>, time to force those evil <a href="#companies">Companies</a> to use support open standards like <a href="https://en.wikipedia.org/wiki/XMPP">XMPP</a>? Yes, end-to-end encrypted peer-to-peer becomes harder impossible, but I&#8217;m fine with the <a href="#nsa">NSA</a> reading my messages until a working distributed technical solution is availble, maybe it already is and just needs more visibility.</p>
+</li>
+<li>
+<p>sale discounts</p>
 </li>
 <li>
 <p><a href="#microsoft-windows">Microsoft Windows</a></p>
@@ -7425,7 +7998,44 @@ xdg-open http://localhost:4000</pre>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="knowledge-olympiads"><a class="anchor" href="#knowledge-olympiads"></a><a class="link" href="#knowledge-olympiads">9.1.1. Knowledge Olympiads</a></h4>
+<h4 id="planned-obsolescence"><a class="anchor" href="#planned-obsolescence"></a><a class="link" href="#planned-obsolescence">9.1.1. Planned obsolescence</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Planned_obsolescence" class="bare">https://en.wikipedia.org/wiki/Planned_obsolescence</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Electronics_right_to_repair" class="bare">https://en.wikipedia.org/wiki/Electronics_right_to_repair</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Phoebus_cartel" class="bare">https://en.wikipedia.org/wiki/Phoebus_cartel</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first time <a href="#ciro-santilli">Ciro Santilli</a> Googled this was when trying to repair his cell phone.</p>
+</div>
+<div class="paragraph">
+<p>2019 cell phones are glued together with adhesive, which makes them impossible to repair them unless you have a heat gun, spend hours and hours learning and planning, and accept the risk of breaking the screen</p>
+</div>
+<div class="paragraph">
+<p>Repairability scores: <a href="https://www.ifixit.com/smartphone-repairability" class="bare">https://www.ifixit.com/smartphone-repairability</a></p>
+</div>
+<div class="paragraph">
+<p>If you take a phone less than 300 dollars to a repair shop in the first world, they will say: I&#8217;ve never repaired this crap, and likely for the price of the repair you should just buy a new one, and so to the trash goes the old one, polluting the planet, and in comes a new one, enriching the manufacturer further.</p>
+</div>
+<div class="paragraph">
+<p>European Union, <a href="#europe-cookie-law">I need you now</a>.</p>
+</div>
+<div class="paragraph">
+<p>Oh, there is some 2017 EU action actually: (<a href="https://web.archive.org/web/20190521082737/https://www.europarl.europa.eu/news/en/press-room/20170629IPR78633/making-consumer-products-more-durable-and-easier-to-repair">archive</a>) <a href="https://www.europarl.europa.eu/news/en/press-room/20170629IPR78633/making-consumer-products-more-durable-and-easier-to-repair" class="bare">https://www.europarl.europa.eu/news/en/press-room/20170629IPR78633/making-consumer-products-more-durable-and-easier-to-repair</a></p>
+</div>
+<div class="paragraph">
+<p>Good article: <a href="https://www.androidauthority.com/device-repairability-807585/" class="bare">https://www.androidauthority.com/device-repairability-807585/</a> (<a href="https://web.archive.org/web/20191201135434/https://www.androidauthority.com/device-repairability-807585/">archive</a>).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="knowledge-olympiads"><a class="anchor" href="#knowledge-olympiads"></a><a class="link" href="#knowledge-olympiads">9.1.2. Knowledge Olympiads</a></h4>
 <div class="paragraph">
 <p>E.g. <a href="https://en.wikipedia.org/wiki/International_Mathematical_Olympiad">International Mathematical Olympiad</a>, <a href="https://en.wikipedia.org/wiki/International_Physics_Olympiad">International Physics Olympiad</a>, <a href="https://en.wikipedia.org/wiki/Competitive_programming">competitive programming</a>, etc.</p>
 </div>
@@ -7756,6 +8366,9 @@ xdg-open http://localhost:4000</pre>
 <div class="paragraph">
 <p><a href="#ciro-santilli">Ciro Santilli</a> claims to be one of them.</p>
 </div>
+<div class="paragraph">
+<p>Much like a pianist plays his piano, a software engineer plays his <a href="#computer">Computer</a>.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="programming-languages"><a class="anchor" href="#programming-languages"></a><a class="link" href="#programming-languages">10.7. Programming languages</a></h3>
@@ -8059,7 +8672,7 @@ void main() {
 <div class="content">
 <img src="https://web.archive.org/web/20191222121520if_/http://imgs.xkcd.com/comics/real_programmers.png" alt="real programmers">
 </div>
-<div class="title">Figure 30. XKCD Real Programmers Emacs Butterfly. <a href="https://xkcd.com/378/">Source</a></div>
+<div class="title">Figure 32. XKCD Real Programmers Emacs Butterfly. <a href="https://xkcd.com/378/">Source</a></div>
 </div>
 <div class="sect3">
 <h4 id="semiconductor-physical-implementation"><a class="anchor" href="#semiconductor-physical-implementation"></a><a class="link" href="#semiconductor-physical-implementation">10.11.1. Semiconductor physical implementation</a></h4>
@@ -8264,7 +8877,7 @@ void main() {
 <p>The probability of each output of a quantum computer derived from the input and the circuit as follows.</p>
 </div>
 <div class="paragraph">
-<p>First we take the classic input vector of dimension N of 0&#8217;s and 1&#8217;s and convert it to a "quantum state vector" \(\va{q_{in}}\) of dimension \(2^n\).:</p>
+<p>First we take the classic input vector of dimension N of 0&#8217;s and 1&#8217;s and convert it to a "quantum state vector" \(\va{q_{in}}\) of dimension \(2^n\):</p>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -8275,7 +8888,7 @@ void main() {
 <p>We are after all going to multiply it by the program matrix, as you would expect, and that has dimension \(2^n \times 2^n\)!</p>
 </div>
 <div class="paragraph">
-<p>Note that this initial transformation also transforms the discrete zeroes and ones into <a href="#complex-number">Complex number</a>.</p>
+<p>Note that this initial transformation also transforms the discrete zeroes and ones into <a href="#complex-number">complex numbers</a>.</p>
 </div>
 <div class="paragraph">
 <p>For example, in a 3 qubit computer, the quantum vector state has dimension \(2^3 = 8\) and the following shows all 8 possible conversions from the classic input to the quantum state vector:</p>
@@ -8293,7 +8906,23 @@ void main() {
 </div>
 </div>
 <div class="paragraph">
-<p>We will comment on how this can be interpreted soon.</p>
+<p>This can be intuitively interpreted as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>if the classic input is <code>000</code>, then we are certain that all three bits are 0.</p>
+<div class="paragraph">
+<p>Therefore, the probability of all three 0&#8217;s is 1.0, and all other possible combinations have 0 probability.</p>
+</div>
+</li>
+<li>
+<p>if the classic input is <code>001</code>, then we are certain that bit one and two are 0, and bit three is 1. The probability of that is 1.0, and all others are zero.</p>
+</li>
+<li>
+<p>and so on</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Now that we finally have our quantum vector, we just multiply it by the unitary matrix \(Q\) of the quantum circuit, and obtain the \(2^n\) dimensional output quantum state vector \(\va{q_{out}}\):</p>
@@ -8304,7 +8933,7 @@ void main() {
 </div>
 </div>
 <div class="paragraph">
-<p>And at long last, the probability of each classical outcome of the measurement is proportional to the length of each entry in the quantum vector, analogously to what is done in the <a href="#schrodinger-equation">Schrodinger equation</a>.</p>
+<p>And at long last, the probability of each classical outcome of the measurement is proportional to the square of the length of each entry in the quantum vector, analogously to what is done in the <a href="#schrodinger-equation">Schrodinger equation</a>.</p>
 </div>
 <div class="paragraph">
 <p>For example, suppose that the 3 qubit output were:</p>
@@ -8314,9 +8943,9 @@ void main() {
 \[\begin{align}
 \va{q_{out}} &amp;=
 \begin{bmatrix}
-\frac{1}{\sqrt{2}} \\
+\frac{\sqrt{3}}{2} \\
 0.0 \\
-\frac{1}{\sqrt{2}} \\
+\frac{1}{2} \\
 0.0 \\
 0.0 \\
 0.0 \\
@@ -8327,25 +8956,42 @@ void main() {
 </div>
 </div>
 <div class="paragraph">
-<p>Here, the length of the first and third possible outcomes was:</p>
+<p>Then, the probability of the first and third possible outcomes would be the length of each component squared:</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[\frac{1}{\sqrt{2}}^2 = \frac{1}{2}\]
+\[\begin{align}
+\abs{\frac{\sqrt{3}}{2}}^2 &amp;= \frac{\sqrt{3}}{2}^2 &amp;= \frac{3}{4} \\
+\abs{\frac{1}{2}^2}^2      &amp;= \frac{1}{2}^2        &amp;= \frac{1}{4}
+\end{align}\]
 </div>
 </div>
 <div class="paragraph">
-<p>and we therefore had a 50% chance of each one of the first and third outcomes of 3 classical bits:</p>
+<p>i.e. 75% for the first, and 25% for the third outcomes, where just like for the input:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>first outcome: <code>000</code></p>
+<p>first outcome means <code>000</code>: all output bits are zero</p>
 </li>
 <li>
-<p>third outcome: <code>010</code></p>
+<p>third outcome means <code>010</code>: the first and third bits are zero, but the second one is 1</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>All other outcomes have probability 0 and cannot occur, e.g.: <code>001</code> is impossible.</p>
+</div>
+<div class="paragraph">
+<p>Keep in mind that the quantum state vector can also contain complex numbers, but we just take their magnitude in that case, e.g. the following quantum state would lead to the same probabilities as the previous one:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{align}
+\abs{\frac{1 + \sqrt{2}i}{2}}^2 &amp;= \frac{1^2 + \sqrt{2^2}}{2^2} &amp;= \frac{3}{4} \\
+\abs{\frac{i}{2}}^2             &amp;= \frac{1^2}{2^2}              &amp;= \frac{1}{4}
+\end{align}\]
+</div>
 </div>
 <div class="paragraph">
 <p>This interpretation of the quantum state vector clarifies a few things:</p>
@@ -8359,6 +9005,9 @@ void main() {
 <p>the matrix has to be unitary because the total probability of all possible outcomes must be 1.0</p>
 <div class="paragraph">
 <p>This is true for the input matrix, and unitary matrices have the probability of maintaining that property after multiplication.</p>
+</div>
+<div class="paragraph">
+<p>Unitary matrices are a bit analogous to <a href="https://en.wikipedia.org/wiki/Self-adjoint_operator">self-adjoint operators</a> in general quantum mechanics (self-adjoint in finite dimensions implies is stronger)</p>
 </div>
 </li>
 </ul>
@@ -8375,7 +9024,104 @@ void main() {
 <p><a href="https://en.wikipedia.org/wiki/Quantum_logic_gate" class="bare">https://en.wikipedia.org/wiki/Quantum_logic_gate</a></p>
 </div>
 <div class="paragraph">
-<p>TODO</p>
+<p>At <a href="#programmers-model-of-quantum-computers">Programmer&#8217;s model of quantum computers</a> we saw that making a quantum circuit actually comes down to designing one big unitary matrix.</p>
+</div>
+<div class="paragraph">
+<p>However, quantum programmers normally don&#8217;t just produce those big matrices manually from scratch.</p>
+</div>
+<div class="paragraph">
+<p>Instead, they normally use quantum logic gates.</p>
+</div>
+<div class="paragraph">
+<p>This is done for two reasons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>it provides a better intuition of how the final huge matrix is made up step-by-step</p>
+</li>
+<li>
+<p>it might better map to the real quantum hardware.</p>
+<div class="paragraph">
+<p>While there are "quantum compilers" to increase the portability of quantum programs, it is to be expected that programs manually crafted for a specific hardware will be more efficient just like in classic computers. TODO: is there any clear reason why computers can&#8217;t beat humans in approximating any unitary matrix with a gate set?</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is analogous to what classic circuit programmers will do, by using smaller <a href="https://en.wikipedia.org/wiki/Logic_gate">logic gates</a> to create complex circuits, rather than directly creating one huge <a href="https://en.wikipedia.org/wiki/Truth_table">truth table</a>.</p>
+</div>
+<div class="paragraph">
+<p>The most commonly considered quantum gates take 1, 2, or 3 qubits as input.</p>
+</div>
+<div class="paragraph">
+<p>The gates themselves are just unitary matrices that operate on the input qubits and produce the same number of output qubits.</p>
+</div>
+<div class="paragraph">
+<p>For example, the matrix for the quantum CNOT gate, which takes 2 qubits as input is:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>1 0 0 0
+0 1 0 0
+0 0 0 1
+0 0 1 0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The final question is then: if I have a 2 qubit gate but an input with more qubits, say 3 qubits, then what does the 2 qubit gate (4x4 matrix) do for the final big 3 qubit matrix (8x8)? In order words, how do we scale quantum gates up to match the total number of qubits?</p>
+</div>
+<div class="paragraph">
+<p>The intuitive answer is simple: we "just" extend the small matrix with a larger identity matrix so that the sum of the probabilities third bit is unaffected.</p>
+</div>
+<div class="paragraph">
+<p>More precisely, we likely have to extend the matrix in a way such that the <a href="https://cs.stackexchange.com/questions/71462/how-are-partial-measurements-performed-on-a-n-qubit-quantum-circuit">partial measurement</a> of the original small gate qubits leaves all other qubits unaffected.</p>
+</div>
+<div class="paragraph">
+<p>For example, if the circuit were made up of a CNOT gate operating on the first and second qubits as in:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>0 ----+----- 0
+      |
+1 ---CNOT--- 1
+
+2 ---------- 2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>then we would just extend the 2x2 CNOT gate to:</p>
+</div>
+<div class="paragraph">
+<p>TODO lazy to properly learn right now. Apparently you have to use the <a href="https://en.wikipedia.org/wiki/Kronecker_product">Kronecker product</a> by the identity matrix.</p>
+</div>
+<div class="paragraph">
+<p>Bibliography:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://quantumcomputing.stackexchange.com/questions/2299/how-to-interpret-a-quantum-circuit-as-a-matrix" class="bare">https://quantumcomputing.stackexchange.com/questions/2299/how-to-interpret-a-quantum-circuit-as-a-matrix</a></p>
+</li>
+</ul>
+</div>
+<div class="sect5">
+<h6 id="universal-quantum-gates"><a class="anchor" href="#universal-quantum-gates"></a><a class="link" href="#universal-quantum-gates">10.12.3.1.1. Universal quantum gates</a></h6>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/w/index.php?title=Quantum_logic_gate&amp;oldid=935584838#Universal_quantum_gates" class="bare">https://en.wikipedia.org/w/index.php?title=Quantum_logic_gate&amp;oldid=935584838#Universal_quantum_gates</a></p>
+</div>
+<div class="paragraph">
+<p>Just <a href="https://en.wikipedia.org/wiki/Functional_completeness">like as for classic gates</a>, we would like to be able to select <a href="#quantum-computer-physical-implementations">Quantum computer physical implementations</a> that can represent one or a few gates that can be used to create <em>any</em> quantum circuit.</p>
+</div>
+<div class="paragraph">
+<p>Unfortunately, in the case of quantum circuits this is obviously impossible, since the space of N x N unitary matrices is infinite and continuous.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, when we say that certain gates form a "set of universal quantum gates", we actually mean that "any unitary matrix can be approximated to arbitrary precision with enough of these gates".</p>
+</div>
+<div class="paragraph">
+<p>Or if you like fancy Mathy words, you can say that the subgroup of the <a href="#unitary-group">unitary group</a> <a href="#subgroup-generated-by-a-group">generated by</a> our basic gate set is a <a href="#dense-set">dense subset</a> of the unitary group.</p>
+</div>
 </div>
 </div>
 <div class="sect4">
@@ -8468,10 +9214,20 @@ void main() {
 <div class="paragraph">
 <p><a href="https://quantumcomputingreport.com/resources/tools/" class="bare">https://quantumcomputingreport.com/resources/tools/</a> is hard to beat as usual.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/Strilanc/Quirk" class="bare">https://github.com/Strilanc/Quirk</a> JavaScript drag-and-drop, by a 2019-quantum-computing-Googler, impressive</p>
+</li>
+</ul>
+</div>
 <div class="sect4">
 <h5 id="qiskit"><a class="anchor" href="#qiskit"></a><a class="link" href="#qiskit">10.12.7.1. Qiskit</a></h5>
 <div class="paragraph">
 <p><a href="https://en.wikipedia.org/wiki/Qiskit" class="bare">https://en.wikipedia.org/wiki/Qiskit</a></p>
+</div>
+<div class="paragraph">
+<p>Python library, claims multiple backends, including simulation and real IBM quantum hardware.</p>
 </div>
 </div>
 </div>
@@ -8490,7 +9246,7 @@ void main() {
 <div class="content">
 <a class="image" href="#image-photo-of-ross-laptop-at-the-moment-of-arrest-at-the-library-he-was-running-some-gnome-based-distro-could-be-xref2-ubuntu-from-that-photo-and-likely-is-given-that-ross-once-recommended-ubuntu-to-his-flatmate-https-arstechnica-com-tech-policy-2015-01-the-incredibly-simple-story-of-how-the-govt-googled-ross-ulbricht-source-"><img src="https://web.archive.org/web/20190629084608if_/https://cdn.arstechnica.net/wp-content/uploads/2015/01/GX-201C-640x853.png" alt="GX 201C 640x853" height="400"></a>
 </div>
-<div class="title">Figure 31. Photo of Ross' laptop at the moment of arrest at the library. He was running some GNOME based distro, could be <a href="#ubuntu">Ubuntu</a> from that photo, and likely is given that Ross once recommended Ubuntu to his flatmate. <a href="https://arstechnica.com/tech-policy/2015/01/the-incredibly-simple-story-of-how-the-govt-googled-ross-ulbricht">Source</a></div>
+<div class="title">Figure 33. Photo of Ross' laptop at the moment of arrest at the library. He was running some GNOME based distro, could be <a href="#ubuntu">Ubuntu</a> from that photo, and likely is given that Ross once recommended Ubuntu to his flatmate. <a href="https://arstechnica.com/tech-policy/2015/01/the-incredibly-simple-story-of-how-the-govt-googled-ross-ulbricht">Source</a></div>
 </div>
 <div class="paragraph">
 <p>The best article available so far is: <a href="https://www.theregister.co.uk/2019/01/29/how_i_caught_silk_road_mastermind" class="bare">https://www.theregister.co.uk/2019/01/29/how_i_caught_silk_road_mastermind</a> (<a href="https://web.archive.org/web/20191008142214/https://www.theregister.co.uk/2019/01/29/how_i_caught_silk_road_mastermind">archive</a>) which summarizes what one of the investigators said in a 2019 French computer security conference.</p>
@@ -8815,7 +9571,7 @@ void main() {
 <div class="content">
 <a class="image" href="#image-a-weapons-grade-ring-of-electrorefined-plutonium-typical-of-the-rings-refined-at-los-alamos-and-sent-to-rocky-flats-for-fabrication-the-ring-has-a-purity-of-99-96-weighs-5-3-kg-and-is-approx-11-cm-in-diameter-it-is-enough-plutonium-for-one-bomb-core-which-city-shall-we-blow-up-today-"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Plutonium_ring.jpg/505px-Plutonium_ring.jpg" alt="505px Plutonium ring" height="400"></a>
 </div>
-<div class="title">Figure 32. A weapons-grade ring of electrorefined plutonium, typical of the rings refined at Los Alamos and sent to Rocky Flats for fabrication. The ring has a purity of 99.96%, weighs 5.3 kg, and is approx 11 cm in diameter. It is enough plutonium for one bomb core. Which city shall we blow up today?. <a href="https://commons.wikimedia.org/wiki/File:Plutonium_ring.jpg">Source</a>.</div>
+<div class="title">Figure 34. A weapons-grade ring of electrorefined plutonium, typical of the rings refined at Los Alamos and sent to Rocky Flats for fabrication. The ring has a purity of 99.96%, weighs 5.3 kg, and is approx 11 cm in diameter. It is enough plutonium for one bomb core. Which city shall we blow up today?. <a href="https://commons.wikimedia.org/wiki/File:Plutonium_ring.jpg">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p><a href="https://youtu.be/hTRVlUT665U?t=2881" class="bare">https://youtu.be/hTRVlUT665U?t=2881</a> "Los Alamos From Below&#8201;&#8212;&#8201;Richard Feynman". Feynman describing his experience at Los Alamos. This timestamp describes the computing aspects, but the entire talk is amazing. Transcript: <a href="http://calteches.library.caltech.edu/34/3/FeynmanLosAlamos.htm" class="bare">http://calteches.library.caltech.edu/34/3/FeynmanLosAlamos.htm</a></p>
@@ -8844,6 +9600,12 @@ void main() {
 <p><a href="https://en.wikipedia.org/wiki/Fat_Man_and_Little_Boy">Fat Man and Little Boy (1987)</a> shows a possibly reasonably realistic of the history of the development of <a href="https://en.wikipedia.org/wiki/Trinity_(nuclear_test)">Trinity</a></p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nsa"><a class="anchor" href="#nsa"></a><a class="link" href="#nsa">11.2. NSA</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/National_Security_Agency" class="bare">https://en.wikipedia.org/wiki/National_Security_Agency</a></p>
 </div>
 </div>
 </div>
@@ -8885,7 +9647,7 @@ void main() {
 <div class="content">
 <a class="image" href="#image-still-from-https-en-wikipedia-org-wiki-a-boy-and-his-atom-a-boy-and-his-atom-by-https-en-wikipedia-org-wiki-ibm-ibm-https-en-wikipedia-org-wiki-file-a-boy-and-his-atom-still-jpg-source-"><img src="https://upload.wikimedia.org/wikipedia/en/3/37/A_Boy_and_His_Atom_%28still%29.jpg" alt="A Boy and His Atom %28still%29" height="400"></a>
 </div>
-<div class="title">Figure 33. Still from <a href="https://en.wikipedia.org/wiki/A_Boy_and_His_Atom">A boy and his atom</a> by <a href="https://en.wikipedia.org/wiki/IBM">IBM</a>. <a href="https://en.wikipedia.org/wiki/File:A_Boy_and_His_Atom_(still).jpg">Source</a>.</div>
+<div class="title">Figure 35. Still from <a href="https://en.wikipedia.org/wiki/A_Boy_and_His_Atom">A boy and his atom</a> by <a href="https://en.wikipedia.org/wiki/IBM">IBM</a>. <a href="https://en.wikipedia.org/wiki/File:A_Boy_and_His_Atom_(still).jpg">Source</a>.</div>
 </div>
 </li>
 </ul>
@@ -9031,7 +9793,7 @@ void main() {
 <p>The by far dominating DNA sequencing company of the late 2000&#8217;s and 2010&#8217;s due to having the smallest cost per base pair.</p>
 </div>
 <div class="paragraph">
-<p>Illumina actually bought their 2010&#8217;s dominating technology from a Cambridge UK company called Solexa <a href="https://www.reuters.com/article/us-illumina-solexa/illumina-to-buy-genome-firm-solexa-for-600-mln-idUSN1348062320061113">for 600 million in 2007 for 600 million dollars</a>. This is one of the prime examples of <a href="#europe">Europe</a>'s decline. Instead of trying to dominate the sequencing market and gain trillions of dollars from it, they local British early stage investors were more than happy to get a 20x return on their small initial investments, and sold out to the Americans who will then make the real profit. And now Solexa doesn&#8217;t even have its own Wikipedia page, while Illumina is set out to be the next <a href="#microsoft">Microsoft</a>. Here are some good articles about the company: <a href="http://www.bio-itworld.com/2010/issues/sept-oct/solexa.html" class="bare">http://www.bio-itworld.com/2010/issues/sept-oct/solexa.html</a> (<a href="https://web.archive.org/web/20190411005034/http://www.bio-itworld.com/2010/issues/sept-oct/solexa.html">archive</a>). Cambridge visitors can still visit the <a href="https://pantonarms.co.uk/">Panton Arms pub</a>, which was the location of the legendary "hey we should talk" founders meeting.</p>
+<p>Illumina actually bought their 2010&#8217;s dominating technology from a <a href="#cambridge-united-kingdom">Cambridge, United Kingdom</a> company called <a href="#solexa">Solexa</a>.</p>
 </div>
 <div class="paragraph">
 <p>To understand how Illumina&#8217;s technology works basically, watch this video: <a href="https://www.youtube.com/watch?v=fCd6B5HRaZ8" class="bare">https://www.youtube.com/watch?v=fCd6B5HRaZ8</a></p>
@@ -9048,13 +9810,41 @@ void main() {
 <div class="content">
 <a class="image" href="#image-bridge-amplification"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Cluster_Generation.png/960px-Cluster_Generation.png" alt="960px Cluster Generation" height="400"></a>
 </div>
-<div class="title">Figure 34. Illustration of the bridge amplification step of Illumina&#8217;s DNA sequencing. <a href="https://commons.wikimedia.org/wiki/File:Cluster_Generation.png">Source</a>.</div>
+<div class="title">Figure 36. Illustration of the bridge amplification step of Illumina&#8217;s DNA sequencing. <a href="https://commons.wikimedia.org/wiki/File:Cluster_Generation.png">Source</a>.</div>
 </div>
 <div class="paragraph">
 <p>This step is genius because sequencing is basically a noise to signal problem, as you are trying to observe individual tiny nucleotides mixed with billions of other tiny nucleotides.</p>
 </div>
 <div class="paragraph">
 <p>With bridge amplifictaion, we group some of the nucleotides together, and multiply the signal millions of times for that part of the DNA.</p>
+</div>
+<div class="sect4">
+<h5 id="solexa"><a class="anchor" href="#solexa"></a><a class="link" href="#solexa">14.2.1.1. Solexa</a></h5>
+<div class="paragraph">
+<p>Bought by <a href="#illumina">Illumina</a> <a href="https://www.reuters.com/article/us-illumina-solexa/illumina-to-buy-genome-firm-solexa-for-600-mln-idUSN1348062320061113">for 600 million in 2007 for 600 million dollars</a>.</p>
+</div>
+<div class="paragraph">
+<p>This is one of the prime examples of <a href="#europe">Europe</a>'s decline.</p>
+</div>
+<div class="paragraph">
+<p>Instead of trying to dominate the sequencing market and gain trillions of dollars from it, they local British early stage investors were more than happy to get a 20x return on their small initial investments, and sold out to the Americans who will then make the real profit.</p>
+</div>
+<div class="paragraph">
+<p>And now Solexa doesn&#8217;t even have its own Wikipedia page, while Illumina is set out to be the next <a href="#microsoft">Microsoft</a>.</p>
+</div>
+<div class="paragraph">
+<p>Here are some good articles about the company:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.bio-itworld.com/2010/issues/sept-oct/solexa.html" class="bare">http://www.bio-itworld.com/2010/issues/sept-oct/solexa.html</a> (<a href="https://web.archive.org/web/20190411005034/http://www.bio-itworld.com/2010/issues/sept-oct/solexa.html">archive</a>).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cambridge visitors can still visit the <a href="https://pantonarms.co.uk/">Panton Arms pub</a>, which was the location of the legendary "hey we should talk" founders meeting, chosen due to its proximity to the chemistry department of the xref2:university-of-cambridge.</p>
+</div>
 </div>
 </div>
 </div>
@@ -9342,7 +10132,7 @@ c' &amp; = \frac{x_2' - x_1'}{t_2' - t_1'} \\
 <div class="content">
 <a class="image" href="#image-desk-of-ciro-santilli-s-room-at-cole-polytechnique-as-he-as-in-the-middle-of-moving-out-in-2012-the-room-also-has-a-bed-and-toilet-it-was-great-and-it-was-free-only-the-kitchen-was-shared-which-is-good-for-meeting-people-all-students-live-on-campus-which-is-great-for-concentration-"><img src="https://raw.githubusercontent.com/cirosantilli/media/master/Desk_of_Ciro_Santilli's_room_at_École_Polytechnique_as_he_as_in_the_middle_of_moving_out_in_2012.jpg" alt="Desk of Ciro Santilli's room at École Polytechnique as he as in the middle of moving out in 2012" height="400"></a>
 </div>
-<div class="title">Figure 35. Desk of Ciro Santilli&#8217;s room at École Polytechnique as he as in the middle of moving out in 2012. The room also has a bed and toilet, it was great, and it was free! Only the kitchen was shared, which is good for meeting people. All students live on campus, which is great for concentration.</div>
+<div class="title">Figure 37. Desk of Ciro Santilli&#8217;s room at École Polytechnique as he as in the middle of moving out in 2012. The room also has a bed and toilet, it was great, and it was free! Only the kitchen was shared, which is good for meeting people. All students live on campus, which is great for concentration.</div>
 </div>
 </li>
 <li>
@@ -9351,7 +10141,7 @@ c' &amp; = \frac{x_2' - x_1'}{t_2' - t_1'} \\
 <div class="content">
 <a class="image" href="#image-lake-view-of-the-grand-hall-building-of-cole-polytechnique-in-a-cloudy-day-just-imagine-this-in-a-perfect-sunny-weekend-day-with-pure-silence-it-was-just-perfect-the-lake-also-has-a-long-area-where-rowing-is-practiced-"><img src="https://raw.githubusercontent.com/cirosantilli/media/master/Lake_view_of_the_Grand_Hall_building_of_École_Polytechnique_in_a_cloudy_day.jpg" alt="Lake view of the Grand Hall building of École Polytechnique in a cloudy day" height="400"></a>
 </div>
-<div class="title">Figure 36. Lake view of the Grand Hall building of École Polytechnique in a cloudy day. Just imagine this in a perfect sunny weekend day with pure silence, it was just perfect. The lake also has a long area where rowing is practiced.</div>
+<div class="title">Figure 38. Lake view of the Grand Hall building of École Polytechnique in a cloudy day. Just imagine this in a perfect sunny weekend day with pure silence, it was just perfect. The lake also has a long area where rowing is practiced.</div>
 </div>
 </li>
 <li>
@@ -9360,7 +10150,7 @@ c' &amp; = \frac{x_2' - x_1'}{t_2' - t_1'} \\
 <div class="content">
 <a class="image" href="#image-a-typical-small-classroom-at-polytechnique-with-tables-in-the-usual-course-configuration-imagine-that-at-night-in-pure-silence-with-some-of-your-best-friends-studying-on-a-nearby-room-the-usual-course-configuration-was-first-a-course-by-the-main-teacher-in-a-large-amphitheater-and-then-break-down-into-small-groups"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Master_STER_Nassar_Polytechnique.jpg/640px-Master_STER_Nassar_Polytechnique.jpg" alt="640px Master STER Nassar Polytechnique" height="400"></a>
 </div>
-<div class="title">Figure 37. A typical small classroom at Polytechnique, with tables in the usual course configuration. Imagine that at night, in pure silence, with some of your best friends studying on a nearby room. The usual course configuration was first a course by the main teacher in a large amphitheater, and then break down into small groups. <a href="https://commons.wikimedia.org/wiki/File:Master_STER_Nassar_Polytechnique.jpg">Source</a>.</div>
+<div class="title">Figure 39. A typical small classroom at Polytechnique, with tables in the usual course configuration. Imagine that at night, in pure silence, with some of your best friends studying on a nearby room. The usual course configuration was first a course by the main teacher in a large amphitheater, and then break down into small groups. <a href="https://commons.wikimedia.org/wiki/File:Master_STER_Nassar_Polytechnique.jpg">Source</a>.</div>
 </div>
 </li>
 </ul>
@@ -9369,7 +10159,7 @@ c' &amp; = \frac{x_2' - x_1'}{t_2' - t_1'} \\
 <div class="content">
 <a class="image" href="#image-horny-polytechnicienne-in-grand-uniform-mural-by-binet-bd-96-at-cole-polytechnique-with-nipple-censored-by-ciro-santilli-as-seen-in-2010-every-year-student-organizations-https-www-polytechnique-net-groups-binets-called-binets-todo-etymology-get-to-compete-for-student-elections-and-they-are-allowed-to-make-murals-in-the-school-to-advertise-themselves-they-kinky-people-from-the-1996-cartoon-binet-bd-band-dessin-cartoon-in-french-decided-to-take-it-to-the-next-level-good-old-1996-this-would-never-be-allowed-in-2019-due-to-political-correctness-as-an-engineering-school-polytechnique-students-were-predominantly-male-up-as-of-2019-"><img src="https://raw.githubusercontent.com/cirosantilli/media/master/Horny_polytechnicienne_mural_by_binet_BD_96_at_École_Polytechnique_with_nipple_censored_as_seen_in_2010.jpg" alt="Horny polytechnicienne mural by binet BD 96 at École Polytechnique with nipple censored as seen in 2010" height="400"></a>
 </div>
-<div class="title">Figure 38. Horny polytechnicienne in Grand Uniform mural by binet BD 96 at École Polytechnique with nipple censored by Ciro Santilli as seen in 2010. Every year, student organizations, <a href="https://www.polytechnique.net/groups/binets">called "binets"</a> (TODO etymology), get to compete for student elections, and they are allowed to make murals in the school to advertise themselves. They kinky people from the 1996 Cartoon Binet (BD == Band Dessiné == Cartoon in French) decided to take it to the next level. Good old 1996, this would never be allowed in 2019 due to political correctness. As an engineering school, Polytechnique students were predominantly male up as of 2019.</div>
+<div class="title">Figure 40. Horny polytechnicienne in Grand Uniform mural by binet BD 96 at École Polytechnique with nipple censored by Ciro Santilli as seen in 2010. Every year, student organizations, <a href="https://www.polytechnique.net/groups/binets">called "binets"</a> (TODO etymology), get to compete for student elections, and they are allowed to make murals in the school to advertise themselves. They kinky people from the 1996 Cartoon Binet (BD == Band Dessiné == Cartoon in French) decided to take it to the next level. Good old 1996, this would never be allowed in 2019 due to political correctness. As an engineering school, Polytechnique students were predominantly male up as of 2019.</div>
 </div>
 <div class="paragraph">
 <p>The following promotional videos give an idea of how the school looks like, although they fundamentally miss the little corners that Ciro really loved in that the place and which made it magic:</p>
@@ -9398,6 +10188,53 @@ c' &amp; = \frac{x_2' - x_1'}{t_2' - t_1'} \\
 </div>
 <div class="paragraph">
 <p><a href="#ciro-santilli">Ciro Santilli</a> <a href="#ciro-santillis-formal-education">studied there</a> for a few years starting in 2007.</p>
+</div>
+<div class="sect3">
+<h4 id="university-of-cambridge"><a class="anchor" href="#university-of-cambridge"></a><a class="link" href="#university-of-cambridge">16.3.1. University of Cambridge</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/University_of_Cambridge" class="bare">https://en.wikipedia.org/wiki/University_of_Cambridge</a></p>
+</div>
+<div class="paragraph">
+<p>Located in <a href="#cambridge-united-kingdom">Cambridge, United Kingdom</a>.</p>
+</div>
+<div class="paragraph">
+<p>Second largest number of Nobel Prizes as of 2019, need on say more? <a href="https://en.wikipedia.org/w/index.php?title=List_of_Nobel_laureates_by_university_affiliation&amp;oldid=934987075" class="bare">https://en.wikipedia.org/w/index.php?title=List_of_Nobel_laureates_by_university_affiliation&amp;oldid=934987075</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#paul-dirac">Paul Dirac</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="the-royal-society"><a class="anchor" href="#the-royal-society"></a><a class="link" href="#the-royal-society">16.4. The Royal Society</a></h3>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Royal_Society" class="bare">https://en.wikipedia.org/wiki/Royal_Society</a></p>
+</div>
+<div class="paragraph">
+<p>They do two things:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>make a closed source science journal with insantely high <a href="https://en.wikipedia.org/wiki/Impact_factor">impact factor</a> as of 2019</p>
+</li>
+<li>
+<p>gamify science by letting (mostly <a href="#united-kingdom">mostly Bridith</a>) dudes like Newton and <a href="#paul-dirac">Paul Dirac</a> add <a href="#post-nominal-letters">some random letters</a> after their real names to show off</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="post-nominal-letters"><a class="anchor" href="#post-nominal-letters"></a><a class="link" href="#post-nominal-letters">16.4.1. Post nominal letters</a></h4>
+<div class="paragraph">
+<p><a href="https://en.wikipedia.org/wiki/Post-nominal_letters" class="bare">https://en.wikipedia.org/wiki/Post-nominal_letters</a></p>
+</div>
+<div class="paragraph">
+<p>One of <a href="#ciro-santillis-selfish-desires">Ciro Santilli&#8217;s selfish desires</a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -9468,7 +10305,7 @@ c' &amp; = \frac{x_2' - x_1'}{t_2' - t_1'} \\
         <div>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a> unless noted</div>
         <div>Suggestions and corrections: <a href="https://github.com/cirosantilli/cirosantilli.github.io/issues">https://github.com/cirosantilli/cirosantilli.github.io/issues</a></div>
         <div>Website source code: <a href="https://github.com/cirosantilli/cirosantilli.github.io">https://github.com/cirosantilli/cirosantilli.github.io</a></div>
-        <div>Website version: <a href="https://github.com/cirosantilli/cirosantilli.github.io/commit/b8616c8a5bd78c6bc3d504b7adb2f84c39f6e327">b8616c8a5bd78c6bc3d504b7adb2f84c39f6e327</a></div>
+        <div>Website version: <a href="https://github.com/cirosantilli/cirosantilli.github.io/commit/c7e8c4483503482d9cf6deed73c4914659870e9a">c7e8c4483503482d9cf6deed73c4914659870e9a</a></div>
         <div>Cite with: <a href="https://zenodo.org/badge/latestdoi/16453261">this DOI</a></div>
     </footer>
     
